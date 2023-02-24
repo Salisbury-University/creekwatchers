@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#6F9E52">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/estigl25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/estigl75"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/estigl12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.125" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/estigl85"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/waterdepgl252"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/waterdepgl375"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.375" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/waterdepgl50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <TextView
+        android:id="@+id/measurementsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#22356E"
+        android:gravity="center"
+        android:text="Measurements"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/estigl12"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="-139dp" />
+
+    <TextView
+        android:id="@+id/waterdep_home"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#D865D6CC"
+        android:gravity="center"
+        android:text="Home"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/estigl75"
+        app:layout_constraintStart_toStartOf="@+id/estigl25"
+        app:layout_constraintTop_toTopOf="@+id/estigl85" />
+
+    <ImageView
+        android:id="@+id/waterdep_back"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#0831FF "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/estigl25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/estigl85"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
+
+    <ImageView
+        android:id="@+id/waterdep_next"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#0831FF"
+        android:rotationX="0"
+        android:rotationY="180"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/estigl75"
+        app:layout_constraintTop_toTopOf="@+id/estigl85"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
+
+    <EditText
+        android:id="@+id/waterdepmeas1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/backgroundcolor"
+        android:ems="10"
+        android:hint="Water Depth (cm)"
+        android:inputType="textPersonName"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="@color/textcolor"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/waterdepgl50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/waterdepgl375" />
+
+    <TextView
+        android:id="@+id/waterdepth_title"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/textcolor"
+        android:gravity="center"
+        android:text="Water Depth"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@+id/waterdepgl252"
+        app:layout_constraintTop_toBottomOf="@+id/measurementsTitle" />
+
+    <TextView
+        android:id="@+id/waterdep_meas"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:text="Measurement"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/waterdepgl375"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/waterdepgl252" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
