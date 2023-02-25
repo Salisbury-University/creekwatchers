@@ -1,23 +1,28 @@
 package com.dylanlarrabee.watersurveyapp;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 
 public class HomePage extends AppCompatActivity {
-    final int estInd = 0,measInd = 1,commInd = 2;
-    final int totalEst = 6, totalMeas = 5, totalComm = 1, numBtns = 3;
-    final String estStr = "Estimates\n", commStr = "Comments\n", measStr = "Measurements\n";
-    Button[] btns = new Button[numBtns];
-    Button subBtn;
-    String userName,siteName;
-    int curEst = 0, curMeas = 0, curComm = 0;
-    boolean estDone = false, measDone = false, commDone = false;
+    private final int estInd = 0,measInd = 1,commInd = 2;
+    private final int totalEst = 6, totalMeas = 5, totalComm = 1, numBtns = 3;
+    private final String estStr = "Estimates\n", commStr = "Comments\n", measStr = "Measurements\n";
+    private String m_Text = "";
+    private Button[] btns = new Button[numBtns];
+    private Button subBtn;
+    private String userName,siteName;
+    private int curEst = 0, curMeas = 0, curComm = 0;
+    private boolean estDone = false, measDone = false, commDone = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +43,20 @@ public class HomePage extends AppCompatActivity {
             }
         userText.setText(userName );
         userSite.setText(siteName);
+
         //OCL
+        userText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                changeBtnText(userText, "Name");
+            }
+        });
+        userSite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                changeBtnText(userSite, "Site");
+            }
+        });
         estBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -100,6 +118,35 @@ public class HomePage extends AppCompatActivity {
         {
             subBtn.setTextColor(getResources().getColor(R.color.finishGreen));
         }
+    }
+    void changeBtnText(Button btn,String type)
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Enter new " + type);
+
+// Set up the input
+        final EditText input = new EditText(this);
+// Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
+        input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_NORMAL);
+        builder.setView(input);
+
+// Set up the buttons
+        builder.setPositiveButton("Enter", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                m_Text = input.getText().toString();
+                btn.setText(m_Text);
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+        builder.show();
+
     }
 
 }
