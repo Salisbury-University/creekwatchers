@@ -1,10 +1,4 @@
 package com.dylanlarrabee.watersurveyapp;
-
-
-
-import static com.example.creekwatchers.R.*;
-import static com.example.creekwatchers.R.id.waterdep_home;
-
 import static com.dylanlarrabee.watersurveyapp.R.*;
 import static com.dylanlarrabee.watersurveyapp.R.id.waterdep_home;
 
