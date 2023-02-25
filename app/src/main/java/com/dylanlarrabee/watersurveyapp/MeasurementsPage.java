@@ -24,6 +24,7 @@ public class MeasurementsPage extends AppCompatActivity {
 
         XmlPage[] views = new XmlPage[1];
 
+        views[0] = new XmlPage();
         views[0].btnId = id.waterdepth;
         views[0].toPagebtn = (Button) findViewById(views[0].btnId);
         views[0].homeId = waterdep_home;
@@ -40,7 +41,7 @@ public class MeasurementsPage extends AppCompatActivity {
         //Allows the user to go back to main page when clicked the Home button
         setActivity(meashome_btn);
 
-        setListener(views, 0, 1);
+        setListener(views, 1, 0);
 
     }
 
@@ -125,7 +126,7 @@ public class MeasurementsPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Takes back to main activity when clicked
-                Intent homepage=new Intent(MeasurementsPage.this, MainActivity.class);
+                Intent homepage=new Intent(MeasurementsPage.this, HomePage.class);
 
                 startActivity(homepage);
             }
