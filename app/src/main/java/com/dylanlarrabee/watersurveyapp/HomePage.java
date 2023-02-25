@@ -2,7 +2,9 @@ package com.dylanlarrabee.watersurveyapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -26,6 +28,9 @@ public class HomePage extends AppCompatActivity {
         Button estBtn = (Button) findViewById(R.id.estimateHomeBtn);
         Button measBtn = (Button) findViewById(R.id.measurementHomeBtn);
         Button commBtn = (Button) findViewById(R.id.comments);
+        Intent estIntent = new Intent(this,MeasurementsPage.class);
+        Intent measIntent = new Intent(this,MeasurementsPage.class);
+
         subBtn = (Button) findViewById(R.id.submitBtnHome);
         if (extras != null) {
              userName = extras.getString("name");
@@ -33,7 +38,19 @@ public class HomePage extends AppCompatActivity {
             }
         userText.setText(userName );
         userSite.setText(siteName);
-
+        //OCL
+        estBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            startActivity(estIntent);
+            }
+        });
+        measBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(measIntent);
+            }
+        });
         //main Code
         btns[0] = estBtn;
         btns[1] = measBtn;
@@ -84,4 +101,5 @@ public class HomePage extends AppCompatActivity {
             subBtn.setTextColor(getResources().getColor(R.color.finishGreen));
         }
     }
+
 }
