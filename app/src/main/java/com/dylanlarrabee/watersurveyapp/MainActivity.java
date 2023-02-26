@@ -1,16 +1,19 @@
 package com.dylanlarrabee.watersurveyapp;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
     int countClick = 0;
     int clicked = 0;
     String userName,siteName;
-    View selNameView =
     Button selName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,7 +110,8 @@ public class MainActivity extends AppCompatActivity {
     }
     void nameAlert()
     {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setView()
+    }
+    void siteAlert()
+    {
     }
 }
