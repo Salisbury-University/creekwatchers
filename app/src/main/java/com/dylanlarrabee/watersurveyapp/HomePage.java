@@ -16,7 +16,7 @@ import android.widget.TextView;
 public class HomePage extends AppCompatActivity {
     private final int estInd = 0,measInd = 1,commInd = 2;
     private final int totalEst = 6, totalMeas = 5, totalComm = 1, numBtns = 3;
-    private final String estStr = "Estimates\n", commStr = "Comments\n", measStr = "Measurements\n";
+    private final String observerText = "Observer:\n", siteText = "Site:\n", estStr = "Estimates\n", commStr = "Comments\n", measStr = "Measurements\n";
     private String m_Text = "";
     private Button[] btns = new Button[numBtns];
     private Button subBtn;
@@ -38,8 +38,8 @@ public class HomePage extends AppCompatActivity {
 
         subBtn = (Button) findViewById(R.id.submitBtnHome);
         if (extras != null) {
-             userName = extras.getString("name");
-             siteName = extras.getString("site");
+             userName = observerText +  extras.getString("name");
+             siteName = siteText + extras.getString("site");
             }
         userText.setText(userName );
         userSite.setText(siteName);
@@ -135,7 +135,14 @@ public class HomePage extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 m_Text = input.getText().toString();
-                btn.setText(m_Text);
+                if(type == "name")
+                {
+                    btn.setText(observerText +  m_Text);
+                }else
+                {
+                    btn.setText(siteText +  m_Text);
+                }
+
             }
         });
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

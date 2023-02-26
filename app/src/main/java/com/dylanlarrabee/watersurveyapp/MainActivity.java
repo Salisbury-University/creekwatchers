@@ -1,5 +1,6 @@
 package com.dylanlarrabee.watersurveyapp;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -18,25 +19,31 @@ public class MainActivity extends AppCompatActivity {
     int countClick = 0;
     int clicked = 0;
     String userName,siteName;
-
-
+    View selNameView =
+    Button selName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_page);
         Intent toHome = new Intent(this,HomePage.class);
         //Find views
-        TextView cwName = (TextView) findViewById(R.id.cwname);
         EditText enterName = (EditText) findViewById(R.id.entername);
         Button donebtn = (Button) findViewById(R.id.btndone);
         TextView user = (TextView) findViewById(R.id.userName);
         Animation fadeIn = AnimationUtils.loadAnimation(this,R.anim.fade_in);
         Animation fadeOut = AnimationUtils.loadAnimation(this,R.anim.fade_out);
-
+        selName = (Button) findViewById(R.id.selNameLog);
+        //listeners
+        selName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nameAlert();
+            }
+        });
         donebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-           if(clicked == 0 && enterName.getText().toString().length() > 3)
+           if(clicked == 0 && enterName.getText().toString().length() > 0 && enterName.getText().toString().length() < 20)
            {
                Handler handler = new Handler();
 
@@ -49,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                        enterName.startAnimation(fadeIn);
                    }
                };
+
 
                final Runnable r2 = new Runnable() {
                    @Override
@@ -91,8 +99,16 @@ public class MainActivity extends AppCompatActivity {
 
 
            }
+
+
+
+
             }
         });
     }
-
+    void nameAlert()
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setView()
+    }
 }

@@ -19,43 +19,6 @@
         app:layout_constraintTop_toTopOf="parent"></pl.droidsonroids.gif.GifImageView>
 
     <TextView
-        android:id="@+id/cwname"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:fontFamily="@font/aclonica"
-        android:shadowColor="@color/text_shadow"
-        android:shadowDx="-1"
-        android:shadowDy="-1"
-        android:shadowRadius="100"
-        android:text="Creek"
-        android:gravity="bottom|center_horizontal"
-        android:textColor="#800400"
-        android:textSize="48sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline5" />
-
-    <TextView
-        android:id="@+id/cwname2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:fontFamily="@font/aclonica"
-        android:lineSpacingExtra="0sp"
-        android:shadowColor="@color/text_shadow"
-        android:shadowDx="-1"
-        android:shadowDy="-1"
-        android:shadowRadius="100"
-        android:text="Watchers"
-        android:gravity="top|center_horizontal"
-        android:textColor="#FEC20F"
-        android:textSize="48sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline8" />
-
-    <TextView
         android:id="@+id/userName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -71,14 +34,21 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline5" />
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.8" />
+        app:layout_constraintGuide_percent="0.76" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline5"
@@ -92,7 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.7" />
+        app:layout_constraintGuide_percent="0.74" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -112,16 +82,17 @@
         android:id="@+id/entername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#FFFFFF"
+        android:backgroundTint="@color/maroon"
         android:ems="10"
-        android:hint="Enter Name"
-        android:textCursorDrawable="@drawable/color_cursor"
+        android:fontFamily="serif-monospace"
+        android:hint="New Name"
         android:shadowColor="#000000"
         android:shadowRadius="2"
         android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#8DFFFFFF"
-        android:textSize="32sp"
+        android:textColor="@color/gold"
+        android:textColorHint="#9CFFEB3B"
+        android:textCursorDrawable="@drawable/color_cursor"
+        android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -131,12 +102,14 @@
         android:id="@+id/btndone"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
         android:insetTop="0dp"
         android:insetBottom="0dp"
-        android:text="Submit Name"
-        app:backgroundTint="#83000000"
-        android:textSize="34sp"
         android:minHeight="100dp"
+        android:text="Submit Name"
+        android:textColor="@color/gold"
+        android:textSize="32sp"
+        app:backgroundTint="#998A0000"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -144,14 +117,23 @@
         app:layout_constraintTop_toBottomOf="@+id/entername"
         app:layout_constraintVertical_bias="0.495" />
 
-    <ImageView
-        android:id="@+id/imageView"
+    <Button
+        android:id="@+id/selNameLog"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:fontFamily="serif-monospace"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:minHeight="100dp"
+        android:text="Select Saved NAme"
+        android:textColor="@color/gold"
+        android:textSize="32sp"
+        app:backgroundTint="#998A0000"
+        app:layout_constraintBottom_toTopOf="@+id/guideline8"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:srcCompat="@drawable/sunamelogo" />
+        app:layout_constraintTop_toTopOf="@+id/guideline5"
+        app:layout_constraintVertical_bias="0.495" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
