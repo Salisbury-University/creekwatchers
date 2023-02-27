@@ -74,8 +74,8 @@ public class LoginPage extends AppCompatActivity {
           }else
           {
               Context context = getApplicationContext();
-              CharSequence text = "Max Saved Names.\nDelete or Use a Saved name.";
-              int duration = Toast.LENGTH_SHORT;
+              CharSequence text = "Max Saved Names.\nNew name will not save.";
+              int duration = Toast.LENGTH_LONG;
 
               Toast toast = Toast.makeText(context, text, duration);
               toast.show();

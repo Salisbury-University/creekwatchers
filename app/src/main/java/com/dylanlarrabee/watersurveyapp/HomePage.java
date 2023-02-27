@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
@@ -23,10 +24,14 @@ public class HomePage extends AppCompatActivity {
     private String userName,siteName;
     private int curEst = 0, curMeas = 0, curComm = 0;
     private boolean estDone = false, measDone = false, commDone = false;
+    SharedPreferences curInfo;
+    SharedPreferences.Editor editor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+
+        //Find  views and Bundles
         Bundle extras = getIntent().getExtras();
         Button userText = (Button) findViewById(R.id.homeName);
         Button userSite = (Button) findViewById(R.id.homeSite);
@@ -35,14 +40,20 @@ public class HomePage extends AppCompatActivity {
         Button commBtn = (Button) findViewById(R.id.comments);
         Intent estIntent = new Intent(this,MeasurementsPage.class);
         Intent measIntent = new Intent(this,MeasurementsPage.class);
+        //shared pref
+        curInfo = getSharedPreferences("curInfo",MODE_PRIVATE);
+        editor = curInfo.edit();
 
         subBtn = (Button) findViewById(R.id.submitBtnHome);
         if (extras != null) {
-             userName = observerText +  extras.getString("name");
-             siteName = siteText + extras.getString("site");
+             userName =  extras.getString("name");
+             siteName =  extras.getString("site");
+             editor.putString("name",userName);
+             editor.putString("site",siteName);
+             editor.commit();
             }
-        userText.setText(userName );
-        userSite.setText(siteName);
+        userText.setText(observerText + curInfo.getString("name","No Name") );
+        userSite.setText(siteText + curInfo.getString("site","No Site"));
 
         //OCL
         userText.setOnClickListener(new View.OnClickListener() {
@@ -135,12 +146,16 @@ public class HomePage extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 m_Text = input.getText().toString();
-                if(type == "name")
+                if(type == "Name")
                 {
                     btn.setText(observerText +  m_Text);
+                    editor.putString("name",m_Text);
+                    editor.commit();
                 }else
                 {
                     btn.setText(siteText +  m_Text);
+                    editor.putString("site",m_Text);
+                    editor.commit();
                 }
 
             }
