@@ -20,7 +20,7 @@ Intent toHome;
         //intents
         toHome = new Intent(this,HomePage.class);
         //find views
-        site1 = findViewById(R.id.siteBtn);
+        site1 = findViewById(R.id.name1);
         getExtras = getIntent().getExtras();
         userName = getExtras.getString("name");
         //listeners
