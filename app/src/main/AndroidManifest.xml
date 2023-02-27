@@ -10,13 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WaterSurveyApp">
         <activity
+            android:name=".SelectSite"
+            android:exported="false" />
+        <activity
             android:name=".SelectName"
             android:exported="false" />
         <activity
             android:name=".HomePage"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginPage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SelectSite">
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/selSiteBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/rivergif2"
+        android:scaleType="centerCrop"
+        ></pl.droidsonroids.gif.GifImageView>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/siteBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/maroon"
+                android:minHeight="120dp"
+                android:text="Site 1"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/siteBtn2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/maroon"
+                android:minHeight="120dp"
+                android:text="Button"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/siteBtn3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/maroon"
+                android:minHeight="120dp"
+                android:text="Button"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/siteBtn4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/maroon"
+                android:minHeight="120dp"
+                android:text="Button"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/siteBtn5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/maroon"
+                android:minHeight="120dp"
+                android:text="Button"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/siteBtn6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/maroon"
+                android:minHeight="120dp"
+                android:text="Site 6"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/siteBtn7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/maroon"
+                android:minHeight="120dp"
+                android:text="Button"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/siteBtn8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/maroon"
+                android:minHeight="120dp"
+                android:text="Button"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
