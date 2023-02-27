@@ -2,7 +2,10 @@
 
 Survey phone application for Salisbury Creekwatchers volunteers
 
-Developed by Team Leader Sebastian Acosta
+
+Developed by 
+
+Team Leader Sebastian Acosta
 
 Dylan Larrabee
 
