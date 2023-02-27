@@ -18,13 +18,15 @@ public class LoginPage extends AppCompatActivity {
     int clicked = 0;
     String userName,siteName;
     Button selName;
-    Intent toHome = new Intent(this,HomePage.class);
-    Intent toSelName = new Intent(this,SelectName.class);
-    Intent toSelSite = new Intent(this,SelectSite.class);
+    Intent toHome, toSelName,toSelSite;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_page);
+        //intents
+        toHome = new Intent(this,HomePage.class);
+        toSelName = new Intent(this,SelectName.class);
+        toSelSite = new Intent(this,SelectSite.class);
 
         //Find views
         EditText enterName = (EditText) findViewById(R.id.entername);
