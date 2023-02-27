@@ -38,7 +38,7 @@ public class HomePage extends AppCompatActivity {
         Button estBtn = (Button) findViewById(R.id.estimateHomeBtn);
         Button measBtn = (Button) findViewById(R.id.measurementHomeBtn);
         Button commBtn = (Button) findViewById(R.id.comments);
-        Intent estIntent = new Intent(this,MeasurementsPage.class);
+        Intent estIntent = new Intent(this,EstimatesPage.class);
         Intent measIntent = new Intent(this,MeasurementsPage.class);
         //shared pref
         curInfo = getSharedPreferences("curInfo",MODE_PRIVATE);
