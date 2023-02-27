@@ -36,5 +36,6 @@ Intent toHome;
         toHome.putExtra("site",siteName);
         toHome.putExtra("name",userName);
     startActivity(toHome);
+    finish();
     }
 }
