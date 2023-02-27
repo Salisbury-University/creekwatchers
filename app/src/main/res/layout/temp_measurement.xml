@@ -18,31 +18,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.45" />
+        app:layout_constraintGuide_end="453dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.25" />
+        app:layout_constraintGuide_end="556dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.85" />
+        app:layout_constraintGuide_end="109dp" />
 
     <TextView
         android:id="@+id/estimateTitle"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#22356E"
+        android:background="@color/blue_main"
 
         android:fontFamily="monospace"
         android:gravity="center"
-        android:text="Tide Estimate"
+        android:text="Air Temperature"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="34sp"
@@ -52,44 +52,46 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/estimateTitle3"
+        android:id="@+id/estimateTitle2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#71E3C7"
+        android:background="@color/green_main"
+
         android:fontFamily="monospace"
         android:gravity="center"
-        android:text="3"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="60sp"
+        android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline7"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/estimateTitle4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#787EF1"
+        android:id="@+id/estimateTitle5"
+        android:layout_width="421dp"
+        android:layout_height="106dp"
+        android:background="@color/green_main"
+
         android:fontFamily="monospace"
         android:gravity="center"
-        android:text="Low Tide"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline8" />
+        app:layout_constraintTop_toTopOf="@+id/guideline6"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/homeButton"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#D865D6CC"
+        android:background="@color/green_main"
         android:fontFamily="monospace"
         android:gravity="center"
         android:text="Home"
@@ -137,13 +139,64 @@
         app:layout_constraintTop_toTopOf="@+id/guideline3"
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
-    <SeekBar
-        android:id="@+id/seekBar"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:text="Measurement 1"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:text="Measurement 2"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline8" />
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/guideline8"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline7" />
+
+    <EditText
+        android:id="@+id/editTextNumber2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/estimateTitle5"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="304dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="533dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

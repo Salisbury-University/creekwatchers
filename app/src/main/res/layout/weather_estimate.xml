@@ -42,7 +42,7 @@
 
         android:fontFamily="monospace"
         android:gravity="center"
-        android:text="Tide Estimate"
+        android:text="Weather Estimate"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="34sp"
@@ -76,7 +76,7 @@
         android:background="#787EF1"
         android:fontFamily="monospace"
         android:gravity="center"
-        android:text="Low Tide"
+        android:text="Overcast"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="40sp"
