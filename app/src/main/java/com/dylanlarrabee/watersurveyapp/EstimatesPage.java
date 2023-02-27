@@ -16,17 +16,23 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class EstimatesPage extends AppCompatActivity {
 
-    Intent toHome;
+    Intent toHome, toWeather;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(layout.estimates_main);
 
         toHome = new Intent(this,HomePage.class);
+        toWeather = new Intent(this, EstWeather.class);
 
-        TextView homeButton = (TextView) findViewById(id.esthome);
+        Button homeButton = (Button) findViewById(id.esthome);
+        Button tideButton = (Button) findViewById(id.tide_button);
+        Button watersurfaceButton = (Button) findViewById(id.watersurface_button);
+        Button weatherButton = (Button) findViewById(id.weather_button);
+        Button windspeedButton = (Button) findViewById(id.windspeed_button);
+        Button winddirectButton = (Button) findViewById(id.winddirect_button);
+        Button rainfallButton = (Button) findViewById(id.rainfall_button);
 
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,21 +41,51 @@ public class EstimatesPage extends AppCompatActivity {
             }
         });
 
-
-    }
-
-    //Function to easily go back to main page
-    void setActivity(TextView home)
-    {
-        home.setOnClickListener(new View.OnClickListener() {
+        tideButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Takes back to main activity when clicked
-                Intent homepage=new Intent(EstimatesPage.this, HomePage.class);
-
-                startActivity(homepage);
+                setContentView(layout.tide_estimate);
             }
         });
+
+        watersurfaceButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setContentView(layout.water_surface_estimate);
+            }
+        });
+
+
+        weatherButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { startActivity(toWeather);}
+        });
+
+        windspeedButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setContentView(layout.wind_estimate);
+            }
+        });
+
+
+        winddirectButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setContentView(layout.wind_direction_estimate);
+            }
+        });
+
+        rainfallButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setContentView(layout.rainfall_estimate);
+            }
+        });
+
+
     }
+
+
 
 }

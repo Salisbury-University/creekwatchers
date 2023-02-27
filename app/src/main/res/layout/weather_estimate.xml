@@ -4,102 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blue_main"
     tools:context=".XmlPage">
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.12" />
+        app:layout_constraintGuide_percent="0.1" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline8"
+        android:id="@+id/guideline28"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.45" />
+        app:layout_constraintGuide_percent="0.3" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline7"
+        android:id="@+id/guideline29"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.25" />
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.85" />
-
-    <TextView
-        android:id="@+id/estimateTitle"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#22356E"
-
-        android:fontFamily="monospace"
-        android:gravity="center"
-        android:text="Weather Estimate"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/estimateTitle3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#71E3C7"
-        android:fontFamily="monospace"
-        android:gravity="center"
-        android:text="3"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="60sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline7"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/estimateTitle4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#787EF1"
-        android:fontFamily="monospace"
-        android:gravity="center"
-        android:text="Overcast"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline8" />
-
-    <TextView
-        android:id="@+id/homeButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#D865D6CC"
-        android:fontFamily="monospace"
-        android:gravity="center"
-        android:text="Home"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline5"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+        app:layout_constraintGuide_percent="0.9" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
@@ -109,16 +51,63 @@
         app:layout_constraintGuide_percent="0.25" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.75" />
 
-    <ImageView
-        android:id="@+id/imageView2"
+    <TextView
+        android:id="@+id/estimateTitle"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@color/maroon"
+
+        android:fontFamily="serif-monospace"
+        android:gravity="center"
+        android:text="Weather"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/gold"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/home_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/maroon"
+        android:fontFamily="serif-monospace"
+        android:gravity="center"
+        android:text="Home"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/gold"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+    <ImageView
+        android:id="@+id/leftbutton_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/gold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="parent"
@@ -126,9 +115,10 @@
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/rightbutton_image"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@color/gold"
         android:rotationX="0"
         android:rotationY="180"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -137,13 +127,414 @@
         app:layout_constraintTop_toTopOf="@+id/guideline3"
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
-    <SeekBar
-        android:id="@+id/seekBar"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline7"
-        app:layout_constraintEnd_toEndOf="parent"
+    <ImageView
+        android:id="@+id/clear_background"
+        android:layout_width="150dp"
+        android:layout_height="155dp"
+        android:src="@drawable/color_cursor"
+        app:layout_constraintBottom_toBottomOf="@+id/clear_button"
+        app:layout_constraintEnd_toEndOf="@+id/clear_button"
+        app:layout_constraintStart_toStartOf="@+id/clear_button"
+        app:layout_constraintTop_toTopOf="@+id/clear_button"
+        app:srcCompat="@color/white" />
+
+    <ImageView
+        android:id="@+id/clear_image"
+        android:layout_width="138dp"
+        android:layout_height="121dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/weather_clear"
+        app:layout_constraintEnd_toEndOf="@+id/clear_button"
+        app:layout_constraintStart_toStartOf="@+id/clear_button"
+        app:layout_constraintTop_toTopOf="@+id/clear_button"
+        app:srcCompat="@drawable/weather_clear" />
+
+    <TextView
+        android:id="@+id/clear_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
+        android:text="Clear"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/clear_button"
+        app:layout_constraintEnd_toEndOf="@+id/clear_button"
+        app:layout_constraintStart_toStartOf="@+id/clear_button"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintVertical_bias="0.92" />
+
+    <Button
+        android:id="@+id/clear_button"
+        android:layout_width="150dp"
+        android:layout_height="170dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/guideline28"
+        app:layout_constraintEnd_toStartOf="@+id/guideline31"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:strokeColor="#0E0404"
+        app:strokeWidth="1dp" />
+
+    <ImageView
+        android:id="@+id/partlycloudy_background"
+        android:layout_width="150dp"
+        android:layout_height="155dp"
+        android:src="@drawable/color_cursor"
+        app:layout_constraintBottom_toBottomOf="@+id/partlycloudy_button"
+        app:layout_constraintEnd_toEndOf="@+id/partlycloudy_button"
+        app:layout_constraintStart_toStartOf="@+id/partlycloudy_button"
+        app:layout_constraintTop_toTopOf="@+id/partlycloudy_button"
+        app:srcCompat="@color/white" />
+
+    <ImageView
+        android:id="@+id/partlycloudy_image"
+        android:layout_width="132dp"
+        android:layout_height="110dp"
+        android:src="@drawable/weather_cloudy"
+        app:layout_constraintBottom_toBottomOf="@+id/partlycloudy_button"
+        app:layout_constraintEnd_toEndOf="@+id/partlycloudy_button"
+        app:layout_constraintStart_toStartOf="@+id/partlycloudy_button"
+        app:layout_constraintTop_toTopOf="@+id/partlycloudy_button"
+        app:layout_constraintVertical_bias="0.3"
+        app:srcCompat="@drawable/weather_cloudy" />
+
+    <TextView
+        android:id="@+id/partlycloudy_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
+        android:text="Partly Cloudy"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/partlycloudy_button"
+        app:layout_constraintEnd_toEndOf="@+id/partlycloudy_button"
+        app:layout_constraintStart_toStartOf="@+id/partlycloudy_button"
+        app:layout_constraintTop_toTopOf="@+id/partlycloudy_button"
+        app:layout_constraintVertical_bias="0.9" />
+
+    <Button
+        android:id="@+id/partlycloudy_button"
+        android:layout_width="150dp"
+        android:layout_height="170dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/guideline28"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline31"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:strokeColor="#0E0404"
+        app:strokeWidth="1dp" />
+
+    <ImageView
+        android:id="@+id/overcast_background"
+        android:layout_width="150dp"
+        android:layout_height="155dp"
+        android:src="@drawable/color_cursor"
+        app:layout_constraintBottom_toBottomOf="@+id/overcast_button"
+        app:layout_constraintEnd_toEndOf="@+id/overcast_button"
+        app:layout_constraintStart_toStartOf="@+id/overcast_button"
+        app:layout_constraintTop_toTopOf="@+id/overcast_button"
+        app:srcCompat="@color/white" />
+
+    <ImageView
+        android:id="@+id/overcast_image"
+        android:layout_width="138dp"
+        android:layout_height="121dp"
+        android:src="@drawable/weather_overcast"
+        app:layout_constraintBottom_toBottomOf="@+id/overcast_button"
+        app:layout_constraintEnd_toEndOf="@+id/overcast_button"
+        app:layout_constraintStart_toStartOf="@+id/overcast_button"
+        app:layout_constraintTop_toTopOf="@+id/overcast_button"
+        app:srcCompat="@drawable/weather_overcast" />
+
+    <TextView
+        android:id="@+id/overcast_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
+        android:text="Cloudy"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/overcast_button"
+        app:layout_constraintEnd_toEndOf="@+id/overcast_button"
+        app:layout_constraintStart_toStartOf="@+id/overcast_button"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintVertical_bias="0.95" />
+
+    <Button
+        android:id="@+id/overcast_button"
+        android:layout_width="150dp"
+        android:layout_height="170dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/guideline29"
+        app:layout_constraintEnd_toStartOf="@+id/guideline31"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline28"
+        app:strokeColor="#0E0404"
+        app:strokeWidth="1dp" />
+
+    <ImageView
+        android:id="@+id/lightrain_background"
+        android:layout_width="150dp"
+        android:layout_height="155dp"
+        android:src="@drawable/color_cursor"
+        app:layout_constraintBottom_toBottomOf="@+id/lightrain_button"
+        app:layout_constraintEnd_toEndOf="@+id/lightrain_button"
+        app:layout_constraintStart_toStartOf="@+id/lightrain_button"
+        app:layout_constraintTop_toTopOf="@+id/lightrain_button"
+        app:srcCompat="@color/white" />
+
+    <TextView
+        android:id="@+id/lightrain_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
+        android:text="Light Rain"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/lightrain_button"
+        app:layout_constraintEnd_toEndOf="@+id/lightrain_button"
+        app:layout_constraintStart_toStartOf="@+id/lightrain_button"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintVertical_bias="0.95" />
+
+    <ImageView
+        android:id="@+id/lightrain_image"
+        android:layout_width="122dp"
+        android:layout_height="106dp"
+        android:src="@drawable/weather_lightrain"
+        app:layout_constraintBottom_toBottomOf="@+id/lightrain_button"
+        app:layout_constraintEnd_toEndOf="@+id/lightrain_button"
+        app:layout_constraintStart_toStartOf="@+id/lightrain_button"
+        app:layout_constraintTop_toTopOf="@+id/overcast_button"
+        app:layout_constraintVertical_bias="0.36"
+        app:srcCompat="@drawable/weather_lightrain" />
+
+    <Button
+        android:id="@+id/lightrain_button"
+        android:layout_width="150dp"
+        android:layout_height="170dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/guideline29"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline31"
+        app:layout_constraintTop_toTopOf="@+id/guideline28"
+        app:strokeColor="#0E0404"
+        app:strokeWidth="1dp" />
+
+
+    <ImageView
+        android:id="@+id/rain_background"
+        android:layout_width="150dp"
+        android:layout_height="155dp"
+        android:src="@drawable/color_cursor"
+        app:layout_constraintBottom_toBottomOf="@+id/rain_button"
+        app:layout_constraintEnd_toEndOf="@+id/rain_button"
+        app:layout_constraintStart_toStartOf="@+id/rain_button"
+        app:layout_constraintTop_toTopOf="@+id/rain_button"
+        app:srcCompat="@color/white" />
+
+    <ImageView
+        android:id="@+id/rain_image"
+        android:layout_width="115dp"
+        android:layout_height="108dp"
+        android:src="@drawable/weather_rain"
+        app:layout_constraintBottom_toBottomOf="@+id/rain_button"
+        app:layout_constraintEnd_toEndOf="@+id/rain_button"
+        app:layout_constraintStart_toStartOf="@+id/rain_button"
+        app:layout_constraintTop_toBottomOf="@+id/overcast_button"
+        app:layout_constraintVertical_bias="0.36"
+        app:srcCompat="@drawable/weather_rain" />
+
+    <TextView
+        android:id="@+id/rain_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
+        android:text="Rain"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline30"
+        app:layout_constraintEnd_toEndOf="@+id/rain_button"
+        app:layout_constraintStart_toStartOf="@+id/rain_button"
+        app:layout_constraintTop_toTopOf="@+id/rain_button"
+        app:layout_constraintVertical_bias="0.90999997" />
+
+    <Button
+        android:id="@+id/rain_button"
+        android:layout_width="150dp"
+        android:layout_height="170dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/guideline30"
+        app:layout_constraintEnd_toEndOf="@id/guideline31"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline29"
+        app:strokeColor="#0E0404"
+        app:strokeWidth="1dp" />
+
+
+    <ImageView
+        android:id="@+id/heavyrain_background"
+        android:layout_width="150dp"
+        android:layout_height="155dp"
+        android:src="@drawable/color_cursor"
+        app:layout_constraintBottom_toBottomOf="@+id/heavyrain_button"
+        app:layout_constraintEnd_toEndOf="@+id/heavyrain_button"
+        app:layout_constraintStart_toStartOf="@+id/heavyrain_button"
+        app:layout_constraintTop_toTopOf="@+id/heavyrain_button"
+        app:srcCompat="@color/white" />
+
+    <ImageView
+        android:id="@+id/heavyrain_image"
+        android:layout_width="130dp"
+        android:layout_height="118dp"
+        android:src="@drawable/weather_heavyrain"
+        app:layout_constraintBottom_toBottomOf="@+id/heavyrain_button"
+        app:layout_constraintEnd_toEndOf="@+id/heavyrain_button"
+        app:layout_constraintStart_toStartOf="@+id/heavyrain_button"
+        app:layout_constraintTop_toTopOf="@+id/heavyrain_button"
+        app:layout_constraintVertical_bias="0.32999998"
+        app:srcCompat="@drawable/weather_heavyrain" />
+
+    <TextView
+        android:id="@+id/heavyrain_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
+        android:text="Heavy Rain"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/heavyrain_button"
+        app:layout_constraintEnd_toEndOf="@+id/heavyrain_button"
+        app:layout_constraintStart_toStartOf="@+id/heavyrain_button"
+        app:layout_constraintTop_toTopOf="@+id/heavyrain_button"
+        app:layout_constraintVertical_bias="0.92" />
+
+    <Button
+        android:id="@+id/heavyrain_button"
+        android:layout_width="150dp"
+        android:layout_height="170dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/guideline30"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline31"
+        app:layout_constraintTop_toTopOf="@+id/guideline29"
+        app:strokeColor="#0E0404"
+        app:strokeWidth="1dp" />
+
+    <ImageView
+        android:id="@+id/fog_background"
+        android:layout_width="150dp"
+        android:layout_height="155dp"
+        android:src="@drawable/color_cursor"
+        app:layout_constraintBottom_toBottomOf="@+id/fog_button"
+        app:layout_constraintEnd_toEndOf="@+id/fog_button"
+        app:layout_constraintStart_toStartOf="@+id/fog_button"
+        app:layout_constraintTop_toTopOf="@+id/fog_button"
+        app:srcCompat="@color/white" />
+
+    <TextView
+        android:id="@+id/fog_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
+        android:text="Fog"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/fog_button"
+        app:layout_constraintEnd_toEndOf="@+id/fog_button"
+        app:layout_constraintStart_toStartOf="@+id/fog_button"
+        app:layout_constraintTop_toTopOf="@+id/fog_button"
+        app:layout_constraintVertical_bias="0.92" />
+
+    <ImageView
+        android:id="@+id/fog_image"
+        android:layout_width="137dp"
+        android:layout_height="116dp"
+        android:src="@drawable/weather_fog"
+        app:layout_constraintBottom_toBottomOf="@+id/fog_button"
+        app:layout_constraintEnd_toEndOf="@+id/fog_button"
+        app:layout_constraintStart_toStartOf="@+id/fog_button"
+        app:layout_constraintTop_toTopOf="@+id/fog_button"
+        app:layout_constraintVertical_bias="0.32999998"
+        app:srcCompat="@drawable/weather_fog" />
+
+    <Button
+        android:id="@+id/fog_button"
+        android:layout_width="150dp"
+        android:layout_height="170dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintEnd_toStartOf="@+id/guideline31"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline30"
+        app:strokeColor="#0E0404"
+        app:strokeWidth="1dp" />
+
+
+    <ImageView
+        android:id="@+id/snow_background"
+        android:layout_width="150dp"
+        android:layout_height="155dp"
+        android:src="@drawable/color_cursor"
+        app:layout_constraintBottom_toBottomOf="@+id/snow_button"
+        app:layout_constraintEnd_toEndOf="@+id/snow_button"
+        app:layout_constraintStart_toStartOf="@+id/snow_button"
+        app:layout_constraintTop_toTopOf="@+id/snow_button"
+        app:srcCompat="@color/white" />
+
+    <TextView
+        android:id="@+id/snow_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
+        android:text="Snow"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/snow_button"
+        app:layout_constraintEnd_toEndOf="@+id/snow_button"
+        app:layout_constraintStart_toStartOf="@+id/snow_button"
+        app:layout_constraintTop_toTopOf="@+id/snow_button"
+        app:layout_constraintVertical_bias="0.92" />
+
+
+    <ImageView
+        android:id="@+id/snow_image"
+        android:layout_width="120dp"
+        android:layout_height="109dp"
+        android:src="@drawable/weather_snow"
+        app:layout_constraintBottom_toBottomOf="@+id/snow_button"
+        app:layout_constraintEnd_toEndOf="@+id/snow_button"
+        app:layout_constraintStart_toStartOf="@+id/snow_button"
+        app:layout_constraintTop_toTopOf="@+id/snow_button"
+        app:layout_constraintVertical_bias="0.32999998"
+        app:srcCompat="@drawable/weather_snow" />
+
+    <Button
+        android:id="@+id/snow_button"
+        android:layout_width="150dp"
+        android:layout_height="170dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline31"
+        app:layout_constraintTop_toTopOf="@+id/guideline30"
+        app:strokeColor="#0E0404"
+        app:strokeWidth="1dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

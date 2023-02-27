@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.88" />
+        app:layout_constraintGuide_end="85dp" />
 
 
     <TextView
@@ -44,29 +44,34 @@
         android:gravity="center"
         android:text="Estimates"
         android:textAlignment="center"
-        android:textColor="@color/gold"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
         android:textSize="32sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/estigl12"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <Button
         android:id="@+id/esthome"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#D865D6CC"
+        android:layout_marginBottom="-10dp"
+        android:backgroundTint="#22356E"
         android:fontFamily="serif-monospace"
         android:gravity="center"
         android:text="Home"
         android:textAlignment="center"
-        android:textColor="@color/gold"
+        android:textColor="@color/white"
         android:textSize="32sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/estigl75"
         app:layout_constraintStart_toStartOf="@+id/estigl25"
-        app:layout_constraintTop_toTopOf="@+id/estigl85" />
+        app:layout_constraintTop_toTopOf="@+id/estigl85"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/tidelvl"
+        android:id="@+id/tide_button"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
@@ -75,12 +80,13 @@
         android:text="Tide"
         android:textColor="@color/gold"
         android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@+id/weather"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/watersurface_button"
         app:layout_constraintTop_toBottomOf="@+id/estimatesTitle"
         app:layout_constraintVertical_bias="0.5" />
 
     <Button
-        android:id="@+id/weather"
+        android:id="@+id/watersurface_button"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
@@ -89,12 +95,13 @@
         android:text="Water Surface"
         android:textColor="@color/gold"
         android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@+id/windspd"
-        app:layout_constraintTop_toBottomOf="@+id/tidelvl"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/weather_button"
+        app:layout_constraintTop_toBottomOf="@+id/tide_button"
         app:layout_constraintVertical_bias="0.5" />
 
     <Button
-        android:id="@+id/windspd"
+        android:id="@+id/weather_button"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
@@ -103,12 +110,13 @@
         android:text="Weather"
         android:textColor="@color/gold"
         android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@+id/watersurf"
-        app:layout_constraintTop_toBottomOf="@+id/weather"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/windspeed_button"
+        app:layout_constraintTop_toBottomOf="@+id/watersurface_button"
         app:layout_constraintVertical_bias="0.5" />
 
     <Button
-        android:id="@+id/watersurf"
+        android:id="@+id/windspeed_button"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
@@ -117,12 +125,13 @@
         android:text="Wind Speed"
         android:textColor="@color/gold"
         android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@+id/winddirect"
-        app:layout_constraintTop_toBottomOf="@+id/windspd"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/winddirect_button"
+        app:layout_constraintTop_toBottomOf="@+id/weather_button"
         app:layout_constraintVertical_bias="0.5" />
 
     <Button
-        android:id="@+id/winddirect"
+        android:id="@+id/winddirect_button"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
@@ -131,12 +140,13 @@
         android:text="Wind Direction"
         android:textColor="@color/gold"
         android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@+id/rainfall"
-        app:layout_constraintTop_toBottomOf="@+id/watersurf"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/rainfall_button"
+        app:layout_constraintTop_toBottomOf="@+id/windspeed_button"
         app:layout_constraintVertical_bias="0.5" />
 
     <Button
-        android:id="@+id/rainfall"
+        android:id="@+id/rainfall_button"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
@@ -146,8 +156,9 @@
         android:text="Rainfall"
         android:textColor="@color/gold"
         android:textSize="32sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/esthome"
-        app:layout_constraintTop_toBottomOf="@+id/winddirect"
+        app:layout_constraintTop_toBottomOf="@+id/winddirect_button"
         app:layout_constraintVertical_bias="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

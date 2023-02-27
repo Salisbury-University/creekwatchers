@@ -11,95 +11,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.12" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.45" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.25" />
+        app:layout_constraintGuide_percent="0.1" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.85" />
-
-    <TextView
-        android:id="@+id/estimateTitle"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#22356E"
-
-        android:fontFamily="monospace"
-        android:gravity="center"
-        android:text="Tide Estimate"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/estimateTitle3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#71E3C7"
-        android:fontFamily="monospace"
-        android:gravity="center"
-        android:text="3"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="60sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline7"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/estimateTitle4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#787EF1"
-        android:fontFamily="monospace"
-        android:gravity="center"
-        android:text="Low Tide"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline8" />
-
-    <TextView
-        android:id="@+id/homeButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#D865D6CC"
-        android:fontFamily="monospace"
-        android:gravity="center"
-        android:text="Home"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline5"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+        app:layout_constraintGuide_percent="0.9" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
@@ -115,10 +34,150 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.75" />
 
-    <ImageView
-        android:id="@+id/imageView2"
+    <TextView
+        android:id="@+id/high_tide"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="#012FA3"
+        android:fontFamily="serif-monospace"
+        android:gravity="center"
+        android:text="High"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/estimateTitle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/maroon"
+
+        android:fontFamily="serif-monospace"
+        android:gravity="center"
+        android:text="Tide"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/gold"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/mid_falling_tide"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#F20D46D6"
+        android:fontFamily="serif-monospace"
+        android:gravity="center"
+        android:text="Middle Falling"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline25"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/high_tide"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/low_tide"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#03A9F4"
+        android:fontFamily="serif-monospace"
+        android:gravity="center"
+        android:text="Low"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline26"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mid_falling_tide"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/middle_flooding_tide"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#8B4DBDFA"
+        android:fontFamily="serif-monospace"
+        android:gravity="center"
+        android:text="Middle Flooding"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline27"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/low_tide"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/non_tidal_tide"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:fontFamily="serif-monospace"
+        android:gravity="center"
+        android:text="Non-Tidal"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/middle_flooding_tide"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/home_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/maroon"
+        android:fontFamily="serif-monospace"
+        android:gravity="center"
+        android:text="Home"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/gold"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+    <ImageView
+        android:id="@+id/leftbutton_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/gold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="parent"
@@ -126,9 +185,10 @@
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/rightbutton_image"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@color/gold"
         android:rotationX="0"
         android:rotationY="180"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -137,13 +197,32 @@
         app:layout_constraintTop_toTopOf="@+id/guideline3"
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
-    <SeekBar
-        android:id="@+id/seekBar"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.26" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.42" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.58" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.74" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
