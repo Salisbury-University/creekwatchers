@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
+    android:fadeScrollbars="true"
+    android:keepScreenOn="true"
     tools:context=".SelectName">
 
     <pl.droidsonroids.gif.GifImageView
@@ -21,7 +23,7 @@
         android:id="@+id/siteTB"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:backgroundTint="#81FFC420"
+        android:backgroundTint="#FFC420"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:minHeight="0dp"
@@ -37,18 +39,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/siteTB2"
+        android:id="@+id/returnLog"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:backgroundTint="#81FFC420"
+        android:backgroundTint="@color/maroon"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:minHeight="0dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:text="Select Your Name"
+        android:text="Return"
         android:textAlignment="center"
-        android:textColor="@color/maroon"
+        android:textColor="@color/gold"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/selNameBg"
         app:layout_constraintEnd_toEndOf="parent"

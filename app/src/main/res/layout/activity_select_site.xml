@@ -29,6 +29,9 @@
         android:textAlignment="center"
         android:textColor="@color/maroon"
         android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/selSiteBg"
         tools:layout_editor_absoluteY="1dp" />
 
     <ScrollView
