@@ -69,6 +69,7 @@ public class HomePage extends AppCompatActivity {
             public void onClick(View view) {
                 toSelSite.putExtra("name", userName);
                startActivity(toSelSite);
+               finish();
             }
         });
         estBtn.setOnClickListener(new View.OnClickListener() {
