@@ -12,12 +12,15 @@ import android.widget.Button;
 public class SelectName extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
+    BasicCommands bc = new BasicCommands();
+    Intent toLogin;
 
     LayoutInflater inflater;
     final int maxNames = 5;
     int nameNum;
     String[] userStr;
     Button[] userBtns, delBtns;
+    Button returnBtn;
     View[] cards;
     int[] nameBtnIds = {R.id.name1,R.id.name2,R.id.name3,R.id.name4,R.id.name5};
     int[] delBtnIds ={R.id.delName1,R.id.delName2,R.id.delName3,R.id.delName4,R.id.delName5};
@@ -36,7 +39,18 @@ public class SelectName extends AppCompatActivity {
         delBtns = new Button[nameNum];
         cards = new View[nameNum];
         //findviews
+       returnBtn =(Button) findViewById(R.id.returnLog);
 
+        //Other
+        toLogin = bc.setIntent(this,LoginPage.class);
+        //listeners
+        returnBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(toLogin);
+                finish();
+            }
+        });
         //setup button Text
         for(int i = 0; i < nameNum; i++)
         {

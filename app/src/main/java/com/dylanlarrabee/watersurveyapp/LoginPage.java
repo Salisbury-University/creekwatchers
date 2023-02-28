@@ -41,7 +41,6 @@ public class LoginPage extends AppCompatActivity {
         //Find views
         EditText enterName = (EditText) findViewById(R.id.entername);
         Button donebtn = (Button) findViewById(R.id.btndone);
-        TextView user = (TextView) findViewById(R.id.userName);
         Animation fadeIn = AnimationUtils.loadAnimation(this,R.anim.fade_in);
         Animation fadeOut = AnimationUtils.loadAnimation(this,R.anim.fade_out);
         selName = (Button) findViewById(R.id.selNameLog);

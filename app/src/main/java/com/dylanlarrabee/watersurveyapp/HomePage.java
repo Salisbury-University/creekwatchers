@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 
 public class HomePage extends AppCompatActivity {
+    BasicCommands bc = new BasicCommands();
     private final int estInd = 0,measInd = 1,commInd = 2;
     private final int totalEst = 6, totalMeas = 5, totalComm = 1, numBtns = 3;
     private final String observerText = "Observer:\n", siteText = "Site:\n", estStr = "Estimates\n", commStr = "Comments\n", measStr = "Measurements\n";
@@ -40,6 +41,7 @@ public class HomePage extends AppCompatActivity {
         Button commBtn = (Button) findViewById(R.id.comments);
         Intent estIntent = new Intent(this,EstimatesPage.class);
         Intent measIntent = new Intent(this,MeasurementsPage.class);
+        Intent toSelSite = bc.setIntent(this,SelectSite.class);
         //shared pref
         curInfo = getSharedPreferences("curInfo",MODE_PRIVATE);
         editor = curInfo.edit();
@@ -65,7 +67,8 @@ public class HomePage extends AppCompatActivity {
         userSite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                changeBtnText(userSite, "Site");
+                toSelSite.putExtra("name", userName);
+               startActivity(toSelSite);
             }
         });
         estBtn.setOnClickListener(new View.OnClickListener() {
@@ -84,9 +87,6 @@ public class HomePage extends AppCompatActivity {
         btns[0] = estBtn;
         btns[1] = measBtn;
         btns[2] = commBtn;
-        curEst = 6;
-        curMeas = 5;
-        curComm = 1;
         setAllBtnTxt();
         setBtnTextColors();
     }
