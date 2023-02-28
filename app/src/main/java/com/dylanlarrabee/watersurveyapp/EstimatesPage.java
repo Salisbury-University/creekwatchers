@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class EstimatesPage extends AppCompatActivity {
 
-    Intent toHome, toWeather, toTide;
+    Intent toHome, toWeather, toTide, toWaterSurface;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +23,7 @@ public class EstimatesPage extends AppCompatActivity {
         toHome = new Intent(this,HomePage.class);
         toWeather = new Intent(this, EstWeather.class);
         toTide = new Intent(this, EstTide.class);
+        toWaterSurface = new Intent(this, EstWaterSurface.class);
 
         Button homeButton = (Button) findViewById(id.esthome);
         Button tideButton = (Button) findViewById(id.tide_button);
@@ -49,7 +50,7 @@ public class EstimatesPage extends AppCompatActivity {
         watersurfaceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setContentView(layout.estimate_watersurface);
+                startActivity(toWaterSurface);
             }
         });
 

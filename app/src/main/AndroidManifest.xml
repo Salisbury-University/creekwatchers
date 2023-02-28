@@ -39,6 +39,9 @@
         <activity
             android:name=".EstTide"
             android:exported="true" />
+        <activity
+            android:name=".EstWaterSurface"
+            android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"

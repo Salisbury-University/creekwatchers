@@ -1,6 +1,7 @@
 package com.dylanlarrabee.watersurveyapp;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 
 import static com.dylanlarrabee.watersurveyapp.R.id;
@@ -14,25 +15,34 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class EstWeather extends AppCompatActivity {
 
-    Intent toEstHome;
+    Intent toEstHome, toEstWaterSurface, toEstWindSpeed;
     int weatherNum;
     ImageView allBackgrounds[];
+    Button allButtons[];
     ImageView clearBackground, partlycloudyBackground, overcastBackground, lightrainBackground, rainBackground, heavyrainBackground, fogBackground, snowBackground;
+    ImageView rightButton, leftButton;
+    Button clearButton, partlycloudyButton, overcastButton, lightrainButton, rainButton, heavyrainButton, fogButton, snowButton;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.estimate_weather);
 
         toEstHome = new Intent(this, EstimatesPage.class);
+        toEstWindSpeed = new Intent(this, EstimatesPage.class);
+        toEstWaterSurface = new Intent(this, EstWaterSurface.class);
 
         Button homeButton = (Button) findViewById(id.home_button);
-        Button clearButton = (Button) findViewById(id.clear_button);
-        Button partlycloudyButton = (Button) findViewById(id.partlycloudy_button);
-        Button overcastButton = (Button) findViewById(id.overcast_button);
-        Button lightrainButton = (Button) findViewById(id.lightrain_button);
-        Button rainButton = (Button) findViewById(id.rain_button);
-        Button heavyrainButton = (Button) findViewById(id.heavyrain_button);
-        Button fogButton = (Button) findViewById(id.fog_button);
-        Button snowButton = (Button) findViewById(id.snow_button);
+        ImageView leftButton = (ImageView) findViewById(id.leftbutton_image);
+        ImageView rightButton = (ImageView) findViewById(id.rightbutton_image);
+
+        clearButton = (Button) findViewById(id.clear_button);
+        partlycloudyButton = (Button) findViewById(id.partlycloudy_button);
+        overcastButton = (Button) findViewById(id.overcast_button);
+        lightrainButton = (Button) findViewById(id.lightrain_button);
+        rainButton = (Button) findViewById(id.rain_button);
+        heavyrainButton = (Button) findViewById(id.heavyrain_button);
+        fogButton = (Button) findViewById(id.fog_button);
+        snowButton = (Button) findViewById(id.snow_button);
 
         clearBackground = (ImageView) findViewById(id.clear_background);
         partlycloudyBackground = (ImageView) findViewById(id.partlycloudy_background);
@@ -44,6 +54,7 @@ public class EstWeather extends AppCompatActivity {
         snowBackground = (ImageView) findViewById(id.snow_background);
 
         allBackgrounds = new ImageView[] {clearBackground, partlycloudyBackground, overcastBackground, lightrainBackground, rainBackground, heavyrainBackground, fogBackground, snowBackground};
+        allButtons = new Button[] {clearButton, partlycloudyButton, overcastButton, lightrainButton, rainButton, heavyrainButton, fogButton, snowButton };
 
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,64 +63,34 @@ public class EstWeather extends AppCompatActivity {
             }
         });
 
-        clearButton.setOnClickListener(new View.OnClickListener() {
+        rightButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                highlightButton(clearBackground);
-                weatherNum = 1;
+                startActivity(toEstWindSpeed);
+            }
+        });
+        leftButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(toEstWaterSurface);
             }
         });
 
-        partlycloudyButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                highlightButton(partlycloudyBackground);
-                weatherNum = 2;
-            }
-        });
-        overcastButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                highlightButton(overcastBackground);
-                weatherNum = 3;
-            }
-        });
-        lightrainButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                highlightButton(lightrainBackground);
-                weatherNum = 4;
-            }
-        });
-        rainButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                highlightButton(rainBackground);
-                weatherNum = 5;
-            }
-        });
-        heavyrainButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                highlightButton(heavyrainBackground);
-                weatherNum = 6;
-            }
-        });
-        fogButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                highlightButton(fogBackground);
-                weatherNum = 7;
-            }
-        });
-        snowButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                highlightButton(snowBackground);
-                weatherNum = 8;
-            }
-        });
+        setListeners();
+    }
 
+
+    void setListeners() {
+        for(int i = 0; i < 8; i++) {
+            int finalI = i;
+            allButtons[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    highlightButton(allBackgrounds[finalI]);
+                    weatherNum = finalI + 1;
+                }
+            });
+        }
     }
 
     void highlightButton(ImageView background){

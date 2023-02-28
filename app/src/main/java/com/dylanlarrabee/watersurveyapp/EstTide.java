@@ -3,6 +3,7 @@ package com.dylanlarrabee.watersurveyapp;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.media.Image;
 import android.os.Bundle;
 
 import static com.dylanlarrabee.watersurveyapp.R.id;
@@ -10,23 +11,30 @@ import static com.dylanlarrabee.watersurveyapp.R.layout;
 
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 public class EstTide extends AppCompatActivity {
 
-    Intent toEstHome;
+    Intent toEstHome, toEstWaterSurface;
     int tideNum;
     Button homeButton, highButton, midFallingButton, lowButton, midFloodingButton, nontidalButton;
     Button allButtons[];
+
+    ImageView rightButton;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.estimate_tide);
 
         toEstHome = new Intent(this, EstimatesPage.class);
+        toEstWaterSurface = new Intent(this, EstWaterSurface.class);
 
         homeButton = (Button) findViewById(id.home_button);
+        rightButton = (ImageView) findViewById(id.rightbutton_image);
+
         highButton = (Button) findViewById(id.high_tide);
         midFallingButton = (Button) findViewById(id.mid_falling_tide);
         lowButton = (Button) findViewById(id.low_tide);
@@ -39,6 +47,12 @@ public class EstTide extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(toEstHome);
+            }
+        });
+        rightButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(toEstWaterSurface);
             }
         });
 
@@ -61,10 +75,10 @@ public class EstTide extends AppCompatActivity {
     }
 
     void highlightButton(Button button) {
-        highButton.setBackgroundTintList(ColorStateList.valueOf(R.color.hightide));
-        midFallingButton.setBackgroundTintList(ColorStateList.valueOf(R.color.middlefallingtide));
-        lowButton.setBackgroundTintList(ColorStateList.valueOf(R.color.lowtide));
-        midFloodingButton.setBackgroundTintList(ColorStateList.valueOf(R.color.middlefloodingtide));
+        highButton.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.hightide)));
+        midFallingButton.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.middlefallingtide)));
+        lowButton.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.lowtide)));
+        midFloodingButton.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.middlefloodingtide)));
         nontidalButton.setBackgroundTintList(ColorStateList.valueOf(Color.WHITE));
 
         button.setBackgroundTintList(ContextCompat.getColorStateList(this,R.color.green_main));
