@@ -1,30 +1,28 @@
 package com.dylanlarrabee.watersurveyapp;
 
 import static com.dylanlarrabee.watersurveyapp.R.id;
-import static com.dylanlarrabee.watersurveyapp.R.id.waterdep_home;
 import static com.dylanlarrabee.watersurveyapp.R.layout;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 
 public class EstimatesPage extends AppCompatActivity {
 
-    Intent toHome, toWeather;
+    Intent toHome, toWeather, toTide;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(layout.estimates_main);
+        setContentView(layout.estimate_main);
 
         toHome = new Intent(this,HomePage.class);
         toWeather = new Intent(this, EstWeather.class);
+        toTide = new Intent(this, EstTide.class);
 
         Button homeButton = (Button) findViewById(id.esthome);
         Button tideButton = (Button) findViewById(id.tide_button);
@@ -44,14 +42,14 @@ public class EstimatesPage extends AppCompatActivity {
         tideButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setContentView(layout.tide_estimate);
+                startActivity(toTide);
             }
         });
 
         watersurfaceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setContentView(layout.water_surface_estimate);
+                setContentView(layout.estimate_watersurface);
             }
         });
 
@@ -64,7 +62,7 @@ public class EstimatesPage extends AppCompatActivity {
         windspeedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setContentView(layout.wind_estimate);
+                setContentView(layout.estimate_windspeed);
             }
         });
 
@@ -72,14 +70,14 @@ public class EstimatesPage extends AppCompatActivity {
         winddirectButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setContentView(layout.wind_direction_estimate);
+                setContentView(layout.estimate_winddirection);
             }
         });
 
         rainfallButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setContentView(layout.rainfall_estimate);
+                setContentView(layout.estimate_rainfall);
             }
         });
 

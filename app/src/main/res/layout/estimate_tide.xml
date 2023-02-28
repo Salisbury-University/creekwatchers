@@ -34,126 +34,107 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.75" />
 
-    <TextView
+    <Button
         android:id="@+id/high_tide"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#012FA3"
+        android:backgroundTint="#002AC3"
         android:fontFamily="serif-monospace"
-        android:gravity="center"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
         android:text="High"
-        android:textAlignment="center"
         android:textAllCaps="false"
-        android:textColor="#000000"
-        android:textSize="34sp"
+        android:textColor="@color/black"
+        android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline24"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
-    <TextView
-        android:id="@+id/estimateTitle"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/maroon"
-
-        android:fontFamily="serif-monospace"
-        android:gravity="center"
-        android:text="Tide"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textColor="@color/gold"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
+    <Button
         android:id="@+id/mid_falling_tide"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#F20D46D6"
+        android:backgroundTint="#F20D46D6"
         android:fontFamily="serif-monospace"
         android:gravity="center"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
         android:text="Middle Falling"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="#000000"
-        android:textSize="34sp"
+        android:textSize="38sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline25"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/high_tide"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/guideline24" />
 
-    <TextView
+    <Button
         android:id="@+id/low_tide"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#03A9F4"
+        android:backgroundTint="#03A9F4"
         android:fontFamily="serif-monospace"
         android:gravity="center"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
         android:text="Low"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="#000000"
-        android:textSize="34sp"
+        android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline26"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mid_falling_tide"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/guideline25" />
 
-    <TextView
+    <Button
         android:id="@+id/middle_flooding_tide"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#8B4DBDFA"
+        android:backgroundTint="#8B4DBDFA"
         android:fontFamily="serif-monospace"
         android:gravity="center"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
         android:text="Middle Flooding"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="#000000"
-        android:textSize="34sp"
+        android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline27"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/low_tide"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/guideline26" />
 
-    <TextView
+    <Button
         android:id="@+id/non_tidal_tide"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/white"
+        android:backgroundTint="@color/white"
         android:fontFamily="serif-monospace"
         android:gravity="center"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
         android:text="Non-Tidal"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="#000000"
-        android:textSize="34sp"
+        android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/middle_flooding_tide"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/guideline27" />
 
     <Button
         android:id="@+id/home_button"
@@ -196,6 +177,27 @@
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
         app:srcCompat="?attr/actionModeCloseDrawable" />
+
+    <TextView
+        android:id="@+id/estimateTitle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/maroon"
+
+        android:fontFamily="serif-monospace"
+        android:gravity="center"
+        android:text="Tide"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/gold"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline24"

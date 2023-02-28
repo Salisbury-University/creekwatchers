@@ -20,4 +20,9 @@
     <color name="maroon">#8A0000</color>
     <color name="gold">#FFC420</color>
     <color name="finishGreen">#14ff65</color>
+    <color name="hightide">#002AC3</color>
+    <color name="middlefallingtide">#F20D46D6</color>
+    <color name="lowtide">#03A9F4</color>
+    <color name="middlefloodingtide">#8B4DBDFA</color>
+
 </resources>
