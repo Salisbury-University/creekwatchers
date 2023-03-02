@@ -20,13 +20,13 @@ public class WaterDepth extends AppCompatActivity {
         setContentView(layout.water_depth);
 
         //Buttons for the new views
-        TextView water_home = (TextView) findViewById(id.waterdep_home);
-        ImageView water_back = (ImageView) findViewById(id.waterdep_back);
-        ImageView water_next = (ImageView) findViewById(id.waterdep_next);
+        TextView water_h = (TextView) findViewById(id.waterdep_home);
+        ImageView water_b = (ImageView) findViewById(id.waterdep_back);
+        ImageView water_n = (ImageView) findViewById(id.waterdep_next);
 
-        BasicCommands.setActivity(this, water_home, HomePage.class);
-        //BasicCommands.setActivity(this, water_back, EstRainFall.class);
-        BasicCommands.setActivity(this, water_next, SamplePage.class);
+        BasicCommands.setActivity(this, water_h, HomePage.class);
+        //BasicCommands.setActivity(this, water_b, EstRainFall.class);
+        BasicCommands.setActivity(this, water_n, SamplePage.class);
     }
 
 

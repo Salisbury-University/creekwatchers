@@ -1,4 +1,6 @@
 package com.dylanlarrabee.watersurveyapp;
+import static com.dylanlarrabee.watersurveyapp.R.*;
+
 
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -10,13 +12,14 @@ public class AirTemp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstance){
         super.onCreate(savedInstance);
+        setContentView(layout.air_temp);
 
-        TextView air_home = (TextView) findViewById(R.id.airhome);
-        ImageView air_next = (ImageView) findViewById(R.id.air_next);
-        ImageView air_back = (ImageView) findViewById(R.id.air_back);
+        TextView air_h = (TextView) findViewById(R.id.airhome);
+        ImageView air_n = (ImageView) findViewById(R.id.air_next);
+        ImageView air_b = (ImageView) findViewById(R.id.air_back);
 
-        BasicCommands.setActivity(this, air_home, HomePage.class);
-        BasicCommands.setActivity(this, air_back, SamplePage.class);
-        BasicCommands.setActivity(this, air_next, WaterTemp.class);
+        BasicCommands.setActivity(this, air_h, HomePage.class);
+        BasicCommands.setActivity(this, air_b, SamplePage.class);
+        BasicCommands.setActivity(this, air_n, WaterTemp.class);
     }
 }

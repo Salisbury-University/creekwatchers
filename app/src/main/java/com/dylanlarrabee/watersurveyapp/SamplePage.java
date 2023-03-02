@@ -18,12 +18,12 @@ public class SamplePage extends AppCompatActivity{
         setContentView(layout.sample_dist);
 
         TextView samp_home = (TextView) findViewById(id.sampdist_home);
-        ImageView samp_next = (ImageView) findViewById(id.samp_next);
-        ImageView samp_back = (ImageView) findViewById(id.samp_next);
+        ImageView samp_n = (ImageView) findViewById(id.samp_next);
+        ImageView samp_b = (ImageView) findViewById(id.samp_back);
 
         BasicCommands.setActivity(this, samp_home, HomePage.class);
-        BasicCommands.setActivity(this, samp_back, WaterDepth.class);
-        BasicCommands.setActivity(this, samp_next, AirTemp.class);
+        BasicCommands.setActivity(this, samp_b, WaterDepth.class);
+        BasicCommands.setActivity(this, samp_n, AirTemp.class);
 
     }
 }
