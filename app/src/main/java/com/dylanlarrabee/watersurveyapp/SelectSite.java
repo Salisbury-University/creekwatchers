@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class SelectSite extends AppCompatActivity {
+    SurveyData mysd;
     final int numSites = 1;
 Button site1;
 Bundle getExtras;
@@ -17,6 +18,8 @@ Intent toHome;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_site);
+        if (getIntent().getSerializableExtra("mysd") != null)
+            mysd = (SurveyData) getIntent().getSerializableExtra("mysd");
         //intents
         toHome = new Intent(this,HomePage.class);
         //find views
@@ -35,6 +38,10 @@ Intent toHome;
     {
         toHome.putExtra("site",siteName);
         toHome.putExtra("name",userName);
+        if(mysd != null)
+        {
+        toHome.putExtra("mysd",mysd);
+        }
     startActivity(toHome);
     finish();
     }

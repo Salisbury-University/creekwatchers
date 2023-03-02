@@ -15,7 +15,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginPage extends AppCompatActivity {
-
     //vars
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor myEdit;

@@ -11,11 +11,10 @@ import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 
 public class HomePage extends AppCompatActivity {
-    public SurveyData mySurveyData = new SurveyData();
+    public SurveyData mysd = new SurveyData();
     altStartActivity asa = new altStartActivity();
     BasicCommands bc = new BasicCommands();
     private final int estInd = 0,measInd = 1,commInd = 2;
@@ -34,9 +33,15 @@ public class HomePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
+        //Pull survey data from submenus if available
+        if (getIntent().getSerializableExtra("mysd") != null)
+            mysd = (SurveyData) getIntent().getSerializableExtra("mysd");
+
+
+        //curEst = getCurEst();
         //Find  views and Bundles
         Bundle extras = getIntent().getExtras();
-        Button userText = (Button) findViewById(R.id.homeName);
+        Button userName = (Button) findViewById(R.id.homeName);
         Button userSite = (Button) findViewById(R.id.homeSite);
         Button estBtn = (Button) findViewById(R.id.estimateHomeBtn);
         Button measBtn = (Button) findViewById(R.id.measurementHomeBtn);
@@ -44,32 +49,42 @@ public class HomePage extends AppCompatActivity {
         Intent estIntent = new Intent(this,EstimatesPage.class);
         Intent measIntent = new Intent(this,MeasurementsPage.class);
         Intent toSelSite = bc.setIntent(this,SelectSite.class);
-        //shared pref
-        curInfo = getSharedPreferences("curInfo",MODE_PRIVATE);
-        editor = curInfo.edit();
-
         subBtn = (Button) findViewById(R.id.submitBtnHome);
-        if (extras != null) {
-             userName =  extras.getString("name");
-             siteName =  extras.getString("site");
-             editor.putString("name",userName);
-             editor.putString("site",siteName);
-             editor.commit();
+
+        //This pulls the name and site from login page or from mysd after initial login
+        if(extras != null)
+        {
+            if(extras.getString("name") != null)
+            {
+                mysd.userName = extras.getString("name");
             }
-        userText.setText(observerText + curInfo.getString("name","No Name") );
-        userSite.setText(siteText + curInfo.getString("site","No Site"));
+            if(extras.getString("site") != null)
+            {
+                mysd.userSite = extras.getString("site");
+            }
+        }
+        if(mysd.userName.length() > 0)
+        {
+            userName.setText(observerText + mysd.userName);
+        }
+        if(mysd.userSite.length() > 0)
+        {
+            userSite.setText(siteText + mysd.userSite);
+        }
+
+
 
         //OCL
-        userText.setOnClickListener(new View.OnClickListener() {
+        userName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                changeBtnText(userText, "Name");
+                changeBtnText(userName, "Name");
             }
         });
         userSite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                toSelSite.putExtra("name", userName);
+                toSelSite.putExtra("mysd",mysd);
                startActivity(toSelSite);
                finish();
             }
@@ -77,28 +92,24 @@ public class HomePage extends AppCompatActivity {
         estBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            startActivity(asa.altStartAct(estIntent,mySurveyData));
+            startActivity(asa.altStartAct(estIntent, mysd));
             }
         });
         measBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                measIntent.putExtra("mysd",mysd);
                 startActivity(measIntent);
             }
         });
 
-        //Pull survey data from submenus if available
-        if (getIntent().getSerializableExtra("mysd") != null)
-            mySurveyData = (SurveyData) getIntent().getSerializableExtra("mysd");
 
-        curEst = getCurEst();
 
         //main Code
         btns[0] = estBtn;
         btns[1] = measBtn;
         btns[2] = commBtn;
-        setAllBtnTxt();
-        setBtnTextColors();
+        checkCompletion();
     }
     String setBtnTxt(String btnStr,int cur, int max)
     {
@@ -107,13 +118,13 @@ public class HomePage extends AppCompatActivity {
     }
     void setAllBtnTxt()
     {
-        btns[0].setText(setBtnTxt(estStr,curEst,totalEst));
-        btns[1].setText(setBtnTxt(measStr,curMeas,totalMeas));
-        btns[2].setText(setBtnTxt(commStr,curComm,totalComm));
+        btns[0].setText(setBtnTxt(estStr,mysd.curEst,mysd.maxEst));
+        btns[1].setText(setBtnTxt(measStr,mysd.curMeas,mysd.maxMeas));
+        btns[2].setText(setBtnTxt(commStr,mysd.curComm,mysd.maxComm));
     }
     void setBtnTextColors()
     {
-        if(curEst == 0) {
+        if(mysd.curEst == 0) {
             btns[0].setTextColor(getResources().getColor(R.color.maroon));
         }else if (curEst <6) {
             btns[0].setTextColor(getResources().getColor(R.color.gold));
@@ -121,15 +132,15 @@ public class HomePage extends AppCompatActivity {
             btns[0].setTextColor(getResources().getColor(R.color.finishGreen));
             estDone = true;
         }
-        if(curMeas == 0) {
+        if(mysd.curMeas == 0) {
             btns[1].setTextColor(getResources().getColor(R.color.maroon));
-        }else if (curMeas <5) {
+        }else if (mysd.curMeas <5) {
             btns[1].setTextColor(getResources().getColor(R.color.gold));
         } else {
             btns[1].setTextColor(getResources().getColor(R.color.finishGreen));
             measDone = true;
         }
-        if(curComm == 0) {
+        if(mysd.curComm == 0) {
             btns[2].setTextColor(getResources().getColor(R.color.maroon));
         } else {
             btns[2].setTextColor(getResources().getColor(R.color.finishGreen));
@@ -159,13 +170,7 @@ public class HomePage extends AppCompatActivity {
                 if(type == "Name")
                 {
                     btn.setText(observerText +  m_Text);
-                    editor.putString("name",m_Text);
-                    editor.commit();
-                }else
-                {
-                    btn.setText(siteText +  m_Text);
-                    editor.putString("site",m_Text);
-                    editor.commit();
+                    mysd.userName = m_Text;
                 }
 
             }
@@ -181,24 +186,12 @@ public class HomePage extends AppCompatActivity {
 
     }
 
-    //Determines number of estimates pages user has completed
-    int getCurEst() {
-        int num = 0;
-        if(mySurveyData.tideEst != -1)
-            num++;
-        if(mySurveyData.waterSurf != -1)
-            num++;
-        if(mySurveyData.weathEst != -1)
-            num++;
-        if(mySurveyData.windSpeed != -1)
-            num++;
-        if(mySurveyData.windDir != -1)
-            num++;
-        if(mySurveyData.rainfall != -1)
-            num++;
-        return num;
+    void checkCompletion()
+    {
+        mysd.updateCompleted();
+        setAllBtnTxt();
+        setBtnTextColors();
     }
-
 
 
 
