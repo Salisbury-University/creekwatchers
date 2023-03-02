@@ -40,6 +40,9 @@
             android:name=".EstTide"
             android:exported="true" />
         <activity
+            android:name=".EstTideInfo"
+            android:exported="true" />
+        <activity
             android:name=".EstWaterSurface"
             android:exported="true" />
         <activity

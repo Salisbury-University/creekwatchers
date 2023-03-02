@@ -22,6 +22,13 @@
         app:layout_constraintGuide_percent="0.2" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline38"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -75,7 +82,7 @@
         android:id="@+id/rightbutton_image"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#FFC420"
+        android:background="@color/gold"
         android:rotationX="0"
         android:rotationY="180"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -105,6 +112,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/color_cursor"
+        app:layout_constraintBottom_toTopOf="@+id/guideline37"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:srcCompat="@color/gold" />
+
     <TextView
         android:id="@+id/title2"
         android:layout_width="wrap_content"
@@ -112,19 +130,19 @@
         android:fontFamily="serif-monospace"
         android:text="Instructions"
         android:textColor="@color/black"
-        android:textSize="35sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline37"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
         app:layout_constraintVertical_bias="0.55" />
 
     <Button
         android:id="@+id/exit_button"
-        android:layout_width="70dp"
-        android:layout_height="67dp"
+        android:layout_width="68dp"
+        android:layout_height="65dp"
         android:backgroundTint="@color/black"
         android:insetTop="0dp"
         android:insetBottom="0dp"
@@ -138,24 +156,26 @@
 
     <TextView
         android:id="@+id/description_box"
-        android:layout_width="350dp"
-        android:layout_height="182dp"
-        android:layout_marginTop="50dp"
-        android:text="This is where the instructions will go\nIf you are a very good boy, you will see that the tide is low or high.\nClick one of the buttons that describes how high the tide looks.\n\nDiagram below:"
+        android:layout_width="354dp"
+        android:layout_height="217dp"
+        android:text="This is where the instructions will go.\n\nIf you are a very good boy, you will be able to see that the tide is low or high.\n\nClick one of the buttons that describes how high the tide looks.\n\nDiagram (or video?) below:"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline38"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline37" />
+        app:layout_constraintTop_toTopOf="@+id/guideline37"
+        app:layout_constraintVertical_bias="0.52" />
 
     <ImageView
         android:id="@+id/image_diagram"
-        android:layout_width="299dp"
-        android:layout_height="215dp"
+        android:layout_width="327dp"
+        android:layout_height="253dp"
         android:src="@drawable/surface_calm"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description_box"
-        app:layout_constraintVertical_bias="0.18" />
+        app:layout_constraintTop_toTopOf="@+id/guideline38"
+        app:layout_constraintVertical_bias="0.32999998" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
