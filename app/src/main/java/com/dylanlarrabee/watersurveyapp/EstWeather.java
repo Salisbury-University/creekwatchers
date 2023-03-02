@@ -55,7 +55,10 @@ public class EstWeather extends AppCompatActivity {
 
         allBackgrounds = new ImageView[] {clearBackground, partlycloudyBackground, overcastBackground, lightrainBackground, rainBackground, heavyrainBackground, fogBackground, snowBackground};
         allButtons = new Button[] {clearButton, partlycloudyButton, overcastButton, lightrainButton, rainButton, heavyrainButton, fogButton, snowButton };
-
+        if(mysd.weathEst >= 0)
+        {
+            highlightButton(allBackgrounds[mysd.weathEst]);
+        }
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,6 +94,7 @@ public class EstWeather extends AppCompatActivity {
                 public void onClick(View view) {
                     highlightButton(allBackgrounds[finalI]);
                     weatherNum = finalI + 1;
+                    mysd.weathEst = finalI;
                 }
             });
         }

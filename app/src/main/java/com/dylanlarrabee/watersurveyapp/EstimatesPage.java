@@ -38,6 +38,7 @@ public class EstimatesPage extends AppCompatActivity {
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                toHome.putExtra("mysd",mysd);
                 startActivity(toHome);
             }
         });
@@ -53,6 +54,7 @@ public class EstimatesPage extends AppCompatActivity {
         watersurfaceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                toWaterSurface.putExtra("mysd",mysd);
                 startActivity(toWaterSurface);
             }
         });
@@ -60,7 +62,9 @@ public class EstimatesPage extends AppCompatActivity {
 
         weatherButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) { startActivity(toWeather);}
+            public void onClick(View view) {
+                toWeather.putExtra("mysd",mysd);
+                startActivity(toWeather);}
         });
 
         windspeedButton.setOnClickListener(new View.OnClickListener() {

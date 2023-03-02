@@ -25,7 +25,7 @@ public class EstWaterSurface extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.estimate_watersurface);
-        SurveyData mysd = (SurveyData) getIntent().getSerializableExtra("mysd");
+        mysd = (SurveyData) getIntent().getSerializableExtra("mysd");
         toEstHome = new Intent(this, EstimatesPage.class);
         toEstTide = new Intent(this, EstTide.class);
         toEstWeather = new Intent(this, EstWeather.class);
@@ -46,7 +46,10 @@ public class EstWaterSurface extends AppCompatActivity {
 
         allBackgrounds = new ImageView[] {calmBackground, ripplesBackground, choppyBackground, heavychopBackground};
         allButtons = new Button[] {calmButton, ripplesButton, choppyButton, heavychopButton};
-
+        if(mysd.warterSurf >= 0)
+        {
+            highlightButton(allBackgrounds[mysd.warterSurf]);
+        }
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,6 +85,7 @@ public class EstWaterSurface extends AppCompatActivity {
                 public void onClick(View view) {
                     highlightButton(allBackgrounds[finalI]);
                     watersurfaceNum = finalI + 1;
+                    mysd.warterSurf = finalI;
                 }
             });
         }
