@@ -42,6 +42,9 @@
         <activity
             android:name=".EstWaterSurface"
             android:exported="true" />
+        <activity
+            android:name=".WaterDepth"
+            android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"
