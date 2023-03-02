@@ -32,7 +32,8 @@ public class MeasurementsPage extends AppCompatActivity {
         BasicCommands.setActivity(this, toDepth, WaterDepth.class);
         BasicCommands.setActivity(this, toSample, SamplePage.class);
         BasicCommands.setActivity(this, toAirTemp, AirTemp.class);
-
+        BasicCommands.setActivity(this, toWaterTemp, WaterTemp.class);
+        BasicCommands.setActivity(this, toSecchiDepth, SecchiDepth.class);
     }
 
 }

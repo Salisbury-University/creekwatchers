@@ -16,13 +16,13 @@ public class SecchiDepth extends AppCompatActivity{
         super.onCreate(savedInstance);
         setContentView(R.layout.secchi_depth);
 
-        TextView secchi_home = (TextView) findViewById(id.secchihome);
-        ImageView secchi_next = (ImageView) findViewById(id.secchi_next);
-        ImageView secchi_back = (ImageView) findViewById(id.secchi_back);
+        TextView secchi_h = (TextView) findViewById(id.secchihome);
+        ImageView secchi_n = (ImageView) findViewById(id.secchi_next);
+        ImageView secchi_b = (ImageView) findViewById(id.secchi_back);
 
-        BasicCommands.setActivity(this, secchi_home, HomePage.class);
-        BasicCommands.setActivity(this, secchi_back, WaterTemp.class);
-        //BasicCommands.setActivity(this, secchi_next, Comments.class);
+        BasicCommands.setActivity(this, secchi_h, HomePage.class);
+        BasicCommands.setActivity(this, secchi_b, WaterTemp.class);
+        //BasicCommands.setActivity(this, secchi_n Comments.class);
 
     }
 
