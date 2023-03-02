@@ -9,6 +9,7 @@ import static com.dylanlarrabee.watersurveyapp.R.layout;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,12 +17,14 @@ public class EstWaterSurface extends AppCompatActivity {
     SurveyData mysd;
     Intent toEstHome, toEstWeather, toEstTide;
     int watersurfaceNum;
-    ImageView allBackgrounds[];
+    ImageView allBackgrounds[], allImages[];
     Button allButtons[];
+    TextView allText[];
     ImageView calmBackground, ripplesBackground, choppyBackground, heavychopBackground;
     ImageView calmImage, ripplesImage, choppyImage, heavychopImage;
     ImageView rightButton, leftButton;
     Button homeButton, calmButton, ripplesButton, choppyButton, heavychopButton;
+    TextView calmText,ripplesText,choppyText,heavychopText;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,8 +53,15 @@ public class EstWaterSurface extends AppCompatActivity {
         choppyImage = (ImageView) findViewById(id.choppy_image);
         heavychopImage = (ImageView) findViewById(id.heavychop_image);
 
+        calmText = (TextView) findViewById(id.calm_text);
+        ripplesText = (TextView) findViewById(id.ripples_text);
+        choppyText = (TextView) findViewById(id.choppy_text);
+        heavychopText = (TextView) findViewById(id.heavychop_text);
+
         allBackgrounds = new ImageView[] {calmBackground, ripplesBackground, choppyBackground, heavychopBackground};
         allButtons = new Button[] {calmButton, ripplesButton, choppyButton, heavychopButton};
+        allImages = new ImageView[] {calmImage,ripplesImage,choppyImage,heavychopImage};
+        allText = new TextView[] {calmText,ripplesText,choppyText,heavychopText};
         if(mysd.waterSurf >= 0)
         {
             highlightButton(allBackgrounds[mysd.waterSurf],mysd.waterSurf);
@@ -102,12 +112,16 @@ public class EstWaterSurface extends AppCompatActivity {
         for(int i = 0; i < 4; i++)
         {
             allBackgrounds[i].setImageResource(R.color.black);
-            allButtons[i].setAlpha(0.25F);
+            allImages[i].setAlpha(0.6F);
+            allText[i].setTextColor(getResources().getColor(R.color.black));
+            allText[i].setShadowLayer(0,0,0,getResources().getColor(R.color.black));
         }
-        allButtons[iVal].setAlpha(1);
+        allText[iVal].setTextColor(getResources().getColor(R.color.white));
+        allText[iVal].setShadowLayer(4,0,0,getResources().getColor(R.color.black));
+        allImages[iVal].setAlpha(0.875F);
 
 
-        background.setImageResource(R.color.green_main);
+        background.setImageResource(R.color.white);
     }
 
 }
