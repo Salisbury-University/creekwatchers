@@ -25,7 +25,7 @@ public class WaterDepth extends AppCompatActivity {
         ImageView water_next = (ImageView) findViewById(id.waterdep_next);
 
         BasicCommands.setActivity(this, water_home, HomePage.class);
-        BasicCommands.setActivity(this, water_back, MeasurementsPage.class);
+        //BasicCommands.setActivity(this, water_back, EstRainFall.class);
         BasicCommands.setActivity(this, water_next, SamplePage.class);
     }
 

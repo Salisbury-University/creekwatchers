@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rivergif">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/sdgl25v"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/sdgl75v"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/sdgl125v"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.125"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/sdgl25h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/sdgl375h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.375"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/sdgl50h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/sdgl625h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.625"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/sdgl875h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.875" />
+
+    <TextView
+        android:id="@+id/sd_title_meas1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#A88A0000"
+        android:gravity="center"
+        android:text="Measurement 1"
+        android:textColor="@color/gold"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/sdgl25h"
+        app:layout_constraintTop_toTopOf="@+id/sdgl125v"
+        tools:layout_editor_absoluteX="150dp" />
+
+    <TextView
+        android:id="@+id/secchititle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="Secchi Depth"
+        android:textSize="30sp"
+        android:textColor="@color/gold"
+        android:background="@color/maroon"
+        app:layout_constraintBottom_toTopOf="@+id/sdgl125v"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <EditText
+        android:id="@+id/secchimeas1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#A8FFC420"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Secchi Depth 1(cm)"
+        android:inputType="textPersonName"
+        android:text=""
+        android:textColor="@color/maroon"
+        android:textColorHint="@color/maroon"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/sdgl375h"
+        app:layout_constraintTop_toTopOf="@+id/sdgl25h" />
+
+    <TextView
+        android:id="@+id/sd_title_meas2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#A88A0000"
+        android:gravity="center"
+        android:text="Measurement 2"
+        android:textColor="@color/gold"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/sdgl50h"
+        app:layout_constraintTop_toTopOf="@+id/sdgl375h" />
+
+    <EditText
+        android:id="@+id/secchimeas2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#A8FFC420"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Secchi Depth 2(cm)"
+        android:inputType="textPersonName"
+        android:text=""
+        android:textColor="@color/maroon"
+        android:textColorHint="@color/maroon"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/sdgl625h"
+        app:layout_constraintTop_toTopOf="@+id/sdgl50h" />
+
+    <TextView
+        android:id="@+id/secchihome"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="Home"
+        android:textSize="30sp"
+        android:textColor="@color/gold"
+        android:background="@color/maroon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/sdgl75v"
+        app:layout_constraintStart_toStartOf="@+id/sdgl25v"
+        app:layout_constraintTop_toTopOf="@+id/sdgl875h" />
+
+    <ImageView
+        android:id="@+id/secchi_back"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/gold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/sdgl25v"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/sdgl875h"
+        app:srcCompat="?attr/homeAsUpIndicator" />
+
+    <ImageView
+        android:id="@+id/secchi_next"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/gold"
+        android:rotationY="180"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/sdgl75v"
+        app:layout_constraintTop_toTopOf="@+id/sdgl875h"
+        app:srcCompat="?attr/homeAsUpIndicator" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
