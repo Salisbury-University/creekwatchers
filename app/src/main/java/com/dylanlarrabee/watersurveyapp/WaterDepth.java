@@ -26,7 +26,7 @@ public class WaterDepth extends AppCompatActivity {
 
         BasicCommands.setActivity(this, water_home, HomePage.class);
         BasicCommands.setActivity(this, water_back, MeasurementsPage.class);
-        //setActivity((water_next, SampDist.class));
+        BasicCommands.setActivity(this, water_next, SamplePage.class);
     }
 
 

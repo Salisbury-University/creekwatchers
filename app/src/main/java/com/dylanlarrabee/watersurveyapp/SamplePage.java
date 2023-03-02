@@ -17,6 +17,13 @@ public class SamplePage extends AppCompatActivity{
         super.onCreate(savedInstance);
         setContentView(layout.sample_dist);
 
+        TextView samp_home = (TextView) findViewById(id.sampdist_home);
+        ImageView samp_next = (ImageView) findViewById(id.samp_next);
+        ImageView samp_back = (ImageView) findViewById(id.samp_next);
+
+        BasicCommands.setActivity(this, samp_home, HomePage.class);
+        BasicCommands.setActivity(this, samp_back, WaterDepth.class);
+
         
     }
 }

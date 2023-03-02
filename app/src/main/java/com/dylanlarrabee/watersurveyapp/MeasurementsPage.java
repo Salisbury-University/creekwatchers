@@ -12,14 +12,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MeasurementsPage extends AppCompatActivity {
-    Button toDepth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.measurements_main);
 
-        toDepth = (Button) findViewById(id.waterdepth);
+        Button toDepth = (Button) findViewById(id.waterdepth);
+        Button toSample = (Button) findViewById(id.samdist);
 
         //Creates text views for measurement home page button
         TextView meashome_btn = (TextView) findViewById(id.meashome);
@@ -27,7 +27,7 @@ public class MeasurementsPage extends AppCompatActivity {
         //Allows the user to go back to main page when clicked the Home button
         BasicCommands.setActivity(this, meashome_btn, HomePage.class);
         BasicCommands.setActivity(this, toDepth, WaterDepth.class);
-
+        BasicCommands.setActivity(this, toSample, SamplePage.class);
 
     }
 
