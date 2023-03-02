@@ -17,21 +17,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 public class EstTide extends AppCompatActivity {
-
     Intent toEstHome, toEstWaterSurface;
     int tideNum;
     Button homeButton, highButton, midFallingButton, lowButton, midFloodingButton, nontidalButton;
     Button allButtons[];
 
     ImageView rightButton;
-
+    SurveyData mysd;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.estimate_tide);
-
         toEstHome = new Intent(this, EstimatesPage.class);
         toEstWaterSurface = new Intent(this, EstWaterSurface.class);
-
+        mysd = (SurveyData) getIntent().getSerializableExtra("mysd");
         homeButton = (Button) findViewById(id.home_button);
         rightButton = (ImageView) findViewById(id.rightbutton_image);
 
@@ -42,16 +40,21 @@ public class EstTide extends AppCompatActivity {
         nontidalButton = (Button) findViewById(id.non_tidal_tide);
 
         allButtons = new Button[] {highButton, midFallingButton, lowButton, midFloodingButton, nontidalButton};
-
+        if(mysd.tideEst >= 0)
+        {
+            highlightButton(allButtons[mysd.tideEst]);
+        }
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                toEstHome.putExtra("mysd",mysd);
                 startActivity(toEstHome);
             }
         });
         rightButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                toEstWaterSurface.putExtra("mysd",mysd);
                 startActivity(toEstWaterSurface);
             }
         });
@@ -69,6 +72,7 @@ public class EstTide extends AppCompatActivity {
                 public void onClick(View view) {
                     highlightButton(allButtons[finalI]);
                     tideNum = finalI + 1;
+                    mysd.tideEst = finalI;
                 }
             });
         }

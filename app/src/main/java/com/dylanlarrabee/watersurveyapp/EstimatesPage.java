@@ -12,13 +12,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 public class EstimatesPage extends AppCompatActivity {
-
+    altStartActivity asa;
     Intent toHome, toWeather, toTide, toWaterSurface;
-
+    SurveyData mysd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.estimate_main);
+
+        mysd = (SurveyData) getIntent().getSerializableExtra("mysd");
+
 
         toHome = new Intent(this,HomePage.class);
         toWeather = new Intent(this, EstWeather.class);
@@ -32,7 +35,6 @@ public class EstimatesPage extends AppCompatActivity {
         Button windspeedButton = (Button) findViewById(id.windspeed_button);
         Button winddirectButton = (Button) findViewById(id.winddirect_button);
         Button rainfallButton = (Button) findViewById(id.rainfall_button);
-
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,6 +45,7 @@ public class EstimatesPage extends AppCompatActivity {
         tideButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                toTide.putExtra("mysd",mysd);
                 startActivity(toTide);
             }
         });
