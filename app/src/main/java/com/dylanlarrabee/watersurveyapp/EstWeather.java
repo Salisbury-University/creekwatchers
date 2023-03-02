@@ -10,30 +10,42 @@ import static com.dylanlarrabee.watersurveyapp.R.layout;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class EstWeather extends AppCompatActivity {
     SurveyData mysd;
-    Intent toEstHome, toEstWaterSurface, toEstWindSpeed;
+    Intent toEstHome, toEstWaterSurface, toEstWindSpeed, toEstWeatherInfo;
     int weatherNum;
     ImageView allBackgrounds[];
     Button allButtons[];
+    Button homeButton;
     ImageView clearBackground, partlycloudyBackground, overcastBackground, lightrainBackground, rainBackground, heavyrainBackground, fogBackground, snowBackground;
     ImageView rightButton, leftButton;
+    TextView infoButton;
     Button clearButton, partlycloudyButton, overcastButton, lightrainButton, rainButton, heavyrainButton, fogButton, snowButton;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.estimate_weather);
         mysd = (SurveyData) getIntent().getSerializableExtra("mysd");
+
         toEstHome = new Intent(this, EstimatesPage.class);
         toEstWindSpeed = new Intent(this, EstimatesPage.class);
         toEstWaterSurface = new Intent(this, EstWaterSurface.class);
+        toEstWeatherInfo = new Intent(this, EstWeatherInfo.class);
 
-        Button homeButton = (Button) findViewById(id.home_button);
-        ImageView leftButton = (ImageView) findViewById(id.leftbutton_image);
-        ImageView rightButton = (ImageView) findViewById(id.rightbutton_image);
+        setupButtons();
+        setupListeners();
+    }
+
+    void setupButtons(){
+
+        homeButton = (Button) findViewById(id.home_button);
+        leftButton = (ImageView) findViewById(id.leftbutton_image);
+        rightButton = (ImageView) findViewById(id.rightbutton_image);
+        infoButton = (TextView) findViewById(id.estimateTitle);
 
         clearButton = (Button) findViewById(id.clear_button);
         partlycloudyButton = (Button) findViewById(id.partlycloudy_button);
@@ -55,38 +67,13 @@ public class EstWeather extends AppCompatActivity {
 
         allBackgrounds = new ImageView[] {clearBackground, partlycloudyBackground, overcastBackground, lightrainBackground, rainBackground, heavyrainBackground, fogBackground, snowBackground};
         allButtons = new Button[] {clearButton, partlycloudyButton, overcastButton, lightrainButton, rainButton, heavyrainButton, fogButton, snowButton };
+
         if(mysd.weathEst >= 0)
-        {
             highlightButton(allBackgrounds[mysd.weathEst]);
-        }
-        homeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                toEstHome.putExtra("mysd",mysd);
-                startActivity(toEstHome);
-            }
-        });
 
-        rightButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                toEstWindSpeed.putExtra("mysd",mysd);
-                startActivity(toEstWindSpeed);
-            }
-        });
-        leftButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                toEstWaterSurface.putExtra("mysd",mysd);
-                startActivity(toEstWaterSurface);
-            }
-        });
-
-        setListeners();
     }
 
-
-    void setListeners() {
+    void setupListeners() {
         for(int i = 0; i < 8; i++) {
             int finalI = i;
             allButtons[i].setOnClickListener(new View.OnClickListener() {
@@ -98,6 +85,22 @@ public class EstWeather extends AppCompatActivity {
                 }
             });
         }
+        setListener(infoButton, toEstWeatherInfo);
+        setListener(leftButton, toEstWaterSurface);
+        setListener(rightButton, toEstWindSpeed);
+        setListener(homeButton, toEstHome);
+
+    }
+
+    void setListener(View button, Intent intent)
+    {
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent.putExtra("mysd", mysd);
+                startActivity(intent);
+            }
+        });
     }
 
     void highlightButton(ImageView background){

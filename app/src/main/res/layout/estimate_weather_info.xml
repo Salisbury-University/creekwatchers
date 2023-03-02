@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.53" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -99,7 +99,7 @@
 
         android:fontFamily="serif-monospace"
         android:gravity="center"
-        android:text="Water Surface"
+        android:text="Weather"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/gold"
@@ -157,8 +157,8 @@
     <TextView
         android:id="@+id/description_box"
         android:layout_width="354dp"
-        android:layout_height="217dp"
-        android:text="This is where the instructions will go.\n\nIf you are a very good boy, you will be able to see that the water is moving.\n\nClick one of the buttons that describes how the water looks.\n\nDiagram (or video?) below:"
+        android:layout_height="248dp"
+        android:text="This is where the instructions will go.\n\nIf you are a very smart boy, you will be able to see what the weather is like outside.\n\nClick one of the buttons that describes how the weather looks.\n\nDiagram (or video?) below:"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline38"
         app:layout_constraintEnd_toEndOf="parent"
@@ -171,12 +171,12 @@
         android:id="@+id/image_diagram"
         android:layout_width="327dp"
         android:layout_height="253dp"
-        android:src="@drawable/surface_choppy"
+        android:src="@drawable/weather_snow"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline38"
         app:layout_constraintVertical_bias="0.32999998"
-        app:srcCompat="@drawable/surface_choppy" />
+        app:srcCompat="@drawable/weather_snow" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
