@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tide_main"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -169,7 +172,7 @@
         android:id="@+id/rightbutton_image"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/gold"
+        android:background="#FFC420"
         android:rotationX="0"
         android:rotationY="180"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -198,6 +201,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/info_button"
+        android:layout_width="57dp"
+        android:layout_height="67dp"
+        android:src="@drawable/button_info2"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.94"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/button_info2" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline24"
