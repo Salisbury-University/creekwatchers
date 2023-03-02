@@ -20,6 +20,9 @@ public class MeasurementsPage extends AppCompatActivity {
 
         Button toDepth = (Button) findViewById(id.waterdepth);
         Button toSample = (Button) findViewById(id.samdist);
+        Button toAirTemp = (Button) findViewById(id.airtemp);
+        Button toWaterTemp = (Button) findViewById(id.watertemp);
+        Button toSecchiDepth = (Button) findViewById(id.secdepth);
 
         //Creates text views for measurement home page button
         TextView meashome_btn = (TextView) findViewById(id.meashome);
@@ -28,6 +31,7 @@ public class MeasurementsPage extends AppCompatActivity {
         BasicCommands.setActivity(this, meashome_btn, HomePage.class);
         BasicCommands.setActivity(this, toDepth, WaterDepth.class);
         BasicCommands.setActivity(this, toSample, SamplePage.class);
+        BasicCommands.setActivity(this, toAirTemp, AirTemp.class);
 
     }
 

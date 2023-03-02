@@ -23,7 +23,7 @@ public class SamplePage extends AppCompatActivity{
 
         BasicCommands.setActivity(this, samp_home, HomePage.class);
         BasicCommands.setActivity(this, samp_back, WaterDepth.class);
+        BasicCommands.setActivity(this, samp_next, AirTemp.class);
 
-        
     }
 }
