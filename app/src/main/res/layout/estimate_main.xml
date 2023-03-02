@@ -4,7 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/watergif">
+    android:background="@color/black">
+
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/watergif"
+        android:alpha="0.55"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"></pl.droidsonroids.gif.GifImageView>
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/estigl25"
@@ -25,27 +40,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="60dp" />
+        app:layout_constraintGuide_percent="0.1" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/estigl85"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="85dp" />
+        app:layout_constraintGuide_percent="0.9046016" />
 
 
     <TextView
         android:id="@+id/estimatesTitle"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#22356E"
+        android:background="#8A0000"
         android:fontFamily="serif-monospace"
         android:gravity="center"
         android:text="Estimates"
         android:textAlignment="center"
         android:textAllCaps="true"
-        android:textColor="@color/white"
+        android:textColor="@color/gold"
         android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/estigl12"
@@ -56,12 +71,12 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="-10dp"
-        android:backgroundTint="#22356E"
+        android:backgroundTint="#8A0000"
         android:fontFamily="serif-monospace"
         android:gravity="center"
         android:text="Home"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="@color/gold"
         android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -75,7 +90,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
-        android:backgroundTint="#998A0000"
+        android:backgroundTint="#8C8A0000"
         android:fontFamily="serif-monospace"
         android:text="Tide"
         android:textColor="@color/gold"
@@ -90,9 +105,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
-        android:backgroundTint="#998A0000"
+        android:backgroundTint="#8C8A0000"
         android:fontFamily="serif-monospace"
-        android:text="Water Surface"
+        android:text="Water"
         android:textColor="@color/gold"
         android:textSize="32sp"
         android:textStyle="bold"
@@ -105,7 +120,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
-        android:backgroundTint="#998A0000"
+        android:backgroundTint="#8C8A0000"
         android:fontFamily="serif-monospace"
         android:text="Weather"
         android:textColor="@color/gold"
@@ -120,7 +135,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
-        android:backgroundTint="#998A0000"
+        android:backgroundTint="#8C8A0000"
         android:fontFamily="serif-monospace"
         android:text="Wind Speed"
         android:textColor="@color/gold"
@@ -135,7 +150,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
-        android:backgroundTint="#998A0000"
+        android:backgroundTint="#8C8A0000"
         android:fontFamily="serif-monospace"
         android:text="Wind Direction"
         android:textColor="@color/gold"
@@ -151,9 +166,9 @@
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="12dp"
-        android:backgroundTint="#998A0000"
+        android:backgroundTint="#8C8A0000"
         android:fontFamily="serif-monospace"
-        android:text="Rainfall"
+        android:text="Rain"
         android:textColor="@color/gold"
         android:textSize="32sp"
         android:textStyle="bold"

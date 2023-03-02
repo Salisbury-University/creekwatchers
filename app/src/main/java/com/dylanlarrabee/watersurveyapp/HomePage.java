@@ -86,6 +86,13 @@ public class HomePage extends AppCompatActivity {
                 startActivity(measIntent);
             }
         });
+
+        //Pull survey data from submenus if available
+        if (getIntent().getSerializableExtra("mysd") != null)
+            mySurveyData = (SurveyData) getIntent().getSerializableExtra("mysd");
+
+        curEst = getCurEst();
+
         //main Code
         btns[0] = estBtn;
         btns[1] = measBtn;
@@ -173,5 +180,26 @@ public class HomePage extends AppCompatActivity {
         builder.show();
 
     }
+
+    //Determines number of estimates pages user has completed
+    int getCurEst() {
+        int num = 0;
+        if(mySurveyData.tideEst != -1)
+            num++;
+        if(mySurveyData.waterSurf != -1)
+            num++;
+        if(mySurveyData.weathEst != -1)
+            num++;
+        if(mySurveyData.windSpeed != -1)
+            num++;
+        if(mySurveyData.windDir != -1)
+            num++;
+        if(mySurveyData.rainfall != -1)
+            num++;
+        return num;
+    }
+
+
+
 
 }

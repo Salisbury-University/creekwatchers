@@ -156,10 +156,9 @@
         android:id="@+id/calm_image"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="10dp"
         android:scaleType="centerCrop"
         android:src="@drawable/surface_calm2"
-        app:layout_constraintBottom_toTopOf="@+id/guideline35"
+        app:layout_constraintBottom_toBottomOf="@+id/calm_button"
         app:layout_constraintEnd_toEndOf="@+id/calm_button"
         app:layout_constraintStart_toStartOf="@+id/calm_button"
         app:layout_constraintTop_toTopOf="@+id/calm_button"
@@ -192,12 +191,10 @@
         android:insetTop="0dp"
         android:insetBottom="0dp"
         app:iconPadding="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline35"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toTopOf="@+id/guideline36"
         app:strokeColor="#0E0404"
         app:strokeWidth="0dp" />
 
@@ -251,10 +248,10 @@
         android:backgroundTint="#00FFFFFF"
         android:insetTop="0dp"
         android:insetBottom="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline32"
+        app:layout_constraintBottom_toTopOf="@+id/guideline36"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline35"
+        app:layout_constraintTop_toTopOf="@+id/guideline32"
         app:strokeColor="#0E0404"
         app:strokeWidth="0dp" />
 
@@ -306,10 +303,10 @@
         android:backgroundTint="#00FFFFFF"
         android:insetTop="0dp"
         android:insetBottom="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline36"
+        app:layout_constraintBottom_toTopOf="@+id/guideline32"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline32"
+        app:layout_constraintTop_toTopOf="@+id/guideline35"
         app:strokeColor="#0E0404"
         app:strokeWidth="0dp" />
 
@@ -361,10 +358,10 @@
         android:backgroundTint="#00FFFFFF"
         android:insetTop="0dp"
         android:insetBottom="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/home_button"
+        app:layout_constraintBottom_toTopOf="@+id/guideline35"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline36"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
         app:strokeColor="#0E0404"
         app:strokeWidth="0dp" />
 
