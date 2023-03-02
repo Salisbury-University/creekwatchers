@@ -28,9 +28,9 @@ public class WaterDepth extends AppCompatActivity {
 }
 
     //Function to easily go back to main page
-    void setActivity(TextView view, Class page)
+    void setActivity(TextView tv, Class page)
     {
-        view.setOnClickListener(new View.OnClickListener() {
+        tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Takes back to main activity when clicked
