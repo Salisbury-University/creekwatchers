@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import pl.droidsonroids.gif.GifImageView;
+
 public class EstWindSpeed extends AppCompatActivity {
     SurveyData mysd;
     Intent toEstHome, toEstWeather, toEstWindDirection, toEstWindSpeedInfo;
@@ -26,10 +28,16 @@ public class EstWindSpeed extends AppCompatActivity {
     Button homeButton, calmButton, lightButton, mediumButton, heavyButton;
     TextView calmText,ripplesText,choppyText,heavychopText;
 
+    GifImageView heavyGif, mediumGif, lightGif;
+    GifImageView allGifs[];
+
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.estimate_windspeed);
+
         mysd = (SurveyData) getIntent().getSerializableExtra("mysd");
+
         toEstHome = new Intent(this, EstimatesPage.class);
         toEstWindDirection = new Intent(this, EstimatesPage.class);
         toEstWeather = new Intent(this, EstWeather.class);
@@ -37,11 +45,6 @@ public class EstWindSpeed extends AppCompatActivity {
 
         setupButtons();
         setupListeners();
-
-        if(mysd.windSpeed >= 0)
-        {
-            highlightButton(allBackgrounds[mysd.windSpeed],mysd.windSpeed);
-        }
 
     }
 
@@ -67,6 +70,10 @@ public class EstWindSpeed extends AppCompatActivity {
         choppyImage = (ImageView) findViewById(id.choppy_image);
         heavychopImage = (ImageView) findViewById(id.heavychop_image);
 
+        lightGif = (GifImageView) findViewById(id.light_gif);
+        mediumGif = (GifImageView) findViewById(id.medium_gif);
+        heavyGif = (GifImageView) findViewById(id.heavy_gif);
+
         calmText = (TextView) findViewById(id.calm_text);
         ripplesText = (TextView) findViewById(id.ripples_text);
         choppyText = (TextView) findViewById(id.choppy_text);
@@ -76,6 +83,13 @@ public class EstWindSpeed extends AppCompatActivity {
         allButtons = new Button[] {calmButton, lightButton, mediumButton, heavyButton};
         allImages = new ImageView[] {calmImage,ripplesImage,choppyImage,heavychopImage};
         allText = new TextView[] {calmText,ripplesText,choppyText,heavychopText};
+        allGifs = new GifImageView[] {lightGif, mediumGif, heavyGif};
+
+        if(mysd.windSpeed >= 0)
+        {
+            highlightButton(allBackgrounds[mysd.windSpeed],mysd.windSpeed);
+        }
+
     }
 
     void setupListeners() {
@@ -87,7 +101,7 @@ public class EstWindSpeed extends AppCompatActivity {
                 public void onClick(View view) {
                     highlightButton(allBackgrounds[finalI],finalI);
                     watersurfaceNum = finalI + 1;
-                    mysd.waterSurf = finalI;
+                    mysd.windSpeed = finalI;
                 }
             });
         }
@@ -117,10 +131,24 @@ public class EstWindSpeed extends AppCompatActivity {
             allImages[i].setAlpha(0.6F);
             allText[i].setTextColor(getResources().getColor(R.color.black));
             allText[i].setShadowLayer(0,0,0,getResources().getColor(R.color.black));
+
+                //Freeze GIFs and make invisible
+            if(i != 0) {
+                allGifs[i - 1].setFreezesAnimation(true);
+                allGifs[i - 1].setAlpha(0.0F);
+            }
         }
         allText[iVal].setTextColor(getResources().getColor(R.color.white));
         allText[iVal].setShadowLayer(4,0,0,getResources().getColor(R.color.black));
-        allImages[iVal].setAlpha(0.875F);
+        allImages[iVal].setAlpha(0.0F);
+
+        //Unfreeze GIFS and make visible
+        if(iVal != 0) {
+            allGifs[iVal-1].setAlpha(0.875F);
+            allGifs[iVal-1].setFreezesAnimation(false);
+        }
+        else
+            allImages[iVal].setAlpha(0.875F);
 
         background.setImageResource(R.color.white);
     }
