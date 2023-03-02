@@ -36,6 +36,13 @@
         app:layout_constraintGuide_percent="0.375" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gls50h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gls25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -62,7 +69,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/sampdist_home"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/maroon"
@@ -125,8 +132,8 @@
         android:textColor="@color/maroon"
         android:textColorHint="@color/maroon"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/gls375h"
-        app:layout_constraintTop_toTopOf="@+id/gls25h"
+        app:layout_constraintBottom_toTopOf="@+id/gls50h"
+        app:layout_constraintTop_toTopOf="@+id/gls375h"
         app:layout_constraintVertical_bias="0.0"
         tools:layout_editor_absoluteX="-10dp" />
 
@@ -134,10 +141,13 @@
         android:id="@+id/spinner"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/gls375h"
+        android:entries="@array/samp_meas"
+        android:fadeScrollbars="false"
+        android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toTopOf="@+id/gls50h"
         app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/gls75"
-        app:layout_constraintTop_toTopOf="@+id/gls25h" />
-
-
+        app:layout_constraintTop_toTopOf="@+id/gls375h"
+        app:layout_constraintVertical_bias="0.0"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
