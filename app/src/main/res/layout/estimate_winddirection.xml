@@ -62,6 +62,20 @@
         app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
     <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="707dp"
+        android:layout_height="679dp"
+        android:src="@drawable/winddirec_circle"
+        android:tint="#24252C"
+        android:tintMode="multiply"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/estimateTitle"
+        app:layout_constraintVertical_bias="0.58000004" />
+
+    <ImageView
         android:id="@+id/leftbutton_image"
         android:layout_width="0dp"
         android:layout_height="0dp"
