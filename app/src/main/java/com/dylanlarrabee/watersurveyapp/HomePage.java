@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 
 public class HomePage extends AppCompatActivity {
+    public SurveyData mySurveyData = new SurveyData();
     BasicCommands bc = new BasicCommands();
     private final int estInd = 0,measInd = 1,commInd = 2;
     private final int totalEst = 6, totalMeas = 5, totalComm = 1, numBtns = 3;
