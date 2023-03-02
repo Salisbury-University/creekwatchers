@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class EstWaterSurface extends AppCompatActivity {
     SurveyData mysd;
-    Intent toEstHome, toEstWeather, toEstTide;
+    Intent toEstHome, toEstWeather, toEstTide, toEstWaterSurfaceInfo;
     int watersurfaceNum;
     ImageView allBackgrounds[], allImages[];
     Button allButtons[];
@@ -23,6 +23,7 @@ public class EstWaterSurface extends AppCompatActivity {
     ImageView calmBackground, ripplesBackground, choppyBackground, heavychopBackground;
     ImageView calmImage, ripplesImage, choppyImage, heavychopImage;
     ImageView rightButton, leftButton;
+    TextView infoButton;
     Button homeButton, calmButton, ripplesButton, choppyButton, heavychopButton;
     TextView calmText,ripplesText,choppyText,heavychopText;
 
@@ -33,10 +34,24 @@ public class EstWaterSurface extends AppCompatActivity {
         toEstHome = new Intent(this, EstimatesPage.class);
         toEstTide = new Intent(this, EstTide.class);
         toEstWeather = new Intent(this, EstWeather.class);
+        toEstWaterSurfaceInfo = new Intent(this, EstWaterSurfaceInfo.class);
+
+        setupButtons();
+        setupListeners();
+
+        if(mysd.waterSurf >= 0)
+        {
+            highlightButton(allBackgrounds[mysd.waterSurf],mysd.waterSurf);
+        }
+
+    }
+
+    void setupButtons(){
 
         homeButton = (Button) findViewById(id.home_button);
         rightButton = (ImageView) findViewById(id.rightbutton_image);
         leftButton = (ImageView) findViewById(id.leftbutton_image);
+        infoButton = (TextView) findViewById(id.estimateTitle);
 
         calmButton = (Button) findViewById(id.calm_button);
         ripplesButton = (Button) findViewById(id.ripples_button);
@@ -62,38 +77,10 @@ public class EstWaterSurface extends AppCompatActivity {
         allButtons = new Button[] {calmButton, ripplesButton, choppyButton, heavychopButton};
         allImages = new ImageView[] {calmImage,ripplesImage,choppyImage,heavychopImage};
         allText = new TextView[] {calmText,ripplesText,choppyText,heavychopText};
-        if(mysd.waterSurf >= 0)
-        {
-            highlightButton(allBackgrounds[mysd.waterSurf],mysd.waterSurf);
-        }
-        homeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                toEstHome.putExtra("mysd",mysd);
-                startActivity(toEstHome);
-            }
-        });
-
-        rightButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                toEstWeather.putExtra("mysd",mysd);
-                startActivity(toEstWeather);
-            }
-        });
-
-        leftButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                toEstTide.putExtra("mysd",mysd);
-                startActivity(toEstTide);
-            }
-        });
-
-        setListeners();
     }
 
-    void setListeners() {
+    void setupListeners() {
+
         for(int i = 0; i < 4; i++) {
             int finalI = i;
             allButtons[i].setOnClickListener(new View.OnClickListener() {
@@ -105,9 +92,25 @@ public class EstWaterSurface extends AppCompatActivity {
                 }
             });
         }
+
+        setListener(infoButton, toEstWaterSurfaceInfo);
+        setListener(leftButton, toEstTide);
+        setListener(rightButton, toEstWeather);
+        setListener(homeButton, toEstHome);
     }
 
-    void highlightButton(ImageView background, int iVal){
+    void setListener(View button, Intent intent)
+    {
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent.putExtra("mysd", mysd);
+                startActivity(intent);
+            }
+        });
+    }
+
+    void highlightButton(ImageView background, int iVal) {
 
         for(int i = 0; i < 4; i++)
         {
@@ -119,7 +122,6 @@ public class EstWaterSurface extends AppCompatActivity {
         allText[iVal].setTextColor(getResources().getColor(R.color.white));
         allText[iVal].setShadowLayer(4,0,0,getResources().getColor(R.color.black));
         allImages[iVal].setAlpha(0.875F);
-
 
         background.setImageResource(R.color.white);
     }

@@ -39,7 +39,7 @@ public class EstTide extends AppCompatActivity {
         toEstTideInfo = new Intent(this, EstTideInfo.class);
 
         setupButtons();
-        setListeners();
+        setupListeners();
 
     }
 
@@ -59,7 +59,7 @@ public class EstTide extends AppCompatActivity {
         if(mysd.tideEst >= 0)
             highlightButton(allButtons[mysd.tideEst]);
     }
-    void setListeners() {
+    void setupListeners() {
 
         for(int i = 0; i < 5; i++) {
             int finalI = i;
@@ -72,31 +72,23 @@ public class EstTide extends AppCompatActivity {
             });
         }
 
-        homeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                toEstHome.putExtra("mysd",mysd);
-                startActivity(toEstHome);
-            }
-        });
-
-        rightButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                toEstWaterSurface.putExtra("mysd",mysd);
-                startActivity(toEstWaterSurface);
-            }
-        });
-
-        infoButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toEstTideInfo.putExtra("mysd",mysd);
-                startActivity(toEstTideInfo);
-            }
-        });
+        setListener(infoButton, toEstTideInfo);
+        setListener(rightButton, toEstWaterSurface);
+        setListener(homeButton, toEstHome);
 
     }
+
+    void setListener(View button, Intent intent)
+    {
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent.putExtra("mysd", mysd);
+                startActivity(intent);
+            }
+        });
+    }
+
 
     void highlightButton(Button button)
     {

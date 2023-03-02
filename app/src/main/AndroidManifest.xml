@@ -46,6 +46,9 @@
             android:name=".EstWaterSurface"
             android:exported="true" />
         <activity
+            android:name=".EstWaterSurfaceInfo"
+            android:exported="true" />
+        <activity
             android:name=".WaterDepth"
             android:exported="true" />
 
