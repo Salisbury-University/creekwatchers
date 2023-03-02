@@ -46,9 +46,9 @@ public class EstWaterSurface extends AppCompatActivity {
 
         allBackgrounds = new ImageView[] {calmBackground, ripplesBackground, choppyBackground, heavychopBackground};
         allButtons = new Button[] {calmButton, ripplesButton, choppyButton, heavychopButton};
-        if(mysd.warterSurf >= 0)
+        if(mysd.waterSurf >= 0)
         {
-            highlightButton(allBackgrounds[mysd.warterSurf]);
+            highlightButton(allBackgrounds[mysd.waterSurf]);
         }
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,7 +85,7 @@ public class EstWaterSurface extends AppCompatActivity {
                 public void onClick(View view) {
                     highlightButton(allBackgrounds[finalI]);
                     watersurfaceNum = finalI + 1;
-                    mysd.warterSurf = finalI;
+                    mysd.waterSurf = finalI;
                 }
             });
         }
