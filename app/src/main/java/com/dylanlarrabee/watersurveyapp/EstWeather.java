@@ -32,7 +32,7 @@ public class EstWeather extends AppCompatActivity {
         mysd = (SurveyData) getIntent().getSerializableExtra("mysd");
 
         toEstHome = new Intent(this, EstimatesPage.class);
-        toEstWindSpeed = new Intent(this, EstimatesPage.class);
+        toEstWindSpeed = new Intent(this, EstWindSpeed.class);
         toEstWaterSurface = new Intent(this, EstWaterSurface.class);
         toEstWeatherInfo = new Intent(this, EstWeatherInfo.class);
 

@@ -28,7 +28,7 @@ public class EstWeatherInfo extends AppCompatActivity {
 
         toEstHome = new Intent(this, EstimatesPage.class);
         toEstWaterSurface = new Intent(this, EstWaterSurface.class);
-        toEstWindSpeed = new Intent(this, EstimatesPage.class);
+        toEstWindSpeed = new Intent(this, EstWindSpeed.class);
         toEstWeather = new Intent(this, EstWeather.class);
 
         setupButtons();
