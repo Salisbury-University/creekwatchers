@@ -132,7 +132,7 @@
         android:textColor="@color/maroon"
         android:textSize="38sp"
         android:textStyle="bold"
-        app:backgroundTint="#A9000000"
+        app:backgroundTint="#A8000000"
         app:layout_constraintBottom_toTopOf="@+id/guideline11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

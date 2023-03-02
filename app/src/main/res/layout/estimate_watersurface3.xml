@@ -20,14 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.12" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline35"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.31" />
+        app:layout_constraintGuide_percent="0.2" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline32"
@@ -37,18 +30,11 @@
         app:layout_constraintGuide_percent="0.5" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline36"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.69" />
-
-    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline29"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.88" />
+        app:layout_constraintGuide_percent="0.8" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -143,8 +129,8 @@
 
     <ImageView
         android:id="@+id/calm_background"
-        android:layout_width="409dp"
-        android:layout_height="135dp"
+        android:layout_width="180dp"
+        android:layout_height="190dp"
         android:src="@drawable/color_cursor"
         app:layout_constraintBottom_toBottomOf="@+id/calm_button"
         app:layout_constraintEnd_toEndOf="@+id/calm_button"
@@ -154,14 +140,14 @@
 
     <ImageView
         android:id="@+id/calm_image"
-        android:layout_width="406dp"
-        android:layout_height="130dp"
+        android:layout_width="166dp"
+        android:layout_height="149dp"
         android:layout_marginTop="10dp"
-        android:src="@drawable/surface_calm2"
+        android:src="@drawable/surface_calm"
         app:layout_constraintEnd_toEndOf="@+id/calm_button"
         app:layout_constraintStart_toStartOf="@+id/calm_button"
         app:layout_constraintTop_toTopOf="@+id/calm_button"
-        app:srcCompat="@drawable/surface_calm2" />
+        app:srcCompat="@drawable/surface_calm" />
 
     <TextView
         android:id="@+id/calm_text"
@@ -171,33 +157,30 @@
         android:text="Calm"
         android:textAllCaps="false"
         android:textColor="@color/black"
-        android:textSize="50sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/calm_button"
         app:layout_constraintEnd_toEndOf="@+id/calm_button"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/calm_button"
         app:layout_constraintTop_toTopOf="@+id/calm_button"
-        app:layout_constraintVertical_bias="0.35000002" />
+        app:layout_constraintVertical_bias="0.92" />
 
     <Button
         android:id="@+id/calm_button"
-        android:layout_width="match_parent"
-        android:layout_height="148dp"
+        android:layout_width="180dp"
+        android:layout_height="200dp"
         android:backgroundTint="#00FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/guideline32"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toStartOf="@+id/guideline31"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline28"
-        app:layout_constraintVertical_bias="0.0"
         app:strokeColor="#0E0404"
         app:strokeWidth="1dp" />
 
     <ImageView
         android:id="@+id/ripples_background"
-        android:layout_width="409dp"
-        android:layout_height="135dp"
+        android:layout_width="180dp"
+        android:layout_height="190dp"
         android:src="@drawable/color_cursor"
         app:layout_constraintBottom_toBottomOf="@+id/ripples_button"
         app:layout_constraintEnd_toEndOf="@+id/ripples_button"
@@ -207,15 +190,15 @@
 
     <ImageView
         android:id="@+id/ripples_image"
-        android:layout_width="408dp"
-        android:layout_height="130dp"
-        android:src="@drawable/surface_ripples3"
+        android:layout_width="169dp"
+        android:layout_height="162dp"
+        android:src="@drawable/surface_ripples2"
         app:layout_constraintBottom_toBottomOf="@+id/ripples_button"
         app:layout_constraintEnd_toEndOf="@+id/ripples_button"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/ripples_button"
         app:layout_constraintTop_toTopOf="@+id/ripples_button"
-        app:srcCompat="@drawable/surface_ripples3" />
+        app:layout_constraintVertical_bias="0.07999998"
+        app:srcCompat="@drawable/surface_ripples2" />
 
     <TextView
         android:id="@+id/ripples_text"
@@ -225,31 +208,30 @@
         android:text="Ripples"
         android:textAllCaps="false"
         android:textColor="@color/black"
-        android:textSize="50sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/ripples_button"
         app:layout_constraintEnd_toEndOf="@+id/ripples_button"
-        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="@+id/ripples_button"
         app:layout_constraintTop_toTopOf="@+id/ripples_button"
-        app:layout_constraintVertical_bias="0.35000002" />
+        app:layout_constraintVertical_bias="0.92" />
 
     <Button
         android:id="@+id/ripples_button"
-        android:layout_width="match_parent"
-        android:layout_height="148dp"
+        android:layout_width="180dp"
+        android:layout_height="200dp"
         android:backgroundTint="#00FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/guideline32"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline35"
+        app:layout_constraintStart_toStartOf="@+id/guideline31"
+        app:layout_constraintTop_toTopOf="@+id/guideline28"
         app:strokeColor="#0E0404"
         app:strokeWidth="1dp" />
 
     <ImageView
         android:id="@+id/choppy_background"
-        android:layout_width="408dp"
-        android:layout_height="135dp"
+        android:layout_width="180dp"
+        android:layout_height="190dp"
         android:src="@drawable/color_cursor"
         app:layout_constraintBottom_toBottomOf="@+id/choppy_button"
         app:layout_constraintEnd_toEndOf="@+id/choppy_button"
@@ -259,14 +241,15 @@
 
     <ImageView
         android:id="@+id/choppy_image"
-        android:layout_width="412dp"
-        android:layout_height="130dp"
-        android:src="@drawable/surface_wavy"
+        android:layout_width="172dp"
+        android:layout_height="175dp"
+        android:src="@drawable/surface_choppy"
         app:layout_constraintBottom_toBottomOf="@+id/choppy_button"
         app:layout_constraintEnd_toEndOf="@+id/choppy_button"
         app:layout_constraintStart_toStartOf="@+id/choppy_button"
         app:layout_constraintTop_toTopOf="@+id/choppy_button"
-        app:srcCompat="@drawable/surface_wavy" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/surface_choppy" />
 
     <TextView
         android:id="@+id/choppy_text"
@@ -276,21 +259,21 @@
         android:text="Choppy"
         android:textAllCaps="false"
         android:textColor="@color/black"
-        android:textSize="50sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/choppy_button"
         app:layout_constraintEnd_toEndOf="@+id/choppy_button"
         app:layout_constraintStart_toStartOf="@+id/choppy_button"
         app:layout_constraintTop_toTopOf="@+id/choppy_button"
-        app:layout_constraintVertical_bias="0.38" />
+        app:layout_constraintVertical_bias="0.92" />
 
     <Button
         android:id="@+id/choppy_button"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_width="180dp"
+        android:layout_height="200dp"
         android:backgroundTint="#00FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/guideline36"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline29"
+        app:layout_constraintEnd_toStartOf="@+id/guideline31"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline32"
         app:strokeColor="#0E0404"
@@ -298,25 +281,14 @@
 
     <ImageView
         android:id="@+id/heavychop_background"
-        android:layout_width="match_parent"
-        android:layout_height="135dp"
+        android:layout_width="180dp"
+        android:layout_height="190dp"
         android:src="@drawable/color_cursor"
         app:layout_constraintBottom_toBottomOf="@+id/heavychop_button"
         app:layout_constraintEnd_toEndOf="@+id/heavychop_button"
         app:layout_constraintStart_toStartOf="@+id/heavychop_button"
         app:layout_constraintTop_toTopOf="@+id/heavychop_button"
         app:srcCompat="@color/white" />
-
-    <ImageView
-        android:id="@+id/heavychop_image"
-        android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:src="@drawable/surface_heavychop"
-        app:layout_constraintBottom_toBottomOf="@+id/heavychop_button"
-        app:layout_constraintEnd_toEndOf="@+id/heavychop_button"
-        app:layout_constraintStart_toStartOf="@+id/heavychop_button"
-        app:layout_constraintTop_toTopOf="@+id/heavychop_button"
-        app:srcCompat="@drawable/surface_heavychop" />
 
     <TextView
         android:id="@+id/heavychop_text"
@@ -326,23 +298,35 @@
         android:text="Heavy Chop"
         android:textAllCaps="false"
         android:textColor="@color/black"
-        android:textSize="50sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/heavychop_button"
         app:layout_constraintEnd_toEndOf="@+id/heavychop_button"
         app:layout_constraintStart_toStartOf="@+id/heavychop_button"
         app:layout_constraintTop_toTopOf="@+id/heavychop_button"
-        app:layout_constraintVertical_bias="0.37" />
+        app:layout_constraintVertical_bias="0.92" />
+
+    <ImageView
+        android:id="@+id/heavychop_image"
+        android:layout_width="167dp"
+        android:layout_height="146dp"
+        android:src="@drawable/surface_verychoppy"
+        app:layout_constraintBottom_toBottomOf="@+id/heavychop_button"
+        app:layout_constraintEnd_toEndOf="@+id/heavychop_button"
+        app:layout_constraintStart_toStartOf="@+id/heavychop_button"
+        app:layout_constraintTop_toTopOf="@+id/choppy_button"
+        app:layout_constraintVertical_bias="0.19"
+        app:srcCompat="@drawable/surface_verychoppy" />
 
     <Button
         android:id="@+id/heavychop_button"
-        android:layout_width="match_parent"
-        android:layout_height="148dp"
+        android:layout_width="180dp"
+        android:layout_height="200dp"
         android:backgroundTint="#00FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/guideline29"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline36"
+        app:layout_constraintStart_toStartOf="@+id/guideline31"
+        app:layout_constraintTop_toTopOf="@+id/guideline32"
         app:strokeColor="#0E0404"
         app:strokeWidth="1dp" />
 

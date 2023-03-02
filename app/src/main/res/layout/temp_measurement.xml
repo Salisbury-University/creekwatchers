@@ -88,7 +88,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/homeButton"
+        android:id="@+id/home_button"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/green_main"
@@ -118,7 +118,7 @@
         app:layout_constraintGuide_percent="0.75" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/leftbutton_image"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -128,7 +128,7 @@
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/rightbutton_image"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:rotationX="0"
