@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class EstWeather extends AppCompatActivity {
-
+    SurveyData mysd;
     Intent toEstHome, toEstWaterSurface, toEstWindSpeed;
     int weatherNum;
     ImageView allBackgrounds[];
@@ -26,7 +26,7 @@ public class EstWeather extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.estimate_weather);
-
+        mysd = (SurveyData) getIntent().getSerializableExtra("mysd");
         toEstHome = new Intent(this, EstimatesPage.class);
         toEstWindSpeed = new Intent(this, EstimatesPage.class);
         toEstWaterSurface = new Intent(this, EstWaterSurface.class);
@@ -59,6 +59,7 @@ public class EstWeather extends AppCompatActivity {
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                toEstHome.putExtra("mysd",mysd);
                 startActivity(toEstHome);
             }
         });
@@ -66,12 +67,14 @@ public class EstWeather extends AppCompatActivity {
         rightButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                toEstWindSpeed.putExtra("mysd",mysd);
                 startActivity(toEstWindSpeed);
             }
         });
         leftButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                toEstWaterSurface.putExtra("mysd",mysd);
                 startActivity(toEstWaterSurface);
             }
         });

@@ -39,21 +39,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.25" />
+        app:layout_constraintGuide_percent="0.25171" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/waterdepgl375"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.375" />
+        app:layout_constraintGuide_percent="0.374829" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/waterdepgl50"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.500684" />
 
 
     <TextView

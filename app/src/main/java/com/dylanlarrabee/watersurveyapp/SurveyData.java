@@ -1,7 +1,14 @@
 package com.dylanlarrabee.watersurveyapp;
 
-public class SurveyData {
-        int tideEst,weathEst,windSpeed,warterSurf,windDir,rainfall,waterDepth,sampleDist;
-        int[] airTemp,waterTemp,secchiDepth;
+import java.io.Serializable;
+
+public class SurveyData implements Serializable {
+        int tideEst=2,weathEst=-1,windSpeed=-1,warterSurf=-1,windDir=-1,rainfall=-1,waterDepth=-1,sampleDist=-1;
+        int[] airTemp = {-1,-1},waterTemp={-1,-1},secchiDepth={-1,-1};
         boolean bottomedOut;
+
+        public SurveyData()
+        {
+
+        }
 }

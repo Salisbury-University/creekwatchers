@@ -14,20 +14,130 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.125" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gls875"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.875" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gls25h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gls375h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.375" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gls25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gls75"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:text="Sample Distance"
-        android:textSize="30sp"
-        android:gravity="center"
-        android:textColor="@color/gold"
         android:background="@color/maroon"
+        android:gravity="center"
+        android:text="Sample Distance"
+        android:textColor="@color/gold"
+        android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/gls125"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/maroon"
+        android:gravity="center"
+        android:text="Home"
+        android:textColor="@color/gold"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/gls75"
+        app:layout_constraintStart_toStartOf="@+id/gls25"
+        app:layout_constraintTop_toTopOf="@+id/gls875" />
 
+    <ImageView
+        android:id="@+id/samp_back"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/gold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/gls25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/gls875"
+        app:srcCompat="?attr/homeAsUpIndicator" />
+
+    <ImageView
+        android:id="@+id/samp_next"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/gold"
+        android:rotationY="180"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/gls75"
+        app:layout_constraintTop_toTopOf="@+id/gls875"
+        app:srcCompat="?attr/homeAsUpIndicator" />
+
+    <TextView
+        android:id="@+id/samp_meas"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#A88A0000"
+        android:gravity="center"
+        android:text="Measurement"
+        android:textColor="@color/gold"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/gls25h"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/gls125" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#A8FFC420"
+        android:ems="10"
+        android:hint="Sample"
+        android:inputType="textPersonName"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="@color/maroon"
+        android:textColorHint="@color/maroon"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/gls375h"
+        app:layout_constraintTop_toTopOf="@+id/gls25h"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="-10dp" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/gls375h"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
+        app:layout_constraintStart_toStartOf="@+id/gls75"
+        app:layout_constraintTop_toTopOf="@+id/gls25h" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
