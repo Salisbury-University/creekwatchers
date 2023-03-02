@@ -19,6 +19,7 @@ public class EstWaterSurface extends AppCompatActivity {
     ImageView allBackgrounds[];
     Button allButtons[];
     ImageView calmBackground, ripplesBackground, choppyBackground, heavychopBackground;
+    ImageView calmImage, ripplesImage, choppyImage, heavychopImage;
     ImageView rightButton, leftButton;
     Button homeButton, calmButton, ripplesButton, choppyButton, heavychopButton;
 
@@ -44,11 +45,16 @@ public class EstWaterSurface extends AppCompatActivity {
         choppyBackground = (ImageView) findViewById(id.choppy_background);
         heavychopBackground = (ImageView) findViewById(id.heavychop_background);
 
+        calmImage = (ImageView) findViewById(id.calm_image);
+        ripplesImage = (ImageView) findViewById(id.ripples_image);
+        choppyImage = (ImageView) findViewById(id.choppy_image);
+        heavychopImage = (ImageView) findViewById(id.heavychop_image);
+
         allBackgrounds = new ImageView[] {calmBackground, ripplesBackground, choppyBackground, heavychopBackground};
         allButtons = new Button[] {calmButton, ripplesButton, choppyButton, heavychopButton};
         if(mysd.warterSurf >= 0)
         {
-            highlightButton(allBackgrounds[mysd.warterSurf]);
+            highlightButton(allBackgrounds[mysd.warterSurf],mysd.warterSurf);
         }
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,7 +89,7 @@ public class EstWaterSurface extends AppCompatActivity {
             allButtons[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    highlightButton(allBackgrounds[finalI]);
+                    highlightButton(allBackgrounds[finalI],finalI);
                     watersurfaceNum = finalI + 1;
                     mysd.warterSurf = finalI;
                 }
@@ -91,10 +97,16 @@ public class EstWaterSurface extends AppCompatActivity {
         }
     }
 
-    void highlightButton(ImageView background){
+    void highlightButton(ImageView background, int iVal){
 
         for(int i = 0; i < 4; i++)
-            allBackgrounds[i].setImageResource(R.color.white);
+        {
+            allBackgrounds[i].setImageResource(R.color.black);
+            allButtons[i].setAlpha(0.25F);
+        }
+        allButtons[iVal].setAlpha(1);
+
+
         background.setImageResource(R.color.green_main);
     }
 
