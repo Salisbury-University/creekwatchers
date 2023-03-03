@@ -10,7 +10,6 @@ public class SurveyData implements Serializable {
         int[] airTemp = {-1,-1},waterTemp={-1,-1},secchiDepth={-1,-1};
         int estArr[] = {tideEst,waterSurf,weathEst,windSpeed,windDir,rainfall};
 
-
         boolean bottomedOut;
 
         public SurveyData()

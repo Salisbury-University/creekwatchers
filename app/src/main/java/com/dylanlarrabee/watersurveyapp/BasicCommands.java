@@ -20,7 +20,7 @@ public class BasicCommands {
 
     }
 
-    //Function to easily go back to main page
+    //Function to easily go to a different activity
     public static void setActivity(Activity act, TextView tv, Class page)
     {
         tv.setOnClickListener(new View.OnClickListener() {
