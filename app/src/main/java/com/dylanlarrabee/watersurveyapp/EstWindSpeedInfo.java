@@ -18,13 +18,11 @@ public class EstWindSpeedInfo extends AppCompatActivity {
     Button homeButton, exitButton;
     ImageView rightButton, leftButton;
     TextView headerBox;
-    SurveyData mysd;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.estimate_windspeed_info);
 
-        mysd = (SurveyData) getIntent().getSerializableExtra("mysd");
 
         toEstHome = new Intent(this, EstimatesPage.class);
         toEstWindSpeed = new Intent(this, EstWindSpeed.class);
@@ -55,7 +53,6 @@ public class EstWindSpeedInfo extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent.putExtra("mysd", mysd);
                 startActivity(intent);
             }
         });

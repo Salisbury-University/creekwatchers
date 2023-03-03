@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.125"/>
+        app:layout_constraintGuide_percent="0.1" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/wtgl25h"
@@ -39,7 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.375"/>
+        app:layout_constraintGuide_percent="0.3" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/wtgl50h"
@@ -53,14 +53,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.625"/>
+        app:layout_constraintGuide_percent="0.7" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/wtgl875h"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.875" />
+        app:layout_constraintGuide_percent="0.9" />
 
     <TextView
         android:id="@+id/wt_title_meas1"
@@ -71,7 +71,7 @@
         android:text="Measurement 1"
         android:textColor="@color/gold"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/wtgl25h"
+        app:layout_constraintBottom_toTopOf="@+id/wt_title_meas2"
         app:layout_constraintTop_toTopOf="@+id/wtgl125v"
         tools:layout_editor_absoluteX="150dp" />
 
@@ -88,48 +88,16 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp" />
 
-    <EditText
-        android:id="@+id/wtmeas1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="#A8FFC420"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Water Temperature 1(C)"
-        android:inputType="textPersonName"
-        android:text=""
-        android:textColor="@color/maroon"
-        android:textColorHint="@color/maroon"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/wtgl375h"
-        app:layout_constraintTop_toTopOf="@+id/wtgl25h" />
-
     <TextView
         android:id="@+id/wt_title_meas2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#A88A0000"
+        android:background="#A9FFC420"
         android:gravity="center"
         android:text="Measurement 2"
-        android:textColor="@color/gold"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/wtgl50h"
-        app:layout_constraintTop_toTopOf="@+id/wtgl375h" />
-
-    <EditText
-        android:id="@+id/wtmeas2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="#A8FFC420"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Water Temperature 1(C)"
-        android:inputType="textPersonName"
-        android:text=""
         android:textColor="@color/maroon"
-        android:textColorHint="@color/maroon"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/wtgl625h"
+        app:layout_constraintBottom_toTopOf="@+id/wtgl875h"
         app:layout_constraintTop_toTopOf="@+id/wtgl50h" />
 
     <TextView

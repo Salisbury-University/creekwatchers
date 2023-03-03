@@ -21,13 +21,11 @@ public class EstTideInfo extends AppCompatActivity {
     Button homeButton, exitButton;
     ImageView rightButton;
     TextView headerBox;
-    SurveyData mysd;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.estimate_tide_info);
 
-        mysd = (SurveyData) getIntent().getSerializableExtra("mysd");
 
         toEstHome = new Intent(this, EstimatesPage.class);
         toEstWaterSurface = new Intent(this, EstWaterSurface.class);
@@ -54,7 +52,6 @@ public class EstTideInfo extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent.putExtra("mysd", mysd);
                 startActivity(intent);
             }
         });

@@ -26,13 +26,11 @@ public class EstTide extends AppCompatActivity {
     Button allButtons[];
     ImageView rightButton;
     TextView infoButton;
-    SurveyData mysd;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.estimate_tide);
 
-        mysd = (SurveyData) getIntent().getSerializableExtra("mysd");
 
         toEstHome = new Intent(this, EstimatesPage.class);
         toEstWaterSurface = new Intent(this, EstWaterSurface.class);
@@ -40,7 +38,10 @@ public class EstTide extends AppCompatActivity {
 
         setupButtons();
         setupListeners();
-
+        if(SurveyData.tideEst >=0)
+        {
+            highlightButton(allButtons[SurveyData.tideEst],SurveyData.tideEst);
+        }
     }
 
     void setupButtons() {
@@ -56,8 +57,6 @@ public class EstTide extends AppCompatActivity {
 
         allButtons = new Button[] {highButton, midFallingButton, lowButton, midFloodingButton, nontidalButton};
 
-        if(mysd.tideEst >= 0)
-            highlightButton(allButtons[mysd.tideEst]);
     }
     void setupListeners() {
 
@@ -66,8 +65,7 @@ public class EstTide extends AppCompatActivity {
             allButtons[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    highlightButton(allButtons[finalI]);
-                    mysd.tideEst = finalI;
+                    highlightButton(allButtons[finalI],finalI);
                 }
             });
         }
@@ -83,14 +81,13 @@ public class EstTide extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent.putExtra("mysd", mysd);
                 startActivity(intent);
             }
         });
     }
 
 
-    void highlightButton(Button button)
+    void highlightButton(Button button,int ival)
     {
         highButton.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.hightide)));
         midFallingButton.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.middlefallingtide)));
@@ -98,6 +95,7 @@ public class EstTide extends AppCompatActivity {
         midFloodingButton.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.middlefloodingtide)));
         nontidalButton.setBackgroundTintList(ColorStateList.valueOf(Color.WHITE));
 
+        SurveyData.tideEst = ival;
         button.setBackgroundTintList(ContextCompat.getColorStateList(this,R.color.green_main));
     }
 

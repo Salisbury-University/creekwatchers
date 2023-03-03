@@ -14,7 +14,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class EstWaterSurface extends AppCompatActivity {
-    SurveyData mysd;
     Intent toEstHome, toEstWeather, toEstTide, toEstWaterSurfaceInfo;
     int watersurfaceNum;
     ImageView allBackgrounds[], allImages[];
@@ -30,7 +29,6 @@ public class EstWaterSurface extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.estimate_watersurface);
-        mysd = (SurveyData) getIntent().getSerializableExtra("mysd");
         toEstHome = new Intent(this, EstimatesPage.class);
         toEstTide = new Intent(this, EstTide.class);
         toEstWeather = new Intent(this, EstWeather.class);
@@ -39,9 +37,9 @@ public class EstWaterSurface extends AppCompatActivity {
         setupButtons();
         setupListeners();
 
-        if(mysd.waterSurf >= 0)
+        if(SurveyData.waterSurf >= 0)
         {
-            highlightButton(allBackgrounds[mysd.waterSurf],mysd.waterSurf);
+            highlightButton(allBackgrounds[SurveyData.waterSurf],SurveyData.waterSurf);
         }
 
     }
@@ -88,7 +86,7 @@ public class EstWaterSurface extends AppCompatActivity {
                 public void onClick(View view) {
                     highlightButton(allBackgrounds[finalI],finalI);
                     watersurfaceNum = finalI + 1;
-                    mysd.waterSurf = finalI;
+                    SurveyData.waterSurf = finalI;
                 }
             });
         }
@@ -104,7 +102,6 @@ public class EstWaterSurface extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent.putExtra("mysd", mysd);
                 startActivity(intent);
             }
         });

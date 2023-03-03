@@ -12,8 +12,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class EstWindDirection  extends AppCompatActivity {
-
-    SurveyData mysd;
+    
     Intent toEstHome, toEstWindSpeed, toEstWindDirectInfo, toEstRainfall;
     ImageView allButtons[];
     Button homeButton;
@@ -24,7 +23,6 @@ public class EstWindDirection  extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.estimate_winddirection);
-        mysd = (SurveyData) getIntent().getSerializableExtra("mysd");
 
         toEstHome = new Intent(this, EstimatesPage.class);
         toEstWindSpeed = new Intent(this, EstWindSpeed.class);
@@ -53,8 +51,8 @@ public class EstWindDirection  extends AppCompatActivity {
 
        allButtons = new ImageView[] {northButton, northeastButton, eastButton, southeastButton, southButton, southwestButton, westButton, northwestButton};
 
-        if(mysd.windDir >= 0)
-            highlightButton(allButtons[mysd.windDir]);
+        if(SurveyData.windDir >= 0)
+            highlightButton(allButtons[SurveyData.windDir]);
 
     }
 
@@ -66,7 +64,7 @@ public class EstWindDirection  extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     highlightButton(allButtons[finalI]);
-                    mysd.windDir = finalI;
+                    SurveyData.windDir = finalI;
                 }
             });
         }
@@ -81,7 +79,6 @@ public class EstWindDirection  extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent.putExtra("mysd", mysd);
                 startActivity(intent);
             }
         });

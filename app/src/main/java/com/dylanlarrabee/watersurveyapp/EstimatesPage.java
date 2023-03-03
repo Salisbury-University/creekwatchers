@@ -15,17 +15,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 public class EstimatesPage extends AppCompatActivity {
-    altStartActivity asa;
+   
     Intent toHome, toWeather, toTide, toWaterSurface, toWindSpeed, toWindDirection;
-    SurveyData mysd;
+    
     Button homeButton, tideButton, watersurfaceButton, weatherButton, windspeedButton, winddirectButton, rainfallButton;
+    TextView tideblack,waterblack,weatherblack,speedblack,winddirblack,rainfallblack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.estimate_main);
-
-        mysd = (SurveyData) getIntent().getSerializableExtra("mysd");
 
         setupIntents();
         setupButtons();
@@ -43,21 +42,43 @@ public class EstimatesPage extends AppCompatActivity {
         winddirectButton = (Button) findViewById(id.winddirect_button);
         rainfallButton = (Button) findViewById(id.rainfall_button);
 
-        if(mysd.tideEst >=0) {
-            tideButton.setBackgroundColor(Color.BLACK);
+        tideblack = (TextView) findViewById(id.tideblackbg);
+        waterblack = (TextView) findViewById(id.tideblackbg2);
+        weatherblack = (TextView) findViewById(id.tideblackbg3);
+        speedblack = (TextView) findViewById(id.tideblackbg4);
+        winddirblack = (TextView) findViewById(id.tideblackbg5);
+        rainfallblack = (TextView) findViewById(id.tideblackbg6);
+
+        if(SurveyData.tideEst >=0) {
+            tideButton.setBackgroundColor(getResources().getColor(R.color.maroon_dim));
+            tideblack.setBackgroundColor(getResources().getColor(R.color.black_dim));
+            tideButton.setTextColor(getResources().getColor(R.color.black));
         }
-        if(mysd.waterSurf >=0) {
-            watersurfaceButton.setBackgroundColor(Color.BLACK);
+        if(SurveyData.waterSurf >=0) {
+            watersurfaceButton.setBackgroundColor(getResources().getColor(R.color.maroon_dim));
+            waterblack.setBackgroundColor(getResources().getColor(R.color.black_dim));
+            watersurfaceButton.setTextColor(getResources().getColor(R.color.black));
         }
-        if(mysd.weathEst >=0) {
-            weatherButton.setBackgroundColor(Color.BLACK);
+        if(SurveyData.weathEst >=0) {
+            weatherButton.setBackgroundColor(getResources().getColor(R.color.maroon_dim));
+            weatherblack.setBackgroundColor(getResources().getColor(R.color.black_dim));
+            weatherButton.setTextColor(getResources().getColor(R.color.black));
         }
-        if(mysd.windSpeed >=0)
-            windspeedButton.setBackgroundColor(Color.BLACK);
-        if(mysd.windDir >=0)
-            winddirectButton.setBackgroundColor(Color.BLACK);
-        if(mysd.rainfall >=0)
-            rainfallButton.setBackgroundColor(Color.BLACK);
+        if(SurveyData.windSpeed >=0) {
+            windspeedButton.setBackgroundColor(getResources().getColor(R.color.maroon_dim));
+            speedblack.setBackgroundColor(getResources().getColor(R.color.black_dim));
+            windspeedButton.setTextColor(getResources().getColor(R.color.black));
+        }
+        if(SurveyData.windDir >=0) {
+            winddirectButton.setBackgroundColor(getResources().getColor(R.color.maroon_dim));
+            winddirblack.setBackgroundColor(getResources().getColor(R.color.black_dim));
+            winddirectButton.setTextColor(getResources().getColor(R.color.black));
+        }
+        if(SurveyData.rainfall >=0) {
+            rainfallButton.setBackgroundColor(getResources().getColor(R.color.maroon_dim));
+            rainfallblack.setBackgroundColor(getResources().getColor(R.color.black_dim));
+            rainfallButton.setTextColor(getResources().getColor(R.color.black));
+        }
     }
 
     void setupIntents() {
@@ -86,7 +107,6 @@ public class EstimatesPage extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent.putExtra("mysd", mysd);
                 startActivity(intent);
             }
         });

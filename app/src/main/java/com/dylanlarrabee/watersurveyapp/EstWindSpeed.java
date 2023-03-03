@@ -15,7 +15,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import pl.droidsonroids.gif.GifImageView;
 
 public class EstWindSpeed extends AppCompatActivity {
-    SurveyData mysd;
     Intent toEstHome, toEstWeather, toEstWindDirection, toEstWindSpeedInfo;
     int watersurfaceNum;
     ImageView allBackgrounds[], allImages[];
@@ -36,7 +35,6 @@ public class EstWindSpeed extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(layout.estimate_windspeed);
 
-        mysd = (SurveyData) getIntent().getSerializableExtra("mysd");
 
         toEstHome = new Intent(this, EstimatesPage.class);
         toEstWindDirection = new Intent(this, EstWindDirection.class);
@@ -85,9 +83,9 @@ public class EstWindSpeed extends AppCompatActivity {
         allText = new TextView[] {calmText,ripplesText,choppyText,heavychopText};
         allGifs = new GifImageView[] {lightGif, mediumGif, heavyGif};
 
-        if(mysd.windSpeed >= 0)
+        if(SurveyData.windSpeed >= 0)
         {
-            highlightButton(allBackgrounds[mysd.windSpeed],mysd.windSpeed);
+            highlightButton(allBackgrounds[SurveyData.windSpeed],SurveyData.windSpeed);
         }
 
     }
@@ -101,7 +99,7 @@ public class EstWindSpeed extends AppCompatActivity {
                 public void onClick(View view) {
                     highlightButton(allBackgrounds[finalI],finalI);
                     watersurfaceNum = finalI + 1;
-                    mysd.windSpeed = finalI;
+                    SurveyData.windSpeed = finalI;
                 }
             });
         }
@@ -117,7 +115,6 @@ public class EstWindSpeed extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent.putExtra("mysd", mysd);
                 startActivity(intent);
             }
         });

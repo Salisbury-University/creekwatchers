@@ -14,8 +14,6 @@ import android.widget.EditText;
 
 
 public class HomePage extends AppCompatActivity {
-    public SurveyData mysd = new SurveyData();
-    altStartActivity asa = new altStartActivity();
     BasicCommands bc = new BasicCommands();
     private final int estInd = 0,measInd = 1,commInd = 2;
     private final int totalEst = 6, totalMeas = 5, totalComm = 1, numBtns = 3;
@@ -34,8 +32,6 @@ public class HomePage extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
 
         //Pull survey data from submenus if available
-        if (getIntent().getSerializableExtra("mysd") != null)
-            mysd = (SurveyData) getIntent().getSerializableExtra("mysd");
 
 
         //curEst = getCurEst();
@@ -51,27 +47,26 @@ public class HomePage extends AppCompatActivity {
         Intent toSelSite = bc.setIntent(this,SelectSite.class);
         subBtn = (Button) findViewById(R.id.submitBtnHome);
 
-        //This pulls the name and site from login page or from mysd after initial login
+        //This pulls the name and site from login page or from SurveyData after initial login
         if(extras != null)
         {
             if(extras.getString("name") != null)
             {
-                mysd.userName = extras.getString("name");
+                SurveyData.userName = extras.getString("name");
             }
             if(extras.getString("site") != null)
             {
-                mysd.userSite = extras.getString("site");
+                SurveyData.userSite = extras.getString("site");
             }
         }
-        if(mysd.userName.length() > 0)
+        if(SurveyData.userName.length() > 0)
         {
-            userName.setText(observerText + mysd.userName);
+            userName.setText(observerText + SurveyData.userName);
         }
-        if(mysd.userSite.length() > 0)
+        if(SurveyData.userSite.length() > 0)
         {
-            userSite.setText(siteText + mysd.userSite);
+            userSite.setText(siteText + SurveyData.userSite);
         }
-
 
 
         //OCL
@@ -84,7 +79,6 @@ public class HomePage extends AppCompatActivity {
         userSite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                toSelSite.putExtra("mysd",mysd);
                startActivity(toSelSite);
                finish();
             }
@@ -92,13 +86,12 @@ public class HomePage extends AppCompatActivity {
         estBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            startActivity(asa.altStartAct(estIntent, mysd));
+            startActivity(estIntent);
             }
         });
         measBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                measIntent.putExtra("mysd",mysd);
                 startActivity(measIntent);
             }
         });
@@ -118,13 +111,13 @@ public class HomePage extends AppCompatActivity {
     }
     void setAllBtnTxt()
     {
-        btns[0].setText(setBtnTxt(estStr,mysd.curEst,mysd.maxEst));
-        btns[1].setText(setBtnTxt(measStr,mysd.curMeas,mysd.maxMeas));
-        btns[2].setText(setBtnTxt(commStr,mysd.curComm,mysd.maxComm));
+        btns[0].setText(setBtnTxt(estStr,SurveyData.curEst,SurveyData.maxEst));
+        btns[1].setText(setBtnTxt(measStr,SurveyData.curMeas,SurveyData.maxMeas));
+        btns[2].setText(setBtnTxt(commStr,SurveyData.curComm,SurveyData.maxComm));
     }
     void setBtnTextColors()
     {
-        if(mysd.curEst == 0) {
+        if(SurveyData.curEst == 0) {
             btns[0].setTextColor(getResources().getColor(R.color.maroon));
         }else if (curEst <6) {
             btns[0].setTextColor(getResources().getColor(R.color.gold));
@@ -132,15 +125,15 @@ public class HomePage extends AppCompatActivity {
             btns[0].setTextColor(getResources().getColor(R.color.finishGreen));
             estDone = true;
         }
-        if(mysd.curMeas == 0) {
+        if(SurveyData.curMeas == 0) {
             btns[1].setTextColor(getResources().getColor(R.color.maroon));
-        }else if (mysd.curMeas <5) {
+        }else if (SurveyData.curMeas <5) {
             btns[1].setTextColor(getResources().getColor(R.color.gold));
         } else {
             btns[1].setTextColor(getResources().getColor(R.color.finishGreen));
             measDone = true;
         }
-        if(mysd.curComm == 0) {
+        if(SurveyData.curComm == 0) {
             btns[2].setTextColor(getResources().getColor(R.color.maroon));
         } else {
             btns[2].setTextColor(getResources().getColor(R.color.finishGreen));
@@ -170,7 +163,7 @@ public class HomePage extends AppCompatActivity {
                 if(type == "Name")
                 {
                     btn.setText(observerText +  m_Text);
-                    mysd.userName = m_Text;
+                    SurveyData.userName = m_Text;
                 }
 
             }
@@ -188,7 +181,7 @@ public class HomePage extends AppCompatActivity {
 
     void checkCompletion()
     {
-        mysd.updateCompleted();
+        SurveyData.updateCompleted();
         setAllBtnTxt();
         setBtnTextColors();
     }

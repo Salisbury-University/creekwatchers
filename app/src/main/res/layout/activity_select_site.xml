@@ -49,6 +49,300 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/sitebtn1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#998A0000"
+                android:minHeight="0dp"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                android:text="AMPH"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/sitebtn2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#998A0000"
+                android:minHeight="0dp"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                android:text="BRRI"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/sitebtn3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#998A0000"
+                android:minHeight="0dp"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                android:text="CIEA"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/sitebtn4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#998A0000"
+                android:minHeight="0dp"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                android:text="CMPO"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/sitebtn5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#998A0000"
+                android:minHeight="0dp"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                android:text="DNPA"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/name6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#998A0000"
+                android:minHeight="0dp"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                android:text="Site 1"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/siteBtn15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#998A0000"
+                android:minHeight="0dp"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                android:text="Button"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/siteBtn16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#998A0000"
+                android:minHeight="0dp"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                android:text="Button"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/siteBtn17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#998A0000"
+                android:minHeight="0dp"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                android:text="Button"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/siteBtn18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#998A0000"
+                android:minHeight="0dp"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                android:text="Button"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/siteBtn19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#998A0000"
+                android:minHeight="0dp"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                android:text="Site 6"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/siteBtn20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#998A0000"
+                android:minHeight="0dp"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                android:text="Button"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/siteBtn21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#998A0000"
+                android:minHeight="0dp"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                android:text="Button"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#998A0000"
+                android:minHeight="0dp"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                android:text="Site 1"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/siteBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#998A0000"
+                android:minHeight="0dp"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                android:text="Button"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/siteBtn9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#998A0000"
+                android:minHeight="0dp"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                android:text="Button"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/siteBtn10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#998A0000"
+                android:minHeight="0dp"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                android:text="Button"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/siteBtn11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#998A0000"
+                android:minHeight="0dp"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                android:text="Button"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/siteBtn12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#998A0000"
+                android:minHeight="0dp"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                android:text="Site 6"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/siteBtn13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#998A0000"
+                android:minHeight="0dp"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                android:text="Button"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/siteBtn14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#998A0000"
+                android:minHeight="0dp"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                android:text="Button"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+            <Button
                 android:id="@+id/name1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

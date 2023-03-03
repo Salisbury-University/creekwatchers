@@ -15,7 +15,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class EstWeather extends AppCompatActivity {
-    SurveyData mysd;
     Intent toEstHome, toEstWaterSurface, toEstWindSpeed, toEstWeatherInfo;
     int weatherNum;
     ImageView allBackgrounds[];
@@ -29,7 +28,6 @@ public class EstWeather extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.estimate_weather);
-        mysd = (SurveyData) getIntent().getSerializableExtra("mysd");
 
         toEstHome = new Intent(this, EstimatesPage.class);
         toEstWindSpeed = new Intent(this, EstWindSpeed.class);
@@ -68,8 +66,8 @@ public class EstWeather extends AppCompatActivity {
         allBackgrounds = new ImageView[] {clearBackground, partlycloudyBackground, overcastBackground, lightrainBackground, rainBackground, heavyrainBackground, fogBackground, snowBackground};
         allButtons = new Button[] {clearButton, partlycloudyButton, overcastButton, lightrainButton, rainButton, heavyrainButton, fogButton, snowButton };
 
-        if(mysd.weathEst >= 0)
-            highlightButton(allBackgrounds[mysd.weathEst]);
+        if(SurveyData.weathEst >= 0)
+            highlightButton(allBackgrounds[SurveyData.weathEst]);
 
     }
 
@@ -81,7 +79,7 @@ public class EstWeather extends AppCompatActivity {
                 public void onClick(View view) {
                     highlightButton(allBackgrounds[finalI]);
                     weatherNum = finalI + 1;
-                    mysd.weathEst = finalI;
+                    SurveyData.weathEst = finalI;
                 }
             });
         }
@@ -97,7 +95,6 @@ public class EstWeather extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent.putExtra("mysd", mysd);
                 startActivity(intent);
             }
         });
