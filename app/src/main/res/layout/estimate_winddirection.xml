@@ -63,8 +63,8 @@
 
     <ImageView
         android:id="@+id/imageView11"
-        android:layout_width="707dp"
-        android:layout_height="679dp"
+        android:layout_width="760dp"
+        android:layout_height="697dp"
         android:src="@drawable/winddirec_circle"
         android:tint="#24252C"
         android:tintMode="multiply"
@@ -143,10 +143,11 @@
         app:srcCompat="@drawable/button_info2" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/north_button"
         android:layout_width="129dp"
         android:layout_height="139dp"
         android:src="@drawable/winddirec_circle"
+        android:tintMode="multiply"
         app:layout_constraintBottom_toTopOf="@+id/guideline38"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -154,12 +155,13 @@
         app:layout_constraintVertical_bias="0.39" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/south_button"
         android:layout_width="129dp"
         android:layout_height="139dp"
         android:layout_marginTop="520dp"
         android:layout_marginBottom="54dp"
         android:src="@drawable/winddirec_circle"
+        android:tintMode="multiply"
         app:layout_constraintBottom_toTopOf="@+id/home_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -167,32 +169,36 @@
         app:layout_constraintVertical_bias="0.69" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/west_button"
         android:layout_width="129dp"
         android:layout_height="139dp"
         android:layout_marginEnd="290dp"
         android:src="@drawable/winddirec_circle"
+        android:tint="@color/white"
+        android:tintMode="multiply"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
         app:layout_constraintVertical_bias="0.51" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/east_button"
         android:layout_width="129dp"
         android:layout_height="139dp"
         android:layout_marginStart="290dp"
         android:src="@drawable/winddirec_circle"
+        android:tintMode="multiply"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
         app:layout_constraintVertical_bias="0.51" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/northeast_button"
         android:layout_width="105dp"
         android:layout_height="105dp"
         android:src="@drawable/winddirec_circle"
+        android:tintMode="multiply"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.9"
@@ -201,10 +207,11 @@
         app:layout_constraintVertical_bias="0.29000002" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/northwest_button"
         android:layout_width="105dp"
         android:layout_height="105dp"
         android:src="@drawable/winddirec_circle"
+        android:tintMode="multiply"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.1"
@@ -213,10 +220,11 @@
         app:layout_constraintVertical_bias="0.29000002" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/southwest_button"
         android:layout_width="105dp"
         android:layout_height="105dp"
         android:src="@drawable/winddirec_circle"
+        android:tintMode="multiply"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.1"
@@ -225,10 +233,11 @@
         app:layout_constraintVertical_bias="0.73" />
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/southeast_button"
         android:layout_width="105dp"
         android:layout_height="105dp"
         android:src="@drawable/winddirec_circle"
+        android:tintMode="multiply"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.9"
@@ -245,10 +254,10 @@
         android:textColor="@color/black"
         android:textSize="100sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-        app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:layout_constraintBottom_toBottomOf="@+id/north_button"
+        app:layout_constraintEnd_toEndOf="@+id/north_button"
+        app:layout_constraintStart_toStartOf="@+id/north_button"
+        app:layout_constraintTop_toTopOf="@+id/north_button"
         app:layout_constraintVertical_bias="0.41000003" />
 
     <TextView
@@ -260,10 +269,10 @@
         android:textColor="@color/black"
         android:textSize="60sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
-        app:layout_constraintEnd_toEndOf="@+id/imageView7"
-        app:layout_constraintStart_toStartOf="@+id/imageView7"
-        app:layout_constraintTop_toTopOf="@+id/imageView7"
+        app:layout_constraintBottom_toBottomOf="@+id/northeast_button"
+        app:layout_constraintEnd_toEndOf="@+id/northeast_button"
+        app:layout_constraintStart_toStartOf="@+id/northeast_button"
+        app:layout_constraintTop_toTopOf="@+id/northeast_button"
         app:layout_constraintVertical_bias="0.55" />
 
     <TextView
@@ -275,10 +284,10 @@
         android:textColor="@color/black"
         android:textSize="60sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView10"
-        app:layout_constraintEnd_toEndOf="@+id/imageView10"
-        app:layout_constraintStart_toStartOf="@+id/imageView10"
-        app:layout_constraintTop_toTopOf="@+id/imageView10"
+        app:layout_constraintBottom_toBottomOf="@+id/southeast_button"
+        app:layout_constraintEnd_toEndOf="@+id/southeast_button"
+        app:layout_constraintStart_toStartOf="@+id/southeast_button"
+        app:layout_constraintTop_toTopOf="@+id/southeast_button"
         app:layout_constraintVertical_bias="0.55" />
 
     <TextView
@@ -290,10 +299,10 @@
         android:textColor="@color/black"
         android:textSize="60sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView9"
-        app:layout_constraintEnd_toEndOf="@+id/imageView9"
-        app:layout_constraintStart_toStartOf="@+id/imageView9"
-        app:layout_constraintTop_toTopOf="@+id/imageView9"
+        app:layout_constraintBottom_toBottomOf="@+id/southwest_button"
+        app:layout_constraintEnd_toEndOf="@+id/southwest_button"
+        app:layout_constraintStart_toStartOf="@+id/southwest_button"
+        app:layout_constraintTop_toTopOf="@+id/southwest_button"
         app:layout_constraintVertical_bias="0.55" />
 
     <TextView
@@ -305,10 +314,10 @@
         android:textColor="@color/black"
         android:textSize="60sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView8"
-        app:layout_constraintEnd_toEndOf="@+id/imageView8"
-        app:layout_constraintStart_toStartOf="@+id/imageView8"
-        app:layout_constraintTop_toTopOf="@+id/imageView8"
+        app:layout_constraintBottom_toBottomOf="@+id/northwest_button"
+        app:layout_constraintEnd_toEndOf="@+id/northwest_button"
+        app:layout_constraintStart_toStartOf="@+id/northwest_button"
+        app:layout_constraintTop_toTopOf="@+id/northwest_button"
         app:layout_constraintVertical_bias="0.55" />
 
     <TextView
@@ -320,11 +329,11 @@
         android:textColor="@color/black"
         android:textSize="100sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.92"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+        app:layout_constraintBottom_toBottomOf="@+id/east_button"
+        app:layout_constraintEnd_toEndOf="@+id/east_button"
+        app:layout_constraintStart_toStartOf="@+id/east_button"
+        app:layout_constraintTop_toTopOf="@+id/east_button"
+        app:layout_constraintVertical_bias="0.41000003" />
 
     <TextView
         android:id="@+id/textView6"
@@ -335,11 +344,11 @@
         android:textColor="@color/black"
         android:textSize="100sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline38"
-        app:layout_constraintVertical_bias="0.69" />
+        app:layout_constraintBottom_toBottomOf="@+id/south_button"
+        app:layout_constraintEnd_toEndOf="@+id/south_button"
+        app:layout_constraintStart_toStartOf="@+id/south_button"
+        app:layout_constraintTop_toTopOf="@+id/south_button"
+        app:layout_constraintVertical_bias="0.41000003" />
 
     <TextView
         android:id="@+id/textView7"
@@ -350,10 +359,10 @@
         android:textColor="@color/black"
         android:textSize="100sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.07"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+        app:layout_constraintBottom_toBottomOf="@+id/west_button"
+        app:layout_constraintEnd_toEndOf="@+id/west_button"
+        app:layout_constraintStart_toStartOf="@+id/west_button"
+        app:layout_constraintTop_toTopOf="@+id/west_button"
+        app:layout_constraintVertical_bias="0.41000003" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

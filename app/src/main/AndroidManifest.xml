@@ -58,6 +58,12 @@
             android:name=".EstWindSpeedInfo"
             android:exported="true" />
         <activity
+            android:name=".EstWindDirection"
+            android:exported="true" />
+        <activity
+            android:name=".EstWindDirectionInfo"
+            android:exported="true" />
+        <activity
             android:name=".WaterDepth"
             android:exported="true" />
         <activity

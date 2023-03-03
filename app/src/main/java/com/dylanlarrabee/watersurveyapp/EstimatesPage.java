@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class EstimatesPage extends AppCompatActivity {
     altStartActivity asa;
-    Intent toHome, toWeather, toTide, toWaterSurface, toWindSpeed;
+    Intent toHome, toWeather, toTide, toWaterSurface, toWindSpeed, toWindDirection;
     SurveyData mysd;
     Button homeButton, tideButton, watersurfaceButton, weatherButton, windspeedButton, winddirectButton, rainfallButton;
 
@@ -66,7 +66,7 @@ public class EstimatesPage extends AppCompatActivity {
         toTide = new Intent(this, EstTide.class);
         toWaterSurface = new Intent(this, EstWaterSurface.class);
         toWindSpeed = new Intent(this, EstWindSpeed.class);
-//      toWindDirection = new Intent(this, EstWindDirect.class);
+        toWindDirection = new Intent(this, EstWindDirection.class);
 //      toEstRainfall = new Intent(this, EstRainfall.class);
     }
 
@@ -77,7 +77,7 @@ public class EstimatesPage extends AppCompatActivity {
         setListener(watersurfaceButton, toWaterSurface);
         setListener(weatherButton, toWeather);
         setListener(windspeedButton, toWindSpeed);
-//      setListener(winddirectButton, toWindDirect);
+       setListener(winddirectButton, toWindDirection);
 //      setListener(rainfallButton, toRainfall);
     }
 
