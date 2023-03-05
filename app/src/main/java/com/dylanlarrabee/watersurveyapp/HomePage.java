@@ -91,12 +91,16 @@ public class HomePage extends AppCompatActivity {
         btns[0] = estBtn;
         btns[1] = measBtn;
         btns[2] = commBtn;
-      if(SurveyData.firstEntry == true )
+      if(SurveyData.firstEntry == true || SurveyData.newForm == true)
       {
 
           retrieveData();
           SurveyData.firstEntry = false;
+          SurveyData.newForm = false;
       }
+
+
+
         if(extras != null)
         {
             if(extras.getString("name") != null)
@@ -117,7 +121,6 @@ public class HomePage extends AppCompatActivity {
             userSite.setText(siteText + SurveyData.userSite);
         }
         checkCompletion();
-        SurveyData.newForm = false;
     }
 
     String setBtnTxt(String btnStr,int cur, int max)

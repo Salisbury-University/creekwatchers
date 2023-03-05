@@ -62,6 +62,7 @@ public class SelectSite extends AppCompatActivity {
             String newID = "form" + formPref.getAll().size();
             formEdit.putString(newID, newID);
             formEdit.commit();
+            SurveyData.resetData();
             SurveyData.myID = newID;
         }
 

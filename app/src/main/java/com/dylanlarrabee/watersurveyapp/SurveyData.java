@@ -90,6 +90,9 @@ public class SurveyData  {
                 spEdit.putInt(formID+"weath",weathEst);
                 spEdit.putInt(formID+"wspeed",windSpeed);
                 spEdit.putInt(formID+"wdir",windDir);
+                spEdit.putInt(formID+"curest",curEst);
+                spEdit.putInt(formID+"curmeas",curMeas);
+                spEdit.putInt(formID+"curcomm",curComm);
                 //spEdit.putInt(formID+"rain",rainfall);
                 spEdit.commit();
         }
@@ -102,6 +105,9 @@ public class SurveyData  {
                 weathEst = sp.getInt(formID+"weath",-1);
                 windSpeed = sp.getInt(formID+"wspeed",-1);
                 windDir = sp.getInt(formID+"wdir",-1);
+                curEst = sp.getInt(formID+"curest",0);
+                curMeas = sp.getInt(formID+"curmeas",0);
+                curComm = sp.getInt(formID+"curcomm",0);
                 //rainfall = sp.getInt(formID+"rain",-1);
         }
 }
