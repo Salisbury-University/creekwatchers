@@ -16,6 +16,7 @@ import com.google.gson.Gson;
 public class FormArchive extends AppCompatActivity {
     private Button newFormBtn;
     private LinearLayout formLay;
+    private int prefSize;
     SharedPreferences mPrefs;
     SharedPreferences.Editor myEdit;
     @Override
@@ -26,14 +27,13 @@ public class FormArchive extends AppCompatActivity {
         //find views
         formLay = findViewById(R.id.formSelLay);
         newFormBtn = findViewById(R.id.formSelAddBtn);
-        SurveyData.newForm = false;
+
 
 
         //listeners
         newFormBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SurveyData.newForm = true;
                 toLogin();
             }
         });
@@ -41,14 +41,18 @@ public class FormArchive extends AppCompatActivity {
 
         mPrefs = getSharedPreferences("formids",MODE_PRIVATE);
         myEdit = mPrefs.edit();
-
+        prefSize = mPrefs.getAll().size();
         formLay.removeAllViews();
-        for(int i = 0; i < mPrefs.getAll().size(); i++)
-        {
-            String formID = "form" + i;
-            addForm(formID);
-        }
         formLay.addView(newFormBtn);
+        {
+            for(int i = prefSize-1; i >= 0; i--)
+            {
+                String formID = "form" + i;
+                addForm(formID);
+            }
+        }
+
+
 
 
 
