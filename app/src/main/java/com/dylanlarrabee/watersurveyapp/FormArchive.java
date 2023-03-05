@@ -14,7 +14,6 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 
 public class FormArchive extends AppCompatActivity {
-
     private Button newFormBtn;
     private LinearLayout formLay;
     SharedPreferences mPrefs;
