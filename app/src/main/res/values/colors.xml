@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="black_dim">#20000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="whiteDim">#33FFFFFF</color>
     <color name="main_text_col">#0831FF</color>
     <color name="main_bg_col">#6F9E52</color>
     <color name="light_font">#FBFBFB</color>
@@ -25,7 +26,13 @@
     <color name="hightide">#002AC3</color>
     <color name="middlefallingtide">#F20D46D6</color>
     <color name="lowtide">#03A9F4</color>
-    <color name="middlefloodingtide">#8B4DBDFA</color>
+    <color name="middlefloodingtide">#FF74C5F1</color>
+    <color name="hightideDim">#33002AC3</color>
+    <color name="middlefallingtideDim">#330D46D6</color>
+    <color name="lowtideDim">#3303A9F4</color>
+    <color name="middlefloodingtideDim">#3374C5F1</color>
+    <color name="nontidal">#A1D3EF</color>
+    <color name="nontidalDim">#33A1D3EF</color>
     <color name="mint_green">#3EB489</color>
     <color name="mint_green_dim">#603EB489</color>
 

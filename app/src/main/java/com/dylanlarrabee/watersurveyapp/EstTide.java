@@ -22,8 +22,9 @@ import androidx.core.content.ContextCompat;
 public class EstTide extends AppCompatActivity {
 
     private Intent toEstHome, toEstWaterSurface, toEstTideInfo;
-    private Button homeButton, highButton, midFallingButton, lowButton, midFloodingButton, nontidalButton;
-    private Button allButtons[];
+    private Button homeButton, highButton, midFallingButton, lowButton, midFloodingButton, nontidalButton,
+            highButtonbg, midFallingButtonbg, lowButtonbg, midFloodingButtonbg, nontidalButtonbg;
+    private Button allButtons[],allBtnBgs[];
     private ImageView rightButton;
     private TextView infoButton;
 
@@ -40,7 +41,7 @@ public class EstTide extends AppCompatActivity {
         setupListeners();
         if(SurveyData.tideEst >=0)
         {
-            highlightButton(allButtons[SurveyData.tideEst],SurveyData.tideEst);
+            highlightButton(SurveyData.tideEst);
         }
     }
 
@@ -55,17 +56,23 @@ public class EstTide extends AppCompatActivity {
         midFloodingButton = (Button) findViewById(id.middle_flooding_tide);
         nontidalButton = (Button) findViewById(id.non_tidal_tide);
 
-        allButtons = new Button[] {highButton, midFallingButton, lowButton, midFloodingButton, nontidalButton};
+        highButtonbg = (Button) findViewById(id.high_tide2);
+        midFallingButtonbg = (Button) findViewById(id.mid_falling_tide2);
+        lowButtonbg = (Button) findViewById(id.low_tide2);
+        midFloodingButtonbg = (Button) findViewById(id.middle_flooding_tide2);
+        nontidalButtonbg = (Button) findViewById(id.non_tidal_tide2);
 
+        allButtons = new Button[] {highButton, midFallingButton, lowButton, midFloodingButton, nontidalButton};
+        allBtnBgs = new Button[] {highButtonbg, midFallingButtonbg, lowButtonbg, midFloodingButtonbg, nontidalButtonbg};
     }
     void setupListeners() {
 
         for(int i = 0; i < 5; i++) {
             int finalI = i;
-            allButtons[i].setOnClickListener(new View.OnClickListener() {
+            allBtnBgs[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    highlightButton(allButtons[finalI],finalI);
+                    highlightButton(finalI);
                 }
             });
         }
@@ -87,16 +94,17 @@ public class EstTide extends AppCompatActivity {
     }
 
 
-    void highlightButton(Button button,int ival)
+    void highlightButton(int ival)
     {
-        highButton.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.hightide)));
-        midFallingButton.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.middlefallingtide)));
-        lowButton.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.lowtide)));
-        midFloodingButton.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.middlefloodingtide)));
-        nontidalButton.setBackgroundTintList(ColorStateList.valueOf(Color.WHITE));
+        for(int i = 0; i < allButtons.length; i++)
+        {
+            allButtons[i].setTextColor(getResources().getColor(R.color.black));
+            allBtnBgs[i].setAlpha(0.33333F);
+        }
+        allBtnBgs[ival].setAlpha(0F);
+        allButtons[ival].setTextColor(getResources().getColor(R.color.white));
 
         SurveyData.tideEst = ival;
-        button.setBackgroundTintList(ContextCompat.getColorStateList(this,R.color.green_main));
     }
 
 
