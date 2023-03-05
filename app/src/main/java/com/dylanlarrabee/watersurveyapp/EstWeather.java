@@ -19,10 +19,11 @@ public class EstWeather extends AppCompatActivity {
     private int weatherNum;
     private ImageView allBackgrounds[];
     private Button allButtons[];
+    private  TextView allTv[];
     private Button homeButton;
     private ImageView clearBackground, partlycloudyBackground, overcastBackground, lightrainBackground, rainBackground, heavyrainBackground, fogBackground, snowBackground;
     private ImageView rightButton, leftButton;
-    private TextView infoButton;
+    private TextView infoButton, clearTxt, partlycloudyTxt,overTxt,lightrainTxt,rainTxt,heavyrainTxt,fogTxt,snowTxt;
     private Button clearButton, partlycloudyButton, overcastButton, lightrainButton, rainButton, heavyrainButton, fogButton, snowButton;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,11 +64,22 @@ public class EstWeather extends AppCompatActivity {
         fogBackground = (ImageView) findViewById(id.fog_background);
         snowBackground = (ImageView) findViewById(id.snow_background);
 
+        clearTxt = (TextView) findViewById(id.clear_text);
+        partlycloudyTxt = (TextView) findViewById(id.partlycloudy_text);
+        overTxt = (TextView) findViewById(id.overcast_text);
+        lightrainTxt = (TextView) findViewById(id.lightrain_text);
+        rainTxt = (TextView) findViewById(id.rain_text);
+        heavyrainTxt = (TextView) findViewById(id.heavyrain_text);
+        fogTxt= (TextView) findViewById(id.fog_text);
+        snowTxt = (TextView) findViewById(id.snow_text);
+
+
+
         allBackgrounds = new ImageView[] {clearBackground, partlycloudyBackground, overcastBackground, lightrainBackground, rainBackground, heavyrainBackground, fogBackground, snowBackground};
         allButtons = new Button[] {clearButton, partlycloudyButton, overcastButton, lightrainButton, rainButton, heavyrainButton, fogButton, snowButton };
-
+        allTv = new TextView[] {clearTxt, partlycloudyTxt, overTxt, lightrainTxt, rainTxt, heavyrainTxt, fogTxt, snowTxt};
         if(SurveyData.weathEst >= 0)
-            highlightButton(allBackgrounds[SurveyData.weathEst]);
+            highlightButton(allBackgrounds[SurveyData.weathEst],allTv[SurveyData.weathEst]);
 
     }
 
@@ -77,7 +89,7 @@ public class EstWeather extends AppCompatActivity {
             allButtons[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    highlightButton(allBackgrounds[finalI]);
+                    highlightButton(allBackgrounds[finalI],allTv[finalI]);
                     weatherNum = finalI + 1;
                     SurveyData.weathEst = finalI;
                 }
@@ -100,11 +112,17 @@ public class EstWeather extends AppCompatActivity {
         });
     }
 
-    void highlightButton(ImageView background){
+    void highlightButton(ImageView background,TextView tv){
 
         for(int i = 0; i < 8; i++)
-            allBackgrounds[i].setImageResource(R.color.white);
-        background.setImageResource(R.color.green_main);
+        {
+            allBackgrounds[i].setImageResource(R.color.whiteDim);
+            allTv[i].setTextColor(getResources().getColor(R.color.black));
+            allTv[i].setBackgroundColor(getResources().getColor(R.color.transparent));
+        }
+        background.setImageResource(R.color.white);
+        tv.setBackgroundColor(getResources().getColor(R.color.maroon));
+        tv.setTextColor(getResources().getColor(R.color.gold));
     }
 
 }

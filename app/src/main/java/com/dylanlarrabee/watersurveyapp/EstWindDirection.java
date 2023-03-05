@@ -15,9 +15,11 @@ public class EstWindDirection  extends AppCompatActivity {
 
     private Intent toEstHome, toEstWindSpeed, toEstWindDirectInfo, toEstRainfall;
     private ImageView allButtons[];
+    private TextView allText[];
     private Button homeButton;
     private ImageView rightButton, leftButton;
-    private TextView infoButton;
+    private TextView infoButton,
+    northTxt,eastTxt,southTxt,westTxt,northeastTxt,northwestTxt,southeastTxt,southwestTxt;
     private ImageView northButton, northeastButton, eastButton, southeastButton, southButton, southwestButton, westButton, northwestButton;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +51,19 @@ public class EstWindDirection  extends AppCompatActivity {
         westButton = (ImageView) findViewById(R.id.west_button);
         northwestButton = (ImageView) findViewById(R.id.northwest_button);
 
-       allButtons = new ImageView[] {northButton, northeastButton, eastButton, southeastButton, southButton, southwestButton, westButton, northwestButton};
+        northTxt = (TextView) findViewById(R.id.northTxt);
+        northeastTxt = (TextView) findViewById(R.id.northEastTxt);
+        eastTxt = (TextView) findViewById(R.id.eastTxt);
+        southeastTxt = (TextView) findViewById(R.id.southEastTxt);
+        southTxt = (TextView) findViewById(R.id.southTxt);
+        southwestTxt = (TextView) findViewById(R.id.southWestTxt);
+        westTxt = (TextView) findViewById(R.id.westTxt);
+        northwestTxt = (TextView) findViewById(R.id.northWestTxt);
 
+       allButtons = new ImageView[] {northButton, northeastButton, eastButton, southeastButton, southButton, southwestButton, westButton, northwestButton};
+        allText = new TextView[] {northTxt,northeastTxt,eastTxt,southeastTxt,southTxt,southwestTxt,westTxt,northwestTxt};
         if(SurveyData.windDir >= 0)
-            highlightButton(allButtons[SurveyData.windDir]);
+            highlightButton(allButtons[SurveyData.windDir],allText[SurveyData.windDir]);
 
     }
 
@@ -63,7 +74,7 @@ public class EstWindDirection  extends AppCompatActivity {
             allButtons[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    highlightButton(allButtons[finalI]);
+                    highlightButton(allButtons[finalI],allText[finalI]);
                     SurveyData.windDir = finalI;
                 }
             });
@@ -84,11 +95,15 @@ public class EstWindDirection  extends AppCompatActivity {
         });
     }
 
-    void highlightButton(ImageView background){
+    void highlightButton(ImageView background,TextView tv){
 
         for(int i = 0; i < 8; i++)
-            allButtons[i].setImageTintList(ColorStateList.valueOf(Color.WHITE));
-        background.setImageTintList(ColorStateList.valueOf(Color.GREEN));
+        {
+            allButtons[i].setImageTintList(ColorStateList.valueOf(getResources().getColor(R.color.whiteDim)));
+            allText[i].setTextColor(getResources().getColor(R.color.black));
+        }
+        background.setImageTintList(ColorStateList.valueOf(getResources().getColor(R.color.maroon)));
+        tv.setTextColor(getResources().getColor(R.color.gold));
     }
 
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue_main"
+    android:background="@color/black"
     tools:context=".XmlPage">
 
 
@@ -141,8 +141,8 @@
 
     <ImageView
         android:id="@+id/clear_background"
-        android:layout_width="150dp"
-        android:layout_height="155dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:src="@drawable/color_cursor"
         app:layout_constraintBottom_toBottomOf="@+id/clear_button"
         app:layout_constraintEnd_toEndOf="@+id/clear_button"
@@ -152,10 +152,11 @@
 
     <ImageView
         android:id="@+id/clear_image"
-        android:layout_width="138dp"
-        android:layout_height="121dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginTop="15dp"
         android:src="@drawable/weather_clear"
+        app:layout_constraintBottom_toTopOf="@+id/clear_text"
         app:layout_constraintEnd_toEndOf="@+id/clear_button"
         app:layout_constraintStart_toStartOf="@+id/clear_button"
         app:layout_constraintTop_toTopOf="@+id/clear_button"
@@ -163,36 +164,37 @@
 
     <TextView
         android:id="@+id/clear_text"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="serif-monospace"
         android:text="Clear"
+        android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/clear_button"
         app:layout_constraintEnd_toEndOf="@+id/clear_button"
-        app:layout_constraintStart_toStartOf="@+id/clear_button"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:layout_constraintVertical_bias="0.92" />
+        app:layout_constraintStart_toStartOf="@+id/clear_button" />
 
     <Button
         android:id="@+id/clear_button"
-        android:layout_width="150dp"
-        android:layout_height="170dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:backgroundTint="#00FFFFFF"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline28"
         app:layout_constraintEnd_toStartOf="@+id/guideline31"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
         app:strokeColor="#0E0404"
-        app:strokeWidth="1dp" />
+        app:strokeWidth="0dp" />
 
     <ImageView
         android:id="@+id/partlycloudy_background"
-        android:layout_width="150dp"
-        android:layout_height="155dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:src="@drawable/color_cursor"
         app:layout_constraintBottom_toBottomOf="@+id/partlycloudy_button"
         app:layout_constraintEnd_toEndOf="@+id/partlycloudy_button"
@@ -202,10 +204,11 @@
 
     <ImageView
         android:id="@+id/partlycloudy_image"
-        android:layout_width="132dp"
-        android:layout_height="110dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingTop="10dp"
         android:src="@drawable/weather_cloudy"
-        app:layout_constraintBottom_toBottomOf="@+id/partlycloudy_button"
+        app:layout_constraintBottom_toTopOf="@+id/partlycloudy_text"
         app:layout_constraintEnd_toEndOf="@+id/partlycloudy_button"
         app:layout_constraintStart_toStartOf="@+id/partlycloudy_button"
         app:layout_constraintTop_toTopOf="@+id/partlycloudy_button"
@@ -214,36 +217,37 @@
 
     <TextView
         android:id="@+id/partlycloudy_text"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="serif-monospace"
         android:text="Partly Cloudy"
+        android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/partlycloudy_button"
         app:layout_constraintEnd_toEndOf="@+id/partlycloudy_button"
-        app:layout_constraintStart_toStartOf="@+id/partlycloudy_button"
-        app:layout_constraintTop_toTopOf="@+id/partlycloudy_button"
-        app:layout_constraintVertical_bias="0.9" />
+        app:layout_constraintStart_toStartOf="@+id/partlycloudy_button" />
 
     <Button
         android:id="@+id/partlycloudy_button"
-        android:layout_width="150dp"
-        android:layout_height="170dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:backgroundTint="#00FFFFFF"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline28"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline31"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
         app:strokeColor="#0E0404"
-        app:strokeWidth="1dp" />
+        app:strokeWidth="0dp" />
 
     <ImageView
         android:id="@+id/overcast_background"
-        android:layout_width="150dp"
-        android:layout_height="155dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:src="@drawable/color_cursor"
         app:layout_constraintBottom_toBottomOf="@+id/overcast_button"
         app:layout_constraintEnd_toEndOf="@+id/overcast_button"
@@ -253,10 +257,11 @@
 
     <ImageView
         android:id="@+id/overcast_image"
-        android:layout_width="138dp"
-        android:layout_height="121dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingTop="10dp"
         android:src="@drawable/weather_overcast"
-        app:layout_constraintBottom_toBottomOf="@+id/overcast_button"
+        app:layout_constraintBottom_toTopOf="@+id/overcast_text"
         app:layout_constraintEnd_toEndOf="@+id/overcast_button"
         app:layout_constraintStart_toStartOf="@+id/overcast_button"
         app:layout_constraintTop_toTopOf="@+id/overcast_button"
@@ -264,36 +269,37 @@
 
     <TextView
         android:id="@+id/overcast_text"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="serif-monospace"
         android:text="Cloudy"
+        android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/overcast_button"
         app:layout_constraintEnd_toEndOf="@+id/overcast_button"
-        app:layout_constraintStart_toStartOf="@+id/overcast_button"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:layout_constraintVertical_bias="0.95" />
+        app:layout_constraintStart_toStartOf="@+id/overcast_button" />
 
     <Button
         android:id="@+id/overcast_button"
-        android:layout_width="150dp"
-        android:layout_height="170dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:backgroundTint="#00FFFFFF"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline29"
         app:layout_constraintEnd_toStartOf="@+id/guideline31"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline28"
         app:strokeColor="#0E0404"
-        app:strokeWidth="1dp" />
+        app:strokeWidth="0dp" />
 
     <ImageView
         android:id="@+id/lightrain_background"
-        android:layout_width="150dp"
-        android:layout_height="155dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:src="@drawable/color_cursor"
         app:layout_constraintBottom_toBottomOf="@+id/lightrain_button"
         app:layout_constraintEnd_toEndOf="@+id/lightrain_button"
@@ -303,26 +309,26 @@
 
     <TextView
         android:id="@+id/lightrain_text"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="serif-monospace"
         android:text="Light Rain"
+        android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/lightrain_button"
         app:layout_constraintEnd_toEndOf="@+id/lightrain_button"
-        app:layout_constraintStart_toStartOf="@+id/lightrain_button"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:layout_constraintVertical_bias="0.95" />
+        app:layout_constraintStart_toStartOf="@+id/lightrain_button" />
 
     <ImageView
         android:id="@+id/lightrain_image"
-        android:layout_width="122dp"
-        android:layout_height="106dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingTop="10dp"
         android:src="@drawable/weather_lightrain"
-        app:layout_constraintBottom_toBottomOf="@+id/lightrain_button"
+        app:layout_constraintBottom_toTopOf="@+id/lightrain_text"
         app:layout_constraintEnd_toEndOf="@+id/lightrain_button"
         app:layout_constraintStart_toStartOf="@+id/lightrain_button"
         app:layout_constraintTop_toTopOf="@+id/overcast_button"
@@ -331,21 +337,23 @@
 
     <Button
         android:id="@+id/lightrain_button"
-        android:layout_width="150dp"
-        android:layout_height="170dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:backgroundTint="#00FFFFFF"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline29"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline31"
         app:layout_constraintTop_toTopOf="@+id/guideline28"
         app:strokeColor="#0E0404"
-        app:strokeWidth="1dp" />
+        app:strokeWidth="0dp" />
 
 
     <ImageView
         android:id="@+id/rain_background"
-        android:layout_width="150dp"
-        android:layout_height="155dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:src="@drawable/color_cursor"
         app:layout_constraintBottom_toBottomOf="@+id/rain_button"
         app:layout_constraintEnd_toEndOf="@+id/rain_button"
@@ -355,10 +363,11 @@
 
     <ImageView
         android:id="@+id/rain_image"
-        android:layout_width="115dp"
-        android:layout_height="108dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingTop="10dp"
         android:src="@drawable/weather_rain"
-        app:layout_constraintBottom_toBottomOf="@+id/rain_button"
+        app:layout_constraintBottom_toTopOf="@+id/rain_text"
         app:layout_constraintEnd_toEndOf="@+id/rain_button"
         app:layout_constraintStart_toStartOf="@+id/rain_button"
         app:layout_constraintTop_toBottomOf="@+id/overcast_button"
@@ -367,37 +376,38 @@
 
     <TextView
         android:id="@+id/rain_text"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="serif-monospace"
         android:text="Rain"
+        android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline30"
         app:layout_constraintEnd_toEndOf="@+id/rain_button"
-        app:layout_constraintStart_toStartOf="@+id/rain_button"
-        app:layout_constraintTop_toTopOf="@+id/rain_button"
-        app:layout_constraintVertical_bias="0.90999997" />
+        app:layout_constraintStart_toStartOf="@+id/rain_button" />
+
 
     <Button
         android:id="@+id/rain_button"
-        android:layout_width="150dp"
-        android:layout_height="170dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:backgroundTint="#00FFFFFF"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline30"
         app:layout_constraintEnd_toEndOf="@id/guideline31"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline29"
         app:strokeColor="#0E0404"
-        app:strokeWidth="1dp" />
-
+        app:strokeWidth="0dp" />
 
     <ImageView
         android:id="@+id/heavyrain_background"
-        android:layout_width="150dp"
-        android:layout_height="155dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:src="@drawable/color_cursor"
         app:layout_constraintBottom_toBottomOf="@+id/heavyrain_button"
         app:layout_constraintEnd_toEndOf="@+id/heavyrain_button"
@@ -407,10 +417,11 @@
 
     <ImageView
         android:id="@+id/heavyrain_image"
-        android:layout_width="130dp"
-        android:layout_height="118dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingTop="10dp"
         android:src="@drawable/weather_heavyrain"
-        app:layout_constraintBottom_toBottomOf="@+id/heavyrain_button"
+        app:layout_constraintBottom_toTopOf="@+id/heavyrain_text"
         app:layout_constraintEnd_toEndOf="@+id/heavyrain_button"
         app:layout_constraintStart_toStartOf="@+id/heavyrain_button"
         app:layout_constraintTop_toTopOf="@+id/heavyrain_button"
@@ -419,36 +430,37 @@
 
     <TextView
         android:id="@+id/heavyrain_text"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="serif-monospace"
         android:text="Heavy Rain"
+        android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/heavyrain_button"
         app:layout_constraintEnd_toEndOf="@+id/heavyrain_button"
-        app:layout_constraintStart_toStartOf="@+id/heavyrain_button"
-        app:layout_constraintTop_toTopOf="@+id/heavyrain_button"
-        app:layout_constraintVertical_bias="0.92" />
+        app:layout_constraintStart_toStartOf="@+id/heavyrain_button" />
 
     <Button
         android:id="@+id/heavyrain_button"
-        android:layout_width="150dp"
-        android:layout_height="170dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:backgroundTint="#00FFFFFF"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline30"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline31"
         app:layout_constraintTop_toTopOf="@+id/guideline29"
         app:strokeColor="#0E0404"
-        app:strokeWidth="1dp" />
+        app:strokeWidth="0dp" />
 
     <ImageView
         android:id="@+id/fog_background"
-        android:layout_width="150dp"
-        android:layout_height="155dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:src="@drawable/color_cursor"
         app:layout_constraintBottom_toBottomOf="@+id/fog_button"
         app:layout_constraintEnd_toEndOf="@+id/fog_button"
@@ -458,26 +470,26 @@
 
     <TextView
         android:id="@+id/fog_text"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="serif-monospace"
         android:text="Fog"
+        android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/fog_button"
         app:layout_constraintEnd_toEndOf="@+id/fog_button"
-        app:layout_constraintStart_toStartOf="@+id/fog_button"
-        app:layout_constraintTop_toTopOf="@+id/fog_button"
-        app:layout_constraintVertical_bias="0.92" />
+        app:layout_constraintStart_toStartOf="@+id/fog_button" />
 
     <ImageView
         android:id="@+id/fog_image"
-        android:layout_width="137dp"
-        android:layout_height="116dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingTop="5dp"
         android:src="@drawable/weather_fog"
-        app:layout_constraintBottom_toBottomOf="@+id/fog_button"
+        app:layout_constraintBottom_toTopOf="@+id/fog_text"
         app:layout_constraintEnd_toEndOf="@+id/fog_button"
         app:layout_constraintStart_toStartOf="@+id/fog_button"
         app:layout_constraintTop_toTopOf="@+id/fog_button"
@@ -486,51 +498,53 @@
 
     <Button
         android:id="@+id/fog_button"
-        android:layout_width="150dp"
-        android:layout_height="170dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:backgroundTint="#00FFFFFF"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toStartOf="@+id/guideline31"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline30"
         app:strokeColor="#0E0404"
-        app:strokeWidth="1dp" />
+        app:strokeWidth="0dp" />
 
 
     <ImageView
         android:id="@+id/snow_background"
-        android:layout_width="150dp"
-        android:layout_height="155dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:src="@drawable/color_cursor"
         app:layout_constraintBottom_toBottomOf="@+id/snow_button"
         app:layout_constraintEnd_toEndOf="@+id/snow_button"
         app:layout_constraintStart_toStartOf="@+id/snow_button"
-        app:layout_constraintTop_toTopOf="@+id/snow_button"
+        app:layout_constraintTop_toTopOf="@+id/guideline30"
         app:srcCompat="@color/white" />
 
     <TextView
         android:id="@+id/snow_text"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="serif-monospace"
         android:text="Snow"
+        android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/snow_button"
         app:layout_constraintEnd_toEndOf="@+id/snow_button"
-        app:layout_constraintStart_toStartOf="@+id/snow_button"
-        app:layout_constraintTop_toTopOf="@+id/snow_button"
-        app:layout_constraintVertical_bias="0.92" />
+        app:layout_constraintStart_toStartOf="@+id/snow_button" />
 
 
     <ImageView
         android:id="@+id/snow_image"
-        android:layout_width="120dp"
-        android:layout_height="109dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingTop="10dp"
         android:src="@drawable/weather_snow"
-        app:layout_constraintBottom_toBottomOf="@+id/snow_button"
+        app:layout_constraintBottom_toTopOf="@+id/snow_text"
         app:layout_constraintEnd_toEndOf="@+id/snow_button"
         app:layout_constraintStart_toStartOf="@+id/snow_button"
         app:layout_constraintTop_toTopOf="@+id/snow_button"
@@ -539,14 +553,16 @@
 
     <Button
         android:id="@+id/snow_button"
-        android:layout_width="150dp"
-        android:layout_height="170dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:backgroundTint="#00FFFFFF"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline31"
         app:layout_constraintTop_toTopOf="@+id/guideline30"
         app:strokeColor="#0E0404"
-        app:strokeWidth="1dp" />
+        app:strokeWidth="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
