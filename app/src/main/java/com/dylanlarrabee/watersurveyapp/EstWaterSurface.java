@@ -14,17 +14,17 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class EstWaterSurface extends AppCompatActivity {
-    Intent toEstHome, toEstWeather, toEstTide, toEstWaterSurfaceInfo;
-    int watersurfaceNum;
-    ImageView allBackgrounds[], allImages[];
-    Button allButtons[];
-    TextView allText[];
-    ImageView calmBackground, ripplesBackground, choppyBackground, heavychopBackground;
-    ImageView calmImage, ripplesImage, choppyImage, heavychopImage;
-    ImageView rightButton, leftButton;
-    TextView infoButton;
-    Button homeButton, calmButton, ripplesButton, choppyButton, heavychopButton;
-    TextView calmText,ripplesText,choppyText,heavychopText;
+    private Intent toEstHome, toEstWeather, toEstTide, toEstWaterSurfaceInfo;
+    private int watersurfaceNum;
+    private ImageView allBackgrounds[], allImages[];
+    private Button allButtons[];
+    private TextView allText[];
+    private ImageView calmBackground, ripplesBackground, choppyBackground, heavychopBackground;
+    private ImageView calmImage, ripplesImage, choppyImage, heavychopImage;
+    private ImageView rightButton, leftButton;
+    private TextView infoButton;
+    private Button homeButton, calmButton, ripplesButton, choppyButton, heavychopButton;
+    private TextView calmText,ripplesText,choppyText,heavychopText;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

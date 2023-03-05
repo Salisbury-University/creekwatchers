@@ -14,7 +14,7 @@ import android.widget.EditText;
 
 
 public class HomePage extends AppCompatActivity {
-    BasicCommands bc = new BasicCommands();
+    private BasicCommands bc = new BasicCommands();
     private final int estInd = 0,measInd = 1,commInd = 2;
     private final int totalEst = 6, totalMeas = 5, totalComm = 1, numBtns = 3;
     private final String observerText = "Observer:\n", siteText = "Site:\n", estStr = "Estimates\n", commStr = "Comments\n", measStr = "Measurements\n";
@@ -24,8 +24,8 @@ public class HomePage extends AppCompatActivity {
     private String userName,siteName;
     private int curEst = 0, curMeas = 0, curComm = 0;
     private boolean estDone = false, measDone = false, commDone = false;
-    SharedPreferences curInfo;
-    SharedPreferences.Editor editor;
+    private SharedPreferences curInfo,spForms;
+    private SharedPreferences.Editor editor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,27 +46,10 @@ public class HomePage extends AppCompatActivity {
         Intent measIntent = new Intent(this,MeasurementsPage.class);
         Intent toSelSite = bc.setIntent(this,SelectSite.class);
         subBtn = (Button) findViewById(R.id.submitBtnHome);
-
+        spForms = getSharedPreferences("forms",MODE_PRIVATE);
         //This pulls the name and site from login page or from SurveyData after initial login
-        if(extras != null)
-        {
-            if(extras.getString("name") != null)
-            {
-                SurveyData.userName = extras.getString("name");
-            }
-            if(extras.getString("site") != null)
-            {
-                SurveyData.userSite = extras.getString("site");
-            }
-        }
-        if(SurveyData.userName.length() > 0)
-        {
-            userName.setText(observerText + SurveyData.userName);
-        }
-        if(SurveyData.userSite.length() > 0)
-        {
-            userSite.setText(siteText + SurveyData.userSite);
-        }
+
+
 
 
         //OCL
@@ -95,15 +78,48 @@ public class HomePage extends AppCompatActivity {
                 startActivity(measIntent);
             }
         });
-
+        subBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SurveyData.SaveData(spForms,SurveyData.myID);
+                SwapActivity.navForms(HomePage.this);
+            }
+        });
 
 
         //main Code
         btns[0] = estBtn;
         btns[1] = measBtn;
         btns[2] = commBtn;
+      if(SurveyData.firstEntry == true )
+      {
+
+          retrieveData();
+          SurveyData.firstEntry = false;
+      }
+        if(extras != null)
+        {
+            if(extras.getString("name") != null)
+            {
+                SurveyData.userName = extras.getString("name");
+            }
+            if(extras.getString("site") != null)
+            {
+                SurveyData.userSite = extras.getString("site");
+            }
+        }
+        if(SurveyData.userName.length() > 0)
+        {
+            userName.setText(observerText + SurveyData.userName);
+        }
+        if(SurveyData.userSite.length() > 0)
+        {
+            userSite.setText(siteText + SurveyData.userSite);
+        }
         checkCompletion();
+        SurveyData.newForm = false;
     }
+
     String setBtnTxt(String btnStr,int cur, int max)
     {
         String newStr = btnStr + cur + "/" + max;
@@ -178,14 +194,19 @@ public class HomePage extends AppCompatActivity {
         builder.show();
 
     }
-
     void checkCompletion()
     {
         SurveyData.updateCompleted();
         setAllBtnTxt();
         setBtnTextColors();
+        subBtn.setText(SurveyData.myID);
     }
 
+    void retrieveData()
+    {
 
+            SurveyData.RetrieveData(spForms,SurveyData.myID);
+
+    }
 
 }

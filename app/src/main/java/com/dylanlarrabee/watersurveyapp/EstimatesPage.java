@@ -15,11 +15,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 public class EstimatesPage extends AppCompatActivity {
-   
-    Intent toHome, toWeather, toTide, toWaterSurface, toWindSpeed, toWindDirection;
-    
-    Button homeButton, tideButton, watersurfaceButton, weatherButton, windspeedButton, winddirectButton, rainfallButton;
-    TextView tideblack,waterblack,weatherblack,speedblack,winddirblack,rainfallblack;
+
+    private Intent toHome, toWeather, toTide, toWaterSurface, toWindSpeed, toWindDirection;
+
+    private Button homeButton, tideButton, watersurfaceButton, weatherButton, windspeedButton, winddirectButton, rainfallButton;
+    private TextView tideblack,waterblack,weatherblack,speedblack,winddirblack,rainfallblack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

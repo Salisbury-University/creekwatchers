@@ -15,15 +15,15 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class EstWeather extends AppCompatActivity {
-    Intent toEstHome, toEstWaterSurface, toEstWindSpeed, toEstWeatherInfo;
-    int weatherNum;
-    ImageView allBackgrounds[];
-    Button allButtons[];
-    Button homeButton;
-    ImageView clearBackground, partlycloudyBackground, overcastBackground, lightrainBackground, rainBackground, heavyrainBackground, fogBackground, snowBackground;
-    ImageView rightButton, leftButton;
-    TextView infoButton;
-    Button clearButton, partlycloudyButton, overcastButton, lightrainButton, rainButton, heavyrainButton, fogButton, snowButton;
+    private Intent toEstHome, toEstWaterSurface, toEstWindSpeed, toEstWeatherInfo;
+    private int weatherNum;
+    private ImageView allBackgrounds[];
+    private Button allButtons[];
+    private Button homeButton;
+    private ImageView clearBackground, partlycloudyBackground, overcastBackground, lightrainBackground, rainBackground, heavyrainBackground, fogBackground, snowBackground;
+    private ImageView rightButton, leftButton;
+    private TextView infoButton;
+    private Button clearButton, partlycloudyButton, overcastButton, lightrainButton, rainButton, heavyrainButton, fogButton, snowButton;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

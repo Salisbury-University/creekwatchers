@@ -15,20 +15,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import pl.droidsonroids.gif.GifImageView;
 
 public class EstWindSpeed extends AppCompatActivity {
-    Intent toEstHome, toEstWeather, toEstWindDirection, toEstWindSpeedInfo;
-    int watersurfaceNum;
-    ImageView allBackgrounds[], allImages[];
-    Button allButtons[];
-    TextView allText[];
-    ImageView calmBackground, ripplesBackground, choppyBackground, heavychopBackground;
-    ImageView calmImage, ripplesImage, choppyImage, heavychopImage;
-    ImageView rightButton, leftButton;
-    TextView infoButton;
-    Button homeButton, calmButton, lightButton, mediumButton, heavyButton;
-    TextView calmText,ripplesText,choppyText,heavychopText;
+    private Intent toEstHome, toEstWeather, toEstWindDirection, toEstWindSpeedInfo;
+    private int watersurfaceNum;
+    private ImageView allBackgrounds[], allImages[];
+    private Button allButtons[];
+    private TextView allText[];
+    private ImageView calmBackground, ripplesBackground, choppyBackground, heavychopBackground;
+    private ImageView calmImage, ripplesImage, choppyImage, heavychopImage;
+    private ImageView rightButton, leftButton;
+    private TextView infoButton;
+    private Button homeButton, calmButton, lightButton, mediumButton, heavyButton;
+    private TextView calmText,ripplesText,choppyText,heavychopText;
 
-    GifImageView heavyGif, mediumGif, lightGif;
-    GifImageView allGifs[];
+    private GifImageView heavyGif, mediumGif, lightGif;
+    private GifImageView allGifs[];
 
 
     protected void onCreate(Bundle savedInstanceState) {

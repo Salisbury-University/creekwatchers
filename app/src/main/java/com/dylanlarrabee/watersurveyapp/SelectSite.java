@@ -3,17 +3,20 @@ package com.dylanlarrabee.watersurveyapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 public class SelectSite extends AppCompatActivity {
-    final int numSites = 5;
-Button site1,site2,site3,site4,site5;
-Button siteBtns[] = new Button[] {site1,site2,site3,site4,site5};
-Bundle getExtras;
-String userName;
-Intent toHome;
+    private final int numSites = 5;
+    private Button site1,site2,site3,site4,site5;
+    private Button siteBtns[] = new Button[] {site1,site2,site3,site4,site5};
+    private Bundle getExtras;
+    private String userName;
+    private Intent toHome;
+    private SharedPreferences formPref;
+    private SharedPreferences.Editor formEdit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +37,9 @@ Intent toHome;
         siteBtns[2] = site3;
         siteBtns[3] = site4;
         siteBtns[4] = site5;
+        // Prefs
+        formPref = getSharedPreferences("formids",MODE_PRIVATE);
+        formEdit = formPref.edit();
         //listeners
        for(int i = 0; i < numSites; i++)
        {
@@ -52,6 +58,13 @@ Intent toHome;
     }
     void toHome(String siteName)
     {
+        if(SurveyData.newForm == true) {
+            String newID = "form" + formPref.getAll().size();
+            formEdit.putString(newID, newID);
+            formEdit.commit();
+            SurveyData.myID = newID;
+        }
+
         toHome.putExtra("site",siteName);
         toHome.putExtra("name",userName);
     startActivity(toHome);

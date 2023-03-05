@@ -1,16 +1,22 @@
 package com.dylanlarrabee.watersurveyapp;
 
+import static android.content.Context.MODE_PRIVATE;
 import static androidx.core.content.ContextCompat.startActivity;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
 public class BasicCommands {
+    //Function to save the current form
+
 
     Intent setIntent(Context from, Class to)
     {

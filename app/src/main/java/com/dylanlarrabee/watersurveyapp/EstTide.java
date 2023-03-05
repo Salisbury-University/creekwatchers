@@ -21,11 +21,11 @@ import androidx.core.content.ContextCompat;
 
 public class EstTide extends AppCompatActivity {
 
-    Intent toEstHome, toEstWaterSurface, toEstTideInfo;
-    Button homeButton, highButton, midFallingButton, lowButton, midFloodingButton, nontidalButton;
-    Button allButtons[];
-    ImageView rightButton;
-    TextView infoButton;
+    private Intent toEstHome, toEstWaterSurface, toEstTideInfo;
+    private Button homeButton, highButton, midFallingButton, lowButton, midFloodingButton, nontidalButton;
+    private Button allButtons[];
+    private ImageView rightButton;
+    private TextView infoButton;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

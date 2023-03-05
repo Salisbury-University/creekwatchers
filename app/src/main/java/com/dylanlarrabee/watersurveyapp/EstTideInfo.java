@@ -17,10 +17,10 @@ import androidx.core.content.ContextCompat;
 
 public class EstTideInfo extends AppCompatActivity {
 
-    Intent toEstHome, toEstWaterSurface, toEstTide;
-    Button homeButton, exitButton;
-    ImageView rightButton;
-    TextView headerBox;
+    private Intent toEstHome, toEstWaterSurface, toEstTide;
+    private Button homeButton, exitButton;
+    private ImageView rightButton;
+    private TextView headerBox;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

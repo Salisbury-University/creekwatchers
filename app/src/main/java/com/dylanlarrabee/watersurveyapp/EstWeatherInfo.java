@@ -14,10 +14,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class EstWeatherInfo extends AppCompatActivity {
 
-    Intent toEstHome, toEstWaterSurface, toEstWindSpeed, toEstWeather;
-    Button homeButton, exitButton;
-    ImageView rightButton, leftButton;
-    TextView headerBox;
+    private Intent toEstHome, toEstWaterSurface, toEstWindSpeed, toEstWeather;
+    private Button homeButton, exitButton;
+    private ImageView rightButton, leftButton;
+    private TextView headerBox;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

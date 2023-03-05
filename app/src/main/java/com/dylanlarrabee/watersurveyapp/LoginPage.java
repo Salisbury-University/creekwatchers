@@ -11,27 +11,25 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginPage extends AppCompatActivity {
     //vars
-    SharedPreferences sharedPreferences;
-    SharedPreferences.Editor myEdit;
-    int numNames;
-    int countClick = 0;
-    int clicked = 0;
-    String userName,siteName;
-    Button selName;
-    Intent toHome, toSelName,toSelSite;
+    private SharedPreferences namePref;
+    private SharedPreferences.Editor nameEdit;
+    private int numNames;
+    private String userName,siteName;
+    private Button selName;
+    private Intent toHome, toSelName,toSelSite;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_page);
         //sharedPref
-        sharedPreferences = getSharedPreferences("userNames",MODE_PRIVATE);
-        myEdit = sharedPreferences.edit();
-        numNames = sharedPreferences.getAll().size();
+        namePref = getSharedPreferences("userNames",MODE_PRIVATE);
+        nameEdit = namePref.edit();
+
+        numNames = namePref.getAll().size();
         //intents
         toHome = new Intent(this,HomePage.class);
         toSelName = new Intent(this,SelectName.class);
@@ -47,6 +45,7 @@ public class LoginPage extends AppCompatActivity {
         selName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 nameView();
             }
         });
@@ -67,8 +66,8 @@ public class LoginPage extends AppCompatActivity {
 
           if(numNames < 5)
           {
-              myEdit.putString("name" + numNames,newName);
-              myEdit.commit();
+              nameEdit.putString("name" + numNames,newName);
+              nameEdit.commit();
           }else
           {
               Context context = getApplicationContext();

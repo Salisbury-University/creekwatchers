@@ -12,13 +12,13 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class EstWindDirection  extends AppCompatActivity {
-    
-    Intent toEstHome, toEstWindSpeed, toEstWindDirectInfo, toEstRainfall;
-    ImageView allButtons[];
-    Button homeButton;
-    ImageView rightButton, leftButton;
-    TextView infoButton;
-    ImageView northButton, northeastButton, eastButton, southeastButton, southButton, southwestButton, westButton, northwestButton;
+
+    private Intent toEstHome, toEstWindSpeed, toEstWindDirectInfo, toEstRainfall;
+    private ImageView allButtons[];
+    private Button homeButton;
+    private ImageView rightButton, leftButton;
+    private TextView infoButton;
+    private ImageView northButton, northeastButton, eastButton, southeastButton, southButton, southwestButton, westButton, northwestButton;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

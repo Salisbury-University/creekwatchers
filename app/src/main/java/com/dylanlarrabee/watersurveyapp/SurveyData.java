@@ -1,17 +1,31 @@
 package com.dylanlarrabee.watersurveyapp;
 
-import java.io.Serializable;
+import static android.content.Context.MODE_PRIVATE;
 
-public class SurveyData implements Serializable {
-        static final int maxEst = 6, maxMeas = 5, maxComm = 1;
+import android.app.Activity;
+import android.content.SharedPreferences;
+
+import com.google.gson.Gson;
+
+
+public class SurveyData  {
+        static String myID = "";
+        static String formName = "";
+        static final int maxEst = 6, maxMeas = 5, maxComm = 1, numMeas = 2;
         static String userName = "", userSite = "";
         static int curEst = 0, curMeas = 0, curComm = 0;
         static int tideEst=-1,weathEst=-1,windSpeed=-1, waterSurf =-1,windDir=-1,rainfall=-1,waterDepth=-1,sampleDist=-1;
         static int[] airTemp = {-1,-1},waterTemp={-1,-1},secchiDepth={-1,-1};
         static int estArr[] = {tideEst,waterSurf,weathEst,windSpeed,windDir,rainfall};
+        static boolean bottomedOut, newForm = false,firstEntry = true;;
 
+         String myuserName = "", myuserSite = "";
+         int mycurEst = 0, mycurMeas = 0, mycurComm = 0;
+         int mytideEst=-1,myweathEst=-1,mywindSpeed=-1, mywaterSurf =-1,mywindDir=-1,myrainfall=-1,mywaterDepth=-1,mysampleDist=-1;
+         int[] myairTemp = {-1,-1},mywaterTemp={-1,-1},mysecchiDepth={-1,-1};
+         int myestArr[] = {mytideEst,mywaterSurf,myweathEst,mywindSpeed,mywindDir,myrainfall};
+         boolean mybottomedOut;
 
-        static boolean bottomedOut;
 
         public SurveyData()
         {
@@ -27,6 +41,26 @@ public class SurveyData implements Serializable {
 //                airTemp = new int[]{-1, -1};
 //                waterTemp = new int[]{-1, -1};
 //                secchiDepth = new int[]{-1, -1};
+        }
+        static public void resetData()
+        {
+                userName = "";
+                userSite = "";
+                curEst = 0;
+                curComm = 0;
+                curMeas = 0;
+                for(int i = 0; i < maxEst; i++)
+                {
+                        estArr[i] = -1;
+                }
+                for(int i = 0; i < numMeas; i ++)
+                {
+                        airTemp[i] = -1;
+                        waterTemp[i] = -1;
+                        secchiDepth[i] = -1;
+                }
+                bottomedOut = false;
+
         }
         static public void updateCompleted()
         {
@@ -45,5 +79,29 @@ public class SurveyData implements Serializable {
                         setVal++;
 
                 curEst = setVal;
+        }
+         public static void SaveData(SharedPreferences sp, String formID)
+        {
+                SharedPreferences.Editor spEdit = sp.edit();
+                spEdit.putString(formID + "name",userName);
+                spEdit.putString(formID+"site",userSite);
+                spEdit.putInt(formID+"tide",tideEst);
+                spEdit.putInt(formID+"surf",waterSurf);
+                spEdit.putInt(formID+"weath",weathEst);
+                spEdit.putInt(formID+"wspeed",windSpeed);
+                spEdit.putInt(formID+"wdir",windDir);
+                //spEdit.putInt(formID+"rain",rainfall);
+                spEdit.commit();
+        }
+        public static void RetrieveData(SharedPreferences sp, String formID)
+        {
+                userName = sp.getString(formID+"name","Null Name");
+                userSite = sp.getString(formID+"site","Null Site");
+                tideEst = sp.getInt(formID+"tide",-1);
+                waterSurf = sp.getInt(formID+"surf",-1);
+                weathEst = sp.getInt(formID+"weath",-1);
+                windSpeed = sp.getInt(formID+"wspeed",-1);
+                windDir = sp.getInt(formID+"wdir",-1);
+                //rainfall = sp.getInt(formID+"rain",-1);
         }
 }

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FormArchive">
+
+    <TextView
+        android:id="@+id/formSelTitleBg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#303030"
+
+        android:fontFamily="serif-monospace"
+        android:gravity="center"
+        android:shadowColor="#000000"
+        android:textAlignment="center"
+        android:textColor="@color/gold"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline59"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/formSelTitle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/siteselgrad"
+
+        android:fontFamily="serif-monospace"
+        android:gravity="center"
+        android:shadowColor="#000000"
+        android:shadowRadius="20"
+        android:text="Form Selection"
+        android:textAlignment="center"
+        android:textColor="@color/gold"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline59"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline59"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline59">
+
+        <LinearLayout
+            android:id="@+id/formSelLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/formSelAddBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:insetTop="2dp"
+                android:insetBottom="2dp"
+                android:minHeight="65dp"
+                android:shadowColor="#000000"
+                android:shadowRadius="10"
+                android:text="New Form"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

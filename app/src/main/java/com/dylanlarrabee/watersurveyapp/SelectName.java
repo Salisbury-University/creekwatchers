@@ -11,20 +11,20 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 public class SelectName extends AppCompatActivity {
-    SharedPreferences sharedPreferences;
-    SharedPreferences.Editor editor;
-    BasicCommands bc = new BasicCommands();
-    Intent toLogin;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
+    private BasicCommands bc = new BasicCommands();
+    private Intent toLogin;
 
-    LayoutInflater inflater;
-    final int maxNames = 5;
-    int nameNum;
-    String[] userStr;
-    Button[] userBtns, delBtns;
-    Button returnBtn;
-    int[] nameBtnIds = {R.id.name1,R.id.name2,R.id.name3,R.id.name4,R.id.name5};
-    int[] delBtnIds ={R.id.delName1,R.id.delName2,R.id.delName3,R.id.delName4,R.id.delName5};
-    Intent siteSel;
+    private LayoutInflater inflater;
+    private final int maxNames = 5;
+    private int nameNum;
+    private String[] userStr;
+    private Button[] userBtns, delBtns;
+    private Button returnBtn;
+    private int[] nameBtnIds = {R.id.name1,R.id.name2,R.id.name3,R.id.name4,R.id.name5};
+    private int[] delBtnIds ={R.id.delName1,R.id.delName2,R.id.delName3,R.id.delName4,R.id.delName5};
+    private Intent siteSel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
