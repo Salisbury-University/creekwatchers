@@ -29,11 +29,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/gold"
-                    android:fontFamily="serif-monospace"
-                    android:insetTop="2dp"
-                    android:insetBottom="2dp"
+                    android:fontFamily="@font/aclonica"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
                     android:textColor="@color/maroon"
-                    android:textFontWeight="1000"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -44,17 +43,16 @@
                     android:id="@+id/formName"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:fontFamily="serif-monospace"
+                    android:fontFamily="@font/aclonica"
+                    android:gravity="center"
                     android:text="Form"
                     android:textAlignment="center"
                     android:textColor="@color/gold"
-                    android:textFontWeight="1000"
                     android:textSize="27sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/cardDelBtn"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:gravity="center">
+                    app:layout_constraintTop_toTopOf="parent">
 
                 </TextView>
 
