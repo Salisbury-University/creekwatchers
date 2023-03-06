@@ -104,7 +104,7 @@
         android:background="@color/maroon"
         android:fontFamily="serif-monospace"
         android:gravity="center"
-        android:text="Home"
+        android:text="Menu"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/gold"

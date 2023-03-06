@@ -106,7 +106,7 @@
         android:text=""
         android:textAlignment="center"
         android:textColor="@color/maroon"
-        android:textColorHint="@color/maroon"
+        android:textColorHint="#B98A0000"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/waterdepgl50"
         app:layout_constraintEnd_toEndOf="parent"
