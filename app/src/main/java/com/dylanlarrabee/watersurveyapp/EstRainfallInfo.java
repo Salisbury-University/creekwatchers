@@ -12,23 +12,20 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class EstWindDirectionInfo extends AppCompatActivity {
+public class EstRainfallInfo extends AppCompatActivity {
 
-    private Intent toEstHome, toEstWindDirection, toEstWindSpeed, toEstRainfall;
+    private Intent toEstHome, toEstWindDirection, toMeasWaterDepth;
     private Button homeButton, exitButton;
     private ImageView rightButton, leftButton;
     private TextView headerBox;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(layout.estimate_winddirection_info);
+        setContentView(layout.estimate_rainfall_info);
 
-
-        toEstHome = new Intent(this, EstimatesPage.class);
+        toEstHome = new Intent(this, EstRainfall.class);
         toEstWindDirection = new Intent(this, EstWindDirection.class);
-        toEstWindSpeed = new Intent(this, EstWindSpeed.class);
-        toEstRainfall = new Intent(this, EstRainfall.class);
-
+        toMeasWaterDepth = new Intent(this, WaterDepth.class);
         setupButtons();
     }
 
@@ -37,15 +34,14 @@ public class EstWindDirectionInfo extends AppCompatActivity {
         homeButton = (Button) findViewById(id.home_button);
         rightButton = (ImageView) findViewById(id.rightbutton_image);
         leftButton = (ImageView) findViewById(id.leftbutton_image);
-
         exitButton = (Button) findViewById(id.exit_button);
         headerBox = (TextView) findViewById(id.estimateTitle);
 
         setListener(homeButton, toEstHome);
-        setListener(rightButton, toEstRainfall);
-        setListener(leftButton, toEstWindSpeed);
-        setListener(exitButton, toEstWindDirection);
-        setListener(headerBox, toEstWindDirection);
+        setListener(rightButton, toMeasWaterDepth);
+        setListener(leftButton, toEstWindDirection);
+        setListener(exitButton, toEstHome);
+        setListener(headerBox, toEstHome);
     }
 
     void setListener(View button, Intent intent)

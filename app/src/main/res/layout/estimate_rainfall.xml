@@ -38,7 +38,7 @@
         app:layout_constraintGuide_percent="0.75" />
 
     <Button
-        android:id="@+id/high_tide"
+        android:id="@+id/storm_button"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:backgroundTint="@color/hightide"
@@ -56,7 +56,26 @@
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <Button
-        android:id="@+id/mid_falling_tide"
+        android:id="@+id/storm_button2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0"
+        android:backgroundTint="@color/black"
+        android:fontFamily="serif-monospace"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Unusual Storm"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+    <Button
+        android:id="@+id/heavy_button"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:backgroundTint="#0D46D6"
@@ -77,7 +96,29 @@
         app:layout_constraintTop_toTopOf="@+id/guideline24" />
 
     <Button
-        android:id="@+id/low_tide"
+        android:id="@+id/heavy_button2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0"
+        android:backgroundTint="@color/black"
+        android:fontFamily="serif-monospace"
+        android:gravity="center"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Heavy"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline25"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline24" />
+
+    <Button
+        android:id="@+id/moderate_button"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:backgroundTint="#03A9F4"
@@ -98,7 +139,29 @@
         app:layout_constraintTop_toTopOf="@+id/guideline25" />
 
     <Button
-        android:id="@+id/middle_flooding_tide"
+        android:id="@+id/moderate_button2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0"
+        android:backgroundTint="@color/black"
+        android:fontFamily="serif-monospace"
+        android:gravity="center"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Moderate"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline26"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline25" />
+
+    <Button
+        android:id="@+id/light_button"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:backgroundTint="#74C5F1"
@@ -119,7 +182,72 @@
         app:layout_constraintTop_toTopOf="@+id/guideline26" />
 
     <Button
-        android:id="@+id/non_tidal_tide"
+        android:id="@+id/light_button2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0"
+        android:backgroundTint="@color/black"
+        android:fontFamily="serif-monospace"
+        android:gravity="center"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Light"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline27"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline26" />
+
+    <Button
+        android:id="@+id/trace_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/nontidal"
+        android:fontFamily="serif-monospace"
+        android:gravity="center"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Trace"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline60"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline27" />
+
+    <Button
+        android:id="@+id/trace_button2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0"
+        android:backgroundTint="@color/black"
+        android:fontFamily="serif-monospace"
+        android:gravity="center"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Trace"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline60"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline27" />
+
+    <Button
+        android:id="@+id/none_button"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:backgroundTint="@color/white"
@@ -140,25 +268,26 @@
         app:layout_constraintTop_toTopOf="@+id/guideline60" />
 
     <Button
-        android:id="@+id/non_tidal_tide3"
+        android:id="@+id/none_button2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:backgroundTint="@color/nontidal"
+        android:alpha="0"
+        android:backgroundTint="@color/black"
         android:fontFamily="serif-monospace"
         android:gravity="center"
         android:insetTop="0dp"
         android:insetBottom="0dp"
-        android:text="Trace"
+        android:text="None"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="50sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline60"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline27" />
+        app:layout_constraintTop_toTopOf="@+id/guideline60" />
 
     <Button
         android:id="@+id/home_button"
@@ -182,7 +311,7 @@
         android:id="@+id/leftbutton_image"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/grey_font"
+        android:background="@color/gold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="parent"

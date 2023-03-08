@@ -29,7 +29,7 @@ public class EstWindDirection  extends AppCompatActivity {
         toEstHome = new Intent(this, EstimatesPage.class);
         toEstWindSpeed = new Intent(this, EstWindSpeed.class);
         toEstWindDirectInfo = new Intent(this, EstWindDirectionInfo.class);
-        toEstRainfall = new Intent(this, EstimatesPage.class);
+        toEstRainfall = new Intent(this, EstRainfall.class);
 
         setupButtons();
         setupListeners();
