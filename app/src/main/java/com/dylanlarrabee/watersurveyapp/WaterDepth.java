@@ -29,7 +29,7 @@ public class WaterDepth extends AppCompatActivity {
         ImageView water_n = (ImageView) findViewById(id.waterdep_next);
 
         BasicCommands.setActivity(this, water_h, MeasurementsPage.class);
-        BasicCommands.setActivity(this, water_b, EstRainfallInfo.class);
+        BasicCommands.setActivity(this, water_b, EstRainfall.class);
         BasicCommands.setActivity(this, water_n, SamplePage.class);
 
         BasicCommands.setAlertBox(this, wdmeas, 1, waterDep);
