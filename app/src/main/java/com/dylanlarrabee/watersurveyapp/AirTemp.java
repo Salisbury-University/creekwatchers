@@ -21,47 +21,20 @@ public class AirTemp extends AppCompatActivity {
         super.onCreate(savedInstance);
         setContentView(layout.air_temp);
 
-        TextView ameas1 = (TextView) findViewById(id.at_title_meas1);
+        TextView ameas1 = (TextView) findViewById(R.id.at_title_meas1);
+        TextView ameas2 = (TextView) findViewById(R.id.a_title_meas2);
 
         TextView air_h = (TextView) findViewById(R.id.airhome);
         ImageView air_n = (ImageView) findViewById(R.id.air_next);
         ImageView air_b = (ImageView) findViewById(R.id.air_back);
 
 
-        BasicCommands.setActivity(this, air_h, HomePage.class);
+        BasicCommands.setActivity(this, air_h, MeasurementsPage.class);
         BasicCommands.setActivity(this, air_b, SamplePage.class);
         BasicCommands.setActivity(this, air_n, WaterTemp.class);
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Enter in measurement 1");
-        EditText meas1in = new EditText(this);
-        ameas1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final EditText input = new EditText(AirTemp.this);
-                input.setInputType(InputType.TYPE_CLASS_NUMBER);
-                builder.setView(input);
-
-                builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        String input = meas1in.getText().toString();
-                        if (!input.isEmpty()) {
-                            int num = Integer.parseInt(input);
-                            SurveyData.airTemp[0] = num;
-                        }
-                    }
-                });
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                    }
-                });
-                AlertDialog dialog = builder.create();
-                dialog.show();
-            }
-        });
-
+        BasicCommands.setAlertBox(this, ameas1, 1, SurveyData.airTemp);
+        BasicCommands.setAlertBox(this, ameas2, 2, SurveyData.airTemp);
 
     }
 }

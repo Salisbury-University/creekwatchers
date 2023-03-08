@@ -21,25 +21,11 @@
         app:layout_constraintGuide_percent="0.75"/>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/wtgl125v"
+        android:id="@+id/wtgl10v"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.1" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/wtgl25h"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.25"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/wtgl375h"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.3" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/wtgl50h"
@@ -49,18 +35,11 @@
         app:layout_constraintGuide_percent="0.5"/>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/wtgl625h"
+        android:id="@+id/wtgl90h"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.7" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/wtgl875h"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.9" />
+        app:layout_constraintGuide_percent="0.90" />
 
     <TextView
         android:id="@+id/wt_title_meas1"
@@ -72,7 +51,7 @@
         android:textColor="@color/gold"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/wt_title_meas2"
-        app:layout_constraintTop_toTopOf="@+id/wtgl125v"
+        app:layout_constraintTop_toTopOf="@+id/wtgl10v"
         tools:layout_editor_absoluteX="150dp" />
 
     <TextView
@@ -84,7 +63,7 @@
         android:textSize="30sp"
         android:textColor="@color/gold"
         android:background="@color/maroon"
-        app:layout_constraintBottom_toTopOf="@+id/wtgl125v"
+        app:layout_constraintBottom_toTopOf="@+id/wtgl10v"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp" />
 
@@ -97,7 +76,7 @@
         android:text="Measurement 2"
         android:textColor="@color/maroon"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/wtgl875h"
+        app:layout_constraintBottom_toTopOf="@+id/wtgl90h"
         app:layout_constraintTop_toTopOf="@+id/wtgl50h" />
 
     <TextView
@@ -105,14 +84,14 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
-        android:text="Home"
+        android:text="Menu"
         android:textSize="30sp"
         android:textColor="@color/gold"
         android:background="@color/maroon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/wtgl75v"
         app:layout_constraintStart_toStartOf="@+id/wtgl25v"
-        app:layout_constraintTop_toTopOf="@+id/wtgl875h" />
+        app:layout_constraintTop_toTopOf="@+id/wtgl90h" />
 
     <ImageView
         android:id="@+id/waterTemp_back"
@@ -122,7 +101,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/wtgl25v"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/wtgl875h"
+        app:layout_constraintTop_toTopOf="@+id/wtgl90h"
         app:srcCompat="?attr/homeAsUpIndicator" />
 
     <ImageView
@@ -134,7 +113,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/wtgl75v"
-        app:layout_constraintTop_toTopOf="@+id/wtgl875h"
+        app:layout_constraintTop_toTopOf="@+id/wtgl90h"
         app:srcCompat="?attr/homeAsUpIndicator" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

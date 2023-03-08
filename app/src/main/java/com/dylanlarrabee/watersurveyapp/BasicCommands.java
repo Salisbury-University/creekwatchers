@@ -5,12 +5,17 @@ import static androidx.core.content.ContextCompat.startActivity;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AlertDialog;
 
 import com.google.gson.Gson;
 
@@ -67,5 +72,34 @@ public class BasicCommands {
         });
     }
 
+    public static void setAlertBox(Activity act, TextView view, int measNum, double []val) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(act);
+        builder.setTitle("Enter in measurement " + measNum);
+        EditText measin = new EditText(act);
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    final EditText input = new EditText(act);
+                    input.setInputType(InputType.TYPE_CLASS_NUMBER);
+                    builder.setView(input);
+                    builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            String input = measin.getText().toString();
+                            if (!input.isEmpty()) {
+                                double num = Double.parseDouble(input);
+                                val[measNum-1] = num;
+                            }
+                        }
+                    });
+                    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    });
+                    builder.show();
+                }
+            });
+    }
 
 }

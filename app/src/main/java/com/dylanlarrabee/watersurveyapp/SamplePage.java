@@ -17,13 +17,19 @@ public class SamplePage extends AppCompatActivity{
         super.onCreate(savedInstance);
         setContentView(layout.sample_dist);
 
+        TextView sampmeas = (TextView) findViewById(R.id.waterdep_meas);
+        double []sampleDist = {-1};
+
         TextView samp_home = (TextView) findViewById(id.sampdist_home);
         ImageView samp_n = (ImageView) findViewById(id.samp_next);
         ImageView samp_b = (ImageView) findViewById(id.samp_back);
 
-        BasicCommands.setActivity(this, samp_home, HomePage.class);
+        BasicCommands.setActivity(this, samp_home, MeasurementsPage.class);
         BasicCommands.setActivity(this, samp_b, WaterDepth.class);
         BasicCommands.setActivity(this, samp_n, AirTemp.class);
+
+        BasicCommands.setAlertBox(this, sampmeas, 1, sampleDist);
+        SurveyData.sampleDist = sampleDist[0];
 
     }
 }

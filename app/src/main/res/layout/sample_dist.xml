@@ -8,32 +8,19 @@
 
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gls125"
+        android:id="@+id/gls10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.125" />
+        app:layout_constraintGuide_percent="0.1" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gls875"
+        android:id="@+id/gls90"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.9" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gls25h"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.25" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gls375h"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.375" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gls50h"
@@ -65,7 +52,7 @@
         android:text="Sample Distance"
         android:textColor="@color/gold"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/gls125"
+        app:layout_constraintBottom_toTopOf="@+id/gls10"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -74,13 +61,13 @@
         android:layout_height="0dp"
         android:background="@color/maroon"
         android:gravity="center"
-        android:text="Home"
+        android:text="Menu"
         android:textColor="@color/gold"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/gls75"
         app:layout_constraintStart_toStartOf="@+id/gls25"
-        app:layout_constraintTop_toTopOf="@+id/gls875" />
+        app:layout_constraintTop_toTopOf="@+id/gls90" />
 
     <ImageView
         android:id="@+id/samp_back"
@@ -90,7 +77,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/gls25"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/gls875"
+        app:layout_constraintTop_toTopOf="@+id/gls90"
         app:srcCompat="?attr/homeAsUpIndicator" />
 
     <ImageView
@@ -102,7 +89,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/gls75"
-        app:layout_constraintTop_toTopOf="@+id/gls875"
+        app:layout_constraintTop_toTopOf="@+id/gls90"
         app:srcCompat="?attr/homeAsUpIndicator" />
 
     <TextView
@@ -114,40 +101,9 @@
         android:text="Measurement"
         android:textColor="@color/gold"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/gls25h"
+        app:layout_constraintBottom_toTopOf="@+id/gls50h"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/gls125" />
+        app:layout_constraintTop_toTopOf="@+id/gls10" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="#A8FFC420"
-        android:ems="10"
-        android:hint="Sample"
-        android:inputType="textPersonName"
-        android:text=""
-        android:textAlignment="center"
-        android:textColor="@color/maroon"
-        android:textColorHint="@color/maroon"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/gls50h"
-        app:layout_constraintTop_toTopOf="@+id/gls375h"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="-10dp" />
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:entries="@array/samp_meas"
-        android:fadeScrollbars="false"
-        android:spinnerMode="dropdown"
-        app:layout_constraintBottom_toTopOf="@+id/gls50h"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/gls75"
-        app:layout_constraintTop_toTopOf="@+id/gls375h"
-        app:layout_constraintVertical_bias="0.0"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
