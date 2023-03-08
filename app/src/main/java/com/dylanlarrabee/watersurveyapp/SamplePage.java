@@ -17,7 +17,7 @@ public class SamplePage extends AppCompatActivity{
         super.onCreate(savedInstance);
         setContentView(layout.sample_dist);
 
-        TextView sampmeas = (TextView) findViewById(R.id.waterdep_meas);
+        TextView sampmeas = (TextView) findViewById(id.samp_meas);
         double []sampleDist = {-1};
 
         TextView samp_home = (TextView) findViewById(id.sampdist_home);
