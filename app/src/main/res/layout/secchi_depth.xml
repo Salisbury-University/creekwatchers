@@ -21,28 +21,49 @@
         app:layout_constraintGuide_percent="0.75"/>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/sdgl125v"
+        android:id="@+id/atdgl10h"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.125"/>
+        app:layout_constraintGuide_percent="0.10"/>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/sdgl25h"
+        android:id="@+id/atdgl90h"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.25"/>
+        app:layout_constraintGuide_percent="0.9"/>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/sdgl375h"
+        android:id="@+id/sdgl15h"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.375"/>
+        app:layout_constraintGuide_percent="0.15" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/sdgl50h"
+        android:id="@+id/sdgl275h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.27"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/sdgl325h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.325"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/sdgl45h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/atdgl50h"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -56,11 +77,18 @@
         app:layout_constraintGuide_percent="0.625"/>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/sdgl875h"
+        android:id="@+id/sdgl675h"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.875" />
+        app:layout_constraintGuide_percent="0.675"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/sdgl80h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8"/>
 
     <TextView
         android:id="@+id/sd_title_meas1"
@@ -68,11 +96,11 @@
         android:layout_height="0dp"
         android:background="#A88A0000"
         android:gravity="center"
-        android:text="Measurement 1"
+        android:text="Measurement 1:"
         android:textColor="@color/gold"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/sdgl25h"
-        app:layout_constraintTop_toTopOf="@+id/sdgl125v"
+        app:layout_constraintBottom_toTopOf="@+id/sdgl275h"
+        app:layout_constraintTop_toTopOf="@+id/sdgl15h"
         tools:layout_editor_absoluteX="150dp" />
 
     <TextView
@@ -84,7 +112,7 @@
         android:textSize="30sp"
         android:textColor="@color/gold"
         android:background="@color/maroon"
-        app:layout_constraintBottom_toTopOf="@+id/sdgl125v"
+        app:layout_constraintBottom_toTopOf="@+id/atdgl10h"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp" />
 
@@ -101,8 +129,10 @@
         android:textColor="@color/maroon"
         android:textColorHint="@color/maroon"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/sdgl375h"
-        app:layout_constraintTop_toTopOf="@+id/sdgl25h" />
+        app:layout_constraintBottom_toTopOf="@+id/sdgl45h"
+        app:layout_constraintTop_toTopOf="@+id/sdgl325h"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="0dp" />
 
     <TextView
         android:id="@+id/sd_title_meas2"
@@ -110,11 +140,11 @@
         android:layout_height="0dp"
         android:background="#A88A0000"
         android:gravity="center"
-        android:text="Measurement 2"
+        android:text="Measurement 2:"
         android:textColor="@color/gold"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/sdgl50h"
-        app:layout_constraintTop_toTopOf="@+id/sdgl375h" />
+        app:layout_constraintBottom_toTopOf="@+id/sdgl625h"
+        app:layout_constraintTop_toTopOf="@+id/atdgl50h" />
 
     <EditText
         android:id="@+id/secchimeas2"
@@ -129,8 +159,8 @@
         android:textColor="@color/maroon"
         android:textColorHint="@color/maroon"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/sdgl625h"
-        app:layout_constraintTop_toTopOf="@+id/sdgl50h" />
+        app:layout_constraintBottom_toTopOf="@+id/sdgl80h"
+        app:layout_constraintTop_toTopOf="@+id/sdgl675h" />
 
     <TextView
         android:id="@+id/secchihome"
@@ -144,7 +174,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/sdgl75v"
         app:layout_constraintStart_toStartOf="@+id/sdgl25v"
-        app:layout_constraintTop_toTopOf="@+id/sdgl875h" />
+        app:layout_constraintTop_toTopOf="@+id/atdgl90h" />
 
     <ImageView
         android:id="@+id/secchi_back"
@@ -154,7 +184,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/sdgl25v"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/sdgl875h"
+        app:layout_constraintTop_toTopOf="@+id/atdgl90h"
         app:srcCompat="?attr/homeAsUpIndicator" />
 
     <ImageView
@@ -166,7 +196,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/sdgl75v"
-        app:layout_constraintTop_toTopOf="@+id/sdgl875h"
+        app:layout_constraintTop_toTopOf="@+id/atdgl90h"
         app:srcCompat="?attr/homeAsUpIndicator" />
 
 

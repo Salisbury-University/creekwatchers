@@ -21,46 +21,27 @@
         app:layout_constraintGuide_percent="0.75"/>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/sdgl125v"
+        android:id="@+id/atdgl10h"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.125"/>
+        app:layout_constraintGuide_percent="0.10"/>
+
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/sdgl25h"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.25"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/sdgl375h"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.375"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/sdgl50h"
+        android:id="@+id/atdgl50h"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/sdgl625h"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.625"/>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/sdgl875h"
+        android:id="@+id/atdgl90h"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.875" />
+        app:layout_constraintGuide_percent="0.9" />
 
     <TextView
         android:id="@+id/at_title_meas1"
@@ -71,8 +52,8 @@
         android:text="Measurement 1"
         android:textColor="@color/gold"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/sdgl25h"
-        app:layout_constraintTop_toTopOf="@+id/sdgl125v"
+        app:layout_constraintBottom_toTopOf="@+id/atdgl50h"
+        app:layout_constraintTop_toTopOf="@+id/atdgl10h"
         tools:layout_editor_absoluteX="150dp" />
 
     <TextView
@@ -84,53 +65,21 @@
         android:textSize="30sp"
         android:textColor="@color/gold"
         android:background="@color/maroon"
-        app:layout_constraintBottom_toTopOf="@+id/sdgl125v"
+        app:layout_constraintBottom_toTopOf="@+id/atdgl10h"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp" />
-
-    <EditText
-        android:id="@+id/airmeas1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="#A8FFC420"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Air Temperature 1(C)"
-        android:inputType="textPersonName"
-        android:text=""
-        android:textColor="@color/maroon"
-        android:textColorHint="@color/maroon"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/sdgl375h"
-        app:layout_constraintTop_toTopOf="@+id/sdgl25h" />
 
     <TextView
         android:id="@+id/a_title_meas2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#A88A0000"
+        android:background="#A8FFC420"
         android:gravity="center"
         android:text="Measurement 2"
-        android:textColor="@color/gold"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/sdgl50h"
-        app:layout_constraintTop_toTopOf="@+id/sdgl375h" />
-
-    <EditText
-        android:id="@+id/airmeas2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="#A8FFC420"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Air Temperature 1(C)"
-        android:inputType="textPersonName"
-        android:text=""
         android:textColor="@color/maroon"
-        android:textColorHint="@color/maroon"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/sdgl625h"
-        app:layout_constraintTop_toTopOf="@+id/sdgl50h" />
+        app:layout_constraintBottom_toTopOf="@+id/atdgl90h"
+        app:layout_constraintTop_toTopOf="@+id/atdgl50h" />
 
     <TextView
         android:id="@+id/airhome"
@@ -144,7 +93,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/sdgl75v"
         app:layout_constraintStart_toStartOf="@+id/sdgl25v"
-        app:layout_constraintTop_toTopOf="@+id/sdgl875h" />
+        app:layout_constraintTop_toTopOf="@+id/atdgl90h" />
 
     <ImageView
         android:id="@+id/air_back"
@@ -154,7 +103,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/sdgl25v"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/sdgl875h"
+        app:layout_constraintTop_toTopOf="@+id/atdgl90h"
         app:srcCompat="?attr/homeAsUpIndicator" />
 
     <ImageView
@@ -166,7 +115,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/sdgl75v"
-        app:layout_constraintTop_toTopOf="@+id/sdgl875h"
+        app:layout_constraintTop_toTopOf="@+id/atdgl90h"
         app:srcCompat="?attr/homeAsUpIndicator" />
 
 

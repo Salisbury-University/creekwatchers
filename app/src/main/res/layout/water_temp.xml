@@ -80,7 +80,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:gravity="center"
-        android:text="Water Tempature"
+        android:text="Water Temperature"
         android:textSize="30sp"
         android:textColor="@color/gold"
         android:background="@color/maroon"
