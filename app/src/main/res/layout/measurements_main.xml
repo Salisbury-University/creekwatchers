@@ -21,18 +21,18 @@
         app:layout_constraintGuide_percent="0.75" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/estigl12"
+        android:id="@+id/estigl10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.125" />
+        app:layout_constraintGuide_percent="0.10" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/estigl85"
+        android:id="@+id/estigl90"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".85" />
+        app:layout_constraintGuide_percent=".90" />
 
 
     <TextView
@@ -46,7 +46,7 @@
         android:textAlignment="center"
         android:textColor="@color/gold"
         android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@+id/estigl12"
+        app:layout_constraintBottom_toTopOf="@+id/estigl10"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -63,7 +63,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/estigl75"
         app:layout_constraintStart_toStartOf="@+id/estigl25"
-        app:layout_constraintTop_toTopOf="@+id/estigl85" />
+        app:layout_constraintTop_toTopOf="@+id/estigl90" />
 
     <Button
         android:id="@+id/airtemp"
@@ -72,7 +72,7 @@
         android:layout_marginTop="12dp"
         android:backgroundTint="#998A0000"
         android:fontFamily="serif-monospace"
-        android:text="Air Tempature"
+        android:text="Air Temperature"
         android:textColor="@color/gold"
         android:textSize="32sp"
         app:layout_constraintBottom_toTopOf="@+id/watertemp"

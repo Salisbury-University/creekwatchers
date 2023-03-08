@@ -5,10 +5,9 @@ import static android.content.Context.MODE_PRIVATE;
 import android.app.Activity;
 import android.content.SharedPreferences;
 
-import com.google.gson.Gson;
 
-
-public class SurveyData  {
+public class
+SurveyData  {
         static String myID = "";
         static String formName = "";
         static final int maxEst = 6, maxMeas = 5, maxComm = 1, numMeas = 2;
@@ -17,7 +16,7 @@ public class SurveyData  {
         static int tideEst=-1,weathEst=-1,windSpeed=-1, waterSurf =-1,windDir=-1,rainfall=-1,waterDepth=-1,sampleDist=-1;
         static int[] airTemp = {-1,-1},waterTemp={-1,-1},secchiDepth={-1,-1};
         static int estArr[] = {tideEst,waterSurf,weathEst,windSpeed,windDir,rainfall};
-        static boolean bottomedOut, newForm = false,firstEntry = true;;
+        static boolean bottomedOut, newForm = false,firstEntry = true;
 
          String myuserName = "", myuserSite = "";
          int mycurEst = 0, mycurMeas = 0, mycurComm = 0;
