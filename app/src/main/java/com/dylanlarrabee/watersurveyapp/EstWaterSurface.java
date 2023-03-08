@@ -15,7 +15,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class EstWaterSurface extends AppCompatActivity {
     private Intent toEstHome, toEstWeather, toEstTide, toEstWaterSurfaceInfo;
-    private int watersurfaceNum;
     private ImageView allBackgrounds[], allImages[];
     private Button allButtons[];
     private TextView allText[];
@@ -85,7 +84,6 @@ public class EstWaterSurface extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     highlightButton(allBackgrounds[finalI],finalI);
-                    watersurfaceNum = finalI + 1;
                     SurveyData.waterSurf = finalI;
                 }
             });
