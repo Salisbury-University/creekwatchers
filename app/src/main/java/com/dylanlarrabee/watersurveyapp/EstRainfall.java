@@ -99,7 +99,8 @@ public class EstRainfall extends AppCompatActivity {
             allBtnBgs[i].setAlpha(0.33333F);
         }
         allBtnBgs[ival].setAlpha(0F);
-        allButtons[ival].setTextColor(getResources().getColor(R.color.white));
+        if(ival!=5) //don't change the "none" text white
+            allButtons[ival].setTextColor(getResources().getColor(R.color.white));
 
         SurveyData.rainfall = ival;
     }
