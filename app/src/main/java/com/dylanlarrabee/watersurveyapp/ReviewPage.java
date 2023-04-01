@@ -3,11 +3,16 @@ package com.dylanlarrabee.watersurveyapp;
 import static com.dylanlarrabee.watersurveyapp.R.id;
 import static com.dylanlarrabee.watersurveyapp.R.layout;
 import android.content.Intent;
+import android.graphics.Color;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.text.DecimalFormat;
 
 public class ReviewPage extends AppCompatActivity {
 
@@ -15,10 +20,17 @@ public class ReviewPage extends AppCompatActivity {
     private Button homeButton, submitButton, tideButton, watersurfaceButton, weatherButton, windspeedButton, winddirectButton, rainfallButton, waterDepthButton, sampleDistButton, airTempButton, waterTempButton, secchiDepthButton;
     private TextView tideTxt, watersurfaceTxt, weatherTxt, windspeedTxt, winddirectTxt, rainfallTxt, waterDepthTxt, sampleDistTxt, airTempTxt, waterTempTxt, secchiDepthTxt;
 
+    private ImageView tideBG, watersurfaceBG, weatherBG, windspeedBG, winddirectBG, rainfallBG, waterDepthBG, sampleDistBG, airTempBG, waterTempBG, secchiDepthBG;
+    private static DecimalFormat REAL_FORMATTER = new DecimalFormat("0.###");
+
+    private Boolean canSubmit;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.review_page);
+
+        canSubmit = true;
 
         setupButtons();
         setupIntents();
@@ -46,57 +58,237 @@ public class ReviewPage extends AppCompatActivity {
         weatherTxt = (TextView) findViewById(id.weathertxt);
         windspeedTxt = (TextView) findViewById(id.windspeedtxt);
         winddirectTxt = (TextView) findViewById(id.winddirecttxt);
-        rainfallTxt = (TextView) findViewById(id.raintxt);
+        rainfallTxt = (TextView) findViewById(id.rainfalltxt);
         waterDepthTxt = (TextView) findViewById(id.waterdepthtxt);
         sampleDistTxt = (TextView) findViewById(id.sampledisttxt);
         airTempTxt = (TextView) findViewById(id.airtemptxt);
         waterTempTxt = (TextView) findViewById(id.watertemptxt);
         secchiDepthTxt = (TextView) findViewById(id.secchidepthtxt);
 
-        if(SurveyData.tideEst <=0) {
-            tideButton.setBackgroundColor(getResources().getColor(R.color.maroon_dim));
-            tideTxt.setText("Tap to set");
+        tideBG = (ImageView) findViewById(id.tideBG);
+        watersurfaceBG = (ImageView) findViewById(id.waterBG);
+        weatherBG = (ImageView) findViewById(id.weatherBG);
+        windspeedBG = (ImageView) findViewById(id.windspeedBG);
+        winddirectBG = (ImageView) findViewById(id.winddirectBG);
+        rainfallBG = (ImageView) findViewById(id.rainfallBG);
+        waterDepthBG = (ImageView) findViewById(id.waterdepthBG);
+        sampleDistBG = (ImageView) findViewById(id.sampledistBG);
+        airTempBG = (ImageView) findViewById(id.airtempBG);
+        waterTempBG = (ImageView) findViewById(id.watertempBG);
+        secchiDepthBG = (ImageView) findViewById(id.secchidepthBG);
+
+        String textBox = "";
+
+        switch (SurveyData.tideEst){
+            case -1:
+                tideBG.setImageResource(R.color.maroon);
+                textBox = "Tap to set";
+                canSubmit = false;
+                break;
+            case 0:
+                textBox = "High";
+                break;
+            case 1:
+                textBox = "Mid Falling";
+                break;
+            case 2:
+                textBox = "Low";
+                break;
+            case 3:
+                textBox = "Mid Flooding";
+                break;
+            case 4:
+                textBox = "Nontidal";
+                break;
         }
-        if(SurveyData.waterSurf <=0) {
-            tideButton.setBackgroundColor(getResources().getColor(R.color.maroon_dim));
-            watersurfaceTxt.setText("Tap to set");
+        tideTxt.setText(textBox);
+
+
+        switch (SurveyData.waterSurf){
+            case -1:
+                watersurfaceBG.setImageResource(R.color.maroon);
+                textBox = "Tap to set";
+                canSubmit = false;
+                break;
+            case 0:
+                textBox = "Calm";
+                break;
+            case 1:
+                textBox = "Ripples";
+                break;
+            case 2:
+                textBox = "Choppy";
+                break;
+            case 3:
+                textBox = "Heavy Chop";
+                break;
         }
-        if(SurveyData.weathEst <=0) {
-            weatherButton.setBackgroundColor(getResources().getColor(R.color.maroon_dim));
-            weatherTxt.setText("Tap to set");
+        watersurfaceTxt.setText(textBox);
+
+
+        switch (SurveyData.weathEst){
+            case -1:
+                weatherBG.setImageResource(R.color.maroon);
+                textBox = "Tap to set";
+                canSubmit = false;
+                break;
+            case 0:
+                textBox = "Clear";
+                break;
+            case 1:
+                textBox = "Cloudy";
+                break;
+            case 2:
+                textBox = "Overcast";
+                break;
+            case 3:
+                textBox = "Light Rain";
+                break;
+            case 4:
+                textBox = "Rainy";
+                break;
+            case 5:
+                textBox = "Heavy Rain";
+                break;
+            case 6:
+                textBox = "Foggy";
+                break;
+            case 7:
+                textBox = "Snow";
+                break;
         }
-        if(SurveyData.windSpeed <=0) {
-            windspeedButton.setBackgroundColor(getResources().getColor(R.color.maroon_dim));
-            windspeedTxt.setText("Tap to set");
+        weatherTxt.setText(textBox);
+
+
+        switch (SurveyData.windSpeed){
+            case -1:
+                windspeedBG.setImageResource(R.color.maroon);
+                textBox = "Tap to set";
+                canSubmit = false;
+                break;
+            case 0:
+                textBox = "Calm";
+                break;
+            case 1:
+                textBox = "Light";
+                break;
+            case 2:
+                textBox = "Medium";
+                break;
+            case 3:
+                textBox = "Heavy";
+                break;
         }
-        if(SurveyData.windDir <=0) {
-            winddirectButton.setBackgroundColor(getResources().getColor(R.color.maroon_dim));
-            windspeedTxt.setText("Tap to set");
+        windspeedTxt.setText(textBox);
+
+
+        switch (SurveyData.windDir){
+            case -1:
+                winddirectBG.setImageResource(R.color.maroon);
+                textBox = "Tap to set";
+                canSubmit = false;
+                break;
+            case 0:
+                textBox = "N";
+                break;
+            case 1:
+                textBox = "NE";
+                break;
+            case 2:
+                textBox = "E";
+                break;
+            case 3:
+                textBox = "SE";
+                break;
+            case 4:
+                textBox = "S";
+                break;
+            case 5:
+                textBox = "SW";
+                break;
+            case 6:
+                textBox = "W";
+                break;
+            case 7:
+                textBox = "NW";
+                break;
         }
-        if(SurveyData.rainfall <=0) {
-            rainfallButton.setBackgroundColor(getResources().getColor(R.color.maroon_dim));
-            rainfallTxt.setText("Tap to set");
+        winddirectTxt.setText(textBox);
+
+
+        switch (SurveyData.rainfall){
+            case -1:
+                rainfallBG.setImageResource(R.color.maroon);
+                textBox = "Tap to set";
+                canSubmit = false;
+                break;
+            case 0:
+                textBox = "Storm";
+                break;
+            case 1:
+                textBox = "Heavy";
+                break;
+            case 2:
+                textBox = "Moderate";
+                break;
+            case 3:
+                textBox = "Light";
+                break;
+            case 4:
+                textBox = "Trace";
+                break;
+            case 5:
+                textBox = "None";
+                break;
         }
+        rainfallTxt.setText(textBox);
+
+
         if(SurveyData.waterDepth <=0) {
-            waterDepthButton.setBackgroundColor(getResources().getColor(R.color.maroon_dim));
+            waterDepthBG.setImageResource(R.color.maroon);
             waterDepthTxt.setText("Tap to set");
+            canSubmit = false;
+        } else {
+            waterDepthTxt.setText(REAL_FORMATTER.format(SurveyData.waterDepth));
         }
+
         if(SurveyData.sampleDist <=0) {
-            sampleDistButton.setBackgroundColor(getResources().getColor(R.color.maroon_dim));
+            sampleDistBG.setImageResource(R.color.maroon);
             sampleDistTxt.setText("Tap to set");
+            canSubmit = false;
+        } else {
+            sampleDistTxt.setText(REAL_FORMATTER.format(SurveyData.sampleDist));
         }
+
         if(SurveyData.airTemp[0] <=0 || SurveyData.airTemp[1] <=0 ) {
-            airTempButton.setBackgroundColor(getResources().getColor(R.color.maroon_dim));
+            airTempBG.setImageResource(R.color.maroon);
             airTempTxt.setText("Tap to set");
+            canSubmit = false;
+        }else {
+            airTempTxt.setText(REAL_FORMATTER.format(SurveyData.airTemp[0]) + ", " + REAL_FORMATTER.format(SurveyData.airTemp[1]) );
         }
+
         if(SurveyData.waterTemp[0] <=0 || SurveyData.waterTemp[1] <=0 ) {
-            waterTempButton.setBackgroundColor(getResources().getColor(R.color.maroon_dim));
+            waterTempBG.setImageResource(R.color.maroon);
             waterTempTxt.setText("Tap to set");
+            canSubmit = false;
+        }else {
+            waterTempTxt.setText(REAL_FORMATTER.format(SurveyData.waterTemp[0]) + ", " + REAL_FORMATTER.format(SurveyData.waterTemp[1]) );
         }
+
         if(SurveyData.secchiDepth[0] <=0 || SurveyData.secchiDepth[1] <=0 ) {
-            secchiDepthButton.setBackgroundColor(getResources().getColor(R.color.maroon_dim));
+            secchiDepthBG.setImageResource(R.color.maroon);
             secchiDepthTxt.setText("Tap to set");
+            canSubmit = false;
+        }else {
+            secchiDepthTxt.setText(REAL_FORMATTER.format(SurveyData.secchiDepth[0]) + ", " + REAL_FORMATTER.format(SurveyData.secchiDepth[1]) );
         }
+
+        if(canSubmit == false){
+            submitButton.setBackgroundColor(Color.GRAY);
+            submitButton.setEnabled(false);
+        }
+
     }
 
     void setupIntents()
