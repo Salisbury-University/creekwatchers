@@ -8,19 +8,11 @@
     android:background="#000000"
     tools:context=".SelectSite">
 
-    <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/background"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:alpha="0.6"
-        android:background="@color/black"
-        android:scaleType="centerCrop"></pl.droidsonroids.gif.GifImageView>
-
     <Button
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#81FFC420"
+        android:backgroundTint="@color/gold"
         android:fontFamily="monospace"
         android:insetTop="0dp"
         android:insetBottom="2dp"
@@ -35,18 +27,16 @@
         app:cornerRadius="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/background" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/background"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toBottomOf="@+id/header">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -68,7 +58,7 @@
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="@+id/tidebtn"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintHorizontal_bias="0.83"
                     app:layout_constraintStart_toStartOf="@+id/tidebtn"
                     app:layout_constraintTop_toTopOf="@+id/tidebtn"
                     app:layout_constraintVertical_bias="0.0" />
@@ -102,7 +92,7 @@
                 android:layout_height="100dp">
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/watertxt"
                     android:layout_width="250dp"
                     android:layout_height="0dp"
                     android:text="test test test test "
@@ -142,21 +132,21 @@
                 android:layout_height="100dp">
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/weathertxt"
                     android:layout_width="250dp"
                     android:layout_height="0dp"
                     android:text="test test test test "
                     android:textAlignment="viewEnd"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/waterbtn"
+                    app:layout_constraintBottom_toBottomOf="@+id/weatherbtn"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/waterbtn" />
+                    app:layout_constraintTop_toTopOf="@+id/weatherbtn" />
 
                 <Button
-                    android:id="@+id/waterbtn"
+                    android:id="@+id/weatherbtn"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:backgroundTint="#FFFFFF"
@@ -182,21 +172,21 @@
                 android:layout_height="100dp">
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/windspeedtxt"
                     android:layout_width="250dp"
                     android:layout_height="0dp"
                     android:text="test test test test "
                     android:textAlignment="viewEnd"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/waterbtn"
+                    app:layout_constraintBottom_toBottomOf="@+id/windspeedbtn"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/waterbtn" />
+                    app:layout_constraintTop_toTopOf="@+id/windspeedbtn" />
 
                 <Button
-                    android:id="@+id/waterbtn"
+                    android:id="@+id/windspeedbtn"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:backgroundTint="#FFFFFF"
@@ -222,21 +212,21 @@
                 android:layout_height="100dp">
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/winddirecttxt"
                     android:layout_width="250dp"
                     android:layout_height="0dp"
                     android:text="test test test test "
                     android:textAlignment="viewEnd"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/waterbtn"
+                    app:layout_constraintBottom_toBottomOf="@+id/winddirectbtn"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/waterbtn" />
+                    app:layout_constraintTop_toTopOf="@+id/winddirectbtn" />
 
                 <Button
-                    android:id="@+id/waterbtn"
+                    android:id="@+id/winddirectbtn"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:backgroundTint="#FFFFFF"
@@ -262,21 +252,21 @@
                 android:layout_height="100dp">
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/raintxt"
                     android:layout_width="250dp"
                     android:layout_height="0dp"
                     android:text="test test test test "
                     android:textAlignment="viewEnd"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/waterbtn"
+                    app:layout_constraintBottom_toBottomOf="@+id/rainbtn"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/waterbtn" />
+                    app:layout_constraintTop_toTopOf="@+id/rainbtn" />
 
                 <Button
-                    android:id="@+id/waterbtn"
+                    android:id="@+id/rainbtn"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:backgroundTint="#FFFFFF"
@@ -302,21 +292,21 @@
                 android:layout_height="100dp">
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/waterdepthtxt"
                     android:layout_width="250dp"
                     android:layout_height="0dp"
                     android:text="test test test test "
                     android:textAlignment="viewEnd"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/waterbtn"
+                    app:layout_constraintBottom_toBottomOf="@+id/waterdepthbtn"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/waterbtn" />
+                    app:layout_constraintTop_toTopOf="@+id/waterdepthbtn" />
 
                 <Button
-                    android:id="@+id/waterbtn"
+                    android:id="@+id/waterdepthbtn"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:backgroundTint="#FFFFFF"
@@ -342,21 +332,21 @@
                 android:layout_height="100dp">
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/sampledisttxt"
                     android:layout_width="250dp"
                     android:layout_height="0dp"
                     android:text="test test test test "
                     android:textAlignment="viewEnd"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/waterbtn"
+                    app:layout_constraintBottom_toBottomOf="@+id/sampledistbtn"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/waterbtn" />
+                    app:layout_constraintTop_toTopOf="@+id/sampledistbtn" />
 
                 <Button
-                    android:id="@+id/waterbtn"
+                    android:id="@+id/sampledistbtn"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:backgroundTint="#FFFFFF"
@@ -382,21 +372,21 @@
                 android:layout_height="100dp">
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/airtemptxt"
                     android:layout_width="250dp"
                     android:layout_height="0dp"
                     android:text="test test test test "
                     android:textAlignment="viewEnd"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/waterbtn"
+                    app:layout_constraintBottom_toBottomOf="@+id/airtempbtn"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/waterbtn" />
+                    app:layout_constraintTop_toTopOf="@+id/airtempbtn" />
 
                 <Button
-                    android:id="@+id/waterbtn"
+                    android:id="@+id/airtempbtn"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:backgroundTint="#FFFFFF"
@@ -407,6 +397,86 @@
                     android:paddingTop="30dp"
                     android:paddingBottom="30dp"
                     android:text=" Air Temp"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+                <TextView
+                    android:id="@+id/watertemptxt"
+                    android:layout_width="250dp"
+                    android:layout_height="0dp"
+                    android:text="test test test test "
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/watertempbtn"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/watertempbtn" />
+
+                <Button
+                    android:id="@+id/watertempbtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:fontFamily="monospace"
+                    android:insetTop="0dp"
+                    android:insetBottom="3dp"
+                    android:minHeight="0dp"
+                    android:paddingTop="30dp"
+                    android:paddingBottom="30dp"
+                    android:text=" Water Temp"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+                <TextView
+                    android:id="@+id/secchidepthtxt"
+                    android:layout_width="250dp"
+                    android:layout_height="0dp"
+                    android:text="test test test test "
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/secchidepthbtn"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/secchidepthbtn" />
+
+                <Button
+                    android:id="@+id/secchidepthbtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:fontFamily="monospace"
+                    android:insetTop="0dp"
+                    android:insetBottom="3dp"
+                    android:minHeight="0dp"
+                    android:paddingTop="30dp"
+                    android:paddingBottom="30dp"
+                    android:text=" Secchi Depth"
                     android:textAlignment="viewStart"
                     android:textColor="@color/black"
                     android:textSize="20sp"
