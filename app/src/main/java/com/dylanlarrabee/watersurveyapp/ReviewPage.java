@@ -2,19 +2,12 @@ package com.dylanlarrabee.watersurveyapp;
 
 import static com.dylanlarrabee.watersurveyapp.R.id;
 import static com.dylanlarrabee.watersurveyapp.R.layout;
-
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.ViewFlipper;
-
 import androidx.appcompat.app.AppCompatActivity;
-
-import org.w3c.dom.Text;
-
 
 public class ReviewPage extends AppCompatActivity {
 
@@ -116,8 +109,11 @@ public class ReviewPage extends AppCompatActivity {
         toWindSpeed = new Intent(this, EstWindSpeed.class);
         toWindDirection = new Intent(this, EstWindDirection.class);
         toRainfall = new Intent(this, EstRainfall.class);
+        toWaterDepth = new Intent(this, WaterDepth.class);
         toSampleDist = new Intent(this, SamplePage.class);
         toAirTemp = new Intent(this, AirTemp.class);
+        toWaterTemp = new Intent(this, WaterTemp.class);
+        toSecchiDepth = new Intent(this, SecchiDepth.class);
     }
 
     void setupListeners()
