@@ -72,24 +72,26 @@ public class BasicCommands {
         });
     }
 
-    public static void setAlertBox(Activity act, TextView view, int measNum, double []val) {
+    public static void setAlertBox(Activity act, TextView view, int measNum, double []val,String unit) {
         AlertDialog.Builder builder = new AlertDialog.Builder(act);
         builder.setTitle("Enter in measurement " + measNum);
-        EditText measin = new EditText(act);
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     final EditText input = new EditText(act);
-                    input.setInputType(InputType.TYPE_CLASS_NUMBER);
+                    input.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
                     builder.setView(input);
                     builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            String input = measin.getText().toString();
-                            if (!input.isEmpty()) {
-                                double num = Double.parseDouble(input);
-                                val[measNum-1] = num;
+                            String editInput = input.getText().toString();
+                            if(!editInput.isEmpty())
+                            {
+                                view.setText(editInput + " " + unit);
+                                double inpDoub = Double.parseDouble(editInput);
+                                val[measNum] = inpDoub;
                             }
+
                         }
                     });
                     builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -101,5 +103,4 @@ public class BasicCommands {
                 }
             });
     }
-
 }

@@ -16,6 +16,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class AirTemp extends AppCompatActivity {
+    String unit = " °C";
     @Override
     protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
@@ -33,8 +34,17 @@ public class AirTemp extends AppCompatActivity {
         BasicCommands.setActivity(this, air_b, SamplePage.class);
         BasicCommands.setActivity(this, air_n, WaterTemp.class);
 
-        BasicCommands.setAlertBox(this, ameas1, 1, SurveyData.airTemp);
-        BasicCommands.setAlertBox(this, ameas2, 2, SurveyData.airTemp);
+        BasicCommands.setAlertBox(this, ameas1, 0, SurveyData.airTemp,unit);
+        BasicCommands.setAlertBox(this, ameas2, 1, SurveyData.airTemp,unit);
+
+        if(SurveyData.airTemp[0] > 0)
+        {
+         ameas1.setText(""+SurveyData.airTemp[0] + unit);
+        }
+        if(SurveyData.airTemp[1] > 0)
+        {
+            ameas2.setText(""+SurveyData.airTemp[1]+ unit);
+        }
 
     }
 }

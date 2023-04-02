@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 public class SecchiDepth extends AppCompatActivity{
 
+    String unit = " cm";
+
     @Override
     protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
@@ -28,8 +30,8 @@ public class SecchiDepth extends AppCompatActivity{
         BasicCommands.setActivity(this, secchi_b, WaterTemp.class);
         //BasicCommands.setActivity(this, secchi_n Comments.class);
 
-        BasicCommands.setAlertBox(this, secmeas1, 1, SurveyData.secchiDepth);
-        BasicCommands.setAlertBox(this, secmeas2, 2, SurveyData.secchiDepth);
+        BasicCommands.setAlertBox(this, secmeas1, 1, SurveyData.secchiDepth, unit);
+        BasicCommands.setAlertBox(this, secmeas2, 2, SurveyData.secchiDepth, unit);
 
 
     }

@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SamplePage extends AppCompatActivity{
+    String unit = " cm";
     
     @Override
     protected void onCreate(Bundle savedInstance) {
@@ -28,7 +29,7 @@ public class SamplePage extends AppCompatActivity{
         BasicCommands.setActivity(this, samp_b, WaterDepth.class);
         BasicCommands.setActivity(this, samp_n, AirTemp.class);
 
-        BasicCommands.setAlertBox(this, sampmeas, 1, sampleDist);
+        BasicCommands.setAlertBox(this, sampmeas, 1, sampleDist, unit);
         SurveyData.sampleDist = sampleDist[0];
 
     }

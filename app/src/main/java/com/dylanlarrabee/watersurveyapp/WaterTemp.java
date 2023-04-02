@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class WaterTemp extends AppCompatActivity {
+    String unit = " °C";
     @Override
     protected void onCreate(Bundle savedInstance){
         super.onCreate(savedInstance);
@@ -25,7 +26,7 @@ public class WaterTemp extends AppCompatActivity {
         BasicCommands.setActivity(this, waterTemp_b, AirTemp.class);
         BasicCommands.setActivity(this, waterTemp_n, SecchiDepth.class);
 
-        BasicCommands.setAlertBox(this, wtmeas1, 1, SurveyData.waterTemp);
-        BasicCommands.setAlertBox(this, wtmeas2, 2, SurveyData.waterTemp);
+        BasicCommands.setAlertBox(this, wtmeas1, 1, SurveyData.waterTemp,unit);
+        BasicCommands.setAlertBox(this, wtmeas2, 2, SurveyData.waterTemp,unit);
     }
 }

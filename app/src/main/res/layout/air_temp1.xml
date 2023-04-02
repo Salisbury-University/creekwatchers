@@ -43,19 +43,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.9" />
 
-    <TextView
-        android:id="@+id/at_title_meas1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="#A88A0000"
-        android:gravity="center"
-        android:text="Measurement 1"
-        android:textColor="@color/gold"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/atdgl50h"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/atdgl10h" />
 
     <TextView
         android:id="@+id/airtitle"
@@ -70,19 +57,6 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp" />
 
-    <TextView
-        android:id="@+id/a_title_meas2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="#A8FFC420"
-        android:gravity="center"
-        android:text="Measurement 2"
-        android:textColor="@color/maroon"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/atdgl90h"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/atdgl50h" />
 
     <TextView
         android:id="@+id/airhome"
@@ -120,6 +94,19 @@
         app:layout_constraintStart_toStartOf="@+id/sdgl75v"
         app:layout_constraintTop_toTopOf="@+id/atdgl90h"
         app:srcCompat="?attr/homeAsUpIndicator" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:max="40"
+        android:min="0"
+        android:progress="0"
+        android:rotation="270"
+        app:layout_constraintBottom_toTopOf="@+id/atdgl90h"
+        app:layout_constraintEnd_toStartOf="@+id/sdgl75v"
+        app:layout_constraintStart_toStartOf="@+id/sdgl25v"
+        app:layout_constraintTop_toTopOf="@+id/atdgl10h" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
