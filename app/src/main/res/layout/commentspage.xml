@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rivergif">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cgl5v"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cgl25v"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cgl75v"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cgl95v"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cgl10h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cgl15h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cgl75h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cgl90h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9"/>
+
+    <TextView
+        android:id="@+id/commentstitle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/maroon"
+        android:gravity="center"
+        android:text="Comments"
+        android:textColor="@color/gold"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/cgl10h"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="160dp" />
+
+    <TextView
+        android:id="@+id/comhome"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="Home"
+        android:textSize="30sp"
+        android:textColor="@color/gold"
+        android:background="@color/maroon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cgl75v"
+        app:layout_constraintStart_toStartOf="@+id/cgl25v"
+        app:layout_constraintTop_toTopOf="@+id/cgl90h" />
+
+    <ImageView
+        android:id="@+id/com_back"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/gold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cgl25v"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cgl90h"
+        app:srcCompat="?attr/homeAsUpIndicator" />
+
+    <ImageView
+        android:id="@+id/com_next"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/gold"
+        android:rotationY="180"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/cgl75v"
+        app:layout_constraintTop_toTopOf="@+id/cgl90h"
+        app:srcCompat="?attr/homeAsUpIndicator" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#A88A0000"
+        android:ems="10"
+        android:gravity="top|left"
+        android:hint="Enter Comments Here"
+        android:textColorHint="@color/gold"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/cgl75h"
+        app:layout_constraintEnd_toStartOf="@+id/cgl95v"
+        app:layout_constraintStart_toStartOf="@+id/cgl5v"
+        app:layout_constraintTop_toTopOf="@+id/cgl15h" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#A8FFC420"
+        android:text="Bottomed Out"
+        android:textColor="@color/maroon"
+        android:textSize="20sp"
+        android:buttonTint="@color/maroon"
+        app:layout_constraintBottom_toTopOf="@+id/cgl90h"
+        app:layout_constraintEnd_toStartOf="@+id/cgl95v"
+        app:layout_constraintTop_toTopOf="@+id/cgl75h" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
