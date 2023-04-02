@@ -74,7 +74,7 @@ public class BasicCommands {
 
     public static void setAlertBox(Activity act, TextView view, int measNum, double []val,String unit) {
         AlertDialog.Builder builder = new AlertDialog.Builder(act);
-        builder.setTitle("Enter in measurement " + measNum);
+        builder.setTitle("Enter in measurement " + (measNum+1));
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

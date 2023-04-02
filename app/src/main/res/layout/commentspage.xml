@@ -114,14 +114,14 @@
         app:srcCompat="?attr/homeAsUpIndicator" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/commentText"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#A88A0000"
+        android:background="#5A0D08"
         android:ems="10"
         android:gravity="top|left"
         android:hint="Enter Comments Here"
-        android:textColorHint="@color/gold"
+        android:textColorHint="@color/white"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/cgl75h"
         app:layout_constraintEnd_toStartOf="@+id/cgl95v"
@@ -129,17 +129,15 @@
         app:layout_constraintTop_toTopOf="@+id/cgl15h" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/bottomout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#A8FFC420"
+        android:background="@color/gold"
         android:text="Bottomed Out"
         android:textColor="@color/maroon"
         android:textSize="20sp"
         android:buttonTint="@color/maroon"
         app:layout_constraintBottom_toTopOf="@+id/cgl90h"
         app:layout_constraintEnd_toStartOf="@+id/cgl95v"
-        app:layout_constraintTop_toTopOf="@+id/cgl75h" />
-
-
+        app:layout_constraintTop_toTopOf="@+id/cgl75h"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -32,9 +32,12 @@ public class WaterDepth extends AppCompatActivity {
         BasicCommands.setActivity(this, water_b, EstRainfall.class);
         BasicCommands.setActivity(this, water_n, SamplePage.class);
 
-        BasicCommands.setAlertBox(this, wdmeas, 1, waterDep," cm");
+        BasicCommands.setAlertBox(this, wdmeas, 0, waterDep," cm");
         SurveyData.waterDepth = waterDep[0];
+
+        if(SurveyData.waterDepth > 0)
+        {
+            wdmeas.setText(""+SurveyData.waterDepth);
+        }
     }
-
-
 }

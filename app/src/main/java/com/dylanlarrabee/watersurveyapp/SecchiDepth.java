@@ -30,9 +30,16 @@ public class SecchiDepth extends AppCompatActivity{
         BasicCommands.setActivity(this, secchi_b, WaterTemp.class);
         //BasicCommands.setActivity(this, secchi_n Comments.class);
 
-        BasicCommands.setAlertBox(this, secmeas1, 1, SurveyData.secchiDepth, unit);
-        BasicCommands.setAlertBox(this, secmeas2, 2, SurveyData.secchiDepth, unit);
-
+        BasicCommands.setAlertBox(this, secmeas1, 0, SurveyData.secchiDepth, unit);
+        BasicCommands.setAlertBox(this, secmeas2, 1, SurveyData.secchiDepth, unit);
+        if(SurveyData.secchiDepth[0] > 0)
+        {
+            secmeas1.setText(""+SurveyData.secchiDepth[0] + unit);
+        }
+        if(SurveyData.secchiDepth[1] > 0)
+        {
+            secmeas2.setText(""+SurveyData.secchiDepth[1]+ unit);
+        }
 
     }
 

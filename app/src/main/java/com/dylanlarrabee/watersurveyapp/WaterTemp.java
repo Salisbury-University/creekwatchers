@@ -26,7 +26,15 @@ public class WaterTemp extends AppCompatActivity {
         BasicCommands.setActivity(this, waterTemp_b, AirTemp.class);
         BasicCommands.setActivity(this, waterTemp_n, SecchiDepth.class);
 
-        BasicCommands.setAlertBox(this, wtmeas1, 1, SurveyData.waterTemp,unit);
-        BasicCommands.setAlertBox(this, wtmeas2, 2, SurveyData.waterTemp,unit);
+        BasicCommands.setAlertBox(this, wtmeas1, 0, SurveyData.waterTemp,unit);
+        BasicCommands.setAlertBox(this, wtmeas2, 1, SurveyData.waterTemp,unit);
+        if(SurveyData.waterTemp[0] > 0)
+        {
+            wtmeas1.setText(""+SurveyData.waterTemp[0] + unit);
+        }
+        if(SurveyData.waterTemp[1] > 0)
+        {
+            wtmeas2.setText(""+SurveyData.waterTemp[1]+ unit);
+        }
     }
 }
