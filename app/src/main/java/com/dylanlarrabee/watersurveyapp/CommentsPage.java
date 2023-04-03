@@ -1,4 +1,4 @@
-package com.dylanlarrabee.watersurveyapp
+package com.dylanlarrabee.watersurveyapp;
 import static com.dylanlarrabee.watersurveyapp.R.*;
 
 import android.os.Bundle;
