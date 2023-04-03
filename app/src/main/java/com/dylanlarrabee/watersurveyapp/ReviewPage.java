@@ -244,7 +244,7 @@ public class ReviewPage extends AppCompatActivity {
         rainfallTxt.setText(textBox);
 
 
-        if(SurveyData.waterDepth <=0) {
+        if(SurveyData.waterDepth[0] <=0) {
             waterDepthBG.setImageResource(R.color.maroon);
             waterDepthTxt.setText("Tap to set");
             canSubmit = false;
@@ -252,7 +252,7 @@ public class ReviewPage extends AppCompatActivity {
             waterDepthTxt.setText(REAL_FORMATTER.format(SurveyData.waterDepth));
         }
 
-        if(SurveyData.sampleDist <=0) {
+        if(SurveyData.sampleDist[0] <=0) {
             sampleDistBG.setImageResource(R.color.maroon);
             sampleDistTxt.setText("Tap to set");
             canSubmit = false;

@@ -13,6 +13,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class WaterDepth extends AppCompatActivity {
+    String unit = " cm";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +21,6 @@ public class WaterDepth extends AppCompatActivity {
         setContentView(layout.water_depth);
 
         TextView wdmeas = (TextView) findViewById(R.id.waterdep_meas);
-        double []waterDep = {-1};
 
 
         //Buttons for the new views
@@ -32,12 +32,11 @@ public class WaterDepth extends AppCompatActivity {
         BasicCommands.setActivity(this, water_b, EstRainfall.class);
         BasicCommands.setActivity(this, water_n, SamplePage.class);
 
-        BasicCommands.setAlertBox(this, wdmeas, 0, waterDep," cm");
-        SurveyData.waterDepth = waterDep[0];
+        BasicCommands.setAlertBox(this, wdmeas, 0, SurveyData.waterDepth,unit);
 
-        if(SurveyData.waterDepth > 0)
+        if(SurveyData.waterDepth[0] > 0)
         {
-            wdmeas.setText(""+SurveyData.waterDepth);
+            wdmeas.setText(""+SurveyData.waterDepth[0] + unit);
         }
     }
 }

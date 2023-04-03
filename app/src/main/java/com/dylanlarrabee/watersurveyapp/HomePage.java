@@ -12,8 +12,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.gson.Gson;
+
 
 public class HomePage extends AppCompatActivity {
+    Gson gson = new Gson();
     private BasicCommands bc = new BasicCommands();
     private final int estInd = 0,measInd = 1,commInd = 2;
     private final int totalEst = 6, totalMeas = 5, totalComm = 1, numBtns = 3;
@@ -34,7 +37,6 @@ public class HomePage extends AppCompatActivity {
         //Pull survey data from submenus if available
 
 
-        //curEst = getCurEst();
         //Find  views and Bundles
         Bundle extras = getIntent().getExtras();
         Button userName = (Button) findViewById(R.id.homeName);
@@ -81,7 +83,12 @@ public class HomePage extends AppCompatActivity {
         subBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SurveyData.SaveData(spForms,SurveyData.myID);
+                SurveyData mysd = SurveyData.SaveData();
+                editor = spForms.edit();
+                String json = gson.toJson(mysd);
+                editor.putString(SurveyData.myID,json);
+                editor.commit();
+
                 SwapActivity.navForms(HomePage.this);
             }
         });
@@ -91,10 +98,14 @@ public class HomePage extends AppCompatActivity {
         btns[0] = estBtn;
         btns[1] = measBtn;
         btns[2] = commBtn;
-      if(SurveyData.firstEntry == true || SurveyData.newForm == true)
+      if(SurveyData.firstEntry == true && SurveyData.newForm == false)
       {
 
           retrieveData();
+          SurveyData.firstEntry = false;
+          SurveyData.newForm = false;
+      }else
+      {
           SurveyData.firstEntry = false;
           SurveyData.newForm = false;
       }
@@ -138,7 +149,7 @@ public class HomePage extends AppCompatActivity {
     {
         if(SurveyData.curEst == 0) {
             btns[0].setTextColor(getResources().getColor(R.color.maroon));
-        }else if (curEst <6) {
+        }else if (SurveyData.curEst <6) {
             btns[0].setTextColor(getResources().getColor(R.color.gold));
         } else {
             btns[0].setTextColor(getResources().getColor(R.color.finishGreen));
@@ -207,9 +218,10 @@ public class HomePage extends AppCompatActivity {
 
     void retrieveData()
     {
-
-            SurveyData.RetrieveData(spForms,SurveyData.myID);
-
+        SurveyData mysd;
+        String json = spForms.getString(SurveyData.myID,null);
+        mysd = gson.fromJson(json,SurveyData.class);
+        SurveyData.RetrieveData(mysd);
     }
 
 }

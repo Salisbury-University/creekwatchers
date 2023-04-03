@@ -5,6 +5,8 @@ import static android.content.Context.MODE_PRIVATE;
 import android.app.Activity;
 import android.content.SharedPreferences;
 
+import com.google.gson.Gson;
+
 
 public class
 SurveyData  {
@@ -16,14 +18,15 @@ SurveyData  {
         static int tideEst=-1,weathEst=-1,windSpeed=-1, waterSurf =-1,windDir=-1,rainfall=-1;
         static double[] airTemp = {-1,-1},waterTemp={-1,-1},secchiDepth={-1,-1};
 
-        static double waterDepth = -1, sampleDist = -1;
+        static double[] waterDepth = {-1}, sampleDist = {-1};
         static int estArr[] = {tideEst,waterSurf,weathEst,windSpeed,windDir,rainfall};
         static boolean bottomedOut, newForm = false,firstEntry = true;
 
-         String myuserName = "", myuserSite = "";
+         String myuserName = "", myuserSite = "", myUserID;
          int mycurEst = 0, mycurMeas = 0, mycurComm = 0;
-         int mytideEst=-1,myweathEst=-1,mywindSpeed=-1, mywaterSurf =-1,mywindDir=-1,myrainfall=-1,mywaterDepth=-1,mysampleDist=-1;
-         int[] myairTemp = {-1,-1},mywaterTemp={-1,-1},mysecchiDepth={-1,-1};
+         int mytideEst=-1,myweathEst=-1,mywindSpeed=-1, mywaterSurf =-1,mywindDir=-1,myrainfall=-1;
+         double [] mywaterDepth= {-1},mysampleDist= {-1};
+         double[] myairTemp = {-1,-1},mywaterTemp={-1,-1},mysecchiDepth={-1,-1};
          int myestArr[] = {mytideEst,mywaterSurf,myweathEst,mywindSpeed,mywindDir,myrainfall};
          boolean mybottomedOut;
 
@@ -80,35 +83,80 @@ SurveyData  {
                         setVal++;
 
                 curEst = setVal;
+                setVal = 0;
+            if(airTemp[0] > 0 && airTemp[1] > 0)
+            {
+                setVal++;
+            }
+            if(secchiDepth[0] > 0 && secchiDepth[1] > 0)
+            {
+                setVal++;
+            }
+            if(waterTemp[0] > 0 && waterTemp[1] > 0)
+            {
+                setVal++;
+            }
+            if(sampleDist[0] > 0)
+            {
+                setVal++;
+            }
+            if(waterDepth[0] > 0)
+            {
+                setVal++;
+            }
+            curMeas = setVal;
         }
-         public static void SaveData(SharedPreferences sp, String formID)
+         public static SurveyData SaveData()
         {
-                SharedPreferences.Editor spEdit = sp.edit();
-                spEdit.putString(formID + "name",userName);
-                spEdit.putString(formID+"site",userSite);
-                spEdit.putInt(formID+"tide",tideEst);
-                spEdit.putInt(formID+"surf",waterSurf);
-                spEdit.putInt(formID+"weath",weathEst);
-                spEdit.putInt(formID+"wspeed",windSpeed);
-                spEdit.putInt(formID+"wdir",windDir);
-                spEdit.putInt(formID+"curest",curEst);
-                spEdit.putInt(formID+"curmeas",curMeas);
-                spEdit.putInt(formID+"curcomm",curComm);
-                //spEdit.putInt(formID+"rain",rainfall);
-                spEdit.commit();
+                SurveyData mysd = new SurveyData();
+
+                mysd.myuserName = SurveyData.userName;
+                mysd.myuserSite = SurveyData.userSite;
+                mysd.myUserID = SurveyData.myID;
+                mysd.mycurEst = SurveyData.curEst;
+                mysd.mycurMeas = SurveyData.curMeas;
+                mysd.mycurComm = SurveyData.curComm;
+                mysd.mybottomedOut = SurveyData.bottomedOut;
+                mysd.mytideEst = SurveyData.tideEst;
+                mysd.mywaterSurf = SurveyData.waterSurf;
+                mysd.myweathEst = SurveyData.weathEst;
+                mysd.mywindDir = SurveyData.windDir;
+                mysd.mywindSpeed = SurveyData.windSpeed;
+                mysd.myrainfall = SurveyData.rainfall;
+                mysd.mywaterTemp[0] = SurveyData.waterTemp[0];
+                mysd.mywaterTemp[1] = SurveyData.waterTemp[1];
+                mysd.myairTemp[0] = SurveyData.airTemp[0];
+                mysd.myairTemp[1] = SurveyData.airTemp[1];
+                mysd.mysecchiDepth[0] = SurveyData.secchiDepth[0];
+                mysd.mysecchiDepth[1] = SurveyData.secchiDepth[1];
+                mysd.mywaterDepth[0] = SurveyData.waterDepth[0];
+                mysd.mysampleDist[0] = SurveyData.sampleDist[0];
+                return mysd;
         }
-        public static void RetrieveData(SharedPreferences sp, String formID)
+        public static void RetrieveData(SurveyData mysd)
         {
-                userName = sp.getString(formID+"name","Null Name");
-                userSite = sp.getString(formID+"site","Null Site");
-                tideEst = sp.getInt(formID+"tide",-1);
-                waterSurf = sp.getInt(formID+"surf",-1);
-                weathEst = sp.getInt(formID+"weath",-1);
-                windSpeed = sp.getInt(formID+"wspeed",-1);
-                windDir = sp.getInt(formID+"wdir",-1);
-                curEst = sp.getInt(formID+"curest",0);
-                curMeas = sp.getInt(formID+"curmeas",0);
-                curComm = sp.getInt(formID+"curcomm",0);
-                //rainfall = sp.getInt(formID+"rain",-1);
+
+               SurveyData.userName = mysd.myuserName;
+               SurveyData.userSite = mysd.myuserSite;
+               SurveyData.myID = mysd.myUserID;
+               SurveyData.curEst = mysd.mycurEst;
+               SurveyData.curMeas = mysd.mycurMeas;
+               SurveyData.curComm = mysd.mycurComm;
+               SurveyData.bottomedOut = mysd.mybottomedOut;
+                SurveyData.tideEst = mysd.mytideEst;
+                SurveyData.waterSurf = mysd.mywaterSurf;
+                SurveyData.weathEst = mysd.myweathEst;
+                SurveyData.windDir = mysd.mywindDir;
+                SurveyData.windSpeed = mysd.mywindSpeed;
+                SurveyData.rainfall = mysd.myrainfall;
+            SurveyData.waterTemp[0] = mysd.mywaterTemp[0];
+            SurveyData.waterTemp[1] = mysd.mywaterTemp[1];
+            SurveyData.airTemp[0] = mysd.myairTemp[0];
+            SurveyData.airTemp[1] = mysd.myairTemp[1];
+            SurveyData.secchiDepth[0] = mysd.mysecchiDepth[0];
+            SurveyData.secchiDepth[1] = mysd.mysecchiDepth[1];
+            SurveyData.sampleDist[0] = mysd.mysampleDist[0];
+            SurveyData.waterDepth[0] = mysd.mywaterDepth[0];
+
         }
 }
