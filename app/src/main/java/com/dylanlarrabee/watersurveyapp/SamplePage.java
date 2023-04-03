@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SamplePage extends AppCompatActivity{
     String unit = " cm";
-    
+    String title = "Enter in Sample Distance ";
     @Override
     protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
@@ -27,8 +27,7 @@ public class SamplePage extends AppCompatActivity{
         BasicCommands.setActivity(this, samp_home, MeasurementsPage.class);
         BasicCommands.setActivity(this, samp_b, WaterDepth.class);
         BasicCommands.setActivity(this, samp_n, AirTemp.class);
-
-        BasicCommands.setAlertBox(this, sampmeas, 0, SurveyData.sampleDist, unit);
+        BasicCommands.setAlertBox(this, sampmeas, 0, SurveyData.sampleDist, unit,title);
 
 
         if(SurveyData.sampleDist[0] > 0)

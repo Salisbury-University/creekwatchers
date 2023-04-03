@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class SecchiDepth extends AppCompatActivity{
 
     String unit = " cm";
+    String title = "Enter in Secchi Depth ";
 
     @Override
     protected void onCreate(Bundle savedInstance) {
@@ -28,10 +29,10 @@ public class SecchiDepth extends AppCompatActivity{
 
         BasicCommands.setActivity(this, secchi_h, MeasurementsPage.class);
         BasicCommands.setActivity(this, secchi_b, WaterTemp.class);
-        //BasicCommands.setActivity(this, secchi_n Comments.class);
+        BasicCommands.setActivity(this, secchi_n, CommentsPage.class);
 
-        BasicCommands.setAlertBox(this, secmeas1, 0, SurveyData.secchiDepth, unit);
-        BasicCommands.setAlertBox(this, secmeas2, 1, SurveyData.secchiDepth, unit);
+        BasicCommands.setAlertBox(this, secmeas1, 0, SurveyData.secchiDepth, unit, title);
+        BasicCommands.setAlertBox(this, secmeas2, 1, SurveyData.secchiDepth, unit, title);
         if(SurveyData.secchiDepth[0] > 0)
         {
             secmeas1.setText(""+SurveyData.secchiDepth[0] + unit);

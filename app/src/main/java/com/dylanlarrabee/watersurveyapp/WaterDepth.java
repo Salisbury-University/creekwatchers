@@ -15,6 +15,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class WaterDepth extends AppCompatActivity {
     String unit = " cm";
 
+    String title = "Enter in Water Depth ";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,8 +33,7 @@ public class WaterDepth extends AppCompatActivity {
         BasicCommands.setActivity(this, water_h, MeasurementsPage.class);
         BasicCommands.setActivity(this, water_b, EstRainfall.class);
         BasicCommands.setActivity(this, water_n, SamplePage.class);
-
-        BasicCommands.setAlertBox(this, wdmeas, 0, SurveyData.waterDepth,unit);
+        BasicCommands.setAlertBox(this, wdmeas, 0, SurveyData.waterDepth,unit,title);
 
         if(SurveyData.waterDepth[0] > 0)
         {
