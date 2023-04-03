@@ -15,8 +15,8 @@ SurveyData  {
         static int curEst = 0, curMeas = 0, curComm = 0;
         static int tideEst=-1,weathEst=-1,windSpeed=-1, waterSurf =-1,windDir=-1,rainfall=-1;
         static double[] airTemp = {-1,-1},waterTemp={-1,-1},secchiDepth={-1,-1};
-
         static double waterDepth = -1, sampleDist = -1;
+        static String comments = " ";
         static int estArr[] = {tideEst,waterSurf,weathEst,windSpeed,windDir,rainfall};
         static boolean bottomedOut, newForm = false,firstEntry = true;
 

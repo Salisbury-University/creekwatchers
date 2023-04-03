@@ -72,9 +72,9 @@ public class BasicCommands {
         });
     }
 
-    public static void setAlertBox(Activity act, TextView view, int measNum, double []val,String unit) {
+    public static void setAlertBox(Activity act, TextView view, int measNum, double []val,String unit, String title) {
         AlertDialog.Builder builder = new AlertDialog.Builder(act);
-        builder.setTitle("Enter in measurement " + (measNum+1));
+        builder.setTitle(title + (measNum+1));
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
