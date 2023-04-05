@@ -14,4 +14,5 @@ public class CommentsPage extends AppCompatActivity{
         super.onCreate(savedInstance);
         setContentView(layout.commentspage);
     }
+
 }

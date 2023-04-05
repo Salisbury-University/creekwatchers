@@ -90,6 +90,9 @@
             android:name=".SamplePage"
             android:exported="true" />
         <activity
+            android:name=".CommentsPage"
+            android:exported="true" />
+        <activity
             android:name=".ReviewPage"
             android:exported="true" />
 
