@@ -150,5 +150,54 @@
         app:layout_constraintTop_toBottomOf="@+id/waterdepth"
         app:layout_constraintVertical_bias="0.5" />
 
+    <TextView
+        android:id="@+id/wdblackbg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="@+id/waterdepth"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/waterdepth"/>
+
+    <TextView
+        android:id="@+id/sdblackbg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="@+id/samdist"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/samdist"/>
+
+    <TextView
+        android:id="@+id/atblackbg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="@+id/airtemp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/airtemp"/>
+
+    <TextView
+        android:id="@+id/wtblackbg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="@+id/watertemp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/watertemp"/>
+
+    <TextView
+        android:id="@+id/secblackbg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#00000000"
+        app:layout_constraintBottom_toBottomOf="@+id/secdepth"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/secdepth"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
