@@ -23,7 +23,7 @@ public class HomePage extends AppCompatActivity {
     private final String observerText = "Observer:\n", siteText = "Site:\n", estStr = "Estimates\n", commStr = "Comments\n", measStr = "Measurements\n";
     private String m_Text = "";
     private Button[] btns = new Button[numBtns];
-    private Button subBtn;
+    private Button subBtn,commBtn,formBtn;
     private String userName,siteName;
     private int curEst = 0, curMeas = 0, curComm = 0;
     private boolean estDone = false, measDone = false, commDone = false;
@@ -39,6 +39,8 @@ public class HomePage extends AppCompatActivity {
 
         //Find  views and Bundles
         Bundle extras = getIntent().getExtras();
+        commBtn = findViewById(R.id.comments);
+        formBtn = findViewById(R.id.formBtn);
         Button userName = (Button) findViewById(R.id.homeName);
         Button userSite = (Button) findViewById(R.id.homeSite);
         Button estBtn = (Button) findViewById(R.id.estimateHomeBtn);
@@ -47,6 +49,9 @@ public class HomePage extends AppCompatActivity {
         Intent estIntent = new Intent(this,EstimatesPage.class);
         Intent measIntent = new Intent(this,MeasurementsPage.class);
         Intent toSelSite = bc.setIntent(this,SelectSite.class);
+        Intent toCommPage = new Intent(this,CommentsPage.class);
+        Intent toRevPage = new Intent(this,ReviewPage.class);
+        Intent toFormsPage = new Intent(this,FormArchive.class);
         subBtn = (Button) findViewById(R.id.submitBtnHome);
         spForms = getSharedPreferences("forms",MODE_PRIVATE);
         //This pulls the name and site from login page or from SurveyData after initial login
@@ -55,6 +60,18 @@ public class HomePage extends AppCompatActivity {
 
 
         //OCL
+        formBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(toFormsPage);
+            }
+        });
+        commBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(toCommPage);
+            }
+        });
         userName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -89,7 +106,8 @@ public class HomePage extends AppCompatActivity {
                 editor.putString(SurveyData.myID,json);
                 editor.commit();
 
-                SwapActivity.navForms(HomePage.this);
+                startActivity(toRevPage);
+
             }
         });
 
@@ -213,7 +231,6 @@ public class HomePage extends AppCompatActivity {
         SurveyData.updateCompleted();
         setAllBtnTxt();
         setBtnTextColors();
-        subBtn.setText(SurveyData.myID);
     }
 
     void retrieveData()

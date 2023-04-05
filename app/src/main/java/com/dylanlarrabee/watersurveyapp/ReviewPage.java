@@ -249,7 +249,7 @@ public class ReviewPage extends AppCompatActivity {
             waterDepthTxt.setText("Tap to set");
             canSubmit = false;
         } else {
-            waterDepthTxt.setText(REAL_FORMATTER.format(SurveyData.waterDepth));
+            waterDepthTxt.setText(REAL_FORMATTER.format(SurveyData.waterDepth[0]));
         }
 
         if(SurveyData.sampleDist[0] <=0) {
@@ -257,7 +257,7 @@ public class ReviewPage extends AppCompatActivity {
             sampleDistTxt.setText("Tap to set");
             canSubmit = false;
         } else {
-            sampleDistTxt.setText(REAL_FORMATTER.format(SurveyData.sampleDist));
+            sampleDistTxt.setText(REAL_FORMATTER.format(SurveyData.sampleDist[0]));
         }
 
         if(SurveyData.airTemp[0] <=0 || SurveyData.airTemp[1] <=0 ) {
