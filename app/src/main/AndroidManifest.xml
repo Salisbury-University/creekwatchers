@@ -12,13 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WaterSurveyApp">
 
-
         <activity
             android:name=".FormArchive"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -33,9 +31,7 @@
             android:exported="false" />
         <activity
             android:name=".LoginPage"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"/>
         <activity
             android:name=".MeasurementsPage"
             android:exported="true" />
@@ -98,6 +94,9 @@
             android:exported="true" />
         <activity
             android:name=".ReviewPage"
+            android:exported="true" />
+        <activity
+            android:name=".SubmitPage"
             android:exported="true" />
 
         <meta-data
