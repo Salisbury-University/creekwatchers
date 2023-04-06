@@ -130,16 +130,24 @@ public class SubmitPage extends AppCompatActivity {
         message.setFrom(new InternetAddress(Config.EMAIL));
         // Set recipient
         message.addRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
+
         // Get date
-        Date currentTime = Calendar.getInstance().getTime();
+        Calendar currentTime = Calendar.getInstance();
+        int year = currentTime.get(Calendar.YEAR); year %=100;
+        String date1 = currentTime.get(Calendar.MONTH) + "/" + currentTime.get(Calendar.DAY_OF_MONTH) + "/" + year;
+        String date2 = currentTime.get(Calendar.MONTH) + "-" + currentTime.get(Calendar.DAY_OF_MONTH) + "-" + year;
+
+        String fileprefix = SurveyData.userSite + " " + SurveyData.userName + " " + date2;
+        String subject  = SurveyData.userSite + " " + SurveyData.userName + " " + date1;
+
         // Set subject
-        String emailSubject = SurveyData.userName + " " + SurveyData.userSite + " " + currentTime;
-        message.setSubject(emailSubject);
-        Log.d("MAIL", "Subject: " + emailSubject );
+        message.setSubject(subject);
+        Log.d("MAIL", "Subject: " + subject);
 
         // Set body
         String emailBody =
             "Name: " + SurveyData.userName + "\n" +
+            "Date: " + date1 + "\n" +
             "Site: " + SurveyData.userSite + "\n" +
             "Tide Est: " + SurveyData.tideEst + "\n" +
             "Weather Est: " +SurveyData.weathEst + "\n" +
@@ -162,24 +170,25 @@ public class SubmitPage extends AppCompatActivity {
 
         // Create CSV file
         String csvText =
-            SurveyData.userName + ", " +
-            SurveyData.userSite + ", " +
-            SurveyData.tideEst + ", " +
-            SurveyData.weathEst + ", " +
-            SurveyData.waterSurf + ", " +
-            SurveyData.windSpeed+ ", " +
-            SurveyData.windDir+ ", " +
-            SurveyData.rainfall+ ", " +
-            SurveyData.waterDepth[0] + ", " +
-            SurveyData.sampleDist[0]+ ", " +
-            SurveyData.airTemp[0]+ ", " +
-            SurveyData.airTemp[1] + ", " +
-            SurveyData.waterTemp[0]+ ", " +
-            SurveyData.waterTemp[1]+ ", " +
-            SurveyData.secchiDepth[0]+ ", " +
-            SurveyData.secchiDepth[1];
+            "\"Name\",\"Site\",\"Tide\",\"Weather\",\"WaterSurf\",\"WindSpeed\",\"WindDirect\",\"Rainfall\",\"WaterDepth1\",\"WaterDepth2\",\"AirTemp1\",\"AirTemp2\",\"WaterTemp1\",\"WaterTemp2\",\"SecchiDepth1\",\"SecchiDepth2\"\n\"" +
+            SurveyData.userName + "\",\"" +
+            SurveyData.userSite + "\",\"" +
+            SurveyData.tideEst + "\",\"" +
+            SurveyData.weathEst + "\",\"" +
+            SurveyData.waterSurf + "\",\"" +
+            SurveyData.windSpeed+ "\",\"" +
+            SurveyData.windDir+ "\",\"" +
+            SurveyData.rainfall+ "\",\"" +
+            SurveyData.waterDepth[0] +"\",\"" +
+            SurveyData.sampleDist[0]+ "\",\"" +
+            SurveyData.airTemp[0]+ "\",\"" +
+            SurveyData.airTemp[1] + "\",\"" +
+            SurveyData.waterTemp[0]+ "\",\"" +
+            SurveyData.waterTemp[1]+ "\",\"" +
+            SurveyData.secchiDepth[0]+ "\",\"" +
+            SurveyData.secchiDepth[1] + "\"";
 
-        String filename = "survey.txt";
+        String filename = fileprefix + ".csv";
         File directory = getDir("surveys", Context.MODE_PRIVATE);
         File myFile = new File(directory, filename);
         try {
@@ -205,16 +214,6 @@ public class SubmitPage extends AppCompatActivity {
         // Must use Async SendMail class to send the email
         SendMail mail = new SendMail();
         mail.execute(message);
-    }
-
-    void setListener(Button button, Intent intent) {
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(intent);
-
-            }
-        });
     }
 
     private class SendMail extends AsyncTask<MimeMessage, Void, Void> {
@@ -244,14 +243,23 @@ public class SubmitPage extends AppCompatActivity {
             });
         }
     }
-    void submitSuccess(){
 
+    void submitSuccess() {
         progressBar.setVisibility(View.INVISIBLE);
         thankyouText.setText("Thank you for being a Creekwatcher!");
         thankyouText.setVisibility(View.VISIBLE);
         greencheck.setImageResource(R.drawable.greencheck);
         greencheck.setVisibility(View.VISIBLE);
-        statusText.setText("Form Submitted.");
+        statusText.setText("Form Submitted");
+    }
+
+    void setListener(Button button, Intent intent) {
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(intent);
+            }
+        });
     }
 }
 
