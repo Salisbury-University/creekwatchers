@@ -55,8 +55,9 @@ public class SubmitPage extends AppCompatActivity {
     private ImageView greencheck;
     private ProgressBar progressBar;
     private Button resubmitButton;
+    private String date;
 
-    //official recipient email: creekwatchers@salisbury.edu
+    //official email: creekwatchers@salisbury.edu
     private String recipient = "chrismorse301@gmail.com";
 
     @Override
@@ -75,17 +76,7 @@ public class SubmitPage extends AppCompatActivity {
         resubmitButton = (Button) findViewById(id.submitButton);
         greencheck = (ImageView) findViewById(id.greencheck);
 
-        // Hide lower text box, submit button and green check image while submitting
-        thankyouText.setVisibility(View.INVISIBLE);
-        resubmitButton.setVisibility(View.INVISIBLE);
-        greencheck.setVisibility(View.INVISIBLE);
-
-        resubmitButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                attemptSubmit();
-            }
-        });
+        resubmitButton.setOnClickListener(v -> attemptSubmit());
     }
 
     void attemptSubmit() {
@@ -94,152 +85,20 @@ public class SubmitPage extends AppCompatActivity {
         greencheck.setVisibility(View.INVISIBLE);
         resubmitButton.setVisibility(View.INVISIBLE);
         thankyouText.setVisibility(View.INVISIBLE);
+
         try {
-            sendEmail();
-        } catch (MessagingException e) {
-           submitFailure();
-        }
-    }
+            // Setup email client
+            Session session = setupEmailClient();
 
-    void sendEmail() throws MessagingException {
+            // Create email message
+            MimeMessage message = makeEmail(session);
 
-        Log.d("MAIL", "sendMail() called");
+            // use Asynchronous SendMail class to send the email
+            SendMail mail = new SendMail();
+            mail.execute(message);
 
-        // Establish an email client
-        Properties props = new Properties();
-        props.put("mail.smtp.host", "smtp.gmail.com");
-        props.put("mail.smtp.socketFactory.port", "465");
-        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.port", "465");
-
-        // Login to email account
-        Session session = Session.getDefaultInstance(props,
-            new javax.mail.Authenticator() {
-                protected PasswordAuthentication getPasswordAuthentication() {
-                    return new PasswordAuthentication(Config.EMAIL, Config.PASSWORD);
-                }
-            });
-
-        // Create email object (MimeMessage)
-        MimeMessage message = new MimeMessage(session);
-        // Set sender
-        message.setFrom(new InternetAddress(Config.EMAIL));
-        // Set recipient
-        message.addRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
-
-        // Get date
-        Calendar currentTime = Calendar.getInstance();
-        int year = currentTime.get(Calendar.YEAR); year %=100;
-        String date = currentTime.get(Calendar.MONTH) + "/" + currentTime.get(Calendar.DAY_OF_MONTH) + "/" + year;
-
-        String subject  = SurveyData.userSite + " " + SurveyData.userName + " " + date;
-
-        // Set subject
-        message.setSubject(subject);
-        Log.d("MAIL", "Subject: " + subject);
-
-        // Set body
-        String emailBody =
-            "Name: " + SurveyData.userName + "\n" +
-            "Date: " + date + "\n" +
-            "Site: " + SurveyData.userSite + "\n" +
-            "Tide Est: " + SurveyData.tideEst + "\n" +
-            "Weather Est: " +SurveyData.weathEst + "\n" +
-            "Water Surface Est: " +SurveyData.waterSurf + "\n" +
-            "Wind Speed Est: " +SurveyData.windSpeed + "\n" +
-            "Wind Direction Est: " +SurveyData.windDir+ "\n" +
-            "Rainfall Est: " +SurveyData.rainfall+ "\n" +
-            "Water Depth: " +SurveyData.waterDepth[0] + "\n" +
-            "Sample Distance: " +SurveyData.sampleDist[0] + "\n" +
-            "Air Temp 1: " +SurveyData.airTemp[0]+ "\n" +
-            "Air Temp 2: " +SurveyData.airTemp[1] + "\n" +
-            "Water Temp 1: " +SurveyData.waterTemp[0]+ "\n" +
-            "Water Temp 2: " +SurveyData.waterTemp[1]+ "\n" +
-            "Secchi Depth 1: " +SurveyData.secchiDepth[0]+ "\n" +
-            "Secchi Depth 2: " +SurveyData.secchiDepth[1]+ "\n";
-
-        BodyPart messageBodyPart1 = new MimeBodyPart();
-        messageBodyPart1.setText(emailBody);
-        Log.d("MAIL", "Body: " + emailBody);
-
-        // Create CSV file
-        String csvText =
-            "\"Name\",\"Site\",\"Tide\",\"Weather\",\"WaterSurf\",\"WindSpeed\",\"WindDirect\",\"Rainfall\",\"WaterDepth1\",\"WaterDepth2\",\"AirTemp1\",\"AirTemp2\",\"WaterTemp1\",\"WaterTemp2\",\"SecchiDepth1\",\"SecchiDepth2\"\n\"" +
-            SurveyData.userName + "\",\"" +
-            SurveyData.userSite + "\",\"" +
-            SurveyData.tideEst + "\",\"" +
-            SurveyData.weathEst + "\",\"" +
-            SurveyData.waterSurf + "\",\"" +
-            SurveyData.windSpeed+ "\",\"" +
-            SurveyData.windDir+ "\",\"" +
-            SurveyData.rainfall+ "\",\"" +
-            SurveyData.waterDepth[0] +"\",\"" +
-            SurveyData.sampleDist[0]+ "\",\"" +
-            SurveyData.airTemp[0]+ "\",\"" +
-            SurveyData.airTemp[1] + "\",\"" +
-            SurveyData.waterTemp[0]+ "\",\"" +
-            SurveyData.waterTemp[1]+ "\",\"" +
-            SurveyData.secchiDepth[0]+ "\",\"" +
-            SurveyData.secchiDepth[1] + "\"";
-
-        String filename = SurveyData.userSite + " " + SurveyData.userName + " " + currentTime.get(Calendar.MONTH) + "-" + currentTime.get(Calendar.DAY_OF_MONTH) + "-" + year + ".csv";
-        File directory = getDir("surveys", Context.MODE_PRIVATE);
-        File myFile = new File(directory, filename);
-        try {
-            FileWriter fr = new FileWriter(myFile, false);
-            fr.write(csvText);
-            fr.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-        // Create file attachment
-        BodyPart messageBodyPart2 = new MimeBodyPart();
-        DataSource source = new FileDataSource(myFile);
-        messageBodyPart2.setDataHandler(new DataHandler(source));
-        messageBodyPart2.setFileName(filename);
-
-        // Attach file to email body
-        Multipart multipartObject = new MimeMultipart();
-        multipartObject.addBodyPart(messageBodyPart1);
-        multipartObject.addBodyPart(messageBodyPart2);
-        message.setContent(multipartObject);
-
-        // Must use Asynchronous SendMail class to send the email
-        // SendMail processes sending the email in the background on a separate thread from the main app thread.
-        // SendMail member function onPostExecute is called when the email sends.
-        // execute() calls doInBackground() function, takes email object array as parameter.
-        SendMail mail = new SendMail();
-        mail.execute(message);
-    }
-
-    private class SendMail extends AsyncTask<MimeMessage, Void, Void> {
-
-        protected Void doInBackground(MimeMessage... message) {
-            sendMail(message[0]);
-            return null;
-        }
-        public void sendMail(MimeMessage message) {
-            try {
-                Log.d("MAIL", "Sending email now...");
-                Transport.send(message);
-                Log.d("MAIL", "Mail sent");
-                onPostExecute();
-            }
-            catch (MessagingException mex) {
-                mex.printStackTrace();
-            }
-        }
-        protected void onPreExecute() {}
-        protected void onPostExecute() {
-            // Need run function to bypass rule blocking UI change outside of original thread
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    submitSuccess();
-                }
-            });
+        } catch (Exception e) {
+            submitFailure();
         }
     }
 
@@ -261,14 +120,145 @@ public class SubmitPage extends AppCompatActivity {
         resubmitButton.setVisibility(View.VISIBLE);
     }
 
-    void setListener(Button button, Intent intent) {
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(intent);
-            }
-        });
+    private Session setupEmailClient() {
+        // Properties for running a gmail email session
+        Properties props = new Properties();
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.socketFactory.port", "465");
+        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.port", "465");
+
+        // Login to email account
+        Session session = Session.getDefaultInstance(props,
+                new javax.mail.Authenticator() {
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(Config.EMAIL, Config.PASSWORD);
+                    }
+                });
+        return session;
     }
+
+    private MimeMessage makeEmail(Session session) throws MessagingException {
+        // Create email object (MimeMessage)
+        MimeMessage message = new MimeMessage(session);
+
+        // Set sender
+        message.setFrom(new InternetAddress(Config.EMAIL));
+
+        // Set recipient
+        message.addRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
+
+        // Get date
+        Calendar currentTime = Calendar.getInstance();
+        int year = currentTime.get(Calendar.YEAR);
+        year %= 100;
+        date = (currentTime.get(Calendar.MONTH) + 1) + "/" + currentTime.get(Calendar.DAY_OF_MONTH) + "/" + year;
+
+        // Set subject
+        String subject = SurveyData.userSite + " " + SurveyData.userName + " " + date;
+        message.setSubject(subject);
+        Log.d("MAIL", "Subject: " + subject);
+
+        // Set body
+        BodyPart messageBodyPart1 = new MimeBodyPart();
+        messageBodyPart1.setText(getEmailBody());
+        Log.d("MAIL", "Body: " + getEmailBody());
+
+        // Create CSV file
+        String filename = SurveyData.userSite + " " + SurveyData.userName + " " + (currentTime.get(Calendar.MONTH)+1) + "-" + currentTime.get(Calendar.DAY_OF_MONTH) + "-" + year + ".csv";
+        File directory = getDir("surveys", Context.MODE_PRIVATE);
+        File myFile = new File(directory, filename);
+        try {
+            FileWriter fr = new FileWriter(myFile, false);
+            fr.write(getCSV());
+            fr.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        // Create file attachment
+        BodyPart messageBodyPart2 = new MimeBodyPart();
+        DataSource source = new FileDataSource(myFile);
+        messageBodyPart2.setDataHandler(new DataHandler(source));
+        messageBodyPart2.setFileName(filename);
+
+        // Combine file attachment with email body
+        Multipart multipartObject = new MimeMultipart();
+        multipartObject.addBodyPart(messageBodyPart1);
+        multipartObject.addBodyPart(messageBodyPart2);
+        message.setContent(multipartObject);
+
+        return message;
+    }
+
+    private String getEmailBody() {
+        return "Name: " + SurveyData.userName + "\n" +
+                "Date: " + date + "\n" +
+                "Site: " + SurveyData.userSite + "\n" +
+                "Tide Est: " + SurveyData.tideEst + "\n" +
+                "Weather Est: " + SurveyData.weathEst + "\n" +
+                "Water Surface Est: " + SurveyData.waterSurf + "\n" +
+                "Wind Speed Est: " + SurveyData.windSpeed + "\n" +
+                "Wind Direction Est: " + SurveyData.windDir + "\n" +
+                "Rainfall Est: " + SurveyData.rainfall + "\n" +
+                "Water Depth: " + SurveyData.waterDepth[0] + "\n" +
+                "Sample Distance: " + SurveyData.sampleDist[0] + "\n" +
+                "Air Temp 1: " + SurveyData.airTemp[0] + "\n" +
+                "Air Temp 2: " + SurveyData.airTemp[1] + "\n" +
+                "Water Temp 1: " + SurveyData.waterTemp[0] + "\n" +
+                "Water Temp 2: " + SurveyData.waterTemp[1] + "\n" +
+                "Secchi Depth 1: " + SurveyData.secchiDepth[0] + "\n" +
+                "Secchi Depth 2: " + SurveyData.secchiDepth[1] + "\n";
+    }
+
+    private String getCSV() {
+        return "\"Name\",\"Site\",\"Tide\",\"Weather\",\"WaterSurf\",\"WindSpeed\",\"WindDirect\",\"Rainfall\",\"WaterDepth1\",\"WaterDepth2\",\"AirTemp1\",\"AirTemp2\",\"WaterTemp1\",\"WaterTemp2\",\"SecchiDepth1\",\"SecchiDepth2\"\n\"" +
+                SurveyData.userName + "\",\"" +
+                SurveyData.userSite + "\",\"" +
+                SurveyData.tideEst + "\",\"" +
+                SurveyData.weathEst + "\",\"" +
+                SurveyData.waterSurf + "\",\"" +
+                SurveyData.windSpeed + "\",\"" +
+                SurveyData.windDir + "\",\"" +
+                SurveyData.rainfall + "\",\"" +
+                SurveyData.waterDepth[0] + "\",\"" +
+                SurveyData.sampleDist[0] + "\",\"" +
+                SurveyData.airTemp[0] + "\",\"" +
+                SurveyData.airTemp[1] + "\",\"" +
+                SurveyData.waterTemp[0] + "\",\"" +
+                SurveyData.waterTemp[1] + "\",\"" +
+                SurveyData.secchiDepth[0] + "\",\"" +
+                SurveyData.secchiDepth[1] + "\"";
+    }
+
+    private class SendMail extends AsyncTask<MimeMessage, Void, Void> {
+
+        protected Void doInBackground(MimeMessage... message) {
+            try {
+                Log.d("MAIL", "Sending email...");
+                Transport.send(message[0]);
+                Log.d("MAIL", "Email sent.");
+                onPostExecute();
+            } catch (MessagingException e) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        submitFailure();
+                    }
+                });
+            }
+            return null;
+        }
+        // Need run function to bypass rule blocking UI change outside of original thread
+        protected void onPostExecute() {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    submitSuccess();
+                }
+            });
+        }
+    }
+
 }
-
-
