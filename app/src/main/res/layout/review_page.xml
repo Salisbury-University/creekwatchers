@@ -98,7 +98,7 @@
                 <TextView
                     android:id="@+id/tidetxt"
                     android:layout_width="250dp"
-                    android:layout_height="40dp"
+                    android:layout_height="30dp"
                     android:fontFamily="monospace"
                     android:text="Tide Here"
                     android:textAlignment="viewEnd"
@@ -152,7 +152,7 @@
                 <TextView
                     android:id="@+id/watertxt"
                     android:layout_width="250dp"
-                    android:layout_height="40dp"
+                    android:layout_height="30dp"
                     android:fontFamily="monospace"
                     android:text="Water Here"
                     android:textAlignment="viewEnd"
@@ -206,7 +206,7 @@
                 <TextView
                     android:id="@+id/weathertxt"
                     android:layout_width="250dp"
-                    android:layout_height="40dp"
+                    android:layout_height="30dp"
                     android:fontFamily="monospace"
                     android:text="Weather Here"
                     android:textAlignment="viewEnd"
@@ -260,7 +260,7 @@
                 <TextView
                     android:id="@+id/windspeedtxt"
                     android:layout_width="250dp"
-                    android:layout_height="40dp"
+                    android:layout_height="30dp"
                     android:fontFamily="monospace"
                     android:text="Wind Speed Here"
                     android:textAlignment="viewEnd"
@@ -294,7 +294,7 @@
                 <TextView
                     android:id="@+id/winddirecttxt"
                     android:layout_width="250dp"
-                    android:layout_height="40dp"
+                    android:layout_height="30dp"
                     android:fontFamily="monospace"
                     android:text="Wind Direct Here"
                     android:textAlignment="viewEnd"
@@ -348,7 +348,7 @@
                 <TextView
                     android:id="@+id/rainfalltxt"
                     android:layout_width="250dp"
-                    android:layout_height="40dp"
+                    android:layout_height="30dp"
                     android:fontFamily="monospace"
                     android:text="Rainfall Here"
                     android:textAlignment="viewEnd"
@@ -402,7 +402,7 @@
                 <TextView
                     android:id="@+id/waterdepthtxt"
                     android:layout_width="250dp"
-                    android:layout_height="40dp"
+                    android:layout_height="30dp"
                     android:fontFamily="monospace"
                     android:text="Water Depth Here"
                     android:textAlignment="viewEnd"
@@ -456,7 +456,7 @@
                 <TextView
                     android:id="@+id/sampledisttxt"
                     android:layout_width="250dp"
-                    android:layout_height="40dp"
+                    android:layout_height="30dp"
                     android:fontFamily="monospace"
                     android:text="Sample Dist Here"
                     android:textAlignment="viewEnd"
@@ -510,7 +510,7 @@
                 <TextView
                     android:id="@+id/airtemptxt"
                     android:layout_width="250dp"
-                    android:layout_height="40dp"
+                    android:layout_height="30dp"
                     android:fontFamily="monospace"
                     android:text="Air Temp Here"
                     android:textAlignment="viewEnd"
@@ -564,7 +564,7 @@
                 <TextView
                     android:id="@+id/watertemptxt"
                     android:layout_width="250dp"
-                    android:layout_height="40dp"
+                    android:layout_height="30dp"
                     android:fontFamily="monospace"
                     android:text="Water Temp Here"
                     android:textAlignment="viewEnd"
@@ -619,7 +619,7 @@
                 <TextView
                     android:id="@+id/secchidepthtxt"
                     android:layout_width="250dp"
-                    android:layout_height="40dp"
+                    android:layout_height="30dp"
                     android:fontFamily="monospace"
                     android:text="secchi depth Here"
                     android:textAlignment="viewEnd"
@@ -660,7 +660,7 @@
                 android:layout_height="89dp"
                 android:backgroundTint="@color/gold"
                 android:fontFamily="monospace"
-                android:insetTop="2dp"
+                android:insetTop="1dp"
                 android:insetBottom="0dp"
                 android:minHeight="0dp"
                 android:paddingTop="30dp"
@@ -668,7 +668,7 @@
                 android:text="Submit"
                 android:textAlignment="center"
                 android:textColor="@color/maroon"
-                android:textSize="23sp"
+                android:textSize="25sp"
                 android:textStyle="bold"
                 app:cornerRadius="0dp" />
 
