@@ -22,7 +22,8 @@ import javax.activation.*;
 
 public class SubmitPage extends AppCompatActivity {
 
-    private final String RECIPIENT = "chrismorse301@gmail.com";
+  private final String RECIPIENT = "chrismorse301@gmail.com";
+  //private final String RECIPIENT = "creekwatchers@salisbury.edu";
     //official email: creekwatchers@salisbury.edu
 
     private TextView statusText;
@@ -161,7 +162,7 @@ public class SubmitPage extends AppCompatActivity {
     }
 
     private String getEmailBody() {
-        return "Volunteer: " + SurveyData.userName + "\n" +
+        String email = "Volunteer: " + SurveyData.userName + "\n" +
                 "Date: " + date + "\n" +
                 "Site: " + SurveyData.userSite + "\n\n" +
                 "Tide: " + SurveyData.tideEst + "\n" +
@@ -175,6 +176,8 @@ public class SubmitPage extends AppCompatActivity {
                 "Air Temp: " + SurveyData.airTemp[0] + ", " + SurveyData.airTemp[1] + "\n" +
                 "Water Temp: " + SurveyData.waterTemp[0] + ", " + SurveyData.waterTemp[1] + "\n" +
                 "Secchi Depth: " + SurveyData.secchiDepth[0] + ", " + SurveyData.secchiDepth[1] + "\n\n";
+                if(SurveyData.comments != "")  email += "Comments: " + SurveyData.comments + "\n\n\n";
+        return email;
     }
 
     private String getCSV() {
