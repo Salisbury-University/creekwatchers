@@ -1,54 +1,29 @@
 package com.dylanlarrabee.watersurveyapp;
 
 import static com.dylanlarrabee.watersurveyapp.R.id;
-import static com.dylanlarrabee.watersurveyapp.R.layout;
-
 import android.content.Context;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.graphics.Color;
-import android.media.Image;
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Calendar;
-import java.util.Date;
-
-import javax.activation.DataHandler;
-import javax.activation.DataSource;
-import javax.activation.FileDataSource;
-import javax.mail.BodyPart;
-import javax.mail.Message;
-import javax.mail.Multipart;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeBodyPart;
-import javax.mail.internet.MimeMessage;
-import javax.mail.internet.MimeMultipart;
 import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
 import javax.activation.*;
-import javax.mail.Session;
-import javax.mail.Transport;
-import java.util.Properties;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.PasswordAuthentication;
-
 
 public class SubmitPage extends AppCompatActivity {
+
+    private final String RECIPIENT = "chrismorse301@gmail.com";
+    //official email: creekwatchers@salisbury.edu
 
     private TextView statusText;
     private TextView thankyouText;
@@ -56,9 +31,6 @@ public class SubmitPage extends AppCompatActivity {
     private ProgressBar progressBar;
     private Button resubmitButton;
     private String date;
-
-    //official email: creekwatchers@salisbury.edu
-    private String recipient = "chrismorse301@gmail.com";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,10 +61,8 @@ public class SubmitPage extends AppCompatActivity {
         try {
             // Setup email client
             Session session = setupEmailClient();
-
             // Create email message
             MimeMessage message = makeEmail(session);
-
             // use Asynchronous SendMail class to send the email
             SendMail mail = new SendMail();
             mail.execute(message);
@@ -131,11 +101,10 @@ public class SubmitPage extends AppCompatActivity {
 
         // Login to email account
         Session session = Session.getDefaultInstance(props,
-                new javax.mail.Authenticator() {
-                    protected PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication(Config.EMAIL, Config.PASSWORD);
-                    }
-                });
+            new javax.mail.Authenticator() {
+                protected PasswordAuthentication getPasswordAuthentication() {
+                    return new PasswordAuthentication(Config.EMAIL, Config.PASSWORD);
+            }});
         return session;
     }
 
@@ -147,12 +116,11 @@ public class SubmitPage extends AppCompatActivity {
         message.setFrom(new InternetAddress(Config.EMAIL));
 
         // Set recipient
-        message.addRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
+        message.addRecipient(Message.RecipientType.TO, new InternetAddress(RECIPIENT));
 
         // Get date
         Calendar currentTime = Calendar.getInstance();
-        int year = currentTime.get(Calendar.YEAR);
-        year %= 100;
+        int year = currentTime.get(Calendar.YEAR); year %= 100;
         date = (currentTime.get(Calendar.MONTH) + 1) + "/" + currentTime.get(Calendar.DAY_OF_MONTH) + "/" + year;
 
         // Set subject
@@ -193,23 +161,20 @@ public class SubmitPage extends AppCompatActivity {
     }
 
     private String getEmailBody() {
-        return "Name: " + SurveyData.userName + "\n" +
+        return "Volunteer: " + SurveyData.userName + "\n" +
                 "Date: " + date + "\n" +
-                "Site: " + SurveyData.userSite + "\n" +
-                "Tide Est: " + SurveyData.tideEst + "\n" +
-                "Weather Est: " + SurveyData.weathEst + "\n" +
-                "Water Surface Est: " + SurveyData.waterSurf + "\n" +
-                "Wind Speed Est: " + SurveyData.windSpeed + "\n" +
-                "Wind Direction Est: " + SurveyData.windDir + "\n" +
-                "Rainfall Est: " + SurveyData.rainfall + "\n" +
+                "Site: " + SurveyData.userSite + "\n\n" +
+                "Tide: " + SurveyData.tideEst + "\n" +
+                "Weather: " + SurveyData.weathEst + "\n" +
+                "Water Surface: " + SurveyData.waterSurf + "\n" +
+                "Wind Speed: " + SurveyData.windSpeed + "\n" +
+                "Wind Direction: " + SurveyData.windDir + "\n" +
+                "Rainfall: " + SurveyData.rainfall + "\n" +
                 "Water Depth: " + SurveyData.waterDepth[0] + "\n" +
                 "Sample Distance: " + SurveyData.sampleDist[0] + "\n" +
-                "Air Temp 1: " + SurveyData.airTemp[0] + "\n" +
-                "Air Temp 2: " + SurveyData.airTemp[1] + "\n" +
-                "Water Temp 1: " + SurveyData.waterTemp[0] + "\n" +
-                "Water Temp 2: " + SurveyData.waterTemp[1] + "\n" +
-                "Secchi Depth 1: " + SurveyData.secchiDepth[0] + "\n" +
-                "Secchi Depth 2: " + SurveyData.secchiDepth[1] + "\n";
+                "Air Temp: " + SurveyData.airTemp[0] + ", " + SurveyData.airTemp[1] + "\n" +
+                "Water Temp: " + SurveyData.waterTemp[0] + ", " + SurveyData.waterTemp[1] + "\n" +
+                "Secchi Depth: " + SurveyData.secchiDepth[0] + ", " + SurveyData.secchiDepth[1] + "\n\n";
     }
 
     private String getCSV() {
