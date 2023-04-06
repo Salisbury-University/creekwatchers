@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 
@@ -72,9 +73,9 @@ public class BasicCommands {
         });
     }
 
-    public static void setAlertBox(Activity act, TextView view, int measNum, double []val,String unit, String title) {
+    public static void setAlertBox(Activity act, TextView view, int measNum, double []val,String unit, String title, double max) {
         AlertDialog.Builder builder = new AlertDialog.Builder(act);
-        builder.setTitle(title + (measNum+1));
+        builder.setTitle(title + (measNum+1) + " in range of 0" + unit + " - " + max + unit);
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -84,23 +85,23 @@ public class BasicCommands {
                     builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            String editInput = input.getText().toString();
-                            if(!editInput.isEmpty())
-                            {
-                                view.setText(editInput + " " + unit);
-                                double inpDoub = Double.parseDouble(editInput);
+                            Double inpDoub = Double.parseDouble(input.getText().toString());
+                            if(inpDoub >= 0 && inpDoub <= max) {
+                                view.setText(inpDoub + " " + unit);
                                 val[measNum] = inpDoub;
+                            }else{
+                                Toast msg = Toast.makeText(act.getApplicationContext(), "Please enter a number in the proper range", Toast.LENGTH_LONG);
+                                msg.show();
                             }
-
-                        }
-                    });
-                    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                        }
-                    });
-                    builder.show();
-                }
-            });
+                    }
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+                builder.show();
+            }
+        });
     }
 }

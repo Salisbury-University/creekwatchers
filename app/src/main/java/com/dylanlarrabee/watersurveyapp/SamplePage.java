@@ -27,7 +27,7 @@ public class SamplePage extends AppCompatActivity{
         BasicCommands.setActivity(this, samp_home, MeasurementsPage.class);
         BasicCommands.setActivity(this, samp_b, WaterDepth.class);
         BasicCommands.setActivity(this, samp_n, AirTemp.class);
-        BasicCommands.setAlertBox(this, sampmeas, 0, SurveyData.sampleDist, unit,title);
+        BasicCommands.setAlertBox(this, sampmeas, 0, SurveyData.sampleDist, unit,title, 20);
 
 
         if(SurveyData.sampleDist[0] > 0)

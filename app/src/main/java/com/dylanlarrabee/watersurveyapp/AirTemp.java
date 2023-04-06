@@ -35,8 +35,8 @@ public class AirTemp extends AppCompatActivity {
         BasicCommands.setActivity(this, air_b, SamplePage.class);
         BasicCommands.setActivity(this, air_n, WaterTemp.class);
 
-        BasicCommands.setAlertBox(this, ameas1, 0, SurveyData.airTemp,unit,title);
-        BasicCommands.setAlertBox(this, ameas2, 1, SurveyData.airTemp,unit,title);
+        BasicCommands.setAlertBox(this, ameas1, 0, SurveyData.airTemp,unit,title, 40);
+        BasicCommands.setAlertBox(this, ameas2, 1, SurveyData.airTemp,unit,title, 40);
 
         if(SurveyData.airTemp[0] > 0)
         {
