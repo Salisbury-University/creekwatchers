@@ -56,13 +56,14 @@ public class SubmitPage extends AppCompatActivity {
     private ProgressBar progressBar;
     private Button resubmitButton;
 
-    //official email: creekwatchers@salisbury.edu
+    //official recipient email: creekwatchers@salisbury.edu
     private String recipient = "chrismorse301@gmail.com";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.submit_page);
+
         setupViews();
         attemptSubmit();
     }
@@ -74,6 +75,7 @@ public class SubmitPage extends AppCompatActivity {
         resubmitButton = (Button) findViewById(id.submitButton);
         greencheck = (ImageView) findViewById(id.greencheck);
 
+        // Hide lower text box, submit button and green check image while submitting
         thankyouText.setVisibility(View.INVISIBLE);
         resubmitButton.setVisibility(View.INVISIBLE);
         greencheck.setVisibility(View.INVISIBLE);
@@ -85,22 +87,18 @@ public class SubmitPage extends AppCompatActivity {
             }
         });
     }
+
     void attemptSubmit() {
-        boolean success = false;
         statusText.setText("Submitting...");
         progressBar.setVisibility(View.VISIBLE);
+        greencheck.setVisibility(View.INVISIBLE);
+        resubmitButton.setVisibility(View.INVISIBLE);
         thankyouText.setVisibility(View.INVISIBLE);
         try {
             sendEmail();
         } catch (MessagingException e) {
-            resubmitButton.setVisibility(View.VISIBLE);
-            greencheck.setImageResource(R.drawable.submitx);
-            greencheck.setVisibility(View.VISIBLE);
-            progressBar.setVisibility(View.INVISIBLE);
-            statusText.setText("Submission Failed.");
-            thankyouText.setText("Try again?");
+           submitFailure();
         }
-
     }
 
     void sendEmail() throws MessagingException {
@@ -117,15 +115,14 @@ public class SubmitPage extends AppCompatActivity {
 
         // Login to email account
         Session session = Session.getDefaultInstance(props,
-                new javax.mail.Authenticator() {
-                    protected PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication(Config.EMAIL, Config.PASSWORD);
-                    }
-                });
+            new javax.mail.Authenticator() {
+                protected PasswordAuthentication getPasswordAuthentication() {
+                    return new PasswordAuthentication(Config.EMAIL, Config.PASSWORD);
+                }
+            });
 
         // Create email object (MimeMessage)
         MimeMessage message = new MimeMessage(session);
-
         // Set sender
         message.setFrom(new InternetAddress(Config.EMAIL));
         // Set recipient
@@ -134,11 +131,9 @@ public class SubmitPage extends AppCompatActivity {
         // Get date
         Calendar currentTime = Calendar.getInstance();
         int year = currentTime.get(Calendar.YEAR); year %=100;
-        String date1 = currentTime.get(Calendar.MONTH) + "/" + currentTime.get(Calendar.DAY_OF_MONTH) + "/" + year;
-        String date2 = currentTime.get(Calendar.MONTH) + "-" + currentTime.get(Calendar.DAY_OF_MONTH) + "-" + year;
+        String date = currentTime.get(Calendar.MONTH) + "/" + currentTime.get(Calendar.DAY_OF_MONTH) + "/" + year;
 
-        String fileprefix = SurveyData.userSite + " " + SurveyData.userName + " " + date2;
-        String subject  = SurveyData.userSite + " " + SurveyData.userName + " " + date1;
+        String subject  = SurveyData.userSite + " " + SurveyData.userName + " " + date;
 
         // Set subject
         message.setSubject(subject);
@@ -147,7 +142,7 @@ public class SubmitPage extends AppCompatActivity {
         // Set body
         String emailBody =
             "Name: " + SurveyData.userName + "\n" +
-            "Date: " + date1 + "\n" +
+            "Date: " + date + "\n" +
             "Site: " + SurveyData.userSite + "\n" +
             "Tide Est: " + SurveyData.tideEst + "\n" +
             "Weather Est: " +SurveyData.weathEst + "\n" +
@@ -188,7 +183,7 @@ public class SubmitPage extends AppCompatActivity {
             SurveyData.secchiDepth[0]+ "\",\"" +
             SurveyData.secchiDepth[1] + "\"";
 
-        String filename = fileprefix + ".csv";
+        String filename = SurveyData.userSite + " " + SurveyData.userName + " " + currentTime.get(Calendar.MONTH) + "-" + currentTime.get(Calendar.DAY_OF_MONTH) + "-" + year + ".csv";
         File directory = getDir("surveys", Context.MODE_PRIVATE);
         File myFile = new File(directory, filename);
         try {
@@ -199,19 +194,22 @@ public class SubmitPage extends AppCompatActivity {
             throw new RuntimeException(e);
         }
 
-        // Add file to email
+        // Create file attachment
         BodyPart messageBodyPart2 = new MimeBodyPart();
         DataSource source = new FileDataSource(myFile);
         messageBodyPart2.setDataHandler(new DataHandler(source));
         messageBodyPart2.setFileName(filename);
 
-        // Combine text body and file in email
+        // Attach file to email body
         Multipart multipartObject = new MimeMultipart();
         multipartObject.addBodyPart(messageBodyPart1);
         multipartObject.addBodyPart(messageBodyPart2);
         message.setContent(multipartObject);
 
-        // Must use Async SendMail class to send the email
+        // Must use Asynchronous SendMail class to send the email
+        // SendMail processes sending the email in the background on a separate thread from the main app thread.
+        // SendMail member function onPostExecute is called when the email sends.
+        // execute() calls doInBackground() function, takes email object array as parameter.
         SendMail mail = new SendMail();
         mail.execute(message);
     }
@@ -235,6 +233,7 @@ public class SubmitPage extends AppCompatActivity {
         }
         protected void onPreExecute() {}
         protected void onPostExecute() {
+            // Need run function to bypass rule blocking UI change outside of original thread
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
@@ -245,12 +244,21 @@ public class SubmitPage extends AppCompatActivity {
     }
 
     void submitSuccess() {
-        progressBar.setVisibility(View.INVISIBLE);
-        thankyouText.setText("Thank you for being a Creekwatcher!");
-        thankyouText.setVisibility(View.VISIBLE);
-        greencheck.setImageResource(R.drawable.greencheck);
-        greencheck.setVisibility(View.VISIBLE);
         statusText.setText("Form Submitted");
+        thankyouText.setText("Thank you for being a Creekwatcher!");
+        greencheck.setImageResource(R.drawable.greencheck);
+        progressBar.setVisibility(View.INVISIBLE);
+        thankyouText.setVisibility(View.VISIBLE);
+        greencheck.setVisibility(View.VISIBLE);
+    }
+
+    void submitFailure() {
+        statusText.setText("Submission Failed");
+        thankyouText.setText("Please try again or try submission later");
+        greencheck.setImageResource(R.drawable.submitx);
+        progressBar.setVisibility(View.INVISIBLE);
+        greencheck.setVisibility(View.VISIBLE);
+        resubmitButton.setVisibility(View.VISIBLE);
     }
 
     void setListener(Button button, Intent intent) {

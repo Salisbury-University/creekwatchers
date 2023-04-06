@@ -67,13 +67,10 @@ public class ReviewPage extends AppCompatActivity {
     private Intent toHome, toSubmit, toTide, toWaterSurface, toWeather, toWindSpeed, toWindDirection, toRainfall, toWaterDepth, toSampleDist, toAirTemp, toWaterTemp, toSecchiDepth;
     private Button homeButton, submitButton, tideButton, watersurfaceButton, weatherButton, windspeedButton, winddirectButton, rainfallButton, waterDepthButton, sampleDistButton, airTempButton, waterTempButton, secchiDepthButton;
     private TextView tideTxt, watersurfaceTxt, weatherTxt, windspeedTxt, winddirectTxt, rainfallTxt, waterDepthTxt, sampleDistTxt, airTempTxt, waterTempTxt, secchiDepthTxt;
-
     private ImageView tideBG, watersurfaceBG, weatherBG, windspeedBG, winddirectBG, rainfallBG, waterDepthBG, sampleDistBG, airTempBG, waterTempBG, secchiDepthBG;
-    private static DecimalFormat REAL_FORMATTER = new DecimalFormat("0.###");
 
+    private static DecimalFormat REAL_FORMATTER = new DecimalFormat("0.##");
     private Boolean canSubmit;
-
-   //
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,16 +78,12 @@ public class ReviewPage extends AppCompatActivity {
         setContentView(layout.review_page);
 
         canSubmit = true;
-
         setupButtons();
         setupIntents();
         setupListeners();
-
-
     }
 
-    void setupButtons()
-    {
+    void setupButtons() {
         homeButton = (Button) findViewById(id.header);
         submitButton = (Button) findViewById(id.submitbtn);
         tideButton = (Button) findViewById(id.tidebtn);
@@ -129,8 +122,8 @@ public class ReviewPage extends AppCompatActivity {
         waterTempBG = (ImageView) findViewById(id.watertempBG);
         secchiDepthBG = (ImageView) findViewById(id.secchidepthBG);
 
+        // Set text for each row, disable submitting if missing any data.
         String textBox = "";
-
         switch (SurveyData.tideEst){
             case -1:
                 tideBG.setImageResource(R.color.maroon);
@@ -152,9 +145,7 @@ public class ReviewPage extends AppCompatActivity {
             case 4:
                 textBox = "Nontidal";
                 break;
-        }
-        tideTxt.setText(textBox);
-
+        }tideTxt.setText(textBox);
 
         switch (SurveyData.waterSurf){
             case -1:
@@ -174,9 +165,7 @@ public class ReviewPage extends AppCompatActivity {
             case 3:
                 textBox = "Heavy Chop";
                 break;
-        }
-        watersurfaceTxt.setText(textBox);
-
+        } watersurfaceTxt.setText(textBox);
 
         switch (SurveyData.weathEst){
             case -1:
@@ -208,9 +197,7 @@ public class ReviewPage extends AppCompatActivity {
             case 7:
                 textBox = "Snow";
                 break;
-        }
-        weatherTxt.setText(textBox);
-
+        } weatherTxt.setText(textBox);
 
         switch (SurveyData.windSpeed){
             case -1:
@@ -230,9 +217,7 @@ public class ReviewPage extends AppCompatActivity {
             case 3:
                 textBox = "Heavy";
                 break;
-        }
-        windspeedTxt.setText(textBox);
-
+        } windspeedTxt.setText(textBox);
 
         switch (SurveyData.windDir){
             case -1:
@@ -264,9 +249,7 @@ public class ReviewPage extends AppCompatActivity {
             case 7:
                 textBox = "NW";
                 break;
-        }
-        winddirectTxt.setText(textBox);
-
+        } winddirectTxt.setText(textBox);
 
         switch (SurveyData.rainfall){
             case -1:
@@ -292,61 +275,47 @@ public class ReviewPage extends AppCompatActivity {
             case 5:
                 textBox = "None";
                 break;
-        }
-        rainfallTxt.setText(textBox);
-
+        } rainfallTxt.setText(textBox);
 
         if(SurveyData.waterDepth[0] <=0) {
             waterDepthBG.setImageResource(R.color.maroon);
             waterDepthTxt.setText("Tap to set");
             canSubmit = false;
-        } else {
-            waterDepthTxt.setText(REAL_FORMATTER.format(SurveyData.waterDepth[0]));
-        }
+        } else { waterDepthTxt.setText(REAL_FORMATTER.format(SurveyData.waterDepth[0]) + " cm"); }
 
         if(SurveyData.sampleDist[0] <=0) {
             sampleDistBG.setImageResource(R.color.maroon);
             sampleDistTxt.setText("Tap to set");
             canSubmit = false;
-        } else {
-            sampleDistTxt.setText(REAL_FORMATTER.format(SurveyData.sampleDist[0]));
-        }
+        } else { sampleDistTxt.setText(REAL_FORMATTER.format(SurveyData.sampleDist[0])+ " m"); }
 
         if(SurveyData.airTemp[0] <=0 || SurveyData.airTemp[1] <=0 ) {
             airTempBG.setImageResource(R.color.maroon);
             airTempTxt.setText("Tap to set");
             canSubmit = false;
-        }else {
-            airTempTxt.setText(REAL_FORMATTER.format(SurveyData.airTemp[0]) + ", " + REAL_FORMATTER.format(SurveyData.airTemp[1]) );
-        }
+        }else { airTempTxt.setText(REAL_FORMATTER.format(SurveyData.airTemp[0]) + " °C, " + REAL_FORMATTER.format(SurveyData.airTemp[1])+" °C"); }
 
         if(SurveyData.waterTemp[0] <=0 || SurveyData.waterTemp[1] <=0 ) {
             waterTempBG.setImageResource(R.color.maroon);
             waterTempTxt.setText("Tap to set");
             canSubmit = false;
-        }else {
-            waterTempTxt.setText(REAL_FORMATTER.format(SurveyData.waterTemp[0]) + ", " + REAL_FORMATTER.format(SurveyData.waterTemp[1]) );
-            waterTempTxt.setText(""+ SurveyData.waterTemp[0]);
-
-        }
+        }else { waterTempTxt.setText(REAL_FORMATTER.format(SurveyData.waterTemp[0]) + " °C, " + REAL_FORMATTER.format(SurveyData.waterTemp[1])+" °C" ); }
 
         if(SurveyData.secchiDepth[0] <=0 || SurveyData.secchiDepth[1] <=0 ) {
             secchiDepthBG.setImageResource(R.color.maroon);
             secchiDepthTxt.setText("Tap to set");
             canSubmit = false;
-        }else {
-            secchiDepthTxt.setText(REAL_FORMATTER.format(SurveyData.secchiDepth[0]) + ", " + REAL_FORMATTER.format(SurveyData.secchiDepth[1]) );
-        }
+        }else { secchiDepthTxt.setText(REAL_FORMATTER.format(SurveyData.secchiDepth[0]) + " cm, " + REAL_FORMATTER.format(SurveyData.secchiDepth[1])+" cm" ); }
 
-        if(canSubmit == false){
+        // Disable submit button if unfinished
+        if(canSubmit == false) {
             submitButton.setBackgroundColor(Color.GRAY);
+            submitButton.setTextColor(getResources().getColor(R.color.gold));
             submitButton.setEnabled(false);
         }
-
     }
 
-    void setupIntents()
-    {
+    void setupIntents() {
         toHome = new Intent(this,HomePage.class);
         toSubmit = new Intent(this,SubmitPage.class);
         toWeather = new Intent(this, EstWeather.class);
@@ -362,10 +331,9 @@ public class ReviewPage extends AppCompatActivity {
         toSecchiDepth = new Intent(this, SecchiDepth.class);
     }
 
-    void setupListeners()
-    {
+    void setupListeners() {
         setListener(homeButton, toHome);
-        setListener(submitButton, toSubmit); //Needs update later
+        setListener(submitButton, toSubmit);
         setListener(tideButton, toTide);
         setListener(watersurfaceButton, toWaterSurface);
         setListener(weatherButton, toWeather);
@@ -380,8 +348,7 @@ public class ReviewPage extends AppCompatActivity {
         setListener(secchiDepthButton, toSecchiDepth);
     }
 
-    void setListener(Button button, Intent intent)
-    {
+    void setListener(Button button, Intent intent) {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
