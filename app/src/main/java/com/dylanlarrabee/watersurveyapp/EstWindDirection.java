@@ -33,6 +33,11 @@ public class EstWindDirection  extends AppCompatActivity {
         toReview = new Intent(this, ReviewPage.class);
         setupButtons();
         setupListeners();
+
+        if(Config.isReviewing){
+            homeButton.setText("BACK");
+        }
+
     }
 
     void setupButtons(){
