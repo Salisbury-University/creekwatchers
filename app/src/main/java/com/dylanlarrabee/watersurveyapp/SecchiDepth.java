@@ -27,7 +27,13 @@ public class SecchiDepth extends AppCompatActivity{
         ImageView secchi_n = (ImageView) findViewById(id.secchi_next);
         ImageView secchi_b = (ImageView) findViewById(id.secchi_back);
 
-        BasicCommands.setActivity(this, secchi_h, MeasurementsPage.class);
+        if(Config.isReviewing) {
+            secchi_h.setText("BACK");
+            BasicCommands.setActivity(this, secchi_h, ReviewPage.class);
+        }
+        else
+            BasicCommands.setActivity(this, secchi_h, MeasurementsPage.class);
+
         BasicCommands.setActivity(this, secchi_b, WaterTemp.class);
         BasicCommands.setActivity(this, secchi_n, CommentsPage.class);
 

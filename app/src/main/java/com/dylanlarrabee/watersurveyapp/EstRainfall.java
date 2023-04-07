@@ -37,6 +37,10 @@ public class EstRainfall extends AppCompatActivity {
         {
             highlightButton(SurveyData.rainfall);
         }
+        if(Config.isReviewing){
+            homeButton.setText("BACK");
+        }
+
     }
 
     void setupButtons() {

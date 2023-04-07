@@ -38,6 +38,10 @@ public class EstWeather extends AppCompatActivity {
 
         setupButtons();
         setupListeners();
+
+        if(Config.isReviewing){
+            homeButton.setText("BACK");
+        }
     }
 
     void setupButtons(){

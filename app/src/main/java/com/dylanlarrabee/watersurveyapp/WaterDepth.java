@@ -30,7 +30,13 @@ public class WaterDepth extends AppCompatActivity {
         ImageView water_b = (ImageView) findViewById(id.waterdep_back);
         ImageView water_n = (ImageView) findViewById(id.waterdep_next);
 
-        BasicCommands.setActivity(this, water_h, MeasurementsPage.class);
+        if(Config.isReviewing) {
+            water_h.setText("BACK");
+            BasicCommands.setActivity(this, water_h, ReviewPage.class);
+        }
+        else
+            BasicCommands.setActivity(this, water_h, MeasurementsPage.class);
+
         BasicCommands.setActivity(this, water_b, EstRainfall.class);
         BasicCommands.setActivity(this, water_n, SamplePage.class);
         BasicCommands.setAlertBox(this, wdmeas, 0, SurveyData.waterDepth,unit,title, 20);

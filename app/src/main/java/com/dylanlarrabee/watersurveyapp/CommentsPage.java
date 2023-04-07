@@ -24,7 +24,12 @@ public class CommentsPage extends AppCompatActivity{
         ImageView comm_n = (ImageView) findViewById(id.com_next);
         ImageView comm_b = (ImageView) findViewById(id.com_back);
 
-        BasicCommands.setActivity(this, comm_h, HomePage.class);
+        if(Config.isReviewing) {
+            comm_h.setText("BACK");
+            BasicCommands.setActivity(this, comm_h, ReviewPage.class);
+        }
+        else
+            BasicCommands.setActivity(this, comm_h, MeasurementsPage.class);
         BasicCommands.setActivity(this, comm_b, SecchiDepth.class);
         BasicCommands.setActivity(this, comm_n, ReviewPage.class);
 
