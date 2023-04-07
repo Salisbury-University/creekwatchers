@@ -41,6 +41,9 @@ public class EstWaterSurface extends AppCompatActivity {
         {
             highlightButton(allBackgrounds[SurveyData.waterSurf],SurveyData.waterSurf);
         }
+        if(Config.isReviewing){
+            homeButton.setText("BACK");
+        }
 
     }
 

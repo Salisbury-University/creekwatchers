@@ -21,8 +21,13 @@ public class WaterTemp extends AppCompatActivity {
         TextView waterTemp_h = (TextView) findViewById(R.id.waterTemp_home);
         ImageView waterTemp_n = (ImageView) findViewById(R.id.waterTemp_next);
         ImageView waterTemp_b = (ImageView) findViewById(id.waterTemp_back);
+        if(Config.isReviewing) {
+            waterTemp_h.setText("BACK");
+            BasicCommands.setActivity(this, waterTemp_h, ReviewPage.class);
+        }
+        else
+            BasicCommands.setActivity(this, waterTemp_h, MeasurementsPage.class);
 
-        BasicCommands.setActivity(this, waterTemp_h, MeasurementsPage.class);
         BasicCommands.setActivity(this, waterTemp_b, AirTemp.class);
         BasicCommands.setActivity(this, waterTemp_n, SecchiDepth.class);
 

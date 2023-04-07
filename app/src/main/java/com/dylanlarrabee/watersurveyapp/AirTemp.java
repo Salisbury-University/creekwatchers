@@ -31,7 +31,13 @@ public class AirTemp extends AppCompatActivity {
         ImageView air_b = (ImageView) findViewById(R.id.air_back);
 
 
-        BasicCommands.setActivity(this, air_h, MeasurementsPage.class);
+        if(Config.isReviewing) {
+            air_h.setText("BACK");
+            BasicCommands.setActivity(this, air_h, ReviewPage.class);
+        }
+        else
+            BasicCommands.setActivity(this, air_h, MeasurementsPage.class);
+
         BasicCommands.setActivity(this, air_b, SamplePage.class);
         BasicCommands.setActivity(this, air_n, WaterTemp.class);
 

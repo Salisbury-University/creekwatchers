@@ -45,6 +45,11 @@ public class EstTide extends AppCompatActivity {
         {
             highlightButton(SurveyData.tideEst);
         }
+        if(Config.isReviewing){
+            homeButton.setText("BACK");
+        }
+
+
     }
 
     void setupButtons() {

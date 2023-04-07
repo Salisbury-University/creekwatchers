@@ -87,6 +87,10 @@ public class EstWindDirection  extends AppCompatActivity {
         else
             setListener(homeButton, toEstHome);
 
+        if(Config.isReviewing){
+            homeButton.setText("BACK");
+        }
+
     }
 
     void setListener(View button, Intent intent)
