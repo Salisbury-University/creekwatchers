@@ -77,6 +77,8 @@ public class ReviewPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(layout.review_page);
 
+        Config.isReviewing = true;
+
         canSubmit = true;
         setupButtons();
         setupIntents();
@@ -349,9 +351,12 @@ public class ReviewPage extends AppCompatActivity {
     }
 
     void setListener(Button button, Intent intent) {
+        int id = button.getId();
         button.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
+                if(id == R.id.header) Config.isReviewing = false;
                 startActivity(intent);
             }
         });

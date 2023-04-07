@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class EstRainfall extends AppCompatActivity {
 
-    private Intent toEstHome, toEstWindDirection, toMeasWaterDepth, toEstRainfallInfo;
+    private Intent toEstHome, toEstWindDirection, toMeasWaterDepth, toEstRainfallInfo, toReview;
     private Button homeButton, stormButton, heavyButton, moderateButton, lightButton, traceButton, noneButton,
             stormButtonbg, heavyButtonbg, moderateButtonbg,lightButtonbg, traceButtonbg, noneButtonbg;
     private Button allButtons[], allBtnBgs[];
@@ -30,7 +30,7 @@ public class EstRainfall extends AppCompatActivity {
         toEstWindDirection = new Intent(this, EstWindDirection.class);
         toMeasWaterDepth = new Intent(this, WaterDepth.class);
         toEstRainfallInfo = new Intent(this, EstRainfallInfo.class);
-
+        toReview = new Intent(this, ReviewPage.class);
         setupButtons();
         setupListeners();
         if(SurveyData.rainfall >=0)
@@ -77,7 +77,11 @@ public class EstRainfall extends AppCompatActivity {
         setListener(infoButton, toEstRainfallInfo);
         setListener(rightButton, toMeasWaterDepth);
         setListener(leftButton, toEstWindDirection);
-        setListener(homeButton, toEstHome);
+        if(Config.isReviewing)
+            setListener(homeButton, toReview);
+        else
+            setListener(homeButton, toEstHome);
+
     }
 
     void setListener(View button, Intent intent)
