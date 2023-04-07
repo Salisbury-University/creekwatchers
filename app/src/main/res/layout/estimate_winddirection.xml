@@ -115,8 +115,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:alpha="0.6"
+        android:background="#AE5D17"
         android:scaleType="centerCrop"
-        android:src="@drawable/windgif"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintTop_toTopOf="@+id/estimateTitle"></pl.droidsonroids.gif.GifImageView>
     <ImageView

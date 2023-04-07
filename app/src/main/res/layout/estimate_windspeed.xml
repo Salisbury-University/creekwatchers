@@ -153,8 +153,8 @@
 
     <ImageView
         android:id="@+id/calm_background"
-        android:layout_width="409dp"
-        android:layout_height="135dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:src="@drawable/color_cursor"
         app:layout_constraintBottom_toBottomOf="@+id/calm_button"
         app:layout_constraintEnd_toEndOf="@+id/calm_button"
