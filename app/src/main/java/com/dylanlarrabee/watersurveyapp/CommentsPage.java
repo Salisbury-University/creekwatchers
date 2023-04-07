@@ -46,7 +46,7 @@ public class CommentsPage extends AppCompatActivity{
 
         CheckBox bottomOut = findViewById(id.bottomout);
 
-        if(SurveyData.secchiDepth[0] == SurveyData.waterDepth[0] || SurveyData.secchiDepth[1] == SurveyData.waterDepth[0]){
+        if((SurveyData.secchiDepth[0] == SurveyData.waterDepth[0] || SurveyData.secchiDepth[1] == SurveyData.waterDepth[0]) && SurveyData.waterDepth[0] >= 0){
             bottomOut.setChecked(true);
             SurveyData.bottomedOut = true;
         }
