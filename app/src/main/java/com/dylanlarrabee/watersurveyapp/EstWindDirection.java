@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class EstWindDirection  extends AppCompatActivity {
 
-    private Intent toEstHome, toEstWindSpeed, toEstWindDirectInfo, toEstRainfall;
+    private Intent toEstHome, toEstWindSpeed, toEstWindDirectInfo, toEstRainfall, toReview;
     private ImageView allButtons[];
     private TextView allText[];
     private Button homeButton;
@@ -30,7 +30,7 @@ public class EstWindDirection  extends AppCompatActivity {
         toEstWindSpeed = new Intent(this, EstWindSpeed.class);
         toEstWindDirectInfo = new Intent(this, EstWindDirectionInfo.class);
         toEstRainfall = new Intent(this, EstRainfall.class);
-
+        toReview = new Intent(this, ReviewPage.class);
         setupButtons();
         setupListeners();
     }
@@ -82,7 +82,11 @@ public class EstWindDirection  extends AppCompatActivity {
         setListener(infoButton, toEstWindDirectInfo);
         setListener(leftButton, toEstWindSpeed);
         setListener(rightButton, toEstRainfall);
-        setListener(homeButton, toEstHome);
+        if(Config.isReviewing)
+            setListener(homeButton, toReview);
+        else
+            setListener(homeButton, toEstHome);
+
     }
 
     void setListener(View button, Intent intent)

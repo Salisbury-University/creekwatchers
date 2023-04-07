@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import pl.droidsonroids.gif.GifImageView;
 
 public class EstWindSpeed extends AppCompatActivity {
-    private Intent toEstHome, toEstWeather, toEstWindDirection, toEstWindSpeedInfo;
+    private Intent toEstHome, toEstWeather, toEstWindDirection, toEstWindSpeedInfo, toReview;
     private int watersurfaceNum;
     private ImageView allBackgrounds[], allImages[];
     private Button allButtons[];
@@ -40,7 +40,7 @@ public class EstWindSpeed extends AppCompatActivity {
         toEstWindDirection = new Intent(this, EstWindDirection.class);
         toEstWeather = new Intent(this, EstWeather.class);
         toEstWindSpeedInfo = new Intent(this, EstWindSpeedInfo.class);
-
+        toReview = new Intent(this, ReviewPage.class);
         setupButtons();
         setupListeners();
 
@@ -107,7 +107,11 @@ public class EstWindSpeed extends AppCompatActivity {
         setListener(infoButton, toEstWindSpeedInfo);
         setListener(leftButton, toEstWeather);
         setListener(rightButton, toEstWindDirection);
-        setListener(homeButton, toEstHome);
+        if(Config.isReviewing)
+            setListener(homeButton, toReview);
+        else
+            setListener(homeButton, toEstHome);
+
     }
 
     void setListener(View button, Intent intent)

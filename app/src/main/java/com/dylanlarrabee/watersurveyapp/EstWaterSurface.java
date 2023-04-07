@@ -14,7 +14,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class EstWaterSurface extends AppCompatActivity {
-    private Intent toEstHome, toEstWeather, toEstTide, toEstWaterSurfaceInfo;
+    private Intent toEstHome, toEstWeather, toEstTide, toEstWaterSurfaceInfo, toReview;
     private ImageView allBackgrounds[], allImages[];
     private Button allButtons[];
     private TextView allText[];
@@ -32,6 +32,7 @@ public class EstWaterSurface extends AppCompatActivity {
         toEstTide = new Intent(this, EstTide.class);
         toEstWeather = new Intent(this, EstWeather.class);
         toEstWaterSurfaceInfo = new Intent(this, EstWaterSurfaceInfo.class);
+        toReview = new Intent(this, ReviewPage.class);
 
         setupButtons();
         setupListeners();
@@ -92,7 +93,11 @@ public class EstWaterSurface extends AppCompatActivity {
         setListener(infoButton, toEstWaterSurfaceInfo);
         setListener(leftButton, toEstTide);
         setListener(rightButton, toEstWeather);
-        setListener(homeButton, toEstHome);
+        if(Config.isReviewing)
+            setListener(homeButton, toReview);
+        else
+            setListener(homeButton, toEstHome);
+
     }
 
     void setListener(View button, Intent intent)

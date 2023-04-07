@@ -15,7 +15,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class EstWeather extends AppCompatActivity {
-    private Intent toEstHome, toEstWaterSurface, toEstWindSpeed, toEstWeatherInfo;
+    private Intent toEstHome, toEstWaterSurface, toEstWindSpeed, toEstWeatherInfo, toReview;
     private int weatherNum;
     private ImageView allBackgrounds[];
     private Button allButtons[];
@@ -34,6 +34,7 @@ public class EstWeather extends AppCompatActivity {
         toEstWindSpeed = new Intent(this, EstWindSpeed.class);
         toEstWaterSurface = new Intent(this, EstWaterSurface.class);
         toEstWeatherInfo = new Intent(this, EstWeatherInfo.class);
+        toReview= new Intent(this, ReviewPage.class);
 
         setupButtons();
         setupListeners();
@@ -98,7 +99,11 @@ public class EstWeather extends AppCompatActivity {
         setListener(infoButton, toEstWeatherInfo);
         setListener(leftButton, toEstWaterSurface);
         setListener(rightButton, toEstWindSpeed);
-        setListener(homeButton, toEstHome);
+        if(Config.isReviewing)
+            setListener(homeButton, toReview);
+        else
+            setListener(homeButton, toEstHome);
+
 
     }
 

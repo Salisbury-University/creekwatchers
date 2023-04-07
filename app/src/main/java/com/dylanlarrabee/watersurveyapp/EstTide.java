@@ -21,7 +21,7 @@ import androidx.core.content.ContextCompat;
 
 public class EstTide extends AppCompatActivity {
 
-    private Intent toEstHome, toEstWaterSurface, toEstTideInfo;
+    private Intent toEstHome, toEstWaterSurface, toEstTideInfo, toReview;
     private Button homeButton, highButton, midFallingButton, lowButton, midFloodingButton, nontidalButton,
             highButtonbg, midFallingButtonbg, lowButtonbg, midFloodingButtonbg, nontidalButtonbg;
     private Button allButtons[],allBtnBgs[];
@@ -36,6 +36,8 @@ public class EstTide extends AppCompatActivity {
         toEstHome = new Intent(this, EstimatesPage.class);
         toEstWaterSurface = new Intent(this, EstWaterSurface.class);
         toEstTideInfo = new Intent(this, EstTideInfo.class);
+
+        toReview = new Intent(this, ReviewPage.class);
 
         setupButtons();
         setupListeners();
@@ -79,7 +81,12 @@ public class EstTide extends AppCompatActivity {
 
         setListener(infoButton, toEstTideInfo);
         setListener(rightButton, toEstWaterSurface);
-        setListener(homeButton, toEstHome);
+
+        if(Config.isReviewing)
+            setListener(homeButton, toReview);
+        else
+            setListener(homeButton, toEstHome);
+
 
     }
 
