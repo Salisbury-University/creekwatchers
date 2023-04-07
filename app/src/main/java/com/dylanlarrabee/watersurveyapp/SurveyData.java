@@ -21,7 +21,7 @@ SurveyData  {
         static int estArr[] = {tideEst,waterSurf,weathEst,windSpeed,windDir,rainfall};
         static boolean bottomedOut, newForm = false,firstEntry = true;
 
-         String myuserName = "", myuserSite = "", myUserID;
+         String myuserName = "", myuserSite = "", myUserID, myComm = "";
          int mycurEst = 0, mycurMeas = 0, mycurComm = 0;
          int mytideEst=-1,myweathEst=-1,mywindSpeed=-1, mywaterSurf =-1,mywindDir=-1,myrainfall=-1;
          double [] mywaterDepth= {-1},mysampleDist= {-1};
@@ -130,6 +130,7 @@ SurveyData  {
                 mysd.mysecchiDepth[1] = SurveyData.secchiDepth[1];
                 mysd.mywaterDepth[0] = SurveyData.waterDepth[0];
                 mysd.mysampleDist[0] = SurveyData.sampleDist[0];
+                mysd.myComm = SurveyData.comments;
                 return mysd;
         }
         public static void RetrieveData(SurveyData mysd)
@@ -156,6 +157,6 @@ SurveyData  {
             SurveyData.secchiDepth[1] = mysd.mysecchiDepth[1];
             SurveyData.sampleDist[0] = mysd.mysampleDist[0];
             SurveyData.waterDepth[0] = mysd.mywaterDepth[0];
-
+            SurveyData.comments = mysd.myComm;
         }
 }

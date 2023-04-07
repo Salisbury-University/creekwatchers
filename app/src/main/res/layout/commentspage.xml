@@ -49,6 +49,13 @@
         app:layout_constraintGuide_percent="0.15"/>
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cgl70h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.70"/>
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/cgl75h"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -128,6 +135,22 @@
         app:layout_constraintEnd_toStartOf="@+id/cgl95v"
         app:layout_constraintStart_toStartOf="@+id/cgl5v"
         app:layout_constraintTop_toTopOf="@+id/cgl15h" />
+
+    <TextView
+        android:id="@+id/comms_submit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_below="@+id/commentText"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:onClick="store_comms"
+        android:text="Submit"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/cgl75h"
+        app:layout_constraintEnd_toStartOf="@+id/cgl75v"
+        app:layout_constraintStart_toStartOf="@+id/cgl25v"
+        app:layout_constraintTop_toTopOf="@+id/cgl70h" />
 
     <CheckBox
         android:id="@+id/bottomout"
