@@ -39,7 +39,7 @@ public class EstWeather extends AppCompatActivity {
         setupButtons();
         setupListeners();
 
-        if(Config.isReviewing){
+        if(ReviewPage.isReviewing){
             homeButton.setText("BACK");
         }
     }
@@ -103,7 +103,7 @@ public class EstWeather extends AppCompatActivity {
         setListener(infoButton, toEstWeatherInfo);
         setListener(leftButton, toEstWaterSurface);
         setListener(rightButton, toEstWindSpeed);
-        if(Config.isReviewing)
+        if(ReviewPage.isReviewing)
             setListener(homeButton, toReview);
         else
             setListener(homeButton, toEstHome);

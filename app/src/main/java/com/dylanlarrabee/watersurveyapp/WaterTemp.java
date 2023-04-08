@@ -21,7 +21,7 @@ public class WaterTemp extends AppCompatActivity {
         TextView waterTemp_h = (TextView) findViewById(R.id.waterTemp_home);
         ImageView waterTemp_n = (ImageView) findViewById(R.id.waterTemp_next);
         ImageView waterTemp_b = (ImageView) findViewById(id.waterTemp_back);
-        if(Config.isReviewing) {
+        if(ReviewPage.isReviewing) {
             waterTemp_h.setText("BACK");
             BasicCommands.setActivity(this, waterTemp_h, ReviewPage.class);
         }

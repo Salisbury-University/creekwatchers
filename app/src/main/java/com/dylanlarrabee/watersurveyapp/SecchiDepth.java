@@ -27,7 +27,7 @@ public class SecchiDepth extends AppCompatActivity{
         ImageView secchi_n = (ImageView) findViewById(id.secchi_next);
         ImageView secchi_b = (ImageView) findViewById(id.secchi_back);
 
-        if(Config.isReviewing) {
+        if(ReviewPage.isReviewing) {
             secchi_h.setText("BACK");
             BasicCommands.setActivity(this, secchi_h, ReviewPage.class);
         }

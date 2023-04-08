@@ -24,7 +24,7 @@ public class CommentsPage extends AppCompatActivity{
         ImageView comm_n = (ImageView) findViewById(id.com_next);
         ImageView comm_b = (ImageView) findViewById(id.com_back);
 
-        if(Config.isReviewing) {
+        if(ReviewPage.isReviewing) {
             comm_h.setText("BACK");
             BasicCommands.setActivity(this, comm_h, ReviewPage.class);
         }

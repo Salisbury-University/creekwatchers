@@ -24,7 +24,7 @@ public class SamplePage extends AppCompatActivity{
         ImageView samp_n = (ImageView) findViewById(id.samp_next);
         ImageView samp_b = (ImageView) findViewById(id.samp_back);
 
-        if(Config.isReviewing) {
+        if(ReviewPage.isReviewing) {
             samp_home.setText("BACK");
             BasicCommands.setActivity(this, samp_home, ReviewPage.class);
         }
