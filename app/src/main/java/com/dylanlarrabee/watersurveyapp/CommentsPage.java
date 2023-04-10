@@ -46,6 +46,7 @@ public class CommentsPage extends AppCompatActivity{
                 SurveyData.comments = comments;
                 Toast msg = Toast.makeText(getApplicationContext(), "Comment Saved", Toast.LENGTH_SHORT);
                 msg.show();
+                SurveyData.curComm = 1;
             }
         });
 
