@@ -87,12 +87,12 @@ public class EstWindDirection  extends AppCompatActivity {
         setListener(infoButton, toEstWindDirectInfo);
         setListener(leftButton, toEstWindSpeed);
         setListener(rightButton, toEstRainfall);
-        if(Config.isReviewing)
+        if(ReviewPage.isReviewing)
             setListener(homeButton, toReview);
         else
             setListener(homeButton, toEstHome);
 
-        if(Config.isReviewing){
+        if(ReviewPage.isReviewing){
             homeButton.setText("BACK");
         }
 

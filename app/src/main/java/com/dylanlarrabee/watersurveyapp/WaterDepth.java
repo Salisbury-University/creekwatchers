@@ -30,7 +30,7 @@ public class WaterDepth extends AppCompatActivity {
         ImageView water_b = (ImageView) findViewById(id.waterdep_back);
         ImageView water_n = (ImageView) findViewById(id.waterdep_next);
 
-        if(Config.isReviewing) {
+        if(ReviewPage.isReviewing) {
             water_h.setText("BACK");
             BasicCommands.setActivity(this, water_h, ReviewPage.class);
         }

@@ -45,7 +45,7 @@ public class EstTide extends AppCompatActivity {
         {
             highlightButton(SurveyData.tideEst);
         }
-        if(Config.isReviewing){
+        if(ReviewPage.isReviewing){
             homeButton.setText("BACK");
         }
 
@@ -87,7 +87,7 @@ public class EstTide extends AppCompatActivity {
         setListener(infoButton, toEstTideInfo);
         setListener(rightButton, toEstWaterSurface);
 
-        if(Config.isReviewing)
+        if(ReviewPage.isReviewing)
             setListener(homeButton, toReview);
         else
             setListener(homeButton, toEstHome);

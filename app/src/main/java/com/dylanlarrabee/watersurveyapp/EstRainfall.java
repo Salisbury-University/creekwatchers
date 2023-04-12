@@ -37,7 +37,7 @@ public class EstRainfall extends AppCompatActivity {
         {
             highlightButton(SurveyData.rainfall);
         }
-        if(Config.isReviewing){
+        if(ReviewPage.isReviewing){
             homeButton.setText("BACK");
         }
 
@@ -81,7 +81,7 @@ public class EstRainfall extends AppCompatActivity {
         setListener(infoButton, toEstRainfallInfo);
         setListener(rightButton, toMeasWaterDepth);
         setListener(leftButton, toEstWindDirection);
-        if(Config.isReviewing)
+        if(ReviewPage.isReviewing)
             setListener(homeButton, toReview);
         else
             setListener(homeButton, toEstHome);

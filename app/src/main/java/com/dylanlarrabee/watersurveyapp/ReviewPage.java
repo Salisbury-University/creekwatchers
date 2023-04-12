@@ -3,59 +3,15 @@ package com.dylanlarrabee.watersurveyapp;
 import static com.dylanlarrabee.watersurveyapp.R.id;
 import static com.dylanlarrabee.watersurveyapp.R.layout;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.media.Image;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.text.DecimalFormat;
-import java.util.Calendar;
-import java.util.Date;
-
-import javax.activation.DataHandler;
-import javax.activation.DataSource;
-import javax.activation.FileDataSource;
-import javax.mail.BodyPart;
-import javax.mail.Message;
-import javax.mail.Multipart;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeBodyPart;
-import javax.mail.internet.MimeMessage;
-import javax.mail.internet.MimeMultipart;
-
-import android.util.Log;
-
-import java.io.FileWriter;
-import java.util.*;
-import javax.mail.*;
-import javax.mail.internet.*;
-import javax.activation.*;
-import javax.mail.Session;
-import javax.mail.Transport;
-import java.util.Properties;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.PasswordAuthentication;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-import java.util.Calendar;
-import java.util.Date;
-import java.io.File;
-import java.io.IOException;
-
 
 //white text when button is red
 //submit text yellow/white
@@ -71,6 +27,7 @@ public class ReviewPage extends AppCompatActivity {
 
     private static DecimalFormat REAL_FORMATTER = new DecimalFormat("0.##");
     private Boolean canSubmit;
+    public static boolean isReviewing = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +35,7 @@ public class ReviewPage extends AppCompatActivity {
         setContentView(layout.review_page);
 
         Config.isReviewing = true;
-
+        isReviewing = true;
         canSubmit = true;
         setupButtons();
         setupIntents();
@@ -356,7 +313,7 @@ public class ReviewPage extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                if(id == R.id.header) Config.isReviewing = false;
+                if(id == R.id.header) isReviewing = false;
                 startActivity(intent);
             }
         });

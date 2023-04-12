@@ -31,7 +31,7 @@ public class AirTemp extends AppCompatActivity {
         ImageView air_b = (ImageView) findViewById(R.id.air_back);
 
 
-        if(Config.isReviewing) {
+        if(ReviewPage.isReviewing) {
             air_h.setText("BACK");
             BasicCommands.setActivity(this, air_h, ReviewPage.class);
         }

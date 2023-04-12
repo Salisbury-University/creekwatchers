@@ -2,6 +2,7 @@ package com.dylanlarrabee.watersurveyapp;
 
 import static com.dylanlarrabee.watersurveyapp.R.id;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -32,11 +33,13 @@ public class SubmitPage extends AppCompatActivity {
     private ProgressBar progressBar;
     private Button resubmitButton;
     private String date;
+    private Intent toRestart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.submit_page);
+        toRestart = new Intent(this, FormArchive.class);
 
         setupViews();
         attemptSubmit();
@@ -80,6 +83,11 @@ public class SubmitPage extends AppCompatActivity {
         progressBar.setVisibility(View.INVISIBLE);
         thankyouText.setVisibility(View.VISIBLE);
         greencheck.setVisibility(View.VISIBLE);
+
+        resubmitButton.setText("Home");
+        resubmitButton.setOnClickListener(v -> startActivity(toRestart));
+        resubmitButton.setVisibility(View.VISIBLE);
+
     }
 
     void submitFailure() {

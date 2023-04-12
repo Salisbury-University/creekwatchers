@@ -41,7 +41,7 @@ public class EstWaterSurface extends AppCompatActivity {
         {
             highlightButton(allBackgrounds[SurveyData.waterSurf],SurveyData.waterSurf);
         }
-        if(Config.isReviewing){
+        if(ReviewPage.isReviewing){
             homeButton.setText("BACK");
         }
 
@@ -96,7 +96,7 @@ public class EstWaterSurface extends AppCompatActivity {
         setListener(infoButton, toEstWaterSurfaceInfo);
         setListener(leftButton, toEstTide);
         setListener(rightButton, toEstWeather);
-        if(Config.isReviewing)
+        if(ReviewPage.isReviewing)
             setListener(homeButton, toReview);
         else
             setListener(homeButton, toEstHome);
