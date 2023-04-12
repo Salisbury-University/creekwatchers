@@ -19,7 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 
-public class EstTide extends AppCompatActivity {
+public class EstTide extends SaveFormAct {
 
     private Intent toEstHome, toEstWaterSurface, toEstTideInfo, toReview;
     private Button homeButton, highButton, midFallingButton, lowButton, midFloodingButton, nontidalButton,

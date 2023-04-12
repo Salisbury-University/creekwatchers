@@ -20,7 +20,7 @@ import javax.mail.*;
 import javax.mail.internet.*;
 import javax.activation.*;
 
-public class SubmitPage extends AppCompatActivity {
+public class SubmitPage extends SaveFormAct {
 
   private final String RECIPIENT = "chrismorse301@gmail.com";
   //private final String RECIPIENT = "creekwatchers@salisbury.edu";

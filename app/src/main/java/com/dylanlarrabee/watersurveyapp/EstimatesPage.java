@@ -14,7 +14,7 @@ import android.widget.ViewFlipper;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class EstimatesPage extends AppCompatActivity {
+public class EstimatesPage extends SaveFormAct {
 
     private Intent toHome, toWeather, toTide, toWaterSurface, toWindSpeed, toWindDirection, toRainfall;
 

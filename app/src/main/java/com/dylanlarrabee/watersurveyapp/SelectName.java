@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-public class SelectName extends AppCompatActivity {
+public class SelectName extends SaveFormAct {
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
     private BasicCommands bc = new BasicCommands();

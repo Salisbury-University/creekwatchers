@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SamplePage extends AppCompatActivity{
+public class SamplePage extends SaveFormAct{
     String unit = " cm";
     String title = "Enter in Sample Distance ";
     @Override

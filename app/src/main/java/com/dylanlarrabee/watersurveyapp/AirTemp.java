@@ -15,7 +15,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class AirTemp extends AppCompatActivity {
+public class AirTemp extends SaveFormAct {
     String unit = " °C";
     String title = "Enter in Air Temperature ";
     @Override

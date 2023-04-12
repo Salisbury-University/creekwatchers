@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class EstWindDirectionInfo extends AppCompatActivity {
+public class EstWindDirectionInfo extends SaveFormAct {
 
     private Intent toEstHome, toEstWindDirection, toEstWindSpeed, toEstRainfall;
     private Button homeButton, exitButton;

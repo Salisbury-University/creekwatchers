@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 
-public class FormArchive extends AppCompatActivity {
+public class FormArchive extends SaveFormAct {
     private Button newFormBtn;
     private LinearLayout formLay;
     private int prefSize;

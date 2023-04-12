@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class CommentsPage extends AppCompatActivity{
+public class CommentsPage extends SaveFormAct{
 
     @Override
     protected void onCreate(Bundle savedInstance) {

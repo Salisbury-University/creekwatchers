@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class LoginPage extends AppCompatActivity {
+public class LoginPage extends SaveFormAct {
     //vars
     private SharedPreferences namePref;
     private SharedPreferences.Editor nameEdit;

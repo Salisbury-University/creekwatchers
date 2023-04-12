@@ -15,7 +15,7 @@ import android.widget.EditText;
 import com.google.gson.Gson;
 
 
-public class HomePage extends AppCompatActivity {
+public class HomePage extends SaveFormAct {
     Gson gson = new Gson();
     private BasicCommands bc = new BasicCommands();
     private final int estInd = 0,measInd = 1,commInd = 2;
@@ -120,6 +120,7 @@ public class HomePage extends AppCompatActivity {
       {
 
           retrieveData();
+
           SurveyData.firstEntry = false;
           SurveyData.newForm = false;
       }else

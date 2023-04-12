@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class WaterDepth extends AppCompatActivity {
+public class WaterDepth extends SaveFormAct {
     String unit = " cm";
 
     String title = "Enter in Water Depth ";
