@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-public class SecchiDepth extends AppCompatActivity{
+public class SecchiDepth extends SaveFormAct{
 
     String unit = " cm";
     String title = "Enter in Secchi Depth ";

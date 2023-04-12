@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class EstWindDirection  extends AppCompatActivity {
+public class EstWindDirection  extends SaveFormAct {
 
     private Intent toEstHome, toEstWindSpeed, toEstWindDirectInfo, toEstRainfall, toReview;
     private ImageView allButtons[];

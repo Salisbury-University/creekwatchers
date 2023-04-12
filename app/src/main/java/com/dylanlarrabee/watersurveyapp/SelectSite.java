@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class SelectSite extends AppCompatActivity {
+public class SelectSite extends SaveFormAct {
     private final int numSites = 5;
     private Button site1,site2,site3,site4,site5;
     private Button siteBtns[] = new Button[] {site1,site2,site3,site4,site5};

@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class WaterTemp extends AppCompatActivity {
+public class WaterTemp extends SaveFormAct {
     String unit = " °C";
     String title = "Enter in Water Temperature ";
     @Override

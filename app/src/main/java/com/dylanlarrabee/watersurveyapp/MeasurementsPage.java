@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MeasurementsPage extends AppCompatActivity {
+public class MeasurementsPage extends SaveFormAct {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

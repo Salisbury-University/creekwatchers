@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class EstRainfall extends AppCompatActivity {
+public class EstRainfall extends SaveFormAct {
 
     private Intent toEstHome, toEstWindDirection, toMeasWaterDepth, toEstRainfallInfo, toReview;
     private Button homeButton, stormButton, heavyButton, moderateButton, lightButton, traceButton, noneButton,

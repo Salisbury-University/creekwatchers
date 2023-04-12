@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class EstWaterSurfaceInfo extends AppCompatActivity {
+public class EstWaterSurfaceInfo extends SaveFormAct {
 
     private Intent toEstHome, toEstWaterSurface, toEstTide, toEstWeather;
     private Button homeButton, exitButton;

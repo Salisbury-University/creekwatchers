@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import pl.droidsonroids.gif.GifImageView;
 
-public class EstWindSpeed extends AppCompatActivity {
+public class EstWindSpeed extends SaveFormAct {
     private Intent toEstHome, toEstWeather, toEstWindDirection, toEstWindSpeedInfo, toReview;
     private int watersurfaceNum;
     private ImageView allBackgrounds[], allImages[];

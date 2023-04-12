@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class EstWeather extends AppCompatActivity {
+public class EstWeather extends SaveFormAct {
     private Intent toEstHome, toEstWaterSurface, toEstWindSpeed, toEstWeatherInfo, toReview;
     private int weatherNum;
     private ImageView allBackgrounds[];

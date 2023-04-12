@@ -18,7 +18,7 @@ import java.text.DecimalFormat;
 // back button when editing pages
 //
 
-public class ReviewPage extends AppCompatActivity {
+public class ReviewPage extends SaveFormAct {
 
     private Intent toHome, toSubmit, toTide, toWaterSurface, toWeather, toWindSpeed, toWindDirection, toRainfall, toWaterDepth, toSampleDist, toAirTemp, toWaterTemp, toSecchiDepth;
     private Button homeButton, submitButton, tideButton, watersurfaceButton, weatherButton, windspeedButton, winddirectButton, rainfallButton, waterDepthButton, sampleDistButton, airTempButton, waterTempButton, secchiDepthButton;

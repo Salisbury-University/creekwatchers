@@ -15,7 +15,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-public class EstTideInfo extends AppCompatActivity {
+public class EstTideInfo extends SaveFormAct {
 
     private Intent toEstHome, toEstWaterSurface, toEstTide;
     private Button homeButton, exitButton;
