@@ -14,7 +14,7 @@ SurveyData  {
         static String formName = "";
         static final int maxEst = 6, maxMeas = 5, maxComm = 1, numMeas = 2;
         static String userName = "", userSite = "", comments = "";
-        static int curEst = 0, curMeas = 0, curComm = 0;
+        static int curEst = 0, curMeas = 0, curComm = 0, formIDnum = 0;
         static int tideEst=-1,weathEst=-1,windSpeed=-1, waterSurf =-1,windDir=-1,rainfall=-1;
         static double[] airTemp = {-1,-1},waterTemp={-1,-1},secchiDepth={-1,-1};
         static double[] waterDepth = {-1}, sampleDist = {-1};
@@ -22,7 +22,7 @@ SurveyData  {
         static boolean bottomedOut, newForm = false,firstEntry = true;
 
          String myuserName = "", myuserSite = "", myUserID, myComm = "";
-         int mycurEst = 0, mycurMeas = 0, mycurComm = 0;
+         int mycurEst = 0, mycurMeas = 0, mycurComm = 0, myformIDnum = 0;
          int mytideEst=-1,myweathEst=-1,mywindSpeed=-1, mywaterSurf =-1,mywindDir=-1,myrainfall=-1;
          double [] mywaterDepth= {-1},mysampleDist= {-1};
          double[] myairTemp = {-1,-1},mywaterTemp={-1,-1},mysecchiDepth={-1,-1};
@@ -133,6 +133,7 @@ SurveyData  {
                 mysd.mywaterDepth[0] = SurveyData.waterDepth[0];
                 mysd.mysampleDist[0] = SurveyData.sampleDist[0];
                 mysd.myComm = SurveyData.comments;
+                mysd.myformIDnum = SurveyData.formIDnum;
                 return mysd;
         }
         public static void RetrieveData(SurveyData mysd)
@@ -160,5 +161,6 @@ SurveyData  {
             SurveyData.sampleDist[0] = mysd.mysampleDist[0];
             SurveyData.waterDepth[0] = mysd.mywaterDepth[0];
             SurveyData.comments = mysd.myComm;
+            SurveyData.formIDnum = mysd.myformIDnum;
         }
 }

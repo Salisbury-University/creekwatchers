@@ -16,21 +16,26 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Map;
 
 public class FormArchive extends SaveFormAct {
     private Button newFormBtn;
     private LinearLayout formLay;
     private int prefSize;
-    SharedPreferences mPrefs;
+    SharedPreferences mPrefs, survPref;
     SharedPreferences.Editor myEdit;
+    List<Integer> formIDints = new ArrayList<>();
+    List<View> myListView= new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_archive);
 
+        survPref = getSharedPreferences("forms",MODE_PRIVATE);
         //find views
         formLay = findViewById(R.id.formSelLay);
         newFormBtn = findViewById(R.id.formSelAddBtn);
@@ -55,10 +60,25 @@ public class FormArchive extends SaveFormAct {
         for (Map.Entry<String, ?> entry : allEntries.entrySet()) {
             String key = entry.getKey();
             Object value = entry.getValue();
+            SurveyData mysd;
+            Gson gson = new Gson();
+            String json = survPref.getString(key,null);
+            mysd = gson.fromJson(json,SurveyData.class);
+            formIDints.add(mysd.myformIDnum);
             addForm(mPrefs.getString(key,null));
         }
 
-
+//        while(!formIDints.isEmpty())
+//        {
+//            int smallestIndex = formIDints.get(0);
+//            for (int i = 1; i < formIDints.size(); i++) {
+//                if (formIDints.get(i) < formIDints.get(smallestIndex)) {
+//                    smallestIndex = formIDints.get(i);
+//                }
+//            }
+//            formLay.addView(myListView.get(smallestIndex));
+//            formIDints.remove(smallestIndex);
+//        }
 
 
 
@@ -105,6 +125,7 @@ public class FormArchive extends SaveFormAct {
                 builder.show();
             }
         });
+        //myListView.add(formView);
         formLay.addView(formView);
     }
     private void toLogin()
