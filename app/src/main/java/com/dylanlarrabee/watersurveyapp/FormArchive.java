@@ -1,7 +1,9 @@
 package com.dylanlarrabee.watersurveyapp;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -13,12 +15,17 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Map;
+
 public class FormArchive extends SaveFormAct {
     private Button newFormBtn;
     private LinearLayout formLay;
     private int prefSize;
     SharedPreferences mPrefs;
     SharedPreferences.Editor myEdit;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,12 +51,11 @@ public class FormArchive extends SaveFormAct {
         prefSize = mPrefs.getAll().size();
         formLay.removeAllViews();
         formLay.addView(newFormBtn);
-        {
-            for(int i = prefSize-1; i >= 0; i--)
-            {
-                String formID = "form" + i;
-                addForm(formID);
-            }
+        Map<String, ?> allEntries = mPrefs.getAll();
+        for (Map.Entry<String, ?> entry : allEntries.entrySet()) {
+            String key = entry.getKey();
+            Object value = entry.getValue();
+            addForm(mPrefs.getString(key,null));
         }
 
 
@@ -59,9 +65,9 @@ public class FormArchive extends SaveFormAct {
     }
     private void addForm(String formID)
     {
-        View view = getLayoutInflater().inflate(R.layout.form_card,null);
-        TextView text = view.findViewById(R.id.formName);
-        Button btn = view.findViewById(R.id.cardDelBtn);
+        View formView = getLayoutInflater().inflate(R.layout.form_card,null);
+        TextView text = formView.findViewById(R.id.formName);
+        TextView btn = formView.findViewById(R.id.cardDelBtn);
         text.setText(formID);
         text.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,7 +76,36 @@ public class FormArchive extends SaveFormAct {
                 toHome();
             }
         });
-        formLay.addView(view);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(FormArchive.this);
+                builder.setTitle("Confirmation");
+                builder.setMessage("Are you sure you want to delete this form?");
+
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Delete the key-value pair
+                        SharedPreferences.Editor editor =mPrefs.edit();
+                        formLay.removeView(formView);
+                        editor.remove(formID);
+                        editor.apply();
+                    }
+                });
+
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Do nothing - user canceled the deletion
+                    }
+                });
+
+                builder.show();
+            }
+        });
+        formLay.addView(formView);
     }
     private void toLogin()
     {

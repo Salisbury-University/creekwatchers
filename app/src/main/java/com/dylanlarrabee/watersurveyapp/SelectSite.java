@@ -8,6 +8,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class SelectSite extends SaveFormAct {
     private final int numSites = 5;
     private Button site1,site2,site3,site4,site5;
@@ -59,7 +62,13 @@ public class SelectSite extends SaveFormAct {
     void toHome(String siteName)
     {
         if(SurveyData.newForm == true) {
-            String newID = "form" + formPref.getAll().size();
+            // Create a calendar instance
+            Calendar calendar = Calendar.getInstance();
+
+            // Get the current date in a desired format
+            SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy");
+            String currentDate = dateFormat.format(calendar.getTime());
+            String newID = siteName + " | " + currentDate;
             formEdit.putString(newID, newID);
             formEdit.commit();
             SurveyData.resetData();

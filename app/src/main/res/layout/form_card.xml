@@ -13,44 +13,73 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:cardCornerRadius="10dp"
             app:cardElevation="10dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/maroon"
-                android:minHeight="80dp"
-                android:padding="10dp">
+                android:minHeight="80dp">
 
-                <Button
-                    android:id="@+id/cardDelBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/gold"
-                    android:fontFamily="@font/aclonica"
-                    android:insetTop="0dp"
-                    android:insetBottom="0dp"
-                    android:textColor="@color/maroon"
-                    android:textSize="20sp"
+                <TextView
+                    android:id="@+id/formDivider2"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/gold"
+                    android:elevation="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Delete"></Button>
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/formDivider"
+                    android:layout_width="2dp"
+                    android:layout_height="0dp"
+                    android:background="@color/gold"
+                    android:elevation="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline62"
+                    app:layout_constraintStart_toStartOf="@+id/cardDelBtn"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/cardDelBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="#650404"
+                    android:elegantTextHeight="true"
+                    android:elevation="15dp"
+                    android:fontFamily="serif-monospace"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:padding="2dp"
+                    android:text="Delete"
+                    android:textColor="@color/gold"
+                    app:autoSizeTextType="uniform"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline62"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline62"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.8" />
 
                 <TextView
                     android:id="@+id/formName"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:fontFamily="@font/aclonica"
+                    android:fontFamily="serif-monospace"
                     android:gravity="center"
                     android:text="Form"
                     android:textAlignment="center"
                     android:textColor="@color/gold"
                     android:textSize="27sp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/cardDelBtn"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline62"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 

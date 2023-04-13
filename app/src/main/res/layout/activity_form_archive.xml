@@ -80,6 +80,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:backgroundTint="#B2651A1A"
+                android:fontFamily="serif-monospace"
                 android:insetTop="2dp"
                 android:insetBottom="2dp"
                 android:minHeight="65dp"
@@ -88,7 +89,7 @@
                 android:text="New Form"
                 android:textAlignment="center"
                 android:textColor="@color/gold"
-                android:textSize="20sp" />
+                android:textSize="34sp" />
 
         </LinearLayout>
     </ScrollView>
