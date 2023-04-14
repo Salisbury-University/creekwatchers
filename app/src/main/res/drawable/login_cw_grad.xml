@@ -6,7 +6,8 @@
             android:startColor="#05FFC420"
             android:centerColor="#75FFC420"
             android:endColor="#05FFC420"
-            android:type="linear" />
+            android:type="linear"
+            />
     </shape>
 </item>
 </selector>

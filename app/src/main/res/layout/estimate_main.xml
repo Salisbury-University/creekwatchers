@@ -51,16 +51,36 @@
 
 
     <TextView
+        android:id="@+id/formSelTitleBg4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#303030"
+
+        android:fontFamily="serif-monospace"
+        android:gravity="center"
+        android:shadowColor="#000000"
+        android:textAlignment="center"
+        android:textColor="@color/gold"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/estigl10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/estimatesTitle"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@color/gold"
+        android:background="@drawable/yellowvertgrad"
         android:fontFamily="serif-monospace"
         android:gravity="center"
+        android:shadowColor="#000000"
+        android:shadowRadius="15"
         android:text="Estimates"
         android:textAlignment="center"
         android:textAllCaps="true"
-        android:textColor="@color/maroon"
+        android:textColor="#CF0606"
         android:textSize="32sp"
         android:textStyle="bold"
         app:autoSizeMaxTextSize="48sp"
