@@ -107,7 +107,7 @@
         android:textAllCaps="true"
         android:textColor="@color/gold"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/gls50h"
+        app:layout_constraintBottom_toTopOf="@+id/gls90"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/gls10" />
