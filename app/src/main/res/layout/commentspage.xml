@@ -6,6 +6,24 @@
     android:layout_height="match_parent"
     android:background="@drawable/rivergif">
 
+    <TextView
+        android:id="@+id/formSelTitleBg2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#303030"
+
+        android:fontFamily="serif-monospace"
+        android:gravity="center"
+        android:shadowColor="#000000"
+        android:textAlignment="center"
+        android:textColor="@color/gold"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/cgl10h"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/cgl5v"
         android:layout_width="wrap_content"
@@ -53,14 +71,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.70"/>
+        app:layout_constraintGuide_percent="0.76" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/cgl75h"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.75"/>
+        app:layout_constraintGuide_percent="0.82" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/cgl90h"
@@ -73,11 +91,16 @@
         android:id="@+id/commentstitle"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@color/maroon"
+        android:background="@drawable/siteselgrad"
+        android:fontFamily="serif-monospace"
         android:gravity="center"
+        android:shadowColor="#000000"
+        android:shadowRadius="20"
         android:text="Comments"
         android:textColor="@color/gold"
         android:textSize="30sp"
+        app:autoSizeMaxTextSize="50sp"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toTopOf="@+id/cgl10h"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
@@ -87,11 +110,16 @@
         android:id="@+id/comhome"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:gravity="center"
-        android:text="Home"
-        android:textSize="30sp"
-        android:textColor="@color/gold"
         android:background="@color/maroon"
+        android:fontFamily="serif-monospace"
+        android:gravity="center"
+        android:shadowColor="#000000"
+        android:shadowRadius="10"
+        android:text="Home"
+        android:textColor="@color/gold"
+        android:textSize="30sp"
+        app:autoSizeMaxTextSize="54sp"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/cgl75v"
         app:layout_constraintStart_toStartOf="@+id/cgl25v"
@@ -101,7 +129,7 @@
         android:id="@+id/com_back"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/gold"
+        android:background="@color/maroon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/cgl25v"
         app:layout_constraintStart_toStartOf="parent"
@@ -112,7 +140,7 @@
         android:id="@+id/com_next"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/gold"
+        android:background="@color/maroon"
         android:rotationY="180"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -124,20 +152,23 @@
         android:id="@+id/commentText"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#5A0D08"
+        android:background="#E65A0D08"
         android:ems="10"
+        android:fontFamily="serif-monospace"
         android:gravity="top|left"
         android:hint="Enter Comments Here"
         android:padding="5dp"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
+        android:shadowColor="#000000"
+        android:shadowRadius="10"
         android:textColor="@color/white"
         android:textColorHint="#8FFFFFFF"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/cgl75h"
-        app:layout_constraintEnd_toStartOf="@+id/cgl95v"
-        app:layout_constraintStart_toStartOf="@+id/cgl5v"
-        app:layout_constraintTop_toTopOf="@+id/cgl15h" />
+        android:textSize="28sp"
+        app:layout_constraintBottom_toTopOf="@+id/cgl70h"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cgl10h" />
 
     <TextView
         android:id="@+id/comms_submit"
@@ -145,28 +176,60 @@
         android:layout_height="0dp"
         android:layout_below="@+id/commentText"
         android:layout_centerHorizontal="true"
+        android:background="@color/maroon"
+        android:fontFamily="serif-monospace"
         android:gravity="center"
         android:onClick="store_comms"
+        android:padding="2dp"
+        android:shadowColor="#000000"
+        android:shadowRadius="10"
         android:text="Submit"
+        android:textColor="@color/gold"
         android:textSize="25sp"
-        android:textColor="@color/white"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toTopOf="@+id/cgl75h"
-        app:layout_constraintEnd_toStartOf="@+id/cgl75v"
-        app:layout_constraintStart_toStartOf="@+id/cgl25v"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/cgl70h" />
 
     <CheckBox
         android:id="@+id/bottomout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoText="false"
         android:background="@color/gold"
+        android:buttonTint="@color/maroon"
+        android:enabled="false"
+        android:fontFamily="serif-monospace"
+        android:padding="10dp"
+        android:shadowColor="#000000"
+        android:shadowRadius="1"
         android:text="Bottomed Out"
         android:textColor="@color/maroon"
-        android:textSize="20sp"
-        android:enabled="false"
-        android:buttonTint="@color/maroon"
-        app:layout_constraintBottom_toTopOf="@+id/cgl90h"
-        app:layout_constraintEnd_toStartOf="@+id/cgl95v"
-        app:layout_constraintTop_toTopOf="@+id/cgl75h"/>
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/comhome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cgl75h" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/gold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cgl25v"
+        app:layout_constraintStart_toStartOf="@+id/cgl25v"
+        app:layout_constraintTop_toTopOf="@+id/cgl90h" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/gold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cgl75v"
+        app:layout_constraintStart_toStartOf="@+id/cgl75v"
+        app:layout_constraintTop_toTopOf="@+id/cgl90h" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
