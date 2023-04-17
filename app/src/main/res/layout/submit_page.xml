@@ -91,6 +91,7 @@
         android:insetBottom="-1dp"
         android:text="Submit"
         android:textAlignment="center"
+        android:textColor="#FFFFFF"
         android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
