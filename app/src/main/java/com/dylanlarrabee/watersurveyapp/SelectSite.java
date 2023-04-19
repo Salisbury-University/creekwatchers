@@ -88,7 +88,7 @@ public class SelectSite extends SaveFormAct {
             // Get the current date in a desired format
             SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy");
             String currentDate = dateFormat.format(calendar.getTime());
-            String newID = siteName + " | " + currentDate;
+            String newID = userName + " | " + siteName + " | " + currentDate;
             formEdit.putString(newID, newID);
             formEdit.commit();
             SurveyData.resetData();

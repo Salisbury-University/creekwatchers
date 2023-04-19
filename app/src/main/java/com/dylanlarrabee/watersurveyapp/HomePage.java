@@ -72,19 +72,19 @@ public class HomePage extends SaveFormAct {
                 startActivity(toCommPage);
             }
         });
-        userName.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                changeBtnText(userName, "Name");
-            }
-        });
-        userSite.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               startActivity(toSelSite);
-               finish();
-            }
-        });
+//        userName.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                changeBtnText(userName, "Name");
+//            }
+//        });
+//        userSite.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//               startActivity(toSelSite);
+//               finish();
+//            }
+//        });
         estBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

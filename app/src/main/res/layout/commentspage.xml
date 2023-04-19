@@ -134,7 +134,7 @@
         app:layout_constraintEnd_toStartOf="@+id/cgl25v"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/cgl90h"
-        app:srcCompat="?attr/homeAsUpIndicator" />
+        app:srcCompat="@drawable/baseline_arrow_back_24" />
 
     <ImageView
         android:id="@+id/com_next"
@@ -146,7 +146,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/cgl75v"
         app:layout_constraintTop_toTopOf="@+id/cgl90h"
-        app:srcCompat="?attr/homeAsUpIndicator" />
+        app:srcCompat="@drawable/baseline_arrow_back_24" />
 
     <EditText
         android:id="@+id/commentText"
