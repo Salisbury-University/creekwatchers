@@ -18,7 +18,7 @@ public class SelectSite extends SaveFormAct {
     private final int numSites = 5;
     private int highestIDnum = 0;
     private Button site1,site2,site3,site4,site5;
-    private Button siteBtns[] = new Button[] {site1,site2,site3,site4,site5};
+    private Button siteBtns[];
     private Bundle getExtras;
     private String userName;
     private Intent toHome;
@@ -39,11 +39,8 @@ public class SelectSite extends SaveFormAct {
         getExtras = getIntent().getExtras();
         if(getExtras != null)
          userName = getExtras.getString("name");
-        siteBtns[0] = site1;
-        siteBtns[1] = site2;
-        siteBtns[2] = site3;
-        siteBtns[3] = site4;
-        siteBtns[4] = site5;
+
+        siteBtns = new Button[]{site1,site2,site3,site4,site5};
         // Prefs
         formPref = getSharedPreferences("formids",MODE_PRIVATE);
         formEdit = formPref.edit();

@@ -10,7 +10,7 @@ import com.google.gson.Gson;
 
 public class
 SurveyData  {
-        static String myID = "";
+        static String myID = ""; //used in shared pref to access form
         static String formName = "";
         static final int maxEst = 6, maxMeas = 5, maxComm = 1, numMeas = 2;
         static String userName = "", userSite = "", comments = "";
@@ -26,7 +26,7 @@ SurveyData  {
          int mytideEst=-1,myweathEst=-1,mywindSpeed=-1, mywaterSurf =-1,mywindDir=-1,myrainfall=-1;
          double [] mywaterDepth= {-1},mysampleDist= {-1};
          double[] myairTemp = {-1,-1},mywaterTemp={-1,-1},mysecchiDepth={-1,-1};
-         int myestArr[] = {mytideEst,mywaterSurf,myweathEst,mywindSpeed,mywindDir,myrainfall};
+         int myestArr[];
          boolean mybottomedOut;
 
 
@@ -47,23 +47,29 @@ SurveyData  {
         }
         static public void resetData()
         {
+            myID = "";
+            formName = "";
                 userName = "";
                 userSite = "";
                 curEst = 0;
                 curComm = 0;
                 curMeas = 0;
-                for(int i = 0; i < maxEst; i++)
-                {
-                        estArr[i] = -1;
-                }
+               tideEst = -1;
+               waterSurf = -1;
+               weathEst = -1;
+               windDir = -1;
+               windSpeed = -1;
+               rainfall = -1;
                 for(int i = 0; i < numMeas; i ++)
                 {
                         airTemp[i] = -1;
                         waterTemp[i] = -1;
                         secchiDepth[i] = -1;
                 }
-                bottomedOut = false;
+                waterDepth[0] = -1;
+                sampleDist[0] = -1;
 
+                bottomedOut = false;
         }
         static public void updateCompleted()
         {

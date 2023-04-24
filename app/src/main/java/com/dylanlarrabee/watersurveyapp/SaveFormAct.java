@@ -20,7 +20,10 @@ public class SaveFormAct extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        saveForm();
+        if(SurveyData.myID != "")
+        {
+            saveForm();
+        }
         //Log.d("stop","Test - " + SurveyData.userName);
     }
 
