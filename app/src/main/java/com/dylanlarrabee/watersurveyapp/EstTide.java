@@ -25,7 +25,7 @@ public class EstTide extends SaveFormAct {
     private Button homeButton, highButton, midFallingButton, lowButton, midFloodingButton, nontidalButton,
             highButtonbg, midFallingButtonbg, lowButtonbg, midFloodingButtonbg, nontidalButtonbg;
     private Button allButtons[],allBtnBgs[];
-    private ImageView rightButton;
+    private ImageView rightButton,leftButton;
     private TextView infoButton;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +55,7 @@ public class EstTide extends SaveFormAct {
     void setupButtons() {
         homeButton = (Button) findViewById(id.home_button);
         rightButton = (ImageView) findViewById(id.rightbutton_image);
+        leftButton = findViewById(id.leftbutton_image);
         infoButton = (TextView) findViewById(id.estimateTitle);
 
         highButton = (Button) findViewById(id.high_tide);
@@ -86,6 +87,7 @@ public class EstTide extends SaveFormAct {
 
         setListener(infoButton, toEstTideInfo);
         setListener(rightButton, toEstWaterSurface);
+        setListener(leftButton, toEstHome);
 
         if(ReviewPage.isReviewing)
             setListener(homeButton, toReview);

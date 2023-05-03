@@ -6,6 +6,31 @@
     android:layout_height="match_parent"
     android:background="@drawable/rivergif">
 
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/gold"
+        android:elevation="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/sdgl25v"
+        app:layout_constraintStart_toStartOf="@+id/sdgl25v"
+        app:layout_constraintTop_toTopOf="@+id/sdgl90h" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/gold"
+        android:elevation="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/sdgl75v"
+        app:layout_constraintTop_toTopOf="@+id/sdgl90h" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/sdgl25v"
         android:layout_width="wrap_content"
@@ -109,24 +134,24 @@
         android:id="@+id/secchi_back"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/gold"
+        android:background="@color/maroon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/sdgl25v"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/sdgl90h"
-        app:srcCompat="?attr/homeAsUpIndicator" />
+        app:srcCompat="@drawable/baseline_arrow_back_24" />
 
     <ImageView
         android:id="@+id/secchi_next"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/gold"
+        android:background="@color/maroon"
         android:rotationY="180"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/sdgl75v"
         app:layout_constraintTop_toTopOf="@+id/sdgl90h"
-        app:srcCompat="?attr/homeAsUpIndicator" />
+        app:srcCompat="@drawable/baseline_arrow_back_24" />
 
 
 
