@@ -7,6 +7,24 @@
     android:background="@drawable/rivergif">
 
     <TextView
+        android:id="@+id/wt_title_meas4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/gold"
+        android:elevation="25dp"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:textColor="@color/gold"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/atdgl50h"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/wtgl50h" />
+
+    <TextView
         android:id="@+id/textView5"
         android:layout_width="1dp"
         android:layout_height="0dp"
@@ -72,7 +90,7 @@
         android:id="@+id/at_title_meas1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#A88A0000"
+        android:background="#A8050101"
         android:fontFamily="monospace"
         android:gravity="center"
         android:text="Measurement 1"
@@ -103,7 +121,7 @@
         android:id="@+id/a_title_meas2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#A8FFC420"
+        android:background="#A8050101"
         android:fontFamily="monospace"
         android:gravity="center"
         android:text="Measurement 2"

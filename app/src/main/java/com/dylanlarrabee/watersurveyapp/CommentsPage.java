@@ -25,7 +25,7 @@ public class CommentsPage extends SaveFormAct{
         ImageView comm_b = (ImageView) findViewById(id.com_back);
 
         if(ReviewPage.isReviewing) {
-            comm_h.setText("BACK");
+            comm_h.setText("Return");
             BasicCommands.setActivity(this, comm_h, ReviewPage.class);
         }
         else
@@ -35,7 +35,7 @@ public class CommentsPage extends SaveFormAct{
 
         EditText inText = (EditText) findViewById(id.commentText);
         if(SurveyData.comments.isEmpty()){
-            SurveyData.comments = "Enter Comments Here";
+            SurveyData.comments = "";
         }else{
             inText.setText(SurveyData.comments);
         }

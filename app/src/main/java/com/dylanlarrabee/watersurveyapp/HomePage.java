@@ -167,7 +167,7 @@ public class HomePage extends SaveFormAct {
     void setBtnTextColors()
     {
         if(SurveyData.curEst == 0) {
-            btns[0].setTextColor(getResources().getColor(R.color.maroon));
+            btns[0].setTextColor(getResources().getColor(R.color.maroon_text));
         }else if (SurveyData.curEst <6) {
             btns[0].setTextColor(getResources().getColor(R.color.gold));
         } else {
@@ -175,7 +175,7 @@ public class HomePage extends SaveFormAct {
             estDone = true;
         }
         if(SurveyData.curMeas == 0) {
-            btns[1].setTextColor(getResources().getColor(R.color.maroon));
+            btns[1].setTextColor(getResources().getColor(R.color.maroon_text));
         }else if (SurveyData.curMeas <5) {
             btns[1].setTextColor(getResources().getColor(R.color.gold));
         } else {
@@ -183,7 +183,7 @@ public class HomePage extends SaveFormAct {
             measDone = true;
         }
         if(SurveyData.curComm == 0) {
-            btns[2].setTextColor(getResources().getColor(R.color.maroon));
+            btns[2].setTextColor(getResources().getColor(R.color.maroon_text));
         } else {
             btns[2].setTextColor(getResources().getColor(R.color.finishGreen));
             commDone = true;

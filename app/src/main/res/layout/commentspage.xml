@@ -152,9 +152,9 @@
         android:id="@+id/commentText"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#E65A0D08"
+        android:background="#A8000000"
         android:ems="10"
-        android:fontFamily="serif-monospace"
+        android:fontFamily="casual"
         android:gravity="top|left"
         android:hint="Enter Comments Here"
         android:padding="5dp"
@@ -167,8 +167,10 @@
         android:textSize="28sp"
         app:layout_constraintBottom_toTopOf="@+id/cgl70h"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cgl10h" />
+        app:layout_constraintTop_toTopOf="@+id/cgl10h"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/comms_submit"
