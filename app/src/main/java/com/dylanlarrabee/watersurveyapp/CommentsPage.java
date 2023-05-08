@@ -29,6 +29,7 @@ public class CommentsPage extends SaveFormAct{
 
         LayoutInflater inflater = LayoutInflater.from(this);
         View popup = inflater.inflate(layout.tube_pop, null);
+        View rootView = getWindow().getDecorView().getRootView();
 
         if(ReviewPage.isReviewing) {
             comm_h.setText("Return");
@@ -112,14 +113,19 @@ public class CommentsPage extends SaveFormAct{
             }
         });
 
-        CheckBox bottomOut = findViewById(id.bottomout);
-        if((SurveyData.secchiDepth[0] > SurveyData.waterDepth[0]));
 
+        /*
+        if((SurveyData.secchiDepth[0] > SurveyData.waterDepth[0]) || SurveyData.secchiDepth[1] > SurveyData.waterDepth[0]){
+            showPopup(rootView, layout.tube_pop);
+        }
+        */
     }
-    public void showPopup(View anchorView) {
-        View popupView = getLayoutInflater().inflate(layout.tube_pop, null);
+    public void showPopup(View anchorView, int layoutID) {
+        View popupView = getLayoutInflater().inflate(layoutID, null);
 
         PopupWindow popup = new PopupWindow(popupView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+        popup.setBackgroundDrawable(new ColorDrawable(Color.WHITE));
         popup.setOutsideTouchable(true);
         popup.setFocusable(true);
 
