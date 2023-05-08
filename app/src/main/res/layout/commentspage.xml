@@ -67,13 +67,6 @@
         app:layout_constraintGuide_percent="0.15"/>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/cgl70h"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.76" />
-
-    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/cgl75h"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -165,32 +158,10 @@
         android:textColor="@color/white"
         android:textColorHint="#8FFFFFFF"
         android:textSize="28sp"
-        app:layout_constraintBottom_toTopOf="@+id/cgl70h"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cgl10h" />
-
-    <TextView
-        android:id="@+id/comms_submit"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_below="@+id/commentText"
-        android:layout_centerHorizontal="true"
-        android:background="@color/maroon"
-        android:fontFamily="serif-monospace"
-        android:gravity="center"
-        android:onClick="store_comms"
-        android:padding="2dp"
-        android:shadowColor="#000000"
-        android:shadowRadius="10"
-        android:text="Submit"
-        android:textColor="@color/gold"
-        android:textSize="25sp"
-        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toTopOf="@+id/cgl75h"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cgl70h" />
+        app:layout_constraintTop_toTopOf="@+id/cgl10h" />
 
     <CheckBox
         android:id="@+id/bottomout"

@@ -19,7 +19,7 @@ SurveyData  {
         static double[] airTemp = {-1,-1},waterTemp={-1,-1},secchiDepth={-1,-1};
         static double[] waterDepth = {-1}, sampleDist = {-1};
         static int estArr[] = {tideEst,waterSurf,weathEst,windSpeed,windDir,rainfall};
-        static boolean bottomedOut, newForm = false,firstEntry = true;
+        static boolean bottomedOut, newForm = false,firstEntry = true, tube = false;
 
          String myuserName = "", myuserSite = "", myUserID, myComm = "";
          int mycurEst = 0, mycurMeas = 0, mycurComm = 0, myformIDnum = 0;
@@ -27,8 +27,6 @@ SurveyData  {
          double [] mywaterDepth= {-1},mysampleDist= {-1};
          double[] myairTemp = {-1,-1},mywaterTemp={-1,-1},mysecchiDepth={-1,-1};
          int myestArr[] = {mytideEst,mywaterSurf,myweathEst,mywindSpeed,mywindDir,myrainfall};
-         boolean mybottomedOut;
-
 
         public SurveyData()
         {
@@ -117,7 +115,6 @@ SurveyData  {
                 mysd.mycurEst = SurveyData.curEst;
                 mysd.mycurMeas = SurveyData.curMeas;
                 mysd.mycurComm = SurveyData.curComm;
-                mysd.mybottomedOut = SurveyData.bottomedOut;
                 mysd.mytideEst = SurveyData.tideEst;
                 mysd.mywaterSurf = SurveyData.waterSurf;
                 mysd.myweathEst = SurveyData.weathEst;
@@ -145,7 +142,6 @@ SurveyData  {
                SurveyData.curEst = mysd.mycurEst;
                SurveyData.curMeas = mysd.mycurMeas;
                SurveyData.curComm = mysd.mycurComm;
-               SurveyData.bottomedOut = mysd.mybottomedOut;
                 SurveyData.tideEst = mysd.mytideEst;
                 SurveyData.waterSurf = mysd.mywaterSurf;
                 SurveyData.weathEst = mysd.myweathEst;
