@@ -18,7 +18,7 @@
         android:id="@+id/formSelTitleBg"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#303030"
+        android:background="#BF000000"
 
         android:fontFamily="serif-monospace"
         android:gravity="center"
@@ -36,7 +36,6 @@
         android:id="@+id/formSelTitle"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/maroon"
 
         android:fontFamily="@font/alegreya"
         android:gravity="center"
