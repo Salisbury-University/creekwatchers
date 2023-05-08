@@ -15,9 +15,11 @@ import java.util.Calendar;
 import java.util.Map;
 
 public class SelectSite extends SaveFormAct {
-    private final int numSites = 5;
+    private final int numSites = 26;
     private int highestIDnum = 0;
-    private Button site1,site2,site3,site4,site5;
+    private Button site1,site2,site3,site4,site5,site6,site7,site8,site9,site10,
+                   site11,site12,site13,site14,site15,site16,site17,site18,site19,site20,
+                   site21,site22,site23,site24,site25,site26;
     private Button siteBtns[];
     private Bundle getExtras;
     private String userName;
@@ -31,16 +33,39 @@ public class SelectSite extends SaveFormAct {
         //intents
         toHome = new Intent(this,HomePage.class);
         //find views
-        site1 = findViewById(R.id.sitebtn1);
-        site2 =  findViewById(R.id.sitebtn2);
-        site3 = findViewById(R.id.sitebtn3);
-        site4 =  findViewById(R.id.sitebtn4);
-        site5 = findViewById(R.id.sitebtn5);
+        site1 = findViewById(R.id.siteBtn1);
+        site2 =  findViewById(R.id.siteBtn2);
+        site3 = findViewById(R.id.siteBtn3);
+        site4 =  findViewById(R.id.siteBtn4);
+        site5 = findViewById(R.id.siteBtn5);
+        site6 = findViewById(R.id.siteBtn6);
+        site7 =  findViewById(R.id.siteBtn7);
+        site8 = findViewById(R.id.siteBtn8);
+        site9 =  findViewById(R.id.siteBtn9);
+        site10 = findViewById(R.id.siteBtn10);
+        site11 = findViewById(R.id.siteBtn11);
+        site12 =  findViewById(R.id.siteBtn12);
+        site13 = findViewById(R.id.siteBtn13);
+        site14 =  findViewById(R.id.siteBtn14);
+        site15 = findViewById(R.id.siteBtn15);
+        site16 = findViewById(R.id.siteBtn16);
+        site17 =  findViewById(R.id.siteBtn17);
+        site18 = findViewById(R.id.siteBtn18);
+        site19 =  findViewById(R.id.siteBtn19);
+        site20 = findViewById(R.id.siteBtn20);
+        site21 = findViewById(R.id.siteBtn21);
+        site22 =  findViewById(R.id.siteBtn22);
+        site23 = findViewById(R.id.siteBtn23);
+        site24 =  findViewById(R.id.siteBtn24);
+        site25 = findViewById(R.id.siteBtn25);
+        site26 = findViewById(R.id.siteBtn26);
         getExtras = getIntent().getExtras();
         if(getExtras != null)
          userName = getExtras.getString("name");
 
-        siteBtns = new Button[]{site1,site2,site3,site4,site5};
+        siteBtns = new Button[]{site1,site2,site3,site4,site5,site6,site7,site8,site9,site10,
+                                site11,site12,site13,site14,site15,site16,site17,site18,site19,site20,
+                                site21,site22,site23,site24,site25,site26};
         // Prefs
         formPref = getSharedPreferences("formids",MODE_PRIVATE);
         formEdit = formPref.edit();
