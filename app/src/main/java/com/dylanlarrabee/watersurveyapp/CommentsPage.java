@@ -30,6 +30,16 @@ public class CommentsPage extends SaveFormAct{
         LayoutInflater inflater = LayoutInflater.from(this);
         View popup = inflater.inflate(layout.tube_pop, null);
 
+        if(ReviewPage.isReviewing) {
+            comm_h.setText("Return");
+            BasicCommands.setActivity(this, comm_h, ReviewPage.class);
+        }
+        else
+            BasicCommands.setActivity(this, comm_h, MeasurementsPage.class);
+        BasicCommands.setActivity(this, comm_b, SecchiDepth.class);
+        BasicCommands.setActivity(this, comm_n, ReviewPage.class);
+
+
         EditText inText = (EditText) findViewById(id.commentText);
         if(ReviewPage.isReviewing) {
             comm_h.setText("BACK");
@@ -67,7 +77,7 @@ public class CommentsPage extends SaveFormAct{
         }
 
         if(SurveyData.comments.isEmpty()){
-            SurveyData.comments = "Enter Comments Here";
+            SurveyData.comments = "";
         }else{
             inText.setText(SurveyData.comments);
         }
@@ -102,8 +112,8 @@ public class CommentsPage extends SaveFormAct{
             }
         });
 
-        CheckBox bottomOut = findViewById(id.bottomout);g
-        if((SurveyData.secchiDepth[0] > SurveyData.waterDepth[0]) || );
+        CheckBox bottomOut = findViewById(id.bottomout);
+        if((SurveyData.secchiDepth[0] > SurveyData.waterDepth[0]));
 
     }
     public void showPopup(View anchorView) {

@@ -23,7 +23,9 @@
     <color name="maroon">#8A0000</color>
     <color name="maroon_dim">#058A0000</color>
     <color name="gold">#FFC420</color>
-    <color name="finishGreen">#14ff65</color>
+    <color name="finishGreen">#35D86D</color>
+    <color name="finishGreenDim">#9033C866</color>
+
     <color name="hightide">#002AC3</color>
     <color name="middlefallingtide">#F20D46D6</color>
     <color name="lowtide">#03A9F4</color>
@@ -36,5 +38,6 @@
     <color name="nontidalDim">#33A1D3EF</color>
     <color name="mint_green">#3EB489</color>
     <color name="mint_green_dim">#603EB489</color>
+    <color name="maroon_text">#DF0A0A</color>
 
 </resources>

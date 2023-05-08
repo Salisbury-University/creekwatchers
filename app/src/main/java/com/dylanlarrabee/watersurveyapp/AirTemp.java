@@ -28,7 +28,7 @@ public class AirTemp extends SaveFormAct {
 
         TextView air_h = (TextView) findViewById(R.id.airhome);
         ImageView air_n = (ImageView) findViewById(R.id.air_next);
-        ImageView air_b = (ImageView) findViewById(R.id.air_back);
+        ImageView air_b =  (ImageView) findViewById(R.id.air_back);
 
 
         if(ReviewPage.isReviewing) {

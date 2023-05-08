@@ -80,8 +80,6 @@ public class FormArchive extends SaveFormAct {
 //            formIDints.remove(smallestIndex);
 //        }
 
-
-
     }
     private void addForm(String formID)
     {
@@ -130,6 +128,8 @@ public class FormArchive extends SaveFormAct {
     }
     private void toLogin()
     {
+        SurveyData.resetData();
+        SurveyData.firstEntry = true;
         SurveyData.newForm = true;
         Intent intent = new Intent(this,LoginPage.class);
         startActivity(intent);

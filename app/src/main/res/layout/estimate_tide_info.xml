@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2" />
+        app:layout_constraintGuide_percent="0.18" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline38"
@@ -72,7 +72,7 @@
         android:id="@+id/leftbutton_image"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/grey_font"
+        android:background="@color/gold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="parent"
@@ -131,7 +131,7 @@
         android:fontFamily="serif-monospace"
         android:text="Instructions"
         android:textColor="@color/black"
-        android:textSize="40sp"
+        android:textSize="35sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline37"
         app:layout_constraintEnd_toEndOf="parent"
@@ -157,30 +157,52 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/description_box"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:gravity="center"
-        android:padding="2dp"
-        android:text="This is where the instructions will go.\n\nIf you are a very good boy, you will be able to see that the tide is low or high.\n\nClick one of the buttons that describes how high the tide looks.\n\nDiagram (or video?) below:"
-        android:textAlignment="center"
+        android:id="@+id/tidestdescription"
+        android:layout_width="364dp"
+        android:layout_height="167dp"
+        android:text="If you are familiar with the location, please estimate the tide level relative to normal conditions.\n\nIf you are unsure, please visit one of the following links and return to the app."
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline38"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline37"
-        app:layout_constraintVertical_bias="0.52" />
+        app:layout_constraintVertical_bias="0.63" />
 
-    <ImageView
-        android:id="@+id/image_diagram"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:src="@drawable/surface_calm"
+    <TextView
+        android:id="@+id/tidelink1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:text="@string/tidelink1"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline38"
-        app:layout_constraintVertical_bias="0.32999998" />
+        app:layout_constraintTop_toBottomOf="@+id/tidestdescription"
+        app:layout_constraintVertical_bias="0.050000012" />
+
+    <TextView
+        android:id="@+id/tidelink2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tidelink2"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tidelink1"
+        app:layout_constraintVertical_bias="0.13" />
+
+    <TextView
+        android:id="@+id/tidelink3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tidelink3"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tidelink2"
+        app:layout_constraintVertical_bias="0.17000002" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

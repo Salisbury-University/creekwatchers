@@ -6,6 +6,31 @@
     android:layout_height="match_parent"
     android:background="@drawable/rivergif">
 
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/gold"
+        android:elevation="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/waterTemp_home"
+        app:layout_constraintEnd_toStartOf="@+id/wtgl25v"
+        app:layout_constraintStart_toStartOf="@+id/sdgl25v"
+        app:layout_constraintTop_toTopOf="@+id/wtgl90h" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/gold"
+        android:elevation="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/wtgl75v"
+        app:layout_constraintTop_toTopOf="@+id/wtgl90h" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/wtgl25v"
         android:layout_width="wrap_content"
@@ -45,16 +70,40 @@
         android:id="@+id/wt_title_meas1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#A88A0000"
+        android:background="#A8000000"
         android:fontFamily="monospace"
         android:gravity="center"
+        android:maxLines="1"
+        android:padding="30dp"
+        android:shadowColor="#000000"
+        android:shadowRadius="10"
         android:text="Measurement 1"
         android:textAllCaps="true"
         android:textColor="@color/gold"
         android:textSize="30sp"
+        app:autoSizeMaxTextSize="36sp"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toTopOf="@+id/wt_title_meas2"
         app:layout_constraintTop_toTopOf="@+id/wtgl10v"
         tools:layout_editor_absoluteX="150dp" />
+
+    <TextView
+        android:id="@+id/wt_title_meas"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/gold"
+        android:elevation="25dp"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:textColor="@color/gold"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/wt_title_meas2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/wtgl50h" />
 
     <TextView
         android:id="@+id/waterTemp_title"
@@ -75,13 +124,19 @@
         android:id="@+id/wt_title_meas2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#A9FFC420"
+        android:background="#A8000000"
         android:fontFamily="monospace"
         android:gravity="center"
+        android:maxLines="1"
+        android:padding="30dp"
+        android:shadowColor="#000000"
+        android:shadowRadius="10"
         android:text="Measurement 2"
         android:textAllCaps="true"
-        android:textColor="@color/maroon"
+        android:textColor="@color/maroon_text"
         android:textSize="30sp"
+        app:autoSizeMaxTextSize="36sp"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toTopOf="@+id/wtgl90h"
         app:layout_constraintTop_toTopOf="@+id/wtgl50h" />
 
@@ -105,23 +160,25 @@
         android:id="@+id/waterTemp_back"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/gold"
+        android:background="@color/maroon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/wtgl25v"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/wtgl90h"
-        app:srcCompat="?attr/homeAsUpIndicator" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/baseline_arrow_back_24" />
 
     <ImageView
         android:id="@+id/waterTemp_next"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/gold"
+        android:background="@color/maroon"
         android:rotationY="180"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/wtgl75v"
         app:layout_constraintTop_toTopOf="@+id/wtgl90h"
-        app:srcCompat="?attr/homeAsUpIndicator" />
+        app:srcCompat="@drawable/baseline_arrow_back_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

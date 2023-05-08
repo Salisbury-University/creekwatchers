@@ -145,9 +145,9 @@
         android:id="@+id/commentText"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#E65A0D08"
+        android:background="#A8000000"
         android:ems="10"
-        android:fontFamily="serif-monospace"
+        android:fontFamily="casual"
         android:gravity="top|left"
         android:hint="Enter Comments Here"
         android:padding="5dp"
@@ -160,8 +160,11 @@
         android:textSize="28sp"
         app:layout_constraintBottom_toTopOf="@+id/cgl75h"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cgl10h" />
+        app:layout_constraintTop_toTopOf="@+id/cgl10h"
+        app:layout_constraintVertical_bias="0.0" />
+
 
     <CheckBox
         android:id="@+id/bottomout"
@@ -187,6 +190,8 @@
         android:id="@+id/textView2"
         android:layout_width="1dp"
         android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         android:background="@color/gold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/cgl25v"
@@ -197,6 +202,8 @@
         android:id="@+id/textView4"
         android:layout_width="1dp"
         android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         android:background="@color/gold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/cgl75v"

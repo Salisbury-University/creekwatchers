@@ -657,7 +657,7 @@
             <Button
                 android:id="@+id/submitbtn"
                 android:layout_width="match_parent"
-                android:layout_height="89dp"
+                android:layout_height="wrap_content"
                 android:backgroundTint="@color/gold"
                 android:fontFamily="monospace"
                 android:insetTop="1dp"

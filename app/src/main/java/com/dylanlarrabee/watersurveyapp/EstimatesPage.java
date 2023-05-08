@@ -50,34 +50,34 @@ public class EstimatesPage extends SaveFormAct {
         rainfallblack = (TextView) findViewById(id.tideblackbg6);
 
         if(SurveyData.tideEst >=0) {
-            tideButton.setBackgroundColor(getResources().getColor(R.color.maroon_dim));
+            tideButton.setBackgroundColor(getResources().getColor(R.color.finishGreenDim));
             tideblack.setBackgroundColor(getResources().getColor(R.color.black_dim));
-            tideButton.setTextColor(getResources().getColor(R.color.black));
+            tideButton.setTextColor(getResources().getColor(R.color.white));
         }
         if(SurveyData.waterSurf >=0) {
-            watersurfaceButton.setBackgroundColor(getResources().getColor(R.color.maroon_dim));
+            watersurfaceButton.setBackgroundColor(getResources().getColor(R.color.finishGreenDim));
             waterblack.setBackgroundColor(getResources().getColor(R.color.black_dim));
-            watersurfaceButton.setTextColor(getResources().getColor(R.color.black));
+            watersurfaceButton.setTextColor(getResources().getColor(R.color.white));
         }
         if(SurveyData.weathEst >=0) {
-            weatherButton.setBackgroundColor(getResources().getColor(R.color.maroon_dim));
+            weatherButton.setBackgroundColor(getResources().getColor(R.color.finishGreenDim));
             weatherblack.setBackgroundColor(getResources().getColor(R.color.black_dim));
-            weatherButton.setTextColor(getResources().getColor(R.color.black));
+            weatherButton.setTextColor(getResources().getColor(R.color.white));
         }
         if(SurveyData.windSpeed >=0) {
-            windspeedButton.setBackgroundColor(getResources().getColor(R.color.maroon_dim));
+            windspeedButton.setBackgroundColor(getResources().getColor(R.color.finishGreenDim));
             speedblack.setBackgroundColor(getResources().getColor(R.color.black_dim));
-            windspeedButton.setTextColor(getResources().getColor(R.color.black));
+            windspeedButton.setTextColor(getResources().getColor(R.color.white));
         }
         if(SurveyData.windDir >=0) {
-            winddirectButton.setBackgroundColor(getResources().getColor(R.color.maroon_dim));
+            winddirectButton.setBackgroundColor(getResources().getColor(R.color.finishGreenDim));
             winddirblack.setBackgroundColor(getResources().getColor(R.color.black_dim));
-            winddirectButton.setTextColor(getResources().getColor(R.color.black));
+            winddirectButton.setTextColor(getResources().getColor(R.color.white));
         }
         if(SurveyData.rainfall >=0) {
-            rainfallButton.setBackgroundColor(getResources().getColor(R.color.maroon_dim));
+            rainfallButton.setBackgroundColor(getResources().getColor(R.color.finishGreenDim));
             rainfallblack.setBackgroundColor(getResources().getColor(R.color.black_dim));
-            rainfallButton.setTextColor(getResources().getColor(R.color.black));
+            rainfallButton.setTextColor(getResources().getColor(R.color.white));
         }
     }
 
