@@ -5,4 +5,11 @@
         <item>Meters</item>
         <item>Feet</item>
     </string-array>
+
+    <string name="tidelink1"><a href="https://marineweather.net/tide/salisbury-wicomico-river-md-tides">MarineWeather.net</a></string>
+    <string name="tidelink2"><a href="https://tides4fishing.com/us/maryland/salisbury">Tides4Fishing.com</a></string>
+    <string name="tidelink3"><a href="https://tidesandcurrents.noaa.gov/noaatidepredictions.html?id=8571616">NOAA.gov</a></string>
+
+
+
 </resources>
