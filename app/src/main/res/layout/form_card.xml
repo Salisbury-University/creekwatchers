@@ -13,12 +13,14 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:backgroundTint="#00FFFFFF"
             app:cardElevation="10dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/maroon"
+                android:background="#8D000000"
                 android:minHeight="80dp">
 
                 <TextView
@@ -30,6 +32,16 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/formDivider3"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/gold"
+                    android:elevation="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/formDivider"
@@ -46,13 +58,13 @@
                     android:id="@+id/cardDelBtn"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:background="#650404"
+                    android:background="#8D000000"
                     android:elegantTextHeight="true"
                     android:elevation="15dp"
-                    android:fontFamily="serif-monospace"
+                    android:fontFamily="@font/alegreya"
                     android:gravity="center"
                     android:maxLines="1"
-                    android:padding="2dp"
+                    android:padding="5dp"
                     android:text="Delete"
                     android:textColor="@color/gold"
                     app:autoSizeTextType="uniform"
@@ -72,12 +84,15 @@
                     android:id="@+id/formName"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:fontFamily="serif-monospace"
+                    android:fontFamily="@font/alegreya"
                     android:gravity="center"
+                    android:padding="10dp"
                     android:text="Form"
                     android:textAlignment="center"
                     android:textColor="@color/gold"
                     android:textSize="27sp"
+                    app:autoSizeMaxTextSize="35sp"
+                    app:autoSizeTextType="uniform"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/guideline62"
                     app:layout_constraintStart_toStartOf="parent"

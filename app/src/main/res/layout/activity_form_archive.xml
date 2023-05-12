@@ -7,18 +7,18 @@
     android:background="#000000"
     tools:context=".FormArchive">
 
-    <pl.droidsonroids.gif.GifImageView
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:alpha="0.6"
-        android:scaleType="centerCrop"
-        android:src="@drawable/rivergif2" />
+        android:background="@drawable/sakuratree"
+        android:scaleType="centerCrop" />
 
     <TextView
         android:id="@+id/formSelTitleBg"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#303030"
+        android:background="#BF000000"
 
         android:fontFamily="serif-monospace"
         android:gravity="center"
@@ -36,9 +36,8 @@
         android:id="@+id/formSelTitle"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/siteselgrad"
 
-        android:fontFamily="serif-monospace"
+        android:fontFamily="@font/alegreya"
         android:gravity="center"
         android:shadowColor="#000000"
         android:shadowRadius="20"
@@ -79,8 +78,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:backgroundTint="#B2651A1A"
-                android:fontFamily="serif-monospace"
+                android:backgroundTint="#59000000"
+                android:fontFamily="casual"
                 android:insetTop="2dp"
                 android:insetBottom="2dp"
                 android:minHeight="65dp"
