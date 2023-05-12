@@ -5,6 +5,7 @@ import static com.dylanlarrabee.watersurveyapp.R.layout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -17,7 +18,7 @@ public class EstWindSpeedInfo extends SaveFormAct {
     private Intent toEstHome, toEstWindSpeed, toEstWindDirection, toEstWeather;
     private Button homeButton, exitButton;
     private ImageView rightButton, leftButton;
-    private TextView headerBox;
+    private TextView headerBox, link1;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +47,9 @@ public class EstWindSpeedInfo extends SaveFormAct {
         setListener(leftButton, toEstWeather);
         setListener(exitButton, toEstWindSpeed);
         setListener(headerBox, toEstWindSpeed);
+
+        link1 = findViewById(R.id.windspeedlink1);
+        link1.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
     void setListener(View button, Intent intent)

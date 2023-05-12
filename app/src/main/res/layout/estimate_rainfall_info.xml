@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/tide_info"
+    android:id="@+id/rainfall_info"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="2dp"
@@ -72,7 +72,7 @@
         android:id="@+id/leftbutton_image"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/grey_font"
+        android:background="@color/gold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="parent"
@@ -157,30 +157,26 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/description_box"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:gravity="center"
-        android:padding="2dp"
-        android:text="This is where the instructions will go.\n\nIf you are a very good boy, you will be able to see if it is wet outside.\n\nClick one of the buttons that describes the recent rainfall.\n\nDiagram (or video?) below:"
-        android:textAlignment="center"
-        android:textSize="20sp"
+        android:id="@+id/tidestdescription"
+        android:layout_width="304dp"
+        android:layout_height="146dp"
+        android:text="Visit the following website and add up the last two days worth of precipitation measurements found in the far right column titled &quot;Precipitation (in.)&quot;"
+        android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline38"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline37"
-        app:layout_constraintVertical_bias="0.52" />
+        app:layout_constraintTop_toTopOf="@+id/guideline37" />
 
-    <ImageView
-        android:id="@+id/image_diagram"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:src="@drawable/surface_calm"
+    <TextView
+        android:id="@+id/rainfalllink1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rainfalllink1"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline38"
-        app:layout_constraintVertical_bias="0.32999998" />
+        app:layout_constraintTop_toBottomOf="@+id/tidestdescription"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

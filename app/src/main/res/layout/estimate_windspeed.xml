@@ -218,6 +218,44 @@
         app:layout_constraintTop_toTopOf="@+id/calm_button"
         app:layout_constraintVertical_bias="0.35000002" />
 
+    <TextView
+        android:id="@+id/calmnum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
+        android:shadowColor="#000000"
+        android:shadowRadius="0"
+        android:text="0"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/calm_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintStart_toEndOf="@+id/ripples_text"
+        app:layout_constraintTop_toTopOf="@+id/calm_background"
+        app:layout_constraintVertical_bias="0.41000003" />
+
+    <TextView
+        android:id="@+id/calmmph"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
+        android:shadowColor="#000000"
+        android:shadowRadius="0"
+        android:text="mph"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/calm_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toEndOf="@+id/calmnum"
+        app:layout_constraintTop_toTopOf="@+id/calm_background"
+        app:layout_constraintVertical_bias="0.42000002" />
+
     <Button
         android:id="@+id/calm_button"
         android:layout_width="match_parent"
@@ -288,6 +326,44 @@
         app:layout_constraintTop_toTopOf="@+id/ripples_button"
         app:layout_constraintVertical_bias="0.35000002" />
 
+    <TextView
+        android:id="@+id/lightnum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
+        android:shadowColor="#000000"
+        android:shadowRadius="0"
+        android:text="0-5"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline36"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.24"
+        app:layout_constraintStart_toEndOf="@+id/ripples_text"
+        app:layout_constraintTop_toTopOf="@+id/ripples_button"
+        app:layout_constraintVertical_bias="0.41000003" />
+
+    <TextView
+        android:id="@+id/lightmph"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
+        android:shadowColor="#000000"
+        android:shadowRadius="0"
+        android:text="mph"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ripples_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.14"
+        app:layout_constraintStart_toEndOf="@+id/lightnum"
+        app:layout_constraintTop_toTopOf="@+id/ripples_button"
+        app:layout_constraintVertical_bias="0.43" />
+
     <Button
         android:id="@+id/ripples_button"
         android:layout_width="match_parent"
@@ -357,6 +433,45 @@
         app:layout_constraintTop_toTopOf="@+id/choppy_button"
         app:layout_constraintVertical_bias="0.38" />
 
+    <TextView
+        android:id="@+id/mednum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
+        android:shadowColor="#000000"
+        android:shadowRadius="0"
+        android:text="5-12"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/choppy_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.86"
+        app:layout_constraintStart_toEndOf="@+id/heavychop_text"
+        app:layout_constraintStart_toStartOf="@+id/heavychop_button"
+        app:layout_constraintTop_toTopOf="@+id/choppy_image"
+        app:layout_constraintVertical_bias="0.45" />
+
+    <TextView
+        android:id="@+id/medmph"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
+        android:shadowColor="#000000"
+        android:shadowRadius="0"
+        android:text="mph"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline32"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.21"
+        app:layout_constraintStart_toEndOf="@+id/mednum"
+        app:layout_constraintTop_toTopOf="@+id/choppy_background"
+        app:layout_constraintVertical_bias="0.47000003" />
+
     <Button
         android:id="@+id/choppy_button"
         android:layout_width="match_parent"
@@ -425,6 +540,44 @@
         app:layout_constraintTop_toTopOf="@+id/heavychop_button"
         app:layout_constraintVertical_bias="0.37" />
 
+    <TextView
+        android:id="@+id/heavynum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
+        android:shadowColor="#000000"
+        android:shadowRadius="0"
+        android:text="12+"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline35"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.24"
+        app:layout_constraintStart_toEndOf="@+id/heavychop_text"
+        app:layout_constraintTop_toTopOf="@+id/heavychop_button"
+        app:layout_constraintVertical_bias="0.42000002" />
+
+    <TextView
+        android:id="@+id/heavymph"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
+        android:shadowColor="#000000"
+        android:shadowRadius="0"
+        android:text="mph"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline35"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintStart_toEndOf="@+id/heavynum"
+        app:layout_constraintTop_toTopOf="@+id/heavychop_button"
+        app:layout_constraintVertical_bias="0.44" />
+
     <Button
         android:id="@+id/heavychop_button"
         android:layout_width="match_parent"
@@ -434,8 +587,10 @@
         android:insetBottom="0dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline35"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintVertical_bias="0.0"
         app:strokeColor="#0E0404"
         app:strokeWidth="0dp" />
 
