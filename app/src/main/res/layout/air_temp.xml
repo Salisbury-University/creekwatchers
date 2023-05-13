@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/rivergif">
+    android:background="@drawable/riverbg5">
 
     <TextView
         android:id="@+id/wt_title_meas4"
@@ -54,14 +54,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.25"/>
+        app:layout_constraintGuide_percent="0.25" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/sdgl75v"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.75"/>
+        app:layout_constraintGuide_percent="0.75" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/atdgl10h"
@@ -76,7 +76,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5"/>
+        app:layout_constraintGuide_percent="0.5" />
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -90,7 +90,7 @@
         android:id="@+id/at_title_meas1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#A8050101"
+        android:background="#BF050101"
         android:fontFamily="casual"
         android:gravity="center"
         android:text="Measurement 1"
@@ -106,7 +106,7 @@
         android:id="@+id/airtitle"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@color/maroon"
+        android:background="@color/black"
         android:fontFamily="@font/architects_daughter"
         android:gravity="center"
         android:text="Air Temperature"
@@ -121,12 +121,12 @@
         android:id="@+id/a_title_meas2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#A8050101"
+        android:background="#BF050101"
         android:fontFamily="casual"
         android:gravity="center"
         android:text="Measurement 2"
         android:textAllCaps="true"
-        android:textColor="@color/maroon_text"
+        android:textColor="@color/gold"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/atdgl90h"
         app:layout_constraintEnd_toEndOf="parent"
@@ -137,7 +137,7 @@
         android:id="@+id/airhome"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/maroon"
+        android:background="@color/black"
         android:fontFamily="@font/architects_daughter"
         android:gravity="center"
         android:text="Menu"
@@ -153,7 +153,7 @@
         android:id="@+id/air_back"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/maroon"
+        android:background="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/sdgl25v"
         app:layout_constraintStart_toStartOf="parent"
@@ -164,7 +164,7 @@
         android:id="@+id/air_next"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/maroon"
+        android:background="@color/black"
         android:rotationY="180"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

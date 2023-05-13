@@ -37,7 +37,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
 
-        android:fontFamily="@font/alegreya"
+        android:fontFamily="@font/architects_daughter"
         android:gravity="center"
         android:shadowColor="#000000"
         android:shadowRadius="20"

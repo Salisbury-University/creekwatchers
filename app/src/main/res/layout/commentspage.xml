@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/rivergif">
+    android:background="@drawable/riverbg2">
 
     <TextView
         android:id="@+id/formSelTitleBg2"
@@ -36,14 +36,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.25"/>
+        app:layout_constraintGuide_percent="0.25" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/cgl75v"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.75"/>
+        app:layout_constraintGuide_percent="0.75" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/cgl95v"
@@ -64,7 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.15"/>
+        app:layout_constraintGuide_percent="0.15" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/cgl75h"
@@ -78,14 +78,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.9"/>
+        app:layout_constraintGuide_percent="0.9" />
 
     <TextView
         android:id="@+id/commentstitle"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@drawable/siteselgrad"
-        android:fontFamily="serif-monospace"
+        android:background="@color/black"
+        android:fontFamily="@font/architects_daughter"
         android:gravity="center"
         android:shadowColor="#000000"
         android:shadowRadius="20"
@@ -103,8 +103,8 @@
         android:id="@+id/comhome"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/maroon"
-        android:fontFamily="serif-monospace"
+        android:background="@color/black"
+        android:fontFamily="@font/architects_daughter"
         android:gravity="center"
         android:shadowColor="#000000"
         android:shadowRadius="10"
@@ -122,7 +122,7 @@
         android:id="@+id/com_back"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/maroon"
+        android:background="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/cgl25v"
         app:layout_constraintStart_toStartOf="parent"
@@ -133,7 +133,7 @@
         android:id="@+id/com_next"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/maroon"
+        android:background="@color/black"
         android:rotationY="180"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -145,7 +145,7 @@
         android:id="@+id/commentText"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#A8000000"
+        android:background="#C4000000"
         android:ems="10"
         android:fontFamily="casual"
         android:gravity="top|left"
@@ -171,15 +171,15 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:autoText="false"
-        android:background="@color/gold"
-        android:buttonTint="@color/maroon"
+        android:background="#E9000000"
+        android:buttonTint="@color/gold"
         android:enabled="false"
-        android:fontFamily="serif-monospace"
+        android:fontFamily="@font/architects_daughter"
         android:padding="10dp"
         android:shadowColor="#000000"
         android:shadowRadius="1"
         android:text="Bottomed Out"
-        android:textColor="@color/maroon"
+        android:textColor="@color/gold"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/comhome"
         app:layout_constraintEnd_toEndOf="parent"
