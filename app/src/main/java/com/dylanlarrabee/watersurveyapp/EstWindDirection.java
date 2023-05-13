@@ -115,7 +115,7 @@ public class EstWindDirection  extends SaveFormAct {
             allButtons[i].setImageTintList(ColorStateList.valueOf(getResources().getColor(R.color.whiteDim)));
             allText[i].setTextColor(getResources().getColor(R.color.black));
         }
-        background.setImageTintList(ColorStateList.valueOf(getResources().getColor(R.color.maroon)));
+        background.setImageTintList(ColorStateList.valueOf(getResources().getColor(R.color.black_dim)));
         tv.setTextColor(getResources().getColor(R.color.gold));
     }
 

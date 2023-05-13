@@ -127,7 +127,7 @@ public class EstWeather extends SaveFormAct {
             allTv[i].setBackgroundColor(getResources().getColor(R.color.transparent));
         }
         background.setImageResource(R.color.white);
-        tv.setBackgroundColor(getResources().getColor(R.color.maroon));
+        tv.setBackgroundColor(getResources().getColor(R.color.black));
         tv.setTextColor(getResources().getColor(R.color.gold));
     }
 
