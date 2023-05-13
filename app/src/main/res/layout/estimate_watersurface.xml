@@ -111,7 +111,7 @@
 
         android:fontFamily="@font/alegreya"
         android:gravity="center"
-        android:text="Water Surface  "
+        android:text="Water Surface"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/gold"
@@ -121,18 +121,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/info_button"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:src="@drawable/button_info2"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.94"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/button_info2" />
 
     <Button
         android:id="@+id/home_button"

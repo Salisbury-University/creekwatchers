@@ -5,6 +5,7 @@ import static com.dylanlarrabee.watersurveyapp.R.layout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -16,16 +17,18 @@ import pl.droidsonroids.gif.GifImageView;
 
 public class EstWindSpeed extends SaveFormAct {
     private Intent toEstHome, toEstWeather, toEstWindDirection, toEstWindSpeedInfo, toReview;
-    private int watersurfaceNum;
     private ImageView allBackgrounds[], allImages[];
     private Button allButtons[];
     private TextView allText[];
+    private TextView allTextNum[];
+    private TextView allTextMph[];
     private ImageView calmBackground, ripplesBackground, choppyBackground, heavychopBackground;
     private ImageView calmImage, ripplesImage, choppyImage, heavychopImage;
     private ImageView rightButton, leftButton;
     private TextView infoButton;
     private Button homeButton, calmButton, lightButton, mediumButton, heavyButton;
     private TextView calmText,ripplesText,choppyText,heavychopText;
+    private TextView calmNum, calmMph, lightNum, lightMph, medNum, medMph, heavyNum, heavyMph;
 
     private GifImageView heavyGif, mediumGif, lightGif;
     private GifImageView allGifs[];
@@ -81,16 +84,27 @@ public class EstWindSpeed extends SaveFormAct {
         choppyText = (TextView) findViewById(id.choppy_text);
         heavychopText = (TextView) findViewById(id.heavychop_text);
 
+        calmNum = (TextView) findViewById(id.calmnum);
+        calmMph = (TextView) findViewById(id.calmmph);
+        lightNum = (TextView) findViewById(id.lightnum);
+        lightMph = (TextView) findViewById(id.lightmph);
+        medNum = (TextView) findViewById(id.mednum);
+        medMph = (TextView) findViewById(id.medmph);
+        heavyNum = (TextView) findViewById(id.heavynum);
+        heavyMph = (TextView) findViewById(id.heavymph);
+
         allBackgrounds = new ImageView[] {calmBackground, ripplesBackground, choppyBackground, heavychopBackground};
         allButtons = new Button[] {calmButton, lightButton, mediumButton, heavyButton};
         allImages = new ImageView[] {calmImage,ripplesImage,choppyImage,heavychopImage};
+        allTextNum = new TextView[] {calmNum, lightNum, medNum, heavyNum};
+        allTextMph = new TextView[] {calmMph, lightMph, medMph, heavyMph};
         allText = new TextView[] {calmText,ripplesText,choppyText,heavychopText};
         allGifs = new GifImageView[] {lightGif, mediumGif, heavyGif};
 
-        if(SurveyData.windSpeed >= 0)
-        {
+        if(SurveyData.windSpeed >= 0) {
             highlightButton(allBackgrounds[SurveyData.windSpeed],SurveyData.windSpeed);
         }
+
 
     }
 
@@ -102,7 +116,6 @@ public class EstWindSpeed extends SaveFormAct {
                 @Override
                 public void onClick(View view) {
                     highlightButton(allBackgrounds[finalI],finalI);
-                    watersurfaceNum = finalI + 1;
                     SurveyData.windSpeed = finalI;
                 }
             });
@@ -136,6 +149,10 @@ public class EstWindSpeed extends SaveFormAct {
             allImages[i].setAlpha(0.6F);
             allText[i].setTextColor(getResources().getColor(R.color.black));
             allText[i].setShadowLayer(0,0,0,getResources().getColor(R.color.black));
+            allTextNum[i].setTextColor(getResources().getColor(R.color.black));
+            allTextNum[i].setShadowLayer(0,0,0,getResources().getColor(R.color.black));
+            allTextMph[i].setTextColor(getResources().getColor(R.color.black));
+            allTextMph[i].setShadowLayer(0,0,0,getResources().getColor(R.color.black));
 
                 //Freeze GIFs and make invisible
             if(i != 0) {
@@ -145,6 +162,10 @@ public class EstWindSpeed extends SaveFormAct {
         }
         allText[iVal].setTextColor(getResources().getColor(R.color.white));
         allText[iVal].setShadowLayer(4,0,0,getResources().getColor(R.color.black));
+        allTextNum[iVal].setTextColor(getResources().getColor(R.color.white));
+        allTextNum[iVal].setShadowLayer(4,0,0,getResources().getColor(R.color.black));
+        allTextMph[iVal].setTextColor(getResources().getColor(R.color.white));
+        allTextMph[iVal].setShadowLayer(4,0,0,getResources().getColor(R.color.black));
         allImages[iVal].setAlpha(0.0F);
 
         //Unfreeze GIFS and make visible

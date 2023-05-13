@@ -14,7 +14,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class EstWaterSurface extends SaveFormAct {
-    private Intent toEstHome, toEstWeather, toEstTide, toEstWaterSurfaceInfo, toReview;
+    private Intent toEstHome, toEstWeather, toEstTide, toReview;
     private ImageView allBackgrounds[], allImages[];
     private Button allButtons[];
     private TextView allText[];
@@ -31,7 +31,6 @@ public class EstWaterSurface extends SaveFormAct {
         toEstHome = new Intent(this, EstimatesPage.class);
         toEstTide = new Intent(this, EstTide.class);
         toEstWeather = new Intent(this, EstWeather.class);
-        toEstWaterSurfaceInfo = new Intent(this, EstWaterSurfaceInfo.class);
         toReview = new Intent(this, ReviewPage.class);
 
         setupButtons();
@@ -93,7 +92,6 @@ public class EstWaterSurface extends SaveFormAct {
             });
         }
 
-        setListener(infoButton, toEstWaterSurfaceInfo);
         setListener(leftButton, toEstTide);
         setListener(rightButton, toEstWeather);
         if(ReviewPage.isReviewing)
