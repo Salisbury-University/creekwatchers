@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:alpha="0.6"
-        android:background="@drawable/sakuratree"
+        android:background="@drawable/riverbg4"
         android:scaleType="centerCrop"></pl.droidsonroids.gif.GifImageView>
 
     <Button
@@ -108,7 +108,44 @@
                 android:textStyle="bold"
                 app:strokeColor="#000000"
                 app:strokeWidth="1dp" />
-
+            <Button
+                android:id="@+id/siteBtn4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:backgroundTint="#72000000"
+                android:fontFamily="casual"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:minHeight="0dp"
+                android:paddingTop="25dp"
+                android:paddingBottom="25dp"
+                android:text="CMPO"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                app:strokeColor="#000000"
+                app:strokeWidth="1dp" />
+            <Button
+                android:id="@+id/siteBtn5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:backgroundTint="#72000000"
+                android:fontFamily="casual"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:minHeight="0dp"
+                android:paddingTop="25dp"
+                android:paddingBottom="25dp"
+                android:text="DNPA"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                app:strokeColor="#000000"
+                app:strokeWidth="1dp" />
 
             <Button
                 android:id="@+id/siteBtn6"
