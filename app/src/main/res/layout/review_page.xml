@@ -20,13 +20,13 @@
         app:layout_constraintStart_toStartOf="@+id/header"
         app:layout_constraintTop_toTopOf="@+id/header"
         app:srcCompat="@drawable/back_arrow"
-        app:tint="@color/maroon" />
+        app:tint="@color/gold" />
 
     <Button
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/gold"
+        android:backgroundTint="@color/black"
         android:fontFamily="monospace"
         android:insetTop="0dp"
         android:insetBottom="2dp"
@@ -35,7 +35,7 @@
         android:paddingBottom="10dp"
         android:text="Review"
         android:textAlignment="center"
-        android:textColor="@color/maroon"
+        android:textColor="@color/finishGreen"
         android:textSize="20sp"
         android:textStyle="bold"
         app:cornerRadius="0dp"
@@ -658,7 +658,7 @@
                 android:id="@+id/submitbtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/gold"
+                android:backgroundTint="@color/black"
                 android:fontFamily="monospace"
                 android:insetTop="1dp"
                 android:insetBottom="0dp"
@@ -667,7 +667,7 @@
                 android:paddingBottom="30dp"
                 android:text="Submit"
                 android:textAlignment="center"
-                android:textColor="@color/maroon"
+                android:textColor="@color/gold"
                 android:textSize="25sp"
                 android:textStyle="bold"
                 app:cornerRadius="0dp" />

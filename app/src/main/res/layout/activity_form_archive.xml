@@ -43,7 +43,7 @@
         android:shadowRadius="20"
         android:text="Form Selection"
         android:textAlignment="center"
-        android:textColor="@color/gold"
+        android:textColor="@color/finishGreen"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline59"

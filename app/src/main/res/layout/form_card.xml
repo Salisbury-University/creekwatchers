@@ -89,7 +89,7 @@
                     android:padding="10dp"
                     android:text="Form"
                     android:textAlignment="center"
-                    android:textColor="@color/gold"
+                    android:textColor="@color/finishGreen"
                     android:textSize="27sp"
                     app:autoSizeMaxTextSize="35sp"
                     app:autoSizeTextType="uniform"

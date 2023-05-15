@@ -43,7 +43,7 @@
         android:insetBottom="0dp"
         android:shadowColor="#000000"
         android:shadowRadius="10"
-        android:textColor="@color/gold"
+        android:textColor="@color/finishGreen"
         android:textSize="19sp"
         android:textStyle="bold"
         app:backgroundTint="#3E000000"
@@ -54,7 +54,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/gifImageView"
         app:layout_constraintVertical_bias="0.0"
-        app:strokeColor="@color/gold"
+        app:strokeColor="@color/teal_200"
         app:strokeWidth="1dp" />
 
     <Button
@@ -69,7 +69,7 @@
         android:insetBottom="0dp"
         android:shadowColor="#000000"
         android:shadowRadius="10"
-        android:textColor="#E43535"
+        android:textColor="@color/gold"
         android:textSize="19sp"
         android:textStyle="bold"
         app:backgroundTint="#3E000000"
@@ -77,7 +77,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/homeName"
         app:layout_constraintTop_toTopOf="@+id/gifImageView"
-        app:strokeColor="#E43535"
+        app:strokeColor="@color/teal_200"
         app:strokeWidth="1dp" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -236,7 +236,7 @@
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:text="Form Page"
-        android:textColor="@color/gold"
+        android:textColor="@color/finishGreen"
         android:textSize="30sp"
         android:textStyle="bold"
         app:backgroundTint="#66000000"

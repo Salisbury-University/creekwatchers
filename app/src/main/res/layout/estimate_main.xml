@@ -72,6 +72,7 @@
         android:id="@+id/estimatesTitle"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:background="@color/finishGreen"
         android:fontFamily="@font/architects_daughter"
         android:gravity="center"
         android:shadowColor="@color/black"
@@ -85,13 +86,15 @@
         app:autoSizeMaxTextSize="48sp"
         app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toTopOf="@+id/estigl10"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp" />
 
     <Button
         android:id="@+id/esthome"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:backgroundTint="@color/gold"
+        android:backgroundTint="#35D86D"
         android:fontFamily="@font/architects_daughter"
         android:gravity="center"
         android:insetTop="0dp"
