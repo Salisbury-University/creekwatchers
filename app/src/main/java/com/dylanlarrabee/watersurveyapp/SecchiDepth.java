@@ -37,8 +37,8 @@ public class SecchiDepth extends SaveFormAct{
         BasicCommands.setActivity(this, secchi_b, WaterTemp.class);
         BasicCommands.setActivity(this, secchi_n, CommentsPage.class);
 
-        BasicCommands.setAlertBox(this, secmeas1, 0, SurveyData.secchiDepth, unit, title, 20);
-        BasicCommands.setAlertBox(this, secmeas2, 1, SurveyData.secchiDepth, unit, title, 20);
+        BasicCommands.setAlertBox(this, secmeas1, 0, SurveyData.secchiDepth, unit, title, 500);
+        BasicCommands.setAlertBox(this, secmeas2, 1, SurveyData.secchiDepth, unit, title, 500);
         if(SurveyData.secchiDepth[0] > 0)
         {
             secmeas1.setText(""+SurveyData.secchiDepth[0] + unit);

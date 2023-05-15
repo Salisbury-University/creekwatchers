@@ -37,9 +37,10 @@ public class WaterDepth extends SaveFormAct {
         else
             BasicCommands.setActivity(this, water_h, MeasurementsPage.class);
 
+
         BasicCommands.setActivity(this, water_b, EstRainfall.class);
         BasicCommands.setActivity(this, water_n, SamplePage.class);
-        BasicCommands.setAlertBox(this, wdmeas, 0, SurveyData.waterDepth,unit,title, 20);
+        BasicCommands.setAlertBox(this, wdmeas, 0, SurveyData.waterDepth,unit,title, 500);
 
         if(SurveyData.waterDepth[0] > 0)
         {

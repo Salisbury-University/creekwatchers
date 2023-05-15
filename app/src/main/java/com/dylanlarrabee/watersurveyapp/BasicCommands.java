@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.text.InputType;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -85,13 +86,20 @@ public class BasicCommands {
                     builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            Double inpDoub = Double.parseDouble(input.getText().toString());
-                            if(inpDoub >= 0 && inpDoub <= max) {
-                                view.setText(inpDoub + " " + unit);
-                                val[measNum] = inpDoub;
-                            }else{
-                                Toast msg = Toast.makeText(act.getApplicationContext(), "Please enter a number in the proper range", Toast.LENGTH_LONG);
+                            if(input.getText().toString().equals(".") || input.getText().toString().equals("")) {
+
+                                Toast msg = Toast.makeText(act.getApplicationContext(), "Improper input, try again", Toast.LENGTH_LONG);
                                 msg.show();
+                            }else {
+
+                                Double inpDoub = Double.parseDouble(input.getText().toString());
+                                if (inpDoub >= 0 && inpDoub <= max) {
+                                    view.setText(inpDoub + " " + unit);
+                                    val[measNum] = inpDoub;
+                                } else {
+                                    Toast msg = Toast.makeText(act.getApplicationContext(), "Please enter a number in the proper range", Toast.LENGTH_LONG);
+                                    msg.show();
+                                }
                             }
                     }
                 });

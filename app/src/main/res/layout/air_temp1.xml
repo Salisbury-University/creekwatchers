@@ -13,7 +13,6 @@
         android:background="@color/gold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/sdgl25v"
-        app:layout_constraintStart_toStartOf="@+id/cgl25v"
         app:layout_constraintTop_toTopOf="@+id/atdgl90h" />
 
     <TextView
@@ -23,7 +22,6 @@
         android:background="@color/gold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/airhome"
-        app:layout_constraintStart_toStartOf="@+id/cgl75v"
         app:layout_constraintTop_toTopOf="@+id/atdgl90h" />
 
     <androidx.constraintlayout.widget.Guideline
