@@ -23,7 +23,7 @@ public class EstWeather extends SaveFormAct {
     private Button homeButton;
     private ImageView clearBackground, partlycloudyBackground, overcastBackground, lightrainBackground, rainBackground, heavyrainBackground, fogBackground, snowBackground;
     private ImageView rightButton, leftButton;
-    private TextView infoButton, clearTxt, partlycloudyTxt,overTxt,lightrainTxt,rainTxt,heavyrainTxt,fogTxt,snowTxt;
+    private TextView clearTxt, partlycloudyTxt,overTxt,lightrainTxt,rainTxt,heavyrainTxt,fogTxt,snowTxt;
     private Button clearButton, partlycloudyButton, overcastButton, lightrainButton, rainButton, heavyrainButton, fogButton, snowButton;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,6 @@ public class EstWeather extends SaveFormAct {
         toEstHome = new Intent(this, EstimatesPage.class);
         toEstWindSpeed = new Intent(this, EstWindSpeed.class);
         toEstWaterSurface = new Intent(this, EstWaterSurface.class);
-        toEstWeatherInfo = new Intent(this, EstWeatherInfo.class);
         toReview= new Intent(this, ReviewPage.class);
 
         setupButtons();
@@ -49,7 +48,6 @@ public class EstWeather extends SaveFormAct {
         homeButton = (Button) findViewById(id.home_button);
         leftButton = (ImageView) findViewById(id.leftbutton_image);
         rightButton = (ImageView) findViewById(id.rightbutton_image);
-        infoButton = (TextView) findViewById(id.estimateTitle);
 
         clearButton = (Button) findViewById(id.clear_button);
         partlycloudyButton = (Button) findViewById(id.partlycloudy_button);
@@ -100,7 +98,6 @@ public class EstWeather extends SaveFormAct {
                 }
             });
         }
-        setListener(infoButton, toEstWeatherInfo);
         setListener(leftButton, toEstWaterSurface);
         setListener(rightButton, toEstWindSpeed);
         if(ReviewPage.isReviewing)
@@ -130,7 +127,7 @@ public class EstWeather extends SaveFormAct {
             allTv[i].setBackgroundColor(getResources().getColor(R.color.transparent));
         }
         background.setImageResource(R.color.white);
-        tv.setBackgroundColor(getResources().getColor(R.color.maroon));
+        tv.setBackgroundColor(getResources().getColor(R.color.black));
         tv.setTextColor(getResources().getColor(R.color.gold));
     }
 

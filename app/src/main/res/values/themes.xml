@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.WaterSurveyApp" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/maroon</item>
-        <item name="colorPrimaryVariant">@color/maroon</item>
+        <item name="colorPrimary">@color/gold</item>
+        <item name="colorPrimaryVariant">@color/gold</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/gold</item>

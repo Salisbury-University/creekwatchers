@@ -9,6 +9,8 @@
     <string name="tidelink1"><a href="https://marineweather.net/tide/salisbury-wicomico-river-md-tides">MarineWeather.net</a></string>
     <string name="tidelink2"><a href="https://tides4fishing.com/us/maryland/salisbury">Tides4Fishing.com</a></string>
     <string name="tidelink3"><a href="https://tidesandcurrents.noaa.gov/noaatidepredictions.html?id=8571616">NOAA.gov</a></string>
+    <string name="windspeedlink1"><a href="https://wind.willyweather.com/md/wicomico-county/salisbury.html">WillyWeather.com</a></string>
+    <string name="rainfalllink1"><a href="https://w1.weather.gov/obhistory/KSBY.html">w1.weather.gov</a></string>
 
 
 
