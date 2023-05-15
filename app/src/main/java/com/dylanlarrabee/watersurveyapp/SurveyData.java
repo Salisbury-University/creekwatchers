@@ -19,7 +19,7 @@ SurveyData  {
         static double[] airTemp = {-1,-1},waterTemp={-1,-1},secchiDepth={-1,-1};
         static double[] waterDepth = {-1}, sampleDist = {-1};
         static int estArr[] = {tideEst,waterSurf,weathEst,windSpeed,windDir,rainfall};
-        static boolean bottomedOut, newForm = false,firstEntry = true, tube = false;
+        static boolean bottomedOut, tubeUsed, newForm = false,firstEntry = true, tube = false;
 
          String myuserName = "", myuserSite = "", myUserID, myComm = "";
          int mycurEst = 0, mycurMeas = 0, mycurComm = 0, myformIDnum = 0;
@@ -29,7 +29,7 @@ SurveyData  {
 
          int myestArr[] = {mytideEst,mywaterSurf,myweathEst,mywindSpeed,mywindDir,myrainfall};
 
-         boolean mybottomedOut;
+         boolean bottomOut, useTube;
 
 
         public SurveyData()
@@ -70,8 +70,8 @@ SurveyData  {
                 }
                 waterDepth[0] = -1;
                 sampleDist[0] = -1;
-
                 bottomedOut = false;
+                tubeUsed = false;
         }
         static public void updateCompleted()
         {
@@ -141,23 +141,25 @@ SurveyData  {
                 mysd.mysampleDist[0] = SurveyData.sampleDist[0];
                 mysd.myComm = SurveyData.comments;
                 mysd.myformIDnum = SurveyData.formIDnum;
+                mysd.bottomOut = SurveyData.bottomedOut;
+                mysd.useTube = SurveyData.tubeUsed;
                 return mysd;
         }
         public static void RetrieveData(SurveyData mysd)
         {
 
-               SurveyData.userName = mysd.myuserName;
-               SurveyData.userSite = mysd.myuserSite;
-               SurveyData.myID = mysd.myUserID;
-               SurveyData.curEst = mysd.mycurEst;
-               SurveyData.curMeas = mysd.mycurMeas;
-               SurveyData.curComm = mysd.mycurComm;
-                SurveyData.tideEst = mysd.mytideEst;
-                SurveyData.waterSurf = mysd.mywaterSurf;
-                SurveyData.weathEst = mysd.myweathEst;
-                SurveyData.windDir = mysd.mywindDir;
-                SurveyData.windSpeed = mysd.mywindSpeed;
-                SurveyData.rainfall = mysd.myrainfall;
+            SurveyData.userName = mysd.myuserName;
+            SurveyData.userSite = mysd.myuserSite;
+            SurveyData.myID = mysd.myUserID;
+            SurveyData.curEst = mysd.mycurEst;
+            SurveyData.curMeas = mysd.mycurMeas;
+            SurveyData.curComm = mysd.mycurComm;
+            SurveyData.tideEst = mysd.mytideEst;
+            SurveyData.waterSurf = mysd.mywaterSurf;
+            SurveyData.weathEst = mysd.myweathEst;
+            SurveyData.windDir = mysd.mywindDir;
+            SurveyData.windSpeed = mysd.mywindSpeed;
+            SurveyData.rainfall = mysd.myrainfall;
             SurveyData.waterTemp[0] = mysd.mywaterTemp[0];
             SurveyData.waterTemp[1] = mysd.mywaterTemp[1];
             SurveyData.airTemp[0] = mysd.myairTemp[0];
@@ -168,5 +170,7 @@ SurveyData  {
             SurveyData.waterDepth[0] = mysd.mywaterDepth[0];
             SurveyData.comments = mysd.myComm;
             SurveyData.formIDnum = mysd.myformIDnum;
+            SurveyData.bottomedOut = mysd.bottomOut;
+            SurveyData.tubeUsed = mysd.useTube;
         }
 }

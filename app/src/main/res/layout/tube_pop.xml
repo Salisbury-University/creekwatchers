@@ -73,7 +73,7 @@
             android:layout_marginLeft="30dp">
 
             <RadioButton
-                android:id="@+id/radioButton3"
+                android:id="@+id/tubeT"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Yes"
@@ -82,7 +82,7 @@
                 android:buttonTint="@color/gold"/>
 
             <RadioButton
-                android:id="@+id/radioButton4"
+                android:id="@+id/tubeF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="No"

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/riverbg2">
+    android:background="@drawable/riverbg3"
+    android:id="@+id/commLay">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/cgl5v"
