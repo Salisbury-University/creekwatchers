@@ -46,7 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.55" />
+        app:layout_constraintGuide_percent="0.51" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -60,7 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.42" />
+        app:layout_constraintGuide_percent="0.39" />
 
     <EditText
         android:id="@+id/entername"
@@ -91,7 +91,7 @@
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:minHeight="100dp"
-        android:text="Submit Name"
+        android:text="Submit Name ➪"
         android:textColor="@color/gold"
         android:textSize="32sp"
         android:textStyle="bold"
@@ -111,9 +111,10 @@
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:minHeight="100dp"
-        android:text="Select Saved NAme"
-        android:textColor="@color/gold"
-        android:textSize="32sp"
+        android:padding="20dp"
+        android:text="Select Saved Name ➪"
+        android:textColor="@color/finishGreen"
+        android:textSize="26sp"
         android:textStyle="bold"
         app:backgroundTint="#8B000000"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
@@ -121,6 +122,27 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline4"
+        app:layout_constraintVertical_bias="0.495" />
+
+    <Button
+        android:id="@+id/toFormsBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="casual"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:minHeight="100dp"
+        android:text="⇦ Current Forms"
+        android:textColor="@color/gold"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:backgroundTint="#8B000000"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.12"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
         app:layout_constraintVertical_bias="0.495" />
 
     <TextView

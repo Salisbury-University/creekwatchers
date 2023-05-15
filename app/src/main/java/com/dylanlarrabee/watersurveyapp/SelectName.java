@@ -31,7 +31,7 @@ public class SelectName extends SaveFormAct {
         setContentView(R.layout.activity_select_name);
 
         //sharedpref
-        sharedPreferences = getSharedPreferences("userNames",MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("userName",MODE_PRIVATE);
         editor = sharedPreferences.edit();
         nameNum = sharedPreferences.getAll().size();
         userStr = new String[nameNum];

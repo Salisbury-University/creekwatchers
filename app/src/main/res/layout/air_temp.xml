@@ -7,6 +7,31 @@
     android:background="@drawable/riverbg5">
 
     <TextView
+        android:id="@+id/textView5"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/finishGreen"
+        android:elevation="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/sdgl25v"
+        app:layout_constraintStart_toStartOf="@+id/sdgl25v"
+        app:layout_constraintTop_toTopOf="@+id/atdgl90h" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/finishGreen"
+        android:elevation="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/sdgl75v"
+        app:layout_constraintTop_toTopOf="@+id/atdgl90h" />
+
+    <TextView
         android:id="@+id/wt_title_meas4"
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -23,31 +48,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/wtgl50h" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="1dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:background="@color/gold"
-        android:elevation="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/sdgl25v"
-        app:layout_constraintStart_toStartOf="@+id/sdgl25v"
-        app:layout_constraintTop_toTopOf="@+id/atdgl90h" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="1dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:background="@color/gold"
-        android:elevation="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/sdgl75v"
-        app:layout_constraintTop_toTopOf="@+id/atdgl90h" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/sdgl25v"
@@ -106,7 +106,7 @@
         android:id="@+id/airtitle"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@color/black"
+        android:background="#E4000000"
         android:fontFamily="@font/architects_daughter"
         android:gravity="center"
         android:text="Air Temperature"
@@ -137,7 +137,7 @@
         android:id="@+id/airhome"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/black"
+        android:background="#E4000000"
         android:fontFamily="@font/architects_daughter"
         android:gravity="center"
         android:text="Menu"
@@ -153,18 +153,20 @@
         android:id="@+id/air_back"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/black"
+        android:background="#E4000000"
+        android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/sdgl25v"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/atdgl90h"
-        app:srcCompat="@drawable/baseline_arrow_back_24" />
+        app:srcCompat="@drawable/baseline_arrow_back_ios_24" />
 
     <ImageView
         android:id="@+id/air_next"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/black"
+        android:background="#E4000000"
+        android:padding="8dp"
         android:rotationY="180"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -172,7 +174,7 @@
         app:layout_constraintStart_toStartOf="@+id/sdgl75v"
         app:layout_constraintTop_toTopOf="@+id/atdgl90h"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/baseline_arrow_back_24" />
+        app:srcCompat="@drawable/baseline_arrow_back_ios_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,24 +6,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/riverbg2">
 
-    <TextView
-        android:id="@+id/formSelTitleBg2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#303030"
-
-        android:fontFamily="serif-monospace"
-        android:gravity="center"
-        android:shadowColor="#000000"
-        android:textAlignment="center"
-        android:textColor="@color/gold"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/cgl10h"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/cgl5v"
         android:layout_width="wrap_content"
@@ -84,7 +66,7 @@
         android:id="@+id/commentstitle"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@color/black"
+        android:background="#E2000000"
         android:fontFamily="@font/architects_daughter"
         android:gravity="center"
         android:shadowColor="#000000"
@@ -103,7 +85,7 @@
         android:id="@+id/comhome"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/black"
+        android:background="#E4000000"
         android:fontFamily="@font/architects_daughter"
         android:gravity="center"
         android:shadowColor="#000000"
@@ -122,24 +104,26 @@
         android:id="@+id/com_back"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/black"
+        android:background="#CD000000"
+        android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/cgl25v"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/cgl90h"
-        app:srcCompat="@drawable/baseline_arrow_back_24" />
+        app:srcCompat="@drawable/baseline_arrow_back_ios_24" />
 
     <ImageView
         android:id="@+id/com_next"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/black"
+        android:background="#CD000000"
+        android:padding="8dp"
         android:rotationY="180"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/cgl75v"
         app:layout_constraintTop_toTopOf="@+id/cgl90h"
-        app:srcCompat="@drawable/baseline_arrow_back_24" />
+        app:srcCompat="@drawable/baseline_arrow_back_ios_24" />
 
     <EditText
         android:id="@+id/commentText"
@@ -171,7 +155,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:autoText="false"
-        android:background="#E9000000"
+        android:background="#BE000000"
         android:buttonTint="@color/gold"
         android:enabled="false"
         android:fontFamily="@font/architects_daughter"
@@ -188,11 +172,11 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="1dp"
+        android:layout_width="2dp"
         android:layout_height="0dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:background="@color/gold"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/finishGreen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/cgl25v"
         app:layout_constraintStart_toStartOf="@+id/cgl25v"
@@ -200,11 +184,11 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="1dp"
+        android:layout_width="2dp"
         android:layout_height="0dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:background="@color/gold"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/finishGreen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/cgl75v"
         app:layout_constraintStart_toStartOf="@+id/cgl75v"

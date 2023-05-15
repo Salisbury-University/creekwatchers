@@ -19,14 +19,14 @@ public class LoginPage extends SaveFormAct {
     private SharedPreferences.Editor nameEdit;
     private int numNames;
     private String userName,siteName;
-    private Button selName;
-    private Intent toHome, toSelName,toSelSite;
+    private Button selName,toFormsBtn;
+    private Intent toHome, toSelName,toSelSite,toForms;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_page);
         //sharedPref
-        namePref = getSharedPreferences("userNames",MODE_PRIVATE);
+        namePref = getSharedPreferences("userName",MODE_PRIVATE);
         nameEdit = namePref.edit();
 
         numNames = namePref.getAll().size();
@@ -34,14 +34,22 @@ public class LoginPage extends SaveFormAct {
         toHome = new Intent(this,HomePage.class);
         toSelName = new Intent(this,SelectName.class);
         toSelSite = new Intent(this,SelectSite.class);
-
+        toForms = new Intent(this,FormArchive.class);
         //Find views
         EditText enterName = (EditText) findViewById(R.id.entername);
         Button donebtn = (Button) findViewById(R.id.btndone);
         Animation fadeIn = AnimationUtils.loadAnimation(this,R.anim.fade_in);
         Animation fadeOut = AnimationUtils.loadAnimation(this,R.anim.fade_out);
         selName = (Button) findViewById(R.id.selNameLog);
+        toFormsBtn = findViewById(R.id.toFormsBtn);
         //listeners
+        toFormsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            startActivity(toForms);
+            finish();
+            }
+        });
         selName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
