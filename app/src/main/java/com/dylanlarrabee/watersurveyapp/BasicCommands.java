@@ -77,6 +77,12 @@ public class BasicCommands {
     public static void setAlertBox(Activity act, TextView view, int measNum, double []val,String unit, String title, double max) {
         AlertDialog.Builder builder = new AlertDialog.Builder(act);
         builder.setTitle(title + (measNum+1) + " in range of 0" + unit + " - " + max + unit);
+        if(max < 0)
+        {
+            builder.setTitle(title + (measNum+1) + " (Unlimited Range)");
+            max = 1000000;
+        }
+        final double finMax = max;
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -93,7 +99,7 @@ public class BasicCommands {
                             }else {
 
                                 Double inpDoub = Double.parseDouble(input.getText().toString());
-                                if (inpDoub >= 0 && inpDoub <= max) {
+                                if (inpDoub >= 0 && inpDoub <= finMax) {
                                     view.setText(inpDoub + " " + unit);
                                     val[measNum] = inpDoub;
                                 } else {

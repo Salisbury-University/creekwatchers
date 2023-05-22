@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SamplePage extends SaveFormAct{
-    String unit = " cm";
+    String unit = " m";
     String title = "Enter in Sample Distance ";
     @Override
     protected void onCreate(Bundle savedInstance) {
@@ -32,7 +32,7 @@ public class SamplePage extends SaveFormAct{
             BasicCommands.setActivity(this, samp_home, MeasurementsPage.class);
         BasicCommands.setActivity(this, samp_b, WaterDepth.class);
         BasicCommands.setActivity(this, samp_n, AirTemp.class);
-        BasicCommands.setAlertBox(this, sampmeas, 0, SurveyData.sampleDist, unit,title, 20);
+        BasicCommands.setAlertBox(this, sampmeas, 0, SurveyData.sampleDist, unit,title, -1);
 
 
         if(SurveyData.sampleDist[0] > 0)
