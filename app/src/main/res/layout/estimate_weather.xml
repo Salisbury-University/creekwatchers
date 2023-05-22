@@ -122,7 +122,7 @@
         android:text="Menu"
         android:textAlignment="center"
         android:textAllCaps="true"
-        android:textColor="@color/finishGreen"
+        android:textColor="@color/gold"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

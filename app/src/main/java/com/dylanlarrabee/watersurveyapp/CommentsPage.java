@@ -158,14 +158,14 @@ public class CommentsPage extends SaveFormAct {
     }
     public void Showpopup(){
         myDiag.setContentView(layout.tube_test);
-        RadioGroup radioGroup = (RadioGroup) findViewById(id.tubeRadio);
+        RadioGroup radioGroup = (RadioGroup) myDiag.findViewById(id.tubeRadio);
         TextView proceed = (TextView) myDiag.findViewById(id.tube_proceed);
 
-        TextView waterDepthText = (TextView)findViewById(R.id.tube_water);
-        TextView secchiDepth1Text = (TextView) findViewById(R.id.tube_sec1);
-        TextView secchiDepth2Text = (TextView) findViewById(R.id.tube_sec2);
+        TextView waterDepthText = (TextView) myDiag.findViewById(R.id.tube_water);
+        TextView secchiDepth1Text = (TextView) myDiag.findViewById(R.id.tube_sec1);
+        TextView secchiDepth2Text = (TextView) myDiag.findViewById(R.id.tube_sec2);
 
-        waterDepthText.setText("Water Dpeth: " + SurveyData.waterDepth[0] + " cm");
+        waterDepthText.setText("Water Depth: " + SurveyData.waterDepth[0] + " cm");
         secchiDepth1Text.setText("Secchi Depth 1: " + SurveyData.secchiDepth[0] + " cm");
         secchiDepth2Text.setText("Secchi Depth 2: " + SurveyData.secchiDepth[1] + " cm");
 
