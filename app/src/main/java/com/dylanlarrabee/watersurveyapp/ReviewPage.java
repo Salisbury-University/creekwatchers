@@ -276,7 +276,7 @@ public class ReviewPage extends SaveFormAct {
 
     void setupIntents() {
         toHome = new Intent(this,HomePage.class);
-        toSubmit = new Intent(this,SubmitPage.class);
+        toSubmit = new Intent(this,SubmitTest.class);
         toWeather = new Intent(this, EstWeather.class);
         toTide = new Intent(this, EstTide.class);
         toWaterSurface = new Intent(this, EstWaterSurface.class);

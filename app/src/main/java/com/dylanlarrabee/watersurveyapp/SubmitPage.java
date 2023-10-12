@@ -23,8 +23,8 @@ import javax.activation.*;
 
 public class SubmitPage extends SaveFormAct {
 
-  private final String RECIPIENT = "chrismorse301@gmail.com";
-  //private final String RECIPIENT = "creekwatchers@salisbury.edu";
+  //private final String RECIPIENT = "chrismorse301@gmail.com";
+  private final String RECIPIENT = "sacosta2@gulls.salisbury.edu";
     //official email: creekwatchers@salisbury.edu
 
     private TextView statusText;
@@ -183,13 +183,15 @@ public class SubmitPage extends SaveFormAct {
                 "Sample Distance: " + SurveyData.sampleDist[0] + "\n" +
                 "Air Temp: " + SurveyData.airTemp[0] + ", " + SurveyData.airTemp[1] + "\n" +
                 "Water Temp: " + SurveyData.waterTemp[0] + ", " + SurveyData.waterTemp[1] + "\n" +
-                "Secchi Depth: " + SurveyData.secchiDepth[0] + ", " + SurveyData.secchiDepth[1] + "\n\n";
+                "Secchi Depth: " + SurveyData.secchiDepth[0] + ", " + SurveyData.secchiDepth[1] + "\n" +
+                "Glass Bottle: " + SurveyData.Gbottle + "\n" +
+                "Plastic Bottle: " + SurveyData.Pbottle + "\n\n";
                 if(SurveyData.comments != "")  email += "Comments: " + SurveyData.comments + "\n\n\n";
         return email;
     }
 
     private String getCSV() {
-        return "\"Name\",\"Site\",\"Tide\",\"Weather\",\"WaterSurf\",\"WindSpeed\",\"WindDirect\",\"Rainfall\",\"WaterDepth1\",\"WaterDepth2\",\"AirTemp1\",\"AirTemp2\",\"WaterTemp1\",\"WaterTemp2\",\"SecchiDepth1\",\"SecchiDepth2\"\n\"" +
+        return "\"Name\",\"Site\",\"Tide\",\"Weather\",\"WaterSurf\",\"WindSpeed\",\"WindDirect\",\"Rainfall\",\"WaterDepth1\",\"WaterDepth2\",\"AirTemp1\",\"AirTemp2\",\"WaterTemp1\",\"WaterTemp2\",\"SecchiDepth1\",\"SecchiDepth2\", \"Glass Bottle\",\"Plastic Bottle\" \n\"" +
                 SurveyData.userName + "\",\"" +
                 SurveyData.userSite + "\",\"" +
                 SurveyData.tideEst + "\",\"" +
@@ -205,7 +207,9 @@ public class SubmitPage extends SaveFormAct {
                 SurveyData.waterTemp[0] + "\",\"" +
                 SurveyData.waterTemp[1] + "\",\"" +
                 SurveyData.secchiDepth[0] + "\",\"" +
-                SurveyData.secchiDepth[1] + "\"";
+                SurveyData.secchiDepth[1] + "\", \"" +
+                SurveyData.Gbottle + "\", \""+
+                SurveyData.Pbottle + "\"";
     }
 
     private class SendMail extends AsyncTask<MimeMessage, Void, Void> {

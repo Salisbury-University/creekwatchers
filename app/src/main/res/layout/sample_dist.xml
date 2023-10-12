@@ -17,7 +17,7 @@
         android:elevation="25dp"
         app:layout_constraintBottom_toBottomOf="@+id/sampdist_home"
         app:layout_constraintEnd_toStartOf="@+id/sampdist_home"
-        app:layout_constraintStart_toStartOf="@+id/sdgl25v"
+        app:layout_constraintStart_toStartOf="@+id/gls25"
         app:layout_constraintTop_toTopOf="@+id/gls90" />
 
     <TextView
@@ -139,7 +139,9 @@
         app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toTopOf="@+id/gls90"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/gls10" />
+        app:layout_constraintTop_toTopOf="@+id/gls10"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

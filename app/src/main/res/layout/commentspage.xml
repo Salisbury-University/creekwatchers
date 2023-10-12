@@ -22,6 +22,13 @@
         app:layout_constraintGuide_percent="0.25" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cgl50v"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/cgl75v"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -50,7 +57,7 @@
         app:layout_constraintGuide_percent="0.15" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/cgl75h"
+        android:id="@+id/cgl82h"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -62,6 +69,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cgl75h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
 
     <TextView
         android:id="@+id/commentstitle"
@@ -143,7 +157,7 @@
         android:textColor="@color/white"
         android:textColorHint="#8FFFFFFF"
         android:textSize="28sp"
-        app:layout_constraintBottom_toTopOf="@+id/cgl75h"
+        app:layout_constraintBottom_toTopOf="@+id/cgl82h"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -169,30 +183,54 @@
         app:layout_constraintBottom_toTopOf="@+id/comhome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cgl75h" />
+        app:layout_constraintTop_toTopOf="@+id/cgl82h" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="2dp"
+    <EditText
+        android:id="@+id/plasticbottle"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="@color/finishGreen"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/cgl25v"
-        app:layout_constraintStart_toStartOf="@+id/cgl25v"
-        app:layout_constraintTop_toTopOf="@+id/cgl90h" />
+        android:fontFamily="@font/architects_daughter"
+        android:shadowColor="#000000"
+        android:shadowRadius="10"
+        android:hint="Plastic Bottle"
+        android:textAlignment="center"
+        android:textColorHint="@color/white"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:backgroundTint="#3E000000"
+        app:iconPadding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/cgl82h"
+        app:layout_constraintEnd_toStartOf="@+id/cgl95v"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/cgl50v"
+        app:layout_constraintTop_toTopOf="@+id/cgl75h"
+        app:strokeColor="@color/finishGreen"
+        app:strokeWidth="1dp" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="2dp"
+    <EditText
+        android:id="@+id/glassbottle"
+        android:hint="Glass Bottle"
+        android:textColorHint="@color/white"
+        android:textAlignment="center"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="@color/finishGreen"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/cgl75v"
-        app:layout_constraintStart_toStartOf="@+id/cgl75v"
-        app:layout_constraintTop_toTopOf="@+id/cgl90h" />
+        android:alpha="1"
+        android:fontFamily="@font/architects_daughter"
+        android:insetLeft="-1dp"
+        android:insetTop="-2dp"
+        android:insetRight="-2dp"
+        android:insetBottom="0dp"
+        android:shadowColor="#000000"
+        android:shadowRadius="10"
+        android:textColor="@color/gold"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:backgroundTint="#3E000000"
+        app:layout_constraintBottom_toTopOf="@+id/cgl82h"
+        app:layout_constraintEnd_toStartOf="@+id/cgl50v"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cgl75h"
+        app:strokeColor="@color/gold"
+        app:strokeWidth="1dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

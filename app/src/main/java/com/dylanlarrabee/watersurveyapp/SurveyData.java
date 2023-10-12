@@ -12,6 +12,8 @@ public class
 SurveyData  {
         static String myID = ""; //used in shared pref to access form
         static String formName = "";
+        static String Gbottle = "";
+        static String Pbottle = "";
         static final int maxEst = 6, maxMeas = 5, maxComm = 1, numMeas = 2;
         static String userName = "", userSite = "", comments = "";
         static int curEst = 0, curMeas = 0, curComm = 0, formIDnum = 0;
@@ -22,6 +24,7 @@ SurveyData  {
         static boolean bottomedOut, tubeUsed, newForm = false,firstEntry = true, tube = false;
 
          String myuserName = "", myuserSite = "", myUserID, myComm = "";
+         String myplastic = "", myglass = "";
          int mycurEst = 0, mycurMeas = 0, mycurComm = 0, myformIDnum = 0;
          int mytideEst=-1,myweathEst=-1,mywindSpeed=-1, mywaterSurf =-1,mywindDir=-1,myrainfall=-1;
          double [] mywaterDepth= {-1},mysampleDist= {-1};
@@ -46,6 +49,7 @@ SurveyData  {
 //                airTemp = new int[]{-1, -1};
 //                waterTemp = new int[]{-1, -1};
 //                secchiDepth = new int[]{-1, -1};
+
         }
         static public void resetData()
         {
@@ -70,6 +74,8 @@ SurveyData  {
                 }
                 waterDepth[0] = -1;
                 sampleDist[0] = -1;
+                Gbottle = "";
+                Pbottle = "";
                 bottomedOut = false;
                 tubeUsed = false;
         }
@@ -139,6 +145,9 @@ SurveyData  {
                 mysd.mysecchiDepth[1] = SurveyData.secchiDepth[1];
                 mysd.mywaterDepth[0] = SurveyData.waterDepth[0];
                 mysd.mysampleDist[0] = SurveyData.sampleDist[0];
+                mysd.myglass = SurveyData.Gbottle;
+
+                mysd.myplastic = SurveyData.Pbottle;
                 mysd.myComm = SurveyData.comments;
                 mysd.myformIDnum = SurveyData.formIDnum;
                 mysd.bottomOut = SurveyData.bottomedOut;
@@ -168,6 +177,8 @@ SurveyData  {
             SurveyData.secchiDepth[1] = mysd.mysecchiDepth[1];
             SurveyData.sampleDist[0] = mysd.mysampleDist[0];
             SurveyData.waterDepth[0] = mysd.mywaterDepth[0];
+            SurveyData.Gbottle = mysd.myglass;
+            SurveyData.Pbottle = mysd.myplastic;
             SurveyData.comments = mysd.myComm;
             SurveyData.formIDnum = mysd.myformIDnum;
             SurveyData.bottomedOut = mysd.bottomOut;

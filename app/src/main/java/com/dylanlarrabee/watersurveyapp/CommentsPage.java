@@ -51,6 +51,9 @@ public class CommentsPage extends SaveFormAct {
 
 
         EditText inText = (EditText) findViewById(id.commentText);
+        EditText in_p_bottle = (EditText) findViewById(id.plasticbottle);
+        EditText in_g_bottle = (EditText) findViewById(id.glassbottle);
+
         if (ReviewPage.isReviewing) {
             comm_h.setText("BACK");
             comm_h.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +64,12 @@ public class CommentsPage extends SaveFormAct {
                     String comments = inText.getEditableText().toString();
                     SurveyData.comments = comments;
                     SurveyData.curComm = 1;
+
+                    String p_bottle = in_p_bottle.getEditableText().toString();
+                    SurveyData.Pbottle = p_bottle;
+
+                    String g_bottle = in_g_bottle.getEditableText().toString();
+                    SurveyData.Gbottle = g_bottle;
 
                     startActivity(toPage);
                 }
@@ -76,6 +85,13 @@ public class CommentsPage extends SaveFormAct {
                     SurveyData.comments = comments;
                     SurveyData.curComm = 1;
 
+                    String p_bottle = in_p_bottle.getEditableText().toString();
+                    SurveyData.Pbottle = p_bottle;
+
+                    String g_bottle = in_g_bottle.getEditableText().toString();
+                    SurveyData.Gbottle = g_bottle;
+
+
                     startActivity(toPage);
                 }
             });
@@ -87,6 +103,18 @@ public class CommentsPage extends SaveFormAct {
             inText.setText(SurveyData.comments);
         }
 
+        if (SurveyData.Pbottle.isEmpty()) {
+            SurveyData.Pbottle = "";
+        } else {
+            inText.setText(SurveyData.Pbottle);
+        }
+
+        if (SurveyData.Gbottle.isEmpty()) {
+            SurveyData.Gbottle = "";
+        } else {
+            inText.setText(SurveyData.Gbottle);
+        }
+
         comm_b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,6 +123,12 @@ public class CommentsPage extends SaveFormAct {
                 String comments = inText.getEditableText().toString();
                 SurveyData.comments = comments;
                 SurveyData.curComm = 1;
+
+                String p_bottle = in_p_bottle.getEditableText().toString();
+                SurveyData.Pbottle = p_bottle;
+
+                String g_bottle = in_g_bottle.getEditableText().toString();
+                SurveyData.Gbottle = g_bottle;
 
                 startActivity(toPage);
             }
@@ -109,6 +143,13 @@ public class CommentsPage extends SaveFormAct {
                 Toast msg = Toast.makeText(getApplicationContext(), "Comment Saved", Toast.LENGTH_SHORT);
                 msg.show();
                 SurveyData.curComm = 1;
+
+                String p_bottle = in_p_bottle.getEditableText().toString();
+                SurveyData.Pbottle = p_bottle;
+
+                String g_bottle = in_g_bottle.getEditableText().toString();
+                SurveyData.Gbottle = g_bottle;
+
                 startActivity(toPage);
             }
         });
