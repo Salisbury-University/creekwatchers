@@ -3,7 +3,7 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/popup"
-    android:layout_width="300dp"
+    android:layout_width="400dp"
     android:layout_height="wrap_content"
     android:layout_centerInParent="true"
     android:background="@color/black"
@@ -21,7 +21,7 @@
         android:paddingTop="10dp"
         android:text="Did you use a tube?"
         android:textColor="@android:color/white"
-        android:textSize="16sp" />
+        android:textSize="30sp" />
 
     <RadioGroup
         android:id="@+id/tubeRadio"
@@ -37,6 +37,7 @@
             android:buttonTint="@color/gold"
             android:checked="false"
             android:text="Yes"
+            android:textSize="25sp"
             android:textColor="@android:color/white" />
 
         <RadioButton
@@ -47,6 +48,7 @@
             android:buttonTint="@color/gold"
             android:checked="true"
             android:text="No"
+            android:textSize="25sp"
             android:textColor="@android:color/white" />
 
     </RadioGroup>
@@ -60,7 +62,7 @@
         android:paddingBottom="10dp"
         android:text="Are you sure these values are accurate:"
         android:textColor="@android:color/white"
-        android:textSize="16sp" />
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/tube_water"
@@ -69,11 +71,26 @@
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
         android:fontFamily="monospace"
-        android:text="Water Depth"
+        android:text="Water Depth:"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/white"
-        android:textSize="14sp" />
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/waterDepthInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:fontFamily="monospace"
+        android:hint="Enter new value (cm)"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+
+        android:textColorHint="@color/gold"
+        android:textColor="@color/gold"
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/tube_sec1"
@@ -82,11 +99,25 @@
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
         android:fontFamily="monospace"
-        android:text="Secchi Depth 1"
+        android:text="Secchi Depth 1:"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/white"
-        android:textSize="14sp" />
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/secchiDepthIn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:fontFamily="monospace"
+        android:hint="Enter new value (cm)"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textColorHint="@color/gold"
+        android:textColor="@color/gold"
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/tube_sec2"
@@ -95,15 +126,29 @@
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
         android:fontFamily="monospace"
-        android:text="Secchi Depth 2"
+        android:text="Secchi Depth 2:"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/white"
-        android:textSize="14sp" />
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/secchiDepthIn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:fontFamily="monospace"
+        android:hint="Enter new value (cm)"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textColorHint="@color/gold"
+        android:textColor="@color/gold"
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/tube_proceed"
-        android:layout_width="200dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
@@ -113,6 +158,6 @@
         android:text="Proceed"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="15dp" />
+        android:textSize="30sp" />
 
 </LinearLayout>

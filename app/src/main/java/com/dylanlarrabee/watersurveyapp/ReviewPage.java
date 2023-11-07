@@ -20,10 +20,10 @@ import java.text.DecimalFormat;
 
 public class ReviewPage extends SaveFormAct {
 
-    private Intent toHome, toSubmit, toTide, toWaterSurface, toWeather, toWindSpeed, toWindDirection, toRainfall, toWaterDepth, toSampleDist, toAirTemp, toWaterTemp, toSecchiDepth;
-    private Button homeButton, submitButton, tideButton, watersurfaceButton, weatherButton, windspeedButton, winddirectButton, rainfallButton, waterDepthButton, sampleDistButton, airTempButton, waterTempButton, secchiDepthButton;
-    private TextView tideTxt, watersurfaceTxt, weatherTxt, windspeedTxt, winddirectTxt, rainfallTxt, waterDepthTxt, sampleDistTxt, airTempTxt, waterTempTxt, secchiDepthTxt;
-    private ImageView tideBG, watersurfaceBG, weatherBG, windspeedBG, winddirectBG, rainfallBG, waterDepthBG, sampleDistBG, airTempBG, waterTempBG, secchiDepthBG;
+    private Intent toHome, toSubmit, toTide, toWaterSurface, toWeather, toWindSpeed, toWindDirection, toRainfall, toWaterDepth, toSampleDist, toAirTemp, toWaterTemp, toSecchiDepth, toComments;
+    private Button homeButton, submitButton, tideButton, watersurfaceButton, weatherButton, windspeedButton, winddirectButton, rainfallButton, waterDepthButton, sampleDistButton, airTempButton, waterTempButton, secchiDepthButton, bottleButton;
+    private TextView tideTxt, watersurfaceTxt, weatherTxt, windspeedTxt, winddirectTxt, rainfallTxt, waterDepthTxt, sampleDistTxt, airTempTxt, waterTempTxt, secchiDepthTxt, bottleTxt;
+    private ImageView tideBG, watersurfaceBG, weatherBG, windspeedBG, winddirectBG, rainfallBG, waterDepthBG, sampleDistBG, airTempBG, waterTempBG, secchiDepthBG, bottleBG;
 
     private static DecimalFormat REAL_FORMATTER = new DecimalFormat("0.##");
     private Boolean canSubmit;
@@ -56,6 +56,7 @@ public class ReviewPage extends SaveFormAct {
         airTempButton = (Button) findViewById(id.airtempbtn);
         waterTempButton = (Button) findViewById(id.watertempbtn);
         secchiDepthButton = (Button) findViewById(id.secchidepthbtn);
+        bottleButton = (Button) findViewById(id.bottlebtn);
 
         tideTxt = (TextView) findViewById(id.tidetxt);
         watersurfaceTxt = (TextView) findViewById(id.watertxt);
@@ -68,6 +69,7 @@ public class ReviewPage extends SaveFormAct {
         airTempTxt = (TextView) findViewById(id.airtemptxt);
         waterTempTxt = (TextView) findViewById(id.watertemptxt);
         secchiDepthTxt = (TextView) findViewById(id.secchidepthtxt);
+        bottleTxt = (TextView) findViewById(id.bottletxt);
 
         tideBG = (ImageView) findViewById(id.tideBG);
         watersurfaceBG = (ImageView) findViewById(id.waterBG);
@@ -80,6 +82,7 @@ public class ReviewPage extends SaveFormAct {
         airTempBG = (ImageView) findViewById(id.airtempBG);
         waterTempBG = (ImageView) findViewById(id.watertempBG);
         secchiDepthBG = (ImageView) findViewById(id.secchidepthBG);
+        bottleBG = (ImageView) findViewById(id.bottleBG);
 
         // Set text for each row, disable submitting if missing any data.
         String textBox = "";
@@ -266,6 +269,12 @@ public class ReviewPage extends SaveFormAct {
             canSubmit = false;
         }else { secchiDepthTxt.setText(REAL_FORMATTER.format(SurveyData.secchiDepth[0]) + " cm, " + REAL_FORMATTER.format(SurveyData.secchiDepth[1])+" cm" ); }
 
+        if(SurveyData.Gbottle.isEmpty() || SurveyData.Pbottle.isEmpty() ) {
+            bottleBG.setImageResource(R.color.maroon);
+            bottleTxt.setText("Tap to set");
+            canSubmit = false;
+        }else { bottleTxt.setText("GBottle: " +SurveyData.Gbottle + ", PBottle: " + SurveyData.Pbottle); }
+
         // Disable submit button if unfinished
         if(canSubmit == false) {
             submitButton.setBackgroundColor(Color.GRAY);
@@ -288,6 +297,7 @@ public class ReviewPage extends SaveFormAct {
         toAirTemp = new Intent(this, AirTemp.class);
         toWaterTemp = new Intent(this, WaterTemp.class);
         toSecchiDepth = new Intent(this, SecchiDepth.class);
+        toComments = new Intent(this, CommentsPage.class);
     }
 
     void setupListeners() {
@@ -305,6 +315,7 @@ public class ReviewPage extends SaveFormAct {
         setListener(airTempButton, toAirTemp);
         setListener(waterTempButton, toWaterTemp);
         setListener(secchiDepthButton, toSecchiDepth);
+        setListener(bottleButton, toComments);
     }
 
     void setListener(Button button, Intent intent) {
@@ -318,6 +329,5 @@ public class ReviewPage extends SaveFormAct {
             }
         });
     }
-
 
 }

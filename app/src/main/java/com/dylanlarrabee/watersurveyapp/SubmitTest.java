@@ -38,6 +38,9 @@ public class SubmitTest extends SaveFormAct {
     private Intent toRestart;
 
 
+    private String tide, weather, watersurf, windspd, winddir, rain;
+    private float avgWaterTemp, avgAirTemp, avgSecchi;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,34 +78,44 @@ public class SubmitTest extends SaveFormAct {
         int year = currentTime.get(Calendar.YEAR); year %= 100;
         date = (currentTime.get(Calendar.MONTH) + 1) + "/" + currentTime.get(Calendar.DAY_OF_MONTH) + "/" + year;
 
+        setupEst();
+
+        avgWaterTemp = (float) ((SurveyData.waterTemp[0] + SurveyData.waterTemp[1]) / 2);
+        avgAirTemp = (float) ((SurveyData.airTemp[0] + SurveyData.airTemp[1]) / 2);
+        avgSecchi = (float) ((SurveyData.secchiDepth[0] + SurveyData.secchiDepth[1]) / 2);
+
         //Creates a map to store the data
-        Map<String, Object> otherData = new HashMap<>();
-        Map<String, Object> measurementData = new HashMap<>();
-        Map<String, Object> estimateData = new HashMap<>();
-        otherData.put("userName", SurveyData.userName);
-        otherData.put("userSite", SurveyData.userSite);
-        otherData.put("userId", SurveyData.myID);
-        estimateData.put("tideEst", SurveyData.tideEst);
-        estimateData.put("waterSurf", SurveyData.waterSurf);
-        estimateData.put("weathEst", SurveyData.weathEst);
-        estimateData.put("windSpeed", SurveyData.windSpeed);
-        estimateData.put("windDir", SurveyData.windDir);
-        estimateData.put("rainfall", SurveyData.rainfall);
-        measurementData.put("waterDepth", SurveyData.waterDepth[0]);
-        measurementData.put("sampleDist", SurveyData.sampleDist[0]);
-        measurementData.put("airTemp1", SurveyData.airTemp[0]);
-        measurementData.put("airTemp2", SurveyData.airTemp[1]);
-        measurementData.put("waterTemp1", SurveyData.waterTemp[0]);
-        measurementData.put("waterTemp2", SurveyData.waterTemp[1]);
-        measurementData.put("secchiDepth1", SurveyData.secchiDepth[0]);
-        measurementData.put("secchiDepth2", SurveyData.secchiDepth[1]);
-        otherData.put("date", date);
-        otherData.put("comments", SurveyData.comments);
-        otherData.put("bottomedOut", SurveyData.bottomedOut);
+        Map<String, Object> UserData = new HashMap<>();
+        UserData.put("userName", SurveyData.userName);
+        UserData.put("userSite", SurveyData.userSite);
+        UserData.put("userId", SurveyData.myID);
+        UserData.put("tideEst", tide);
+        UserData.put("waterSurf", watersurf);
+        UserData.put("weathEst", weather);
+        UserData.put("windSpeed", windspd);
+        UserData.put("windDir", winddir);
+        UserData.put("rainfall", rain);
+        UserData.put("waterDepth", SurveyData.waterDepth[0]);
+        UserData.put("sampleDist", SurveyData.sampleDist[0]);
+        UserData.put("airTemp1", SurveyData.airTemp[0]);
+        UserData.put("airTemp2", SurveyData.airTemp[1]);
+        UserData.put("waterTemp1", SurveyData.waterTemp[0]);
+        UserData.put("waterTemp2", SurveyData.waterTemp[1]);
+        UserData.put("secchiDepth1", SurveyData.secchiDepth[0]);
+        UserData.put("secchiDepth2", SurveyData.secchiDepth[1]);
+        UserData.put("date", date);
+        UserData.put("comments", SurveyData.comments);
+        UserData.put("bottomedOut", SurveyData.bottomedOut);
+        UserData.put("glassbottle", SurveyData.Gbottle);
+        UserData.put("pbottle", SurveyData.Pbottle);
+        UserData.put("usedTube", SurveyData.tubeUsed);
+        UserData.put("waterTempAvg", avgWaterTemp);
+        UserData.put("airTempAvg", avgAirTemp);
+        UserData.put("secchiAvg", avgSecchi);
 
         // Add other data to Firestore
-        database.collection("otherData")
-                .add(otherData)
+        database.collection("UserData")
+                .add(UserData)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
@@ -117,43 +130,6 @@ public class SubmitTest extends SaveFormAct {
                         submitFailure();
                     }
                 });
-
-        // Add estimate data to Firestore
-        database.collection("estimates")
-                .add(estimateData)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        // Data was successfully added to Firestore
-                        submitSuccess();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        // Failed to add data to Firestore
-                        submitFailure();
-                    }
-                });
-
-        // Add measurement data to Firestore
-        database.collection("measurements")
-                .add(measurementData)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        // Data was successfully added to Firestore
-                        submitSuccess();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        // Failed to add data to Firestore
-                        submitFailure();
-                    }
-                });
-
     }
 
     void submitSuccess() {
@@ -167,7 +143,6 @@ public class SubmitTest extends SaveFormAct {
         resubmitButton.setText("Home");
         resubmitButton.setOnClickListener(v -> startActivity(toRestart));
         resubmitButton.setVisibility(View.VISIBLE);
-
     }
 
     void submitFailure() {
@@ -177,5 +152,125 @@ public class SubmitTest extends SaveFormAct {
         progressBar.setVisibility(View.INVISIBLE);
         greencheck.setVisibility(View.VISIBLE);
         resubmitButton.setVisibility(View.VISIBLE);
+    }
+
+    void setupEst(){
+        switch (SurveyData.tideEst){
+            case 0:
+                tide = "High";
+                break;
+            case 1:
+                tide = "Middle Falling";
+                break;
+            case 2:
+                tide = "Low";
+                break;
+            case 3:
+                tide = "Middle Flooding";
+                break;
+            case 4:
+                tide = "Non-Tridal";
+                break;
+        }
+        switch (SurveyData.waterSurf){
+            case 0:
+                watersurf = "Heavy Chop";
+                break;
+            case 1:
+                watersurf = "Choppy";
+                break;
+            case 2:
+                watersurf = "Ripples";
+                break;
+            case 3:
+                watersurf = "Calm";
+                break;
+        }
+        switch (SurveyData.weathEst){
+            case 0:
+                weather = "Clear";
+                break;
+            case 1:
+                weather = "Partly Cloudy";
+                break;
+            case 2:
+                weather = "Cloudy";
+                break;
+            case 3:
+                weather = "Light Rain";
+                break;
+            case 4:
+                weather = "Rain";
+                break;
+            case 5:
+                weather = "Heavy Rain";
+                break;
+            case 6:
+                weather = "Fog";
+                break;
+            case 7:
+                weather = "Snow";
+                break;
+        }
+        switch (SurveyData.windSpeed){
+            case 0:
+                windspd = "Heavy";
+                break;
+            case 1:
+                windspd = "Medium";
+                break;
+            case 2:
+                windspd = "Light";
+                break;
+            case 3:
+                windspd = "Calm";
+                break;
+        }
+        switch (SurveyData.windDir){
+            case 0:
+                winddir = "North";
+                break;
+            case 1:
+                winddir = "North East";
+                break;
+            case 2:
+                winddir = "East";
+                break;
+            case 3:
+                winddir = "South East";
+                break;
+            case 4:
+                winddir = "South";
+                break;
+            case 5:
+                winddir = "South West";
+                break;
+            case 6:
+                winddir = "West";
+                break;
+            case 7:
+                winddir = "North West";
+                break;
+        }
+        switch (SurveyData.rainfall){
+            case 0:
+                rain = "Unusual Storm";
+                break;
+            case 1:
+                rain = "Heavy";
+                break;
+            case 2:
+                rain = "Medium";
+                break;
+            case 3:
+                rain = "Light";
+                break;
+            case 4:
+                rain = "Trace";
+                break;
+            case 5:
+                rain = "None";
+                break;
+        }
     }
 }

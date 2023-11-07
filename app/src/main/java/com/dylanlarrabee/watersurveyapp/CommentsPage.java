@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.InputFilter;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +25,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import android.text.TextWatcher;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import org.w3c.dom.Text;
@@ -38,14 +41,19 @@ public class CommentsPage extends SaveFormAct {
         TextView comm_h = (TextView) findViewById(id.comhome);
         ImageView comm_n = (ImageView) findViewById(id.com_next);
         ImageView comm_b = (ImageView) findViewById(id.com_back);
+
+        CheckBox checkBox = findViewById(R.id.bottomout);
         ConstraintLayout root = findViewById(R.id.commLay);
         View rootView = getWindow().getDecorView().getRootView();
+
+        LinearLayout linearLayoutPB = findViewById(id.LLPB);
+        LinearLayout linearLayoutGB = findViewById(id.LLGB);
 
         if (ReviewPage.isReviewing) {
             comm_h.setText("Return");
             BasicCommands.setActivity(this, comm_h, ReviewPage.class);
         } else
-            BasicCommands.setActivity(this, comm_h, MeasurementsPage.class);
+            BasicCommands.setActivity(this, comm_h, HomePage.class);
         BasicCommands.setActivity(this, comm_b, SecchiDepth.class);
         BasicCommands.setActivity(this, comm_n, ReviewPage.class);
 
@@ -53,6 +61,71 @@ public class CommentsPage extends SaveFormAct {
         EditText inText = (EditText) findViewById(id.commentText);
         EditText in_p_bottle = (EditText) findViewById(id.plasticbottle);
         EditText in_g_bottle = (EditText) findViewById(id.glassbottle);
+        // Set filters to restrict input to 2 characters for both fields
+        in_p_bottle.setFilters(new InputFilter[]{new InputFilter.LengthFilter(2)});
+        in_g_bottle.setFilters(new InputFilter[]{new InputFilter.LengthFilter(2)});
+
+        if(!SurveyData.Pbottle.isEmpty()) {
+            in_p_bottle.setText(SurveyData.Pbottle);
+        }
+
+        if(!SurveyData.Gbottle.isEmpty()) {
+            in_g_bottle.setText(SurveyData.Gbottle);
+        }
+
+
+        // Add TextWatcher for plasticbottle
+        in_p_bottle.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // Not needed
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // Not needed
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                String input = s.toString().toUpperCase(); // Convert to uppercase
+                if (input.length() == 2) {
+                    char firstChar = input.charAt(0);
+                    char secondChar = input.charAt(1);
+                    if (!(Character.isLetter(firstChar) && Character.isDigit(secondChar))) {
+                        s.delete(1, 2); // Remove the second character if it doesn't match the format
+                    }
+                }
+            }
+        });
+
+
+        // Add TextWatcher for glassbottle
+        in_g_bottle.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // Not needed
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // Not needed
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                String input = s.toString().toUpperCase(); // Convert to uppercase
+                if (input.length() == 2) {
+                    char firstChar = input.charAt(0);
+                    char secondChar = input.charAt(1);
+                    if (!Character.isLetter(firstChar) || !Character.isLetter(secondChar)) {
+                        s.delete(1, 2); // Remove the second character if it's not alphabetic
+                    }
+                }
+            }
+        });
+
+
 
         if (ReviewPage.isReviewing) {
             comm_h.setText("BACK");
@@ -103,17 +176,23 @@ public class CommentsPage extends SaveFormAct {
             inText.setText(SurveyData.comments);
         }
 
-        if (SurveyData.Pbottle.isEmpty()) {
-            SurveyData.Pbottle = "";
-        } else {
-            inText.setText(SurveyData.Pbottle);
-        }
+        linearLayoutPB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Update the content of the plasticbottle EditText
+                in_p_bottle.setText("AA");
 
-        if (SurveyData.Gbottle.isEmpty()) {
-            SurveyData.Gbottle = "";
-        } else {
-            inText.setText(SurveyData.Gbottle);
-        }
+            }
+        });
+
+        linearLayoutGB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Update the content of the glassbottle EditText
+                in_g_bottle.setText("A1");
+            }
+        });
+
 
         comm_b.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -153,48 +232,12 @@ public class CommentsPage extends SaveFormAct {
                 startActivity(toPage);
             }
         });
-        /*
-        if((SurveyData.secchiDepth[0] > SurveyData.waterDepth[0]) || (SurveyData.secchiDepth[1] > SurveyData.waterDepth[0])){
-            // Inflate the XML layout file for the popup
-            LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
-            View popupView = inflater.inflate(R.layout.tube_test, null);
-            RadioGroup radioGroup = popupView.findViewById(R.id.tube);
-            int selectedId = radioGroup.getCheckedRadioButtonId();
 
-            // create the popup window
-            int width = LinearLayout.LayoutParams.WRAP_CONTENT;
-            int height = LinearLayout.LayoutParams.WRAP_CONTENT;
-            boolean focusable = true; //lets taps outside the popup also dismiss it
-            final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
-
-            popupWindow.showAtLocation(getWindow().getDecorView(), Gravity.CENTER, 0, 0);
-
-            // Get references to the EditText views in the popup layout
-            TextView waterDepthText = popupView.findViewById(R.id.tube_water);
-            TextView secchiDepth1Text = popupView.findViewById(R.id.tube_sec1);
-            TextView secchiDepth2Text = popupView.findViewById(R.id.tube_sec2);
-            TextView proceed = popupView.findViewById(R.id.tube_proceed);
-
-            waterDepthText.setText(SurveyData.waterDepth[0] + " cm");
-            secchiDepth1Text.setText(SurveyData.secchiDepth[0] + " cm");
-            secchiDepth2Text.setText(SurveyData.secchiDepth[1] + " cm");
-
-            // Assign the value of the tubeUsed variable based on the answer from the popup
-            if (selectedId == R.id.tubeT) {
-                SurveyData.tubeUsed = true;
-            } else {
-                SurveyData.tubeUsed = false;
-            }
-            proceed.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    popupWindow.dismiss();
-                }
-            });
-        }
-         */
         if ((SurveyData.secchiDepth[0] > SurveyData.waterDepth[0]) || (SurveyData.secchiDepth[1] > SurveyData.waterDepth[0])) {
+            SurveyData.bottomedOut = true;
+            checkBox.setChecked(true);
             Showpopup();
+
         }
     }
     public void Showpopup(){
@@ -206,14 +249,25 @@ public class CommentsPage extends SaveFormAct {
         TextView secchiDepth1Text = (TextView) myDiag.findViewById(R.id.tube_sec1);
         TextView secchiDepth2Text = (TextView) myDiag.findViewById(R.id.tube_sec2);
 
-        waterDepthText.setText("Water Depth: " + SurveyData.waterDepth[0] + " cm");
-        secchiDepth1Text.setText("Secchi Depth 1: " + SurveyData.secchiDepth[0] + " cm");
-        secchiDepth2Text.setText("Secchi Depth 2: " + SurveyData.secchiDepth[1] + " cm");
+        EditText waterDepthInput = myDiag.findViewById(R.id.waterDepthInput);
+        EditText secchiDepth1Input = myDiag.findViewById(id.secchiDepthIn1);
+        EditText secchiDepth2Input = myDiag.findViewById(id.secchiDepthIn2);
+
+        waterDepthText.setText("Water Depth:");
+        secchiDepth1Text.setText("Secchi Depth 1:");
+        secchiDepth2Text.setText("Secchi Depth 2:");
+
+        // Set hint text for EditText fields to display current values
+        waterDepthInput.setHint(String.valueOf(SurveyData.waterDepth[0]) + "cm");
+        secchiDepth1Input.setHint(String.valueOf(SurveyData.secchiDepth[0]) + "cm");
+        secchiDepth2Input.setHint(String.valueOf(SurveyData.secchiDepth[1]) + "cm");
+
 
         proceed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int selectId = radioGroup.getCheckedRadioButtonId();
+                CheckBox checkBox = findViewById(R.id.bottomout);
 
                 if (selectId == R.id.tubeT) {
                     SurveyData.tubeUsed = true;
@@ -221,7 +275,69 @@ public class CommentsPage extends SaveFormAct {
                     SurveyData.tubeUsed = false;
                 }
 
-                myDiag.dismiss();
+                // Get values from EditText fields
+                String waterDepthStr = waterDepthInput.getText().toString();
+                String secchiDepth1Str = secchiDepth1Input.getText().toString();
+                String secchiDepth2Str = secchiDepth2Input.getText().toString();
+
+                // Check if the input fields are empty
+                if (waterDepthStr.isEmpty() && secchiDepth1Str.isEmpty() && secchiDepth2Str.isEmpty()) {
+                    // If all fields are empty, save the old values
+                    if (SurveyData.waterDepth[0] != -1 && SurveyData.secchiDepth[0] != -1 && SurveyData.secchiDepth[1] != -1) {
+                        double waterDepth = SurveyData.waterDepth[0];
+                        double secchiDepth1 = SurveyData.secchiDepth[0];
+                        double secchiDepth2 = SurveyData.secchiDepth[1];
+
+                        // Update SurveyData values
+                        SurveyData.waterDepth[0] = waterDepth;
+                        SurveyData.secchiDepth[0] = secchiDepth1;
+                        SurveyData.secchiDepth[1] = secchiDepth2;
+
+                        if ((SurveyData.secchiDepth[0] > SurveyData.waterDepth[0]) || (SurveyData.secchiDepth[1] > SurveyData.waterDepth[0])) {
+                            SurveyData.bottomedOut = true;
+                            checkBox.setChecked(true);
+                        } else {
+                            SurveyData.bottomedOut = false;
+                            checkBox.setChecked(false);
+                        }
+
+                        myDiag.dismiss();
+                    }
+                } else {
+                    if (!waterDepthStr.isEmpty() || !secchiDepth1Str.isEmpty() || !secchiDepth2Str.isEmpty()) {
+                        // If any of the fields is not empty, proceed with the new values
+
+                        if (waterDepthStr.isEmpty()) {
+                            waterDepthStr = String.valueOf(SurveyData.waterDepth[0]);
+                        }
+                        if (secchiDepth1Str.isEmpty()) {
+                            secchiDepth1Str = String.valueOf(SurveyData.secchiDepth[0]);
+                        }
+                        if (secchiDepth2Str.isEmpty()) {
+                            secchiDepth2Str = String.valueOf(SurveyData.secchiDepth[1]);
+                        }
+
+                        // Parse the values to double
+                        double waterDepth = Double.parseDouble(waterDepthStr);
+                        double secchiDepth1 = Double.parseDouble(secchiDepth1Str);
+                        double secchiDepth2 = Double.parseDouble(secchiDepth2Str);
+
+                        // Update SurveyData values
+                        SurveyData.waterDepth[0] = waterDepth;
+                        SurveyData.secchiDepth[0] = secchiDepth1;
+                        SurveyData.secchiDepth[1] = secchiDepth2;
+
+                        if ((SurveyData.secchiDepth[0] > SurveyData.waterDepth[0]) || (SurveyData.secchiDepth[1] > SurveyData.waterDepth[0])) {
+                            SurveyData.bottomedOut = true;
+                            checkBox.setChecked(true);
+                        } else {
+                            SurveyData.bottomedOut = false;
+                            checkBox.setChecked(false);
+                        }
+
+                        myDiag.dismiss();
+                    }
+                }
             }
         });
         myDiag.show();

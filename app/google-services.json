@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "799020915481",
+    "firebase_url": "https://creekwatchers-88ce2-default-rtdb.firebaseio.com",
+    "project_id": "creekwatchers-88ce2",
+    "storage_bucket": "creekwatchers-88ce2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:799020915481:android:ef96ed883562087b760388",
+        "android_client_info": {
+          "package_name": "com.dylanlarrabee.watersurveyapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJCQHLp1kAo0Km3ViE22DSKxenI1J7ddA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
