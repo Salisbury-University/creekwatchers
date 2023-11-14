@@ -131,17 +131,54 @@
         android:fontFamily="casual"
         android:gravity="center"
         android:padding="30sp"
-        android:text="Measurement"
+        android:text="Measurement:"
         android:textAllCaps="true"
         android:textColor="@color/gold"
         android:textSize="30sp"
         app:autoSizeMaxTextSize="36sp"
         app:autoSizeTextType="uniform"
-        app:layout_constraintBottom_toTopOf="@+id/gls90"
+        app:layout_constraintBottom_toTopOf="@+id/gls50h"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/gls10"
         app:layout_constraintVertical_bias="1.0" />
+
+    <LinearLayout
+        android:id="@+id/sampdist_ll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#A8000000"
+        android:orientation="horizontal"
+
+        app:layout_constraintBottom_toTopOf="@+id/gls90"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/gls50h">
+
+        <EditText
+            android:id="@+id/sampledistEditTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:hint="0.0"
+            android:inputType="numberDecimal"
+            android:textAlignment="center"
+            android:textColorHint="@color/gold"
+            android:textColor="@color/gold"
+            android:textSize="35sp" />
+
+        <Spinner
+            android:id="@+id/samp_distance_unit_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            app:layout_constraintStart_toEndOf="@+id/sampdist_home"
+            app:layout_constraintTop_toTopOf="@+id/samp_home"
+            style="@style/CustomSpinnerStyle"
+            android:layout_weight=".4"
+            android:theme="@style/CustomSpinnerText"/>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

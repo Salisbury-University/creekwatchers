@@ -77,6 +77,13 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.7" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/cgl58h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.58" />
+
     <TextView
         android:id="@+id/commentstitle"
         android:layout_width="match_parent"
@@ -193,7 +200,7 @@
         app:layout_constraintBottom_toTopOf="@+id/cgl82h"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/cgl50v"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/cgl75h"
         app:layout_constraintVertical_bias="0.0">
 
@@ -207,20 +214,20 @@
             android:text="Plastic Bottle:"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="30sp"/>
+            android:textSize="40sp" />
 
         <EditText
             android:id="@+id/plasticbottle"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.7"
+            android:layout_weight="0.4"
             android:fontFamily="@font/architects_daughter"
             android:gravity="center"
             android:hint="A1"
-            android:textColor="@color/gold"
             android:textAlignment="center"
+            android:textColor="@color/gold"
             android:textColorHint="#95FFFFFF"
-            android:textSize="30sp"/>
+            android:textSize="40sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -228,10 +235,10 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/cgl82h"
-        app:layout_constraintEnd_toStartOf="@+id/cgl50v"
+        app:layout_constraintBottom_toTopOf="@+id/cgl75h"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cgl75h">
+        app:layout_constraintTop_toTopOf="@+id/cgl58h">
 
         <TextView
             android:id="@+id/GBTV"
@@ -242,19 +249,19 @@
             android:text="Glass Bottle:"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="30sp"/>
+            android:textSize="40sp" />
 
         <EditText
             android:id="@+id/glassbottle"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.3"
+            android:layout_weight="0.4"
             android:fontFamily="@font/architects_daughter"
             android:hint="AA"
             android:textAlignment="center"
             android:textColor="@color/gold"
             android:textColorHint="#95FFFFFF"
-            android:textSize="30sp" />
+            android:textSize="40sp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -77,20 +77,34 @@
         android:textColor="@color/white"
         android:textSize="25sp" />
 
-    <EditText
-        android:id="@+id/waterDepthInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="15dp"
-        android:fontFamily="monospace"
-        android:hint="Enter new value (cm)"
-        android:inputType="numberDecimal"
-        android:textAlignment="center"
-
-        android:textColorHint="@color/gold"
-        android:textColor="@color/gold"
-        android:textSize="25sp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/waterDepthInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:fontFamily="monospace"
+            android:hint="Enter new value"
+            android:inputType="numberDecimal"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:textColorHint="@color/gold"
+            android:textColor="@color/gold"
+            android:textSize="25sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:text="(cm)"
+            android:textColor="@color/gold"
+            android:textSize="25sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tube_sec1"
@@ -105,19 +119,34 @@
         android:textColor="@color/white"
         android:textSize="25sp" />
 
-    <EditText
-        android:id="@+id/secchiDepthIn2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="15dp"
-        android:fontFamily="monospace"
-        android:hint="Enter new value (cm)"
-        android:inputType="numberDecimal"
-        android:textAlignment="center"
-        android:textColorHint="@color/gold"
-        android:textColor="@color/gold"
-        android:textSize="25sp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/secchiDepthIn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:fontFamily="monospace"
+            android:hint="Enter new value"
+            android:inputType="numberDecimal"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:textColorHint="@color/gold"
+            android:textColor="@color/gold"
+            android:textSize="25sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:text="(cm)"
+            android:textColor="@color/gold"
+            android:textSize="25sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tube_sec2"
@@ -132,19 +161,34 @@
         android:textColor="@color/white"
         android:textSize="25sp" />
 
-    <EditText
-        android:id="@+id/secchiDepthIn1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="15dp"
-        android:fontFamily="monospace"
-        android:hint="Enter new value (cm)"
-        android:inputType="numberDecimal"
-        android:textAlignment="center"
-        android:textColorHint="@color/gold"
-        android:textColor="@color/gold"
-        android:textSize="25sp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/secchiDepthIn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:fontFamily="monospace"
+            android:hint="Enter new value"
+            android:inputType="numberDecimal"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:textColorHint="@color/gold"
+            android:textColor="@color/gold"
+            android:textSize="25sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:text="(cm)"
+            android:textColor="@color/gold"
+            android:textSize="25sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tube_proceed"

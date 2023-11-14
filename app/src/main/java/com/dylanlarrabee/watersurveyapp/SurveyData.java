@@ -14,6 +14,7 @@ SurveyData  {
         static String formName = "";
         static String Gbottle = "";
         static String Pbottle = "";
+        static String sampUnit = "";
         static final int maxEst = 6, maxMeas = 5, maxComm = 1, numMeas = 2;
         static String userName = "", userSite = "", comments = "";
         static int curEst = 0, curMeas = 0, curComm = 0, formIDnum = 0;
@@ -31,6 +32,8 @@ SurveyData  {
          double[] myairTemp = {-1,-1},mywaterTemp={-1,-1},mysecchiDepth={-1,-1};
 
          int myestArr[] = {mytideEst,mywaterSurf,myweathEst,mywindSpeed,mywindDir,myrainfall};
+
+         String mySampUnit = "";
 
          boolean bottomOut, useTube;
 
@@ -76,6 +79,7 @@ SurveyData  {
                 sampleDist[0] = -1;
                 Gbottle = "";
                 Pbottle = "";
+                sampUnit = "m";
                 bottomedOut = false;
                 tubeUsed = false;
         }
@@ -146,12 +150,12 @@ SurveyData  {
                 mysd.mywaterDepth[0] = SurveyData.waterDepth[0];
                 mysd.mysampleDist[0] = SurveyData.sampleDist[0];
                 mysd.myglass = SurveyData.Gbottle;
-
                 mysd.myplastic = SurveyData.Pbottle;
                 mysd.myComm = SurveyData.comments;
                 mysd.myformIDnum = SurveyData.formIDnum;
                 mysd.bottomOut = SurveyData.bottomedOut;
                 mysd.useTube = SurveyData.tubeUsed;
+                mysd.mySampUnit = SurveyData.sampUnit;
                 return mysd;
         }
         public static void RetrieveData(SurveyData mysd)
@@ -183,5 +187,6 @@ SurveyData  {
             SurveyData.formIDnum = mysd.myformIDnum;
             SurveyData.bottomedOut = mysd.bottomOut;
             SurveyData.tubeUsed = mysd.useTube;
+            SurveyData.sampUnit = mysd.mySampUnit;
         }
 }

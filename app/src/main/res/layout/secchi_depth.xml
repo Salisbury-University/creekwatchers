@@ -91,6 +91,20 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/atdgl30h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/atdgl70h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7" />
+
     <TextView
         android:id="@+id/sd_title_meas1"
         android:layout_width="match_parent"
@@ -101,9 +115,44 @@
         android:text="MEASUREMENT 1"
         android:textColor="@color/gold"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/sdgl50h"
+        app:layout_constraintBottom_toTopOf="@+id/atdgl30h"
         app:layout_constraintTop_toTopOf="@+id/sdgl10h"
         tools:layout_editor_absoluteX="150dp" />
+
+    <LinearLayout
+        android:id="@+id/secchiLL1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#A8000000"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/sdgl50h"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/atdgl30h">
+
+        <EditText
+            android:id="@+id/secchiEdit1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:hint="0.0"
+            android:inputType="numberDecimal"
+            android:textAlignment="center"
+            android:textColor="@color/gold"
+            android:textColorHint="@color/gold"
+            android:textSize="35sp" />
+
+        <TextView
+            android:id="@+id/secchi1_measurement_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".4"
+            android:text="cm"
+            android:textColor="@color/gold"
+            android:textSize="35sp" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/secchititle"
@@ -130,8 +179,43 @@
         android:text="MEASUREMENT 2"
         android:textColor="@color/gold"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/sdgl90h"
+        app:layout_constraintBottom_toTopOf="@+id/atdgl70h"
         app:layout_constraintTop_toTopOf="@+id/atdgl50h" />
+
+    <LinearLayout
+        android:id="@+id/secchiLL2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#A8000000"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/sdgl90h"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/atdgl70h">
+
+        <EditText
+            android:id="@+id/secchiEdit2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:hint="0.0"
+            android:inputType="numberDecimal"
+            android:textAlignment="center"
+            android:textColor="@color/gold"
+            android:textColorHint="@color/gold"
+            android:textSize="35sp" />
+
+        <TextView
+            android:id="@+id/secchi2_measurement_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".4"
+            android:text="cm"
+            android:textColor="@color/gold"
+            android:textSize="35sp" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/secchihome"

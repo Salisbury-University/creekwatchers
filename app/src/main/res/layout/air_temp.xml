@@ -47,7 +47,7 @@
         app:layout_constraintBottom_toTopOf="@+id/atdgl50h"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/wtgl50h" />
+        app:layout_constraintTop_toTopOf="@+id/sdgl50v" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/sdgl25v"
@@ -55,6 +55,13 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/sdgl50v"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/sdgl75v"
@@ -68,8 +75,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.10123119" />
+        app:layout_constraintGuide_percent="0.1" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/atdgl30h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/atdgl50h"
@@ -78,6 +91,12 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/atdgl70h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/atdgl90h"
@@ -97,10 +116,45 @@
         android:textAllCaps="true"
         android:textColor="@color/gold"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/atdgl50h"
+        app:layout_constraintBottom_toTopOf="@+id/atdgl30h"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/atdgl10h" />
+
+    <LinearLayout
+        android:id="@+id/airTempLL1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#A8000000"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/a_title_meas2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/at_title_meas1">
+
+        <EditText
+            android:id="@+id/airTempEdit1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:hint="0.0"
+            android:inputType="numberDecimal"
+            android:textAlignment="center"
+            android:textColor="@color/gold"
+            android:textColorHint="@color/gold"
+            android:textSize="35sp" />
+
+        <TextView
+            android:id="@+id/airTemp1_measurement_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".4"
+            android:text="°C"
+            android:textColor="@color/gold"
+            android:textSize="35sp" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/airtitle"
@@ -128,10 +182,45 @@
         android:textAllCaps="true"
         android:textColor="@color/gold"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/atdgl90h"
+        app:layout_constraintBottom_toTopOf="@+id/atdgl70h"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/atdgl50h" />
+
+    <LinearLayout
+        android:id="@+id/airTempLL2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#A8000000"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/atdgl90h"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/atdgl70h">
+
+        <EditText
+            android:id="@+id/airTempEdit2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:hint="0.0"
+            android:inputType="numberDecimal"
+            android:textAlignment="center"
+            android:textColor="@color/gold"
+            android:textColorHint="@color/gold"
+            android:textSize="35sp" />
+
+        <TextView
+            android:id="@+id/airTemp2_measurement_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".4"
+            android:text="°C"
+            android:textColor="@color/gold"
+            android:textSize="35sp" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/airhome"

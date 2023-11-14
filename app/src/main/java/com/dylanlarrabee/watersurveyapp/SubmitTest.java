@@ -35,6 +35,7 @@ public class SubmitTest extends SaveFormAct {
     private ProgressBar progressBar;
     private Button resubmitButton;
     private String date;
+    private String sampDist;
     private Intent toRestart;
 
 
@@ -84,6 +85,8 @@ public class SubmitTest extends SaveFormAct {
         avgAirTemp = (float) ((SurveyData.airTemp[0] + SurveyData.airTemp[1]) / 2);
         avgSecchi = (float) ((SurveyData.secchiDepth[0] + SurveyData.secchiDepth[1]) / 2);
 
+        sampDist = SurveyData.sampleDist + " " + SurveyData.sampUnit;
+
         //Creates a map to store the data
         Map<String, Object> UserData = new HashMap<>();
         UserData.put("userName", SurveyData.userName);
@@ -96,7 +99,7 @@ public class SubmitTest extends SaveFormAct {
         UserData.put("windDir", winddir);
         UserData.put("rainfall", rain);
         UserData.put("waterDepth", SurveyData.waterDepth[0]);
-        UserData.put("sampleDist", SurveyData.sampleDist[0]);
+        UserData.put("sampleDist", sampDist);
         UserData.put("airTemp1", SurveyData.airTemp[0]);
         UserData.put("airTemp2", SurveyData.airTemp[1]);
         UserData.put("waterTemp1", SurveyData.waterTemp[0]);

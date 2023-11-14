@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomSpinnerText">
+        <item name="android:textSize">35sp</item>
+        <item name="android:textColor">@color/gold</item>
+    </style>
+
+    <style name="CustomSpinnerStyle" parent="Widget.AppCompat.Spinner">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">100dp</item> <!-- Adjust the height as needed -->
+        <item name="android:background">#808A0000</item>
+    </style>
+
+</resources>

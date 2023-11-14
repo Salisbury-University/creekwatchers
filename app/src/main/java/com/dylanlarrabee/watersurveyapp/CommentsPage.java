@@ -24,7 +24,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import android.text.InputFilter;
+import android.text.InputType;
+import android.text.Spanned;
 import android.text.TextWatcher;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -253,14 +255,32 @@ public class CommentsPage extends SaveFormAct {
         EditText secchiDepth1Input = myDiag.findViewById(id.secchiDepthIn1);
         EditText secchiDepth2Input = myDiag.findViewById(id.secchiDepthIn2);
 
+        // Set input constraints for the EditText
+        waterDepthInput.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+        waterDepthInput.setFilters(new InputFilter[]{
+                new InputFilterMinMax(0.0, 500.0) // Custom InputFilter to limit the value
+        });
+
+        // Set input constraints for the EditText
+        secchiDepth1Input.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+        secchiDepth1Input.setFilters(new InputFilter[]{
+                new InputFilterMinMax(0.0, 500.0) // Custom InputFilter to limit the value
+        });
+
+        // Set input constraints for the EditText
+        secchiDepth2Input.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+        secchiDepth2Input.setFilters(new InputFilter[]{
+                new InputFilterMinMax(0.0, 500.0) // Custom InputFilter to limit the value
+        });
+
         waterDepthText.setText("Water Depth:");
         secchiDepth1Text.setText("Secchi Depth 1:");
         secchiDepth2Text.setText("Secchi Depth 2:");
 
         // Set hint text for EditText fields to display current values
-        waterDepthInput.setHint(String.valueOf(SurveyData.waterDepth[0]) + "cm");
-        secchiDepth1Input.setHint(String.valueOf(SurveyData.secchiDepth[0]) + "cm");
-        secchiDepth2Input.setHint(String.valueOf(SurveyData.secchiDepth[1]) + "cm");
+        waterDepthInput.setHint(String.valueOf(SurveyData.waterDepth[0]));
+        secchiDepth1Input.setHint(String.valueOf(SurveyData.secchiDepth[0]));
+        secchiDepth2Input.setHint(String.valueOf(SurveyData.secchiDepth[1]));
 
 
         proceed.setOnClickListener(new View.OnClickListener() {

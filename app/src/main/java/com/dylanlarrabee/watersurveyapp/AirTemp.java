@@ -5,7 +5,10 @@ import static com.dylanlarrabee.watersurveyapp.R.*;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.InputFilter;
 import android.text.InputType;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,8 +26,20 @@ public class AirTemp extends SaveFormAct {
         super.onCreate(savedInstance);
         setContentView(layout.air_temp);
 
-        TextView ameas1 = (TextView) findViewById(R.id.at_title_meas1);
-        TextView ameas2 = (TextView) findViewById(R.id.a_title_meas2);
+        EditText airTemp1 = findViewById(id.airTempEdit1);
+        EditText airTemp2 = findViewById(id.airTempEdit2);
+
+        // Set input constraints for the EditText
+        airTemp1.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+        airTemp1.setFilters(new InputFilter[]{
+                new InputFilterMinMax(0.0, 40.0) // Custom InputFilter to limit the value
+        });
+
+        // Set input constraints for the EditText
+        airTemp2.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+        airTemp2.setFilters(new InputFilter[]{
+                new InputFilterMinMax(0.0, 40.0) // Custom InputFilter to limit the value
+        });
 
         TextView air_h = (TextView) findViewById(R.id.airhome);
         ImageView air_n = (ImageView) findViewById(R.id.air_next);
@@ -41,17 +56,52 @@ public class AirTemp extends SaveFormAct {
         BasicCommands.setActivity(this, air_b, SamplePage.class);
         BasicCommands.setActivity(this, air_n, WaterTemp.class);
 
-        BasicCommands.setAlertBox(this, ameas1, 0, SurveyData.airTemp,unit,title, 40);
-        BasicCommands.setAlertBox(this, ameas2, 1, SurveyData.airTemp,unit,title, 40);
-
-        if(SurveyData.airTemp[0] > 0)
+        if(SurveyData.waterTemp[0] >= 0)
         {
-         ameas1.setText(""+SurveyData.airTemp[0] + unit);
-        }
-        if(SurveyData.airTemp[1] > 0)
-        {
-            ameas2.setText(""+SurveyData.airTemp[1]+ unit);
+            airTemp1.setText(String.valueOf(SurveyData.airTemp[0]));
+        }else{
+            airTemp1.setHint("0.0");
         }
 
+        airTemp1.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (!s.toString().isEmpty()) {
+                    SurveyData.airTemp[0] = Double.parseDouble(s.toString());
+                }
+            }
+        });
+
+        if(SurveyData.airTemp[1] >= 0)
+        {
+            airTemp2.setText(String.valueOf(SurveyData.airTemp[1]));
+        }else{
+            airTemp2.setHint("0.0");
+        }
+
+        airTemp2.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (!s.toString().isEmpty()) {
+                    SurveyData.airTemp[1] = Double.parseDouble(s.toString());
+                }
+            }
+        });
     }
 }

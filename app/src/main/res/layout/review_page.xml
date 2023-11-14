@@ -671,35 +671,35 @@
 
 
                 <ImageView
-                    android:id="@+id/bottleBG"
+                    android:id="@+id/PbottleBG"
                     android:layout_width="0dp"
                     android:layout_height="100dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/bottlebtn"
-                    app:layout_constraintEnd_toEndOf="@+id/bottlebtn"
+                    app:layout_constraintBottom_toBottomOf="@+id/Pbottlebtn"
+                    app:layout_constraintEnd_toEndOf="@+id/Pbottlebtn"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/bottlebtn"
-                    app:layout_constraintTop_toTopOf="@+id/bottlebtn"
+                    app:layout_constraintStart_toStartOf="@+id/Pbottlebtn"
+                    app:layout_constraintTop_toTopOf="@+id/Pbottlebtn"
                     app:layout_constraintVertical_bias="0.0"
                     app:srcCompat="@color/white" />
 
                 <TextView
-                    android:id="@+id/bottletxt"
+                    android:id="@+id/Pbottletxt"
                     android:layout_width="250dp"
-                    android:layout_height="75dp"
+                    android:layout_height="30dp"
                     android:layout_marginBottom="5dp"
                     android:fontFamily="monospace"
-                    android:text="Bottle label Here"
+                    android:text="Plastic Bottle Label Here"
                     android:textAlignment="viewEnd"
                     android:textColor="@color/black"
                     android:textSize="30sp"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="@+id/bottlebtn"
+                    app:layout_constraintBottom_toBottomOf="@+id/Pbottlebtn"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.9"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="@+id/Pbottlebtn" />
 
                 <Button
-                    android:id="@+id/bottlebtn"
+                    android:id="@+id/Pbottlebtn"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:backgroundTint="#00FFFFFF"
@@ -710,7 +710,64 @@
                     android:minHeight="0dp"
                     android:paddingTop="26dp"
                     android:paddingBottom="30dp"
-                    android:text=" Bottle Labels"
+                    android:text=" Plastic Bottle"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+
+                    app:cornerRadius="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+
+                <ImageView
+                    android:id="@+id/GbottleBG"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/Gbottlebtn"
+                    app:layout_constraintEnd_toEndOf="@+id/Gbottlebtn"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/Gbottlebtn"
+                    app:layout_constraintTop_toTopOf="@+id/Gbottlebtn"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@color/white" />
+
+                <TextView
+                    android:id="@+id/Gbottletxt"
+                    android:layout_width="250dp"
+                    android:layout_height="30dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="monospace"
+                    android:text="Glass Bottle Label Here"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/black"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/Gbottlebtn"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.9"
+                    app:layout_constraintStart_toStartOf="@+id/Gbottlebtn" />
+
+                <Button
+                    android:id="@+id/Gbottlebtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:backgroundTint="#00FFFFFF"
+                    android:fontFamily="monospace"
+                    android:gravity="top|left"
+                    android:insetTop="0dp"
+                    android:insetBottom="3dp"
+                    android:minHeight="0dp"
+                    android:paddingTop="26dp"
+                    android:paddingBottom="30dp"
+                    android:text=" Glass Bottle"
                     android:textAlignment="viewStart"
                     android:textColor="@color/black"
                     android:textSize="30sp"
