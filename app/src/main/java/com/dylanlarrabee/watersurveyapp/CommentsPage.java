@@ -64,7 +64,7 @@ public class CommentsPage extends SaveFormAct {
         EditText in_p_bottle = (EditText) findViewById(id.plasticbottle);
         EditText in_g_bottle = (EditText) findViewById(id.glassbottle);
         // Set filters to restrict input to 2 characters for both fields
-        in_p_bottle.setFilters(new InputFilter[]{new InputFilter.LengthFilter(2)});
+        in_p_bottle.setFilters(new InputFilter[]{new InputFilter.LengthFilter(3)});
         in_g_bottle.setFilters(new InputFilter[]{new InputFilter.LengthFilter(2)});
 
         if(!SurveyData.Pbottle.isEmpty()) {
@@ -91,12 +91,24 @@ public class CommentsPage extends SaveFormAct {
             @Override
             public void afterTextChanged(Editable s) {
                 String input = s.toString().toUpperCase(); // Convert to uppercase
-                if (input.length() == 2) {
-                    char firstChar = input.charAt(0);
+
+                if (input.length() > 1) {
                     char secondChar = input.charAt(1);
-                    if (!(Character.isLetter(firstChar) && Character.isDigit(secondChar))) {
-                        s.delete(1, 2); // Remove the second character if it doesn't match the format
+
+                    if (Character.isLetter(secondChar) && input.length() > 2) {
+                        // If second character is a letter, delete any third character
+                        s.delete(2, input.length());
+                    } else if (Character.isDigit(secondChar) && input.length() > 2) {
+                        // If second character is a digit, ensure third character is also a digit
+                        if (!Character.isDigit(input.charAt(2))) {
+                            s.delete(2, input.length());
+                        }
                     }
+                }
+
+                if (input.length() == 1 && !Character.isLetter(input.charAt(0))) {
+                    // Ensure first character is a letter
+                    s.delete(0, input.length());
                 }
             }
         });
